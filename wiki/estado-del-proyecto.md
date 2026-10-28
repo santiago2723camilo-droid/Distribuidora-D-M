@@ -30,7 +30,7 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 - **Confirmado:** Vite está activo en `http://127.0.0.1:3000/` y la vista quedó abierta en el navegador de Codex.
 - **Pendiente:** localizar la causa de desplazamiento horizontal de la página a 320 px.
 - **Confirmado:** remoto `origin` configurado como `https://github.com/santiago2723camilo-droid/Distribuidora-D-M.git`; rama local renombrada a `main`. `git ls-remote` no mostró ramas en el destino.
-- **Pendiente:** la subida a GitHub no se completó porque Git necesita autenticación. No se publicaron commits; la rama local sigue limpia y lista para subir tras iniciar sesión.
+- **Pendiente:** el remoto sigue sin ramas. El push devolvió que no puede leer el usuario de GitHub; Git Credential Manager no tiene cuentas registradas. No se subieron commits. La rama local conserva el historial limpio, lista para subir después de iniciar sesión.
 - **Pendiente:** confirmar vigencia de los datos de contacto y recepción real de solicitudes.
 
 ## Comprobaciones

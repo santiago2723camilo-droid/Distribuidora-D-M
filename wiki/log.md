@@ -40,3 +40,9 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - `git ls-remote` respondió sin ramas, así que no había historial remoto que integrar o sobrescribir.
 - Se intentó `git push -u origin main`, pero Git no pudo solicitar el usuario de GitHub por falta de autenticación en la sesión. Se canceló el intento colgado y se confirmó que el remoto sigue sin ramas; no se subieron datos.
 - Próximo paso: completar la autenticación de GitHub en este equipo y repetir el push.
+
+## [2026-10-28] publicación | Reintento tras revisar autenticación
+
+- El usuario autorizó continuar con el push. Se verificó la cuenta de Git Credential Manager sin leer tokens: no hay cuentas de GitHub registradas.
+- El reintento de `git push -u origin main` terminó con `could not read Username for 'https://github.com'`; el remoto sigue sin ramas y no recibió commits.
+- Git Credential Manager confirma que el inicio de sesión local se realiza con `git credential-manager github login`. Esperar a que el usuario complete ese flujo en su equipo antes de repetir el push.
