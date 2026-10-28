@@ -32,4 +32,4 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - Se generó `trabajo/landing-google-ai-studio/public/brand/logo-dym.png` desde el PDF de logo, dejando el original intacto; el encabezado ahora carga ese archivo local y evita el rótulo duplicado.
 - A 320 px se compactó el encabezado: el acceso rápido al crédito se oculta, pero sigue en el menú móvil. Se confirmó visualmente el logo, botón de cotización y menú a 320/375 px; también se revisó escritorio a 1280 px. A 320 px sigue apareciendo barra horizontal en otra zona, pendiente de investigar.
 - Build de Vite y comprobación TypeScript completados sin errores. La vista local está activa.
-- Git recibió identidad local por instrucción del usuario; la identidad global no se modificó. Se preparará un commit local después de revisar el contenido y exclusiones.
+- Git recibió identidad local por instrucción del usuario; la identidad global no se modificó. Se revisaron las rutas añadidas y se creó el commit local `87d8073`, sin `Docs/`, el ZIP, `node_modules/` ni `dist/`.

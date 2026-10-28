@@ -16,7 +16,7 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 - **Confirmado:** Node.js 24.21.0, npm 11.19.0 y Git 2.56.0.windows.2 están disponibles.
 - **Confirmado:** scripts declarados `dev`, `build`, `preview`, `lint`; `dev` usa puerto 3000. `npm install` terminó y generó `package-lock.json`.
 - **Confirmado:** npm reportó un hallazgo de baja severidad y scripts de dependencias no ejecutados automáticamente. No se ejecutó `npm audit fix`.
-- **Confirmado:** se inicializó un repositorio Git local. Se configuró identidad solo en este repositorio con los datos entregados por el usuario; no se modificó la configuración global.
+- **Confirmado:** se inicializó un repositorio Git local. Se configuró identidad solo en este repositorio con los datos entregados por el usuario; no se modificó la configuración global. El commit inicial `87d8073` contiene la copia del proyecto, el agente, la wiki y el logo; no se subió a un remoto.
 - **Confirmado:** npm detectó incompatibilidad en el paquete original: Vite 8 admite esbuild `^0.27.0 || ^0.28.0`, mientras el proyecto fijaba `^0.25.0`. Se ajustó a `^0.27.0`, y la instalación/build terminaron correctamente.
 
 ## Página y publicación
