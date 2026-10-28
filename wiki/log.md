@@ -46,3 +46,10 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - El usuario autorizó continuar con el push. Se verificó la cuenta de Git Credential Manager sin leer tokens: no hay cuentas de GitHub registradas.
 - El reintento de `git push -u origin main` terminó con `could not read Username for 'https://github.com'`; el remoto sigue sin ramas y no recibió commits.
 - Git Credential Manager confirma que el inicio de sesión local se realiza con `git credential-manager github login`. Esperar a que el usuario complete ese flujo en su equipo antes de repetir el push.
+
+## [2026-10-28] publicación | Rama main subida a GitHub
+
+- El usuario pidió reabrir el inicio de sesión. Git Credential Manager completó el flujo oficial y confirmó la cuenta `santiago2723camilo-droid`.
+- `git push -u origin main` terminó correctamente. GitHub creó `main` y confirmó el mismo commit `19dbdb2` que la rama local; quedó configurado el seguimiento `origin/main`.
+- Solo se enviaron los archivos versionados. `Docs/`, el ZIP, `node_modules/` y `dist/` permanecen fuera del repositorio.
+- El código quedó en GitHub; no se configuró ni ejecutó un despliegue web.

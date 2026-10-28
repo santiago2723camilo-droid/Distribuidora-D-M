@@ -36,4 +36,4 @@ fuentes: ["AGENTS.md", "Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/LOGO DIST
 ## 2026-10-28 — Destino GitHub solicitado
 
 - **Decisión confirmada por el usuario:** usar `https://github.com/santiago2723camilo-droid/Distribuidora-D-M.git` y publicar la rama `main`.
-- **Estado:** remoto configurado y sin ramas al comprobarlo; el push quedó pendiente por autenticación de GitHub.
+- **Estado:** autenticación completada en Git Credential Manager y rama `main` publicada en el remoto. El despliegue web sigue siendo una acción separada.

@@ -16,7 +16,7 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 - **Confirmado:** Node.js 24.21.0, npm 11.19.0 y Git 2.56.0.windows.2 están disponibles.
 - **Confirmado:** scripts declarados `dev`, `build`, `preview`, `lint`; `dev` usa puerto 3000. `npm install` terminó y generó `package-lock.json`.
 - **Confirmado:** npm reportó un hallazgo de baja severidad y scripts de dependencias no ejecutados automáticamente. No se ejecutó `npm audit fix`.
-- **Confirmado:** se inicializó un repositorio Git local. Se configuró identidad solo en este repositorio con los datos entregados por el usuario; no se modificó la configuración global. El commit inicial `87d8073` contiene la copia del proyecto, el agente, la wiki y el logo; no se subió a un remoto.
+- **Confirmado:** se inicializó un repositorio Git local. Se configuró identidad solo en este repositorio con los datos entregados por el usuario; no se modificó la configuración global. El commit inicial `87d8073` contiene la copia del proyecto, el agente, la wiki y el logo.
 - **Confirmado:** npm detectó incompatibilidad en el paquete original: Vite 8 admite esbuild `^0.27.0 || ^0.28.0`, mientras el proyecto fijaba `^0.25.0`. Se ajustó a `^0.27.0`, y la instalación/build terminaron correctamente.
 
 ## Página y publicación
@@ -30,7 +30,8 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 - **Confirmado:** Vite está activo en `http://127.0.0.1:3000/` y la vista quedó abierta en el navegador de Codex.
 - **Pendiente:** localizar la causa de desplazamiento horizontal de la página a 320 px.
 - **Confirmado:** remoto `origin` configurado como `https://github.com/santiago2723camilo-droid/Distribuidora-D-M.git`; rama local renombrada a `main`. `git ls-remote` no mostró ramas en el destino.
-- **Pendiente:** el remoto sigue sin ramas. El push devolvió que no puede leer el usuario de GitHub; Git Credential Manager no tiene cuentas registradas. No se subieron commits. La rama local conserva el historial limpio, lista para subir después de iniciar sesión.
+- **Confirmado:** Git Credential Manager inició sesión como `santiago2723camilo-droid`; se subió `main` a `origin` y GitHub confirmó el mismo hash local/remoto `19dbdb2`. La rama local sigue `origin/main`.
+- **Pendiente:** el código está en GitHub, pero no se ha desplegado a un dominio o servicio de hosting.
 - **Pendiente:** confirmar vigencia de los datos de contacto y recepción real de solicitudes.
 
 ## Comprobaciones
