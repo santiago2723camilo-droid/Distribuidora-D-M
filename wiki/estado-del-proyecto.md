@@ -23,7 +23,7 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 
 - **Confirmado:** existe una landing con inicio, productos, aliados, nosotros y contacto, además de modales de cotización y crédito y un botón de WhatsApp.
 - **Provisional:** la app parece construida para una fase de demostración; `mockData.ts` declara catálogo detallado, testimonios, crédito, cobertura, certificaciones, inventario, dirección y correo que aún no se verificaron con las fuentes de `Docs/`.
-- **Confirmado:** el diseño del ZIP usa una foto de stock remota en la cabecera; los activos de Docs son logos, no fotos del negocio.
+- **Confirmado:** el diseño del ZIP usa una foto de stock remota en la sección principal; los activos de Docs son logos, no fotos del negocio.
 - **Confirmado:** build con `node .\node_modules\vite\bin\vite.js build` y TypeScript con `node .\node_modules\typescript\bin\tsc --noEmit` terminaron correctamente. Vite muestra una advertencia de compatibilidad futura por `__dirname` en `vite.config.ts`.
 - **Confirmado:** el encabezado usa el logo local `public/brand/logo-dym.png`, generado al recortar el PDF original sin modificarlo. Ya no depende del logo remoto del código extraído.
 - **Confirmado:** vista previa verificada en navegador a 1280 px y 375 px; logo y controles del encabezado visibles. A 320 px también se ve el logo, cotización y menú; el crédito permanece accesible dentro del menú. En la captura de 320 px se observa una barra horizontal en otra parte de la página, pendiente de localizar.
