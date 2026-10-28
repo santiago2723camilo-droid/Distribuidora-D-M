@@ -1,0 +1,16 @@
+# Fuentes originales y material privado de la empresa
+/Docs/
+/*.zip
+
+# Dependencias, compilados y temporales
+**/node_modules/
+**/dist/
+**/build/
+/tmp/
+*.log
+.DS_Store
+
+# Secretos locales
+.env
+.env.*
+!.env.example

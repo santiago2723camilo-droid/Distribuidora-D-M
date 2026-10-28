@@ -1,0 +1,6 @@
+{
+  "name": "Distribuidora D&M",
+  "description": "Distribución ferretera mayorista en Valledupar y el Caribe colombiano. Materiales eléctricos, construcción, herramientas y accesorios sanitarios.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
