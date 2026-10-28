@@ -33,3 +33,10 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - A 320 px se compactó el encabezado: el acceso rápido al crédito se oculta, pero sigue en el menú móvil. Se confirmó visualmente el logo, botón de cotización y menú a 320/375 px; también se revisó escritorio a 1280 px. A 320 px sigue apareciendo barra horizontal en otra zona, pendiente de investigar.
 - Build de Vite y comprobación TypeScript completados sin errores. La vista local está activa.
 - Git recibió identidad local por instrucción del usuario; la identidad global no se modificó. Se revisaron las rutas añadidas y se creó el commit local `87d8073`, sin `Docs/`, el ZIP, `node_modules/` ni `dist/`.
+
+## [2026-10-28] publicación | Preparación de GitHub
+
+- El usuario autorizó `https://github.com/santiago2723camilo-droid/Distribuidora-D-M.git` como destino. Se configuró como `origin` y se renombró la rama local a `main`.
+- `git ls-remote` respondió sin ramas, así que no había historial remoto que integrar o sobrescribir.
+- Se intentó `git push -u origin main`, pero Git no pudo solicitar el usuario de GitHub por falta de autenticación en la sesión. Se canceló el intento colgado y se confirmó que el remoto sigue sin ramas; no se subieron datos.
+- Próximo paso: completar la autenticación de GitHub en este equipo y repetir el push.

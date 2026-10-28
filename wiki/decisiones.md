@@ -32,3 +32,8 @@ fuentes: ["AGENTS.md", "Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/LOGO DIST
 - **Decisión confirmada por el usuario:** usar el logo que ya estaba en Docs.
 - **Implementación:** crear un derivado PNG recortado desde el PDF original y servirlo localmente; se quitó el logo remoto y el rótulo duplicado. En móvil, el acceso rápido al crédito se trasladó al menú, donde ya existía, para que el logo y los controles quepan.
 - **Fuente:** `Docs/LOGO DISTRIBUIDORA DYM.pdf` y solicitud del usuario.
+
+## 2026-10-28 — Destino GitHub solicitado
+
+- **Decisión confirmada por el usuario:** usar `https://github.com/santiago2723camilo-droid/Distribuidora-D-M.git` y publicar la rama `main`.
+- **Estado:** remoto configurado y sin ramas al comprobarlo; el push quedó pendiente por autenticación de GitHub.

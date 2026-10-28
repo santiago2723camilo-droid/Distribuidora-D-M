@@ -28,7 +28,9 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 - **Confirmado:** el encabezado usa el logo local `public/brand/logo-dym.png`, generado al recortar el PDF original sin modificarlo. Ya no depende del logo remoto del código extraído.
 - **Confirmado:** vista previa verificada en navegador a 1280 px y 375 px; logo y controles del encabezado visibles. A 320 px también se ve el logo, cotización y menú; el crédito permanece accesible dentro del menú. En la captura de 320 px se observa una barra horizontal en otra parte de la página, pendiente de localizar.
 - **Confirmado:** Vite está activo en `http://127.0.0.1:3000/` y la vista quedó abierta en el navegador de Codex.
-- **Pendiente:** localizar la causa de desplazamiento horizontal de la página a 320 px. Estado de publicación desconocido; no se ha publicado.
+- **Pendiente:** localizar la causa de desplazamiento horizontal de la página a 320 px.
+- **Confirmado:** remoto `origin` configurado como `https://github.com/santiago2723camilo-droid/Distribuidora-D-M.git`; rama local renombrada a `main`. `git ls-remote` no mostró ramas en el destino.
+- **Pendiente:** la subida a GitHub no se completó porque Git necesita autenticación. No se publicaron commits; la rama local sigue limpia y lista para subir tras iniciar sesión.
 - **Pendiente:** confirmar vigencia de los datos de contacto y recepción real de solicitudes.
 
 ## Comprobaciones
