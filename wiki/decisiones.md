@@ -2,7 +2,7 @@
 tipo: decisiones
 estado: vigente
 creado: 2026-10-28
-actualizado: 2026-10-28
+actualizado: 2026-11-06
 tags: [decisiones, proyecto]
 fuentes: ["AGENTS.md", "Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/LOGO DISTRIBUIDORA DYM.pdf"]
 ---
@@ -37,3 +37,9 @@ fuentes: ["AGENTS.md", "Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/LOGO DIST
 
 - **Decisión confirmada por el usuario:** usar `https://github.com/santiago2723camilo-droid/Distribuidora-D-M.git` y publicar la rama `main`.
 - **Estado:** autenticación completada en Git Credential Manager y rama `main` publicada en el remoto. El despliegue web sigue siendo una acción separada.
+
+## 2026-11-06 — Eslogan y contacto
+
+- **Decisión confirmada por el usuario:** reemplazar el título principal por «D&M, Soluciones para cada necesidad», retirar el PBX de la landing y usar `distri.dym13@gmail.com` como correo.
+- **Implementación:** se actualizó el título del inicio; se quitaron los bloques de PBX del pie y de la pantalla Contacto; el correo nuevo aparece en ambas ubicaciones como enlace `mailto:`.
+- **Fuente:** solicitud del usuario del 2026-11-06.

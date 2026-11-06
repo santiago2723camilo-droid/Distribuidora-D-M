@@ -32,8 +32,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <span>Distribución Mayorista · Valledupar y Caribe Colombiano</span>
               </div>
 
-              <h1 className="font-['Montserrat'] text-3xl sm:text-4xl lg:text-[44px] text-[#001b4b] tracking-tight font-extrabold uppercase leading-[1.15]">
-                D&M, TU ALIADO EN CADA PROYECTO
+              <h1 className="font-['Montserrat'] text-3xl sm:text-4xl lg:text-[44px] text-[#001b4b] tracking-tight font-extrabold leading-[1.15]">
+                D&amp;M, Soluciones para cada necesidad
               </h1>
 
               <p className="font-['Inter'] text-base sm:text-lg text-[#444650] max-w-xl leading-relaxed">

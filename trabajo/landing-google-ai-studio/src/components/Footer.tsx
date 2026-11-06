@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScreenType } from '../types';
-import { COMPANY_EMAIL, COMPANY_LANDLINE, COMPANY_PHONE, COMPANY_PHONE_DISPLAY } from '../data/mockData';
+import { COMPANY_EMAIL, COMPANY_PHONE, COMPANY_PHONE_DISPLAY } from '../data/mockData';
 
 interface FooterProps {
   onNavigate: (screen: ScreenType) => void;
@@ -93,12 +93,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCreditModal })
                 </a>
               </li>
               <li>
-                <span className="block text-[11px] uppercase tracking-wider text-[#dae2ff]">PBX Valledupar:</span>
-                <span className="text-white font-medium">{COMPANY_LANDLINE}</span>
-              </li>
-              <li>
                 <span className="block text-[11px] uppercase tracking-wider text-[#dae2ff]">Correo Institucional:</span>
-                <span className="text-[#b1c5ff]">{COMPANY_EMAIL}</span>
+                <a href={`mailto:${COMPANY_EMAIL}`} className="text-[#b1c5ff] hover:text-white transition-colors">{COMPANY_EMAIL}</a>
               </li>
             </ul>
             <div className="pt-2">

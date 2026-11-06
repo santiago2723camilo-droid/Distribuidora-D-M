@@ -2,8 +2,7 @@ import { AlliedBrand, ProductItem, Testimonial } from '../types';
 
 export const COMPANY_PHONE = '573164602821';
 export const COMPANY_PHONE_DISPLAY = '+57 316 460 2821';
-export const COMPANY_LANDLINE = '(605) 574 0000';
-export const COMPANY_EMAIL = 'ventas@distribuidoradm.com.co';
+export const COMPANY_EMAIL = 'distri.dym13@gmail.com';
 export const COMPANY_ADDRESS = 'Zona Industrial Cra. 7A # 38-45, Valledupar, Cesar';
 
 export const ALLIED_BRANDS: AlliedBrand[] = [

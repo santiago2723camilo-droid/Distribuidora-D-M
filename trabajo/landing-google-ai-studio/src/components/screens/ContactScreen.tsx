@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { COMPANY_ADDRESS, COMPANY_EMAIL, COMPANY_LANDLINE, COMPANY_PHONE, COMPANY_PHONE_DISPLAY, FAQS } from '../../data/mockData';
+import { COMPANY_ADDRESS, COMPANY_EMAIL, COMPANY_PHONE, COMPANY_PHONE_DISPLAY, FAQS } from '../../data/mockData';
 
 interface ContactScreenProps {
   onOpenQuoteModal: () => void;
@@ -65,20 +65,11 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
 
           <div className="bg-white p-6 rounded-2xl shadow-xs border border-[#dae3f4] space-y-3">
             <div className="w-12 h-12 rounded-xl bg-[#eff4ff] text-[#001b4b] flex items-center justify-center">
-              <span className="material-symbols-outlined text-[26px]">call</span>
-            </div>
-            <h3 className="font-['Montserrat'] text-base font-bold text-[#001b4b]">Línea Fija PBX</h3>
-            <p className="text-xs text-[#444650]">Central de pedidos y facturación.</p>
-            <span className="text-xs font-bold text-[#001b4b] block">{COMPANY_LANDLINE}</span>
-          </div>
-
-          <div className="bg-white p-6 rounded-2xl shadow-xs border border-[#dae3f4] space-y-3">
-            <div className="w-12 h-12 rounded-xl bg-[#eff4ff] text-[#001b4b] flex items-center justify-center">
               <span className="material-symbols-outlined text-[26px]">mail</span>
             </div>
             <h3 className="font-['Montserrat'] text-base font-bold text-[#001b4b]">Correo Comercial</h3>
             <p className="text-xs text-[#444650]">Envío de licitaciones y órdenes de compra.</p>
-            <span className="text-xs font-medium text-[#444650] block truncate">{COMPANY_EMAIL}</span>
+            <a href={`mailto:${COMPANY_EMAIL}`} className="text-xs font-medium text-[#444650] block truncate hover:underline">{COMPANY_EMAIL}</a>
           </div>
 
           <div className="bg-white p-6 rounded-2xl shadow-xs border border-[#dae3f4] space-y-3">

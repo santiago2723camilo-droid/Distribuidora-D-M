@@ -2,7 +2,7 @@
 tipo: estado-del-proyecto
 estado: vigente
 creado: 2026-10-28
-actualizado: 2026-10-28
+actualizado: 2026-11-06
 tags: [proyecto, landing, vite]
 fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-google-ai-studio/README.md"]
 ---
@@ -30,7 +30,7 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 - **Confirmado:** Vite está activo en `http://127.0.0.1:3000/` y la vista quedó abierta en el navegador de Codex.
 - **Pendiente:** localizar la causa de desplazamiento horizontal de la página a 320 px.
 - **Confirmado:** remoto `origin` configurado como `https://github.com/santiago2723camilo-droid/Distribuidora-D-M.git`; rama local renombrada a `main`. `git ls-remote` no mostró ramas en el destino.
-- **Confirmado:** Git Credential Manager inició sesión como `santiago2723camilo-droid`; se subió `main` a `origin` y GitHub confirmó el mismo hash local/remoto `19dbdb2`. La rama local sigue `origin/main`.
+- **Confirmado:** Git Credential Manager inició sesión como `santiago2723camilo-droid`; se subió `main` a `origin` y GitHub confirmó el mismo hash local/remoto `9a56f60`. La rama local sigue `origin/main`.
 - **Pendiente:** el código está en GitHub, pero no se ha desplegado a un dominio o servicio de hosting.
 - **Pendiente:** confirmar vigencia de los datos de contacto y recepción real de solicitudes.
 
@@ -44,3 +44,9 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 ## Próximo paso
 
 Continuar con la revisión del desbordamiento de página a 320 px y validar los datos comerciales provisionales antes de cambiar contenido.
+
+## Cambios recientes
+
+- **Confirmado:** el 2026-11-06 se cambió el encabezado principal a «D&M, Soluciones para cada necesidad», se retiraron las dos apariciones del PBX y el correo se actualizó a `distri.dym13@gmail.com` en el pie y en Contacto.
+- **Confirmado:** `vite build` y `tsc --noEmit` terminaron correctamente.
+- **Pendiente de comprobación:** revisión visual de esta versión; el navegador no pudo cargar el servidor local. La hoja de ruta personalizada y las preguntas para validar los demás datos están en [[plan-de-mejora]].

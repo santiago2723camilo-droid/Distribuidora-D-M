@@ -2,7 +2,7 @@
 tipo: empresa
 estado: inicial
 creado: 2026-10-28
-actualizado: 2026-10-28
+actualizado: 2026-11-06
 tags: [empresa, distribuidora-dym]
 fuentes: ["Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/DISTRIBUIDORA D&M.pdf", "Docs/LOGO DISTRIBUIDORA DYM.pdf"]
 ---
@@ -24,11 +24,12 @@ fuentes: ["Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/DISTRIBUIDORA D&M.pdf"
 
 ## Canales y ubicación
 
-- **Provisional:** el código contiene WhatsApp `+57 316 460 2821`, teléfono `(605) 574 0000`, `ventas@distribuidoradm.com.co` y una dirección en Zona Industrial, Cra. 7A #38-45, Valledupar, Cesar. Son datos del código, no verificados por documentos de Docs/.
-- **Pendiente:** confirmar cuáles siguen vigentes y probar destino/recepción de cada canal con autorización.
+- **Confirmado por el usuario (2026-11-06):** correo de contacto `distri.dym13@gmail.com`.
+- **Pendiente:** verificar vigencia del WhatsApp `+57 316 460 2821` y la dirección que actualmente aparece en el código. El PBX se retiró por solicitud del usuario. No probar recepción de canales sin confirmar vigencia.
 
 ## Preferencias confirmadas
 
 - **Confirmado:** mantener la landing empresarial existente y su contenido aprobado; trabajar con cambios pequeños, explicar en español claro y comprobar el resultado.
 - **Confirmado:** integrar el logo D&M disponible en `Docs/` en el encabezado.
+- **Confirmado:** usar el eslogan «D&M, Soluciones para cada necesidad», retirar el PBX y mostrar `distri.dym13@gmail.com` como correo.
 - **Pendiente:** preferencia específica sobre fotografía o paleta general.

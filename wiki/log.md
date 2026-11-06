@@ -9,6 +9,13 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 
 # Registro cronológico
 
+## [2026-11-06] cambios-de-contacto-y-plan | Actualización de landing D&M
+
+- Se revisaron `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y su hoja de validación con cliente; se creó [[plan-de-mejora]] con el estado real, ruta de ejecución y cinco preguntas de validación.
+- A solicitud del usuario, se cambió el eslogan a «D&M, Soluciones para cada necesidad», se retiró el PBX de Contacto y del pie, y se reemplazó el correo por `distri.dym13@gmail.com` con enlaces `mailto:`.
+- Comprobación: build de Vite y chequeo de TypeScript correctos; búsqueda en el código no encontró PBX ni el correo anterior. La revisión visual quedó pendiente porque el navegador no conectó con el servidor local.
+- Estos cambios locales no se subieron a GitHub.
+
 ## [2026-10-28] inicio | Configuración del agente D&M
 
 - Se inspeccionó la raíz: un ZIP de Google AI Studio y la carpeta original `DOCS`; se renombró solo la carpeta a `Docs` para usar la ruta solicitada, sin cambiar sus archivos.
