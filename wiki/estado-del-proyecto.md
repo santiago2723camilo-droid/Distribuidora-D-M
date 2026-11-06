@@ -66,3 +66,10 @@ Continuar con la revisión del desbordamiento de página a 320 px y validar los 
 
 - **Confirmado (2026-11-06):** el JSON de catálogo contiene 1.492 productos únicos y el directorio técnico contiene 11 logos. `vite build`, `tsc --noEmit` y `git diff --check` terminaron correctamente.
 - **Pendiente:** vista visual y funcional de esta versión. El servidor local de vista previa respondió con timeout en el navegador; no se afirma revisión visual. Estos cambios siguen locales y no se han subido a GitHub.
+
+## Paso 1 del plan · Revisión documental y funcional del código
+
+- **Confirmado (2026-11-06):** se revisaron los originales disponibles en `Docs/`, los archivos del paquete del plan, y el código de catálogo, navegación, aliados, cotizador, crédito y Contacto. No se modificó el sitio.
+- **Confirmado:** el cotizador y Contacto preparan mensajes con `wa.me`; la persona debe revisarlos y enviarlos. El cotizador recoge datos opcionales de nombre, empresa, ciudad y notas; Contacto exige nombre, teléfono, ciudad y consulta. No hay política de privacidad/consentimiento en la interfaz.
+- **Pendiente:** revisar visualmente la versión local. La pestaña en 3000 respondió con timeout; Vite inició en 3002, pero el navegador no logró conectarse desde este entorno.
+- Detalle de materiales y flujos: [[plan-de-mejora]].

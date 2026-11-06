@@ -19,7 +19,7 @@ Esta hoja adapta el plan recibido al código y a los materiales que sí existen.
 - **Confirmado:** el crédito ya no calcula cupos ni publica plazos; ofrece una consulta por WhatsApp, pues el usuario indicó que las condiciones varían.
 - **Confirmado:** Contacto sigue disponible con correo, WhatsApp y dirección confirmados por el usuario; no incluye Maps ni PBX.
 - **Confirmado:** están mostrados los 11 logos entregados. La landing ya no contiene sección de testimonios; la pantalla Nosotros usa solo descripción de actividad y líneas de producto, sin misión/visión.
-- **Confirmado:** compilación de Vite y TypeScript pasan. **Pendiente:** revisión visual/funcional con el navegador, pues no conectó al servidor local de la versión anterior; esta versión fue iniciada en `http://127.0.0.1:3001/`.
+- **Confirmado:** compilación de Vite y TypeScript pasan. **Pendiente:** revisión visual con el navegador; el servidor de esta sesión inició en `http://127.0.0.1:3002/`, pero el navegador local no conecta.
 - **Pendiente:** revisar accesibilidad/breakpoints y decidir publicación. GitHub contiene una versión anterior; los cambios de esta sesión son locales hasta que se autorice subirlos.
 
 ## Cambios aplicados en esta sesión
@@ -33,7 +33,7 @@ Esta hoja adapta el plan recibido al código y a los materiales que sí existen.
 ## Ruta de trabajo
 
 0. **Preparar las skills del plan.** En `Plan De Mejora/17-distribuidora-dym/` están los ZIP de SEO y tratamiento de datos. Revisarlos e instalar sus carpetas completas en `.agents/skills/` antes de esos pasos; las skills de diseño citadas en `instalar-skills.md` no aparecen en este proyecto y su instalación queda pendiente.
-1. **Información empresarial y flujos:** validación inicial completada según las respuestas de este turno. Los detalles restantes están en [[pendientes]].
+1. **Información empresarial y flujos:** revisión documental y del código completada el 2026-11-06; no se cambió el sitio. Se catalogaron activos, formularios, cotizador, crédito, marcas y navegación. La revisión visual queda pendiente por timeout. Hallazgos en [[estado-del-proyecto]] y [[pendientes]].
 2. **Contenido y contacto:** aplicado: teléfono, dirección, email, eslogan, pantalla Contacto conservada y sin Maps/PBX.
 3. **Lenguaje:** aplicado: productos sin SKU o atributos no incluidos en el inventario; sin testimonios ni sección de misión/visión; se quitaron afirmaciones de crédito y stock no respaldadas.
 4. **Catálogo y cotización:** aplicado localmente: 1.492 nombres únicos, tres categorías y 10 por página; sin fotos, stock ni precio. Mantiene filtros y selección; falta comprobar visualmente la navegación y envío al WhatsApp.
@@ -51,3 +51,14 @@ Esta hoja adapta el plan recibido al código y a los materiales que sí existen.
 ## Secuencia para usar el plan recibido
 
 El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus materiales siguen intactos. El sitio conserva el framework actual y la pantalla de contacto. La instalación de skills, política de datos, SEO, revisión visual completa y publicación quedan por hacer cuando corresponda.
+
+## Paso 1 · Revisión realizada
+
+- **Confirmado:** `Docs/` contiene 11 logos JPEG, dos PDF (borrador de landing y logo) y un DOCX empresarial. El Excel del inventario se recibió fuera de `Docs/` y ya alimenta el catálogo. El borrador PDF usa una foto genérica; no hay fotos propias de productos, categorías, instalaciones o equipo.
+- **Confirmado:** el DOCX y el borrador nombran aliados, pero no hay fichas detalladas por marca. El usuario autorizó mostrar los 11 logos; eso no confirma por sí solo la relación comercial actual de cada marca. JC Top y JC Tools son nombres distintos en las fuentes.
+- **Confirmado:** el catálogo actual busca por nombre, filtra las tres categorías y pagina 10 productos; conserva selección en el estado de la aplicación mientras se navega entre pantallas. Los grupos del inventario son inferidos por nombre y no incluyen precio ni existencia.
+- **Confirmado:** el cotizador permite agregar, incrementar, reducir y quitar productos, editar cantidades, vaciar la lista y prepara un mensaje a WhatsApp con el número confirmado. Abrir WhatsApp no envía automáticamente el mensaje. Nombre, empresa, ciudad y notas son campos opcionales; la ciudad empieza en Valledupar. La lista de municipios y la frase de flete del ejemplo aún no tienen respaldo confirmado.
+- **Confirmado:** el formulario de Contacto exige nombre, teléfono, ciudad y consulta; empresa es opcional. Prepara un segundo mensaje a WhatsApp. No se observó política de privacidad ni casilla de aceptación.
+- **Confirmado:** crédito quedó como consulta por WhatsApp, sin captura de datos ni simulador. La pantalla Contacto permanece. Marcas tiene pantalla separada en una cuadrícula estática, no carrusel ni fichas emergentes.
+- **Confirmado:** una búsqueda textual del código no encontró “SKU(s)”, PBX ni enlaces de Maps en la interfaz; `sku` solo permanece como campo opcional legado en el tipo TypeScript. El teléfono, correo y dirección actuales están en `src/data/mockData.ts`.
+- **Pendiente de verificación:** la pestaña `http://127.0.0.1:3000/` mostró `ERR_CONNECTION_TIMED_OUT`. Vite inició en `http://127.0.0.1:3002/`, pero el entorno de navegador no permitió validar su apariencia. No se hicieron cambios en los archivos del sitio.

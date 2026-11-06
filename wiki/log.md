@@ -75,3 +75,9 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - Confirmados 1.492 elementos en el JSON de catálogo y 11 logos técnicos. `vite build`, `tsc --noEmit` y `git diff --check` pasaron.
 - La revisión visual no pudo realizarse porque el navegador no conectó al servidor local. No se afirma que el cambio esté visualmente probado ni publicado.
 - Se actualizó el catálogo de fuentes para registrar que la autorización de mostrar logos no confirma relaciones comerciales vigentes.
+
+## [2026-11-06] plan | Revisión del paso 1
+
+- Se revisaron `Docs/`, los materiales del plan y el código actual de navegación, catálogo, marcas, cotizador, crédito y Contacto; no se modificó el sitio.
+- Se registraron los campos que recogen los formularios, que el mensaje requiere envío manual desde WhatsApp, que no hay aviso/consentimiento de privacidad, y que faltan fotos propias, fichas de marcas, destinos/flete confirmados y datos legales para la política.
+- No se pudo revisar visualmente la página: 3000 da timeout; Vite inició en 3002, pero el entorno del navegador no logró conectarse.

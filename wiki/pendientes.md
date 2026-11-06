@@ -15,8 +15,10 @@ fuentes: ["trabajo/landing-google-ai-studio/src/data/mockData.ts", "Docs/"]
 - **Media:** la clasificación del inventario es provisional y se infirió de los nombres de producto; confirmar los casos que la empresa quiera mover a otra categoría.
 - **Media:** stock y precios del archivo no se muestran en la página; confirmar explícitamente si desean publicar alguno después.
 - **Media:** relación entre JC Top y JC Tools pendiente; ambos logos se muestran de manera separada sin afirmar que son la misma marca.
+- **Media:** confirmar los municipios/destinos que se muestran en el cotizador y si el ejemplo sobre flete es apropiado; aparecen como opciones o texto de ejemplo, sin respaldo empresarial registrado.
 - **Media:** conseguir logo original/vectorial de buena resolución si se desea mejorar la nitidez.
 - **Media:** completar la política de datos cuando se confirmen los datos legales requeridos (NIT/RUT, dirección para datos personales y responsable/correo apropiado).
 - **Pendiente:** instalar las skills entregadas en los ZIP del plan antes de aplicar esas rutinas especializadas.
 - **Pendiente de validación:** revisar demás flujos y confirmar información provisional antes de desplegar la web. El código está en GitHub; el sitio no está desplegado.
+- **Pendiente de verificación:** la vista visual de la página local no cargó en el navegador; Vite inició en el puerto 3002, pero el entorno no pudo conectarse.
 - Ver preguntas de validación y secuencia propuesta en [[plan-de-mejora]].
