@@ -4,7 +4,7 @@ estado: vigente
 creado: 2026-10-28
 actualizado: 2026-11-06
 tags: [decisiones, proyecto]
-fuentes: ["AGENTS.md", "Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/LOGO DISTRIBUIDORA DYM.pdf"]
+fuentes: ["AGENTS.md", "Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/LOGO DISTRIBUIDORA DYM.pdf", "../../inventario 04-11.xlsx"]
 ---
 
 # Decisiones
@@ -43,3 +43,10 @@ fuentes: ["AGENTS.md", "Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/LOGO DIST
 - **Decisión confirmada por el usuario:** reemplazar el título principal por «D&M, Soluciones para cada necesidad», retirar el PBX de la landing y usar `distri.dym13@gmail.com` como correo.
 - **Implementación:** se actualizó el título del inicio; se quitaron los bloques de PBX del pie y de la pantalla Contacto; el correo nuevo aparece en ambas ubicaciones como enlace `mailto:`.
 - **Fuente:** solicitud del usuario del 2026-11-06.
+
+## 2026-11-06 — Inventario, marcas y contenido
+
+- **Confirmado por el usuario:** el inventario recibido es la lista de productos para el catálogo; usar las tres categorías existentes, 10 por página y sin fotos de producto. Mostrar todos los logos compartidos. Quitar testimonios; no añadir misión ni visión. Conservar Contacto, el teléfono y la dirección confirmados; no agregar Maps.
+- **Implementación:** se integraron 1.492 nombres únicos del inventario, clasificados por reglas basadas en el nombre: 156 eléctricos, 285 sanitarios y 1.051 construcción/ferretería. Dos renglones repetidos del archivo se registraron una sola vez en la vista. La clasificación queda provisional para correcciones de la empresa.
+- **Implementación:** se copiaron 11 logos elegidos desde `Docs/` a `public/brand/partners/`; los originales permanecen intactos. Se retiraron stock y precios del sitio y el cálculo de crédito; las consultas se hacen por WhatsApp.
+- **Fuente:** respuestas del usuario del 2026-11-06, `../../inventario 04-11.xlsx` y los 11 originales de marca listados en [[documentos-y-activos]].

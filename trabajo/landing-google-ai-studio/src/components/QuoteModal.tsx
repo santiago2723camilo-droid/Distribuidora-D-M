@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { CartItem, ProductItem } from '../types';
-import { COMPANY_PHONE, PRODUCTS_CATALOG } from '../data/mockData';
+import { CartItem } from '../types';
+import { COMPANY_PHONE } from '../data/mockData';
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -8,7 +8,6 @@ interface QuoteModalProps {
   cart: CartItem[];
   onUpdateQuantity: (productId: string, quantity: number) => void;
   onRemoveItem: (productId: string) => void;
-  onAddToCart: (product: ProductItem, quantity?: number) => void;
   onClearCart: () => void;
 }
 
@@ -18,7 +17,6 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   cart,
   onUpdateQuantity,
   onRemoveItem,
-  onAddToCart,
   onClearCart,
 }) => {
   const [clientName, setClientName] = useState('');
@@ -26,7 +24,6 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   const [city, setCity] = useState('Valledupar');
   const [customCity, setCustomCity] = useState('');
   const [notes, setNotes] = useState('');
-  const [selectedQuickAdd, setSelectedQuickAdd] = useState('');
 
   if (!isOpen) return null;
 
@@ -41,9 +38,8 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
     if (cart.length > 0) {
       message += `📦 *LISTADO DE MATERIALES:* \n`;
       cart.forEach((item, idx) => {
-        message += `${idx + 1}. *${item.product.name}* (SKU: ${item.product.sku})\n`;
-        message += `   • Cantidad: ${item.quantity} [${item.product.unit}]\n`;
-        message += `   • Marca: ${item.product.brand}\n`;
+        message += `${idx + 1}. *${item.product.name}*\n`;
+        message += `   • Cantidad: ${item.quantity}\n`;
       });
     } else {
       message += `📦 *Materiales solicitados:* Deseo cotizar surtido para mi negocio.\n`;
@@ -57,14 +53,6 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
     const encoded = encodeURIComponent(message);
     window.open(`https://wa.me/${COMPANY_PHONE}?text=${encoded}`, '_blank');
-  };
-
-  const handleQuickAdd = (productId: string) => {
-    const prod = PRODUCTS_CATALOG.find((p) => p.id === productId);
-    if (prod) {
-      onAddToCart(prod, 1);
-      setSelectedQuickAdd('');
-    }
   };
 
   return (
@@ -171,7 +159,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                 </span>
                 <p className="font-semibold text-[#131c28]">Aún no has agregado materiales específicos</p>
                 <p className="text-xs text-[#747781] mt-1">
-                  Puedes agregar referencias del catálogo rápido abajo, o enviar tu mensaje directo por WhatsApp indicando qué necesitas.
+                  Cierra el cotizador y añade productos desde el catálogo, o escribe en las notas qué necesitas cotizar.
                 </p>
               </div>
             ) : (
@@ -183,9 +171,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   >
                     <div className="flex-1 min-w-0">
                       <p className="text-xs font-bold text-[#001b4b] truncate">{item.product.name}</p>
-                      <p className="text-[11px] text-[#747781]">
-                        SKU: {item.product.sku} · Marca: {item.product.brand} · Pres.: {item.product.unit}
-                      </p>
+                      <p className="text-[11px] text-[#747781]">{item.product.categoryLabel}</p>
                     </div>
 
                     <div className="flex items-center gap-2 flex-shrink-0">
@@ -217,24 +203,6 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
               </div>
             )}
 
-            {/* Quick-Add dropdown from catalog */}
-            <div className="pt-2 flex items-center gap-2">
-              <select
-                value={selectedQuickAdd}
-                onChange={(e) => {
-                  setSelectedQuickAdd(e.target.value);
-                  if (e.target.value) handleQuickAdd(e.target.value);
-                }}
-                className="flex-1 text-xs px-3 py-2 bg-[#f8f9ff] border border-[#c4c6d1] rounded-lg text-[#131c28] cursor-pointer"
-              >
-                <option value="">+ Agregar material frecuente del catálogo...</option>
-                {PRODUCTS_CATALOG.map((p) => (
-                  <option key={p.id} value={p.id}>
-                    [{p.categoryLabel}] {p.name} - {p.unit}
-                  </option>
-                ))}
-              </select>
-            </div>
           </div>
 
           {/* Notas o requerimientos especiales */}
@@ -255,7 +223,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
         {/* Footer Actions */}
         <div className="p-4 bg-[#f8f9ff] border-t border-[#dae3f4] flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-[#747781] text-center sm:text-left">
-            <span className="font-semibold text-[#001b4b]">Respuesta en 15 minutos:</span> Asesor comercial directo en Valledupar.
+            Tu solicitud se abrirá en WhatsApp para que la revises y la envíes.
           </p>
 
           <div className="flex items-center gap-2 w-full sm:w-auto">

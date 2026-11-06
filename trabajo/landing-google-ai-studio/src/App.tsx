@@ -10,7 +10,6 @@ import { ProductsScreen } from './components/screens/ProductsScreen';
 import { PartnersScreen } from './components/screens/PartnersScreen';
 import { AboutScreen } from './components/screens/AboutScreen';
 import { ContactScreen } from './components/screens/ContactScreen';
-import { PRODUCTS_CATALOG } from './data/mockData';
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<ScreenType>('inicio');
@@ -28,7 +27,7 @@ export default function App() {
             : item
         );
       }
-      return [...prev, { product, quantity, unit: product.unit }];
+      return [...prev, { product, quantity }];
     });
   };
 
@@ -52,16 +51,7 @@ export default function App() {
     setCart([]);
   };
 
-  const handleOpenQuoteModal = (categoryFilter?: string) => {
-    if (categoryFilter && cart.length === 0) {
-      // If opened from a specific category on home, pre-add a featured item from that category
-      const featured = PRODUCTS_CATALOG.find(
-        (p) => p.category === categoryFilter && p.featured
-      );
-      if (featured) {
-        handleAddToCart(featured, 1);
-      }
-    }
+  const handleOpenQuoteModal = () => {
     setIsQuoteModalOpen(true);
   };
 
@@ -100,7 +90,7 @@ export default function App() {
         )}
 
         {currentScreen === 'aliados' && (
-          <PartnersScreen onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
+          <PartnersScreen />
         )}
 
         {currentScreen === 'nosotros' && (
@@ -133,7 +123,6 @@ export default function App() {
         cart={cart}
         onUpdateQuantity={handleUpdateQuantity}
         onRemoveItem={handleRemoveItem}
-        onAddToCart={handleAddToCart}
         onClearCart={handleClearCart}
       />
 

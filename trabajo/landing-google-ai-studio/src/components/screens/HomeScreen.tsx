@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { ScreenType } from '../../types';
-import { ALLIED_BRANDS, COMPANY_PHONE, FAQS, TESTIMONIALS } from '../../data/mockData';
+import { ALLIED_BRANDS, COMPANY_PHONE, FAQS } from '../../data/mockData';
 
 interface HomeScreenProps {
   onNavigate: (screen: ScreenType) => void;
-  onOpenQuoteModal: (categoryFilter?: string) => void;
+  onOpenQuoteModal: () => void;
   onOpenCreditModal: () => void;
 }
 
@@ -37,7 +37,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               </h1>
 
               <p className="font-['Inter'] text-base sm:text-lg text-[#444650] max-w-xl leading-relaxed">
-                Catálogo amplio, precios accesibles, crédito y entregas eficientes en el Caribe colombiano.
+                Productos para construcción, ferretería y soluciones eléctricas. Revisa el catálogo y solicita una cotización.
               </p>
 
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
@@ -68,7 +68,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white p-2 border border-[#dae3f4]">
                 <img
-                  alt="Herramientas de ferretería y material eléctrico sobre mesa de trabajo industrial en Valledupar"
+                  alt="Imagen ilustrativa de herramientas y materiales de ferretería"
                   className="w-full h-auto max-h-[460px] object-cover rounded-xl transform hover:scale-[1.02] transition-transform duration-500"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWMKUpw2rA0Ni6xuDFbfcn_sozckcp1JVvAtRmSIbg2oxk-oEkduLAt5-3yUZwNPdI1Mq0TnoB_hKK7GJA1DgnyMgcTouQisU76xlGx4YgWnT5utw5GYFqSeXvFQYSBnN5ubTLbe9vmeOlCmcqB52JfCBG5kuCDEM9lavOSEO5ngG0gG1VfcAdFbeJUXCJ_-5OZi32ASeiheuUS7twMQ_8jpAXbvg4xEV8zpTYk5A"
                   onError={(e) => {
@@ -79,10 +79,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-lg flex items-center justify-between border border-[#e5eeff]">
                   <div>
                     <p className="text-[11px] font-bold uppercase text-[#fc820c] tracking-wider">
-                      Inventario permanente
+                      Catálogo de productos
                     </p>
                     <p className="font-['Montserrat'] text-sm sm:text-base font-bold text-[#001b4b]">
-                      +3.500 referencias disponibles
+                      Consulta las referencias
                     </p>
                   </div>
                   <div className="w-10 h-10 rounded-full bg-[#e5eeff] flex items-center justify-center text-[#001b4b]">
@@ -106,7 +106,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 </div>
                 <div>
                   <h3 className="font-['Montserrat'] text-sm font-bold text-[#001b4b]">Catálogo amplio</h3>
-                  <p className="text-xs text-[#444650]">Miles de SKUs para surtir</p>
+                  <p className="text-xs text-[#444650]">Referencias para consultar</p>
                 </div>
               </div>
 
@@ -119,8 +119,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   <span className="material-symbols-outlined text-[26px]">sell</span>
                 </div>
                 <div>
-                  <h3 className="font-['Montserrat'] text-sm font-bold text-[#001b4b]">Precios accesibles</h3>
-                  <p className="text-xs text-[#444650]">Márgenes pensados para reventa</p>
+                  <h3 className="font-['Montserrat'] text-sm font-bold text-[#001b4b]">Cotizaciones</h3>
+                  <p className="text-xs text-[#444650]">Solicita precio y disponibilidad</p>
                 </div>
               </div>
 
@@ -147,8 +147,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   <span className="material-symbols-outlined text-[26px]">local_shipping</span>
                 </div>
                 <div>
-                  <h3 className="font-['Montserrat'] text-sm font-bold text-[#001b4b]">Entregas eficientes</h3>
-                  <p className="text-xs text-[#444650]">Rutas diarias por el Caribe</p>
+                  <h3 className="font-['Montserrat'] text-sm font-bold text-[#001b4b]">Atención por WhatsApp</h3>
+                  <p className="text-xs text-[#444650]">Consulta productos y cotizaciones</p>
                 </div>
               </div>
             </div>
@@ -165,10 +165,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 Líneas al por mayor
               </span>
               <h2 className="font-['Montserrat'] text-2xl lg:text-3xl text-[#001b4b] mt-1 font-bold">
-                Todo lo que tu ferretería necesita
+                Explora las categorías del catálogo
               </h2>
               <p className="text-sm text-[#444650] mt-2">
-                Despachos consolidados en bulto, cajas maestras y volumen industrial con los mejores precios directos de distribuidor en la región.
+                Revisa el inventario por categoría y solicita la información de precio y disponibilidad vigente.
               </p>
             </div>
             <div className="flex items-center gap-3">
@@ -184,43 +184,36 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
 
           {/* 3 Tarjetas de Categoría */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
-            {/* Tarjeta 1: ELÉCTRICOS (DESTACADA) */}
-            <div className="relative bg-white rounded-2xl p-6 lg:p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between border-2 border-[#fc820c]/60 overflow-hidden">
-              <div className="absolute top-0 right-0 bg-[#fc820c] text-white text-[11px] px-3.5 py-1 rounded-bl-xl font-bold uppercase tracking-wider shadow-xs">
-                Categoría destacada
-              </div>
-
+            {/* Tarjeta 1: ELÉCTRICOS */}
+            <div className="relative bg-white rounded-2xl p-6 lg:p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between border border-[#dae3f4] overflow-hidden">
               <div>
                 <div className="w-14 h-14 rounded-xl bg-[#ffdcc6] flex items-center justify-center text-[#964900] mb-4">
                   <span className="material-symbols-outlined text-[32px]">bolt</span>
                 </div>
                 <h3 className="font-['Montserrat'] text-xl text-[#001b4b] font-bold">Eléctricos</h3>
                 <p className="text-sm text-[#131c28] mt-1 font-semibold">
-                  Gran variedad para surtir tu negocio en una sola compra
+                  Revisa los productos de esta categoría
                 </p>
                 <p className="text-xs text-[#444650] mt-3 leading-relaxed">
-                  Cables certificados, iluminación LED de alto rendimiento, interruptores, cajas de paso, tomacorrientes y protecciones térmicas industriales.
+                  Consulta las referencias eléctricas incluidas en el inventario.
                 </p>
 
                 <div className="mt-4 pt-3 border-t border-[#f8f9ff] flex flex-wrap gap-1.5 text-[11px] text-[#444650]">
-                  <span className="bg-[#eff4ff] px-2 py-0.5 rounded">Cables THHN</span>
-                  <span className="bg-[#eff4ff] px-2 py-0.5 rounded">Iluminación LED</span>
-                  <span className="bg-[#eff4ff] px-2 py-0.5 rounded">Breakers</span>
-                  <span className="bg-[#eff4ff] px-2 py-0.5 rounded">Tubería EMT</span>
+                  <span className="bg-[#eff4ff] px-2 py-0.5 rounded">Eléctricos</span>
                 </div>
               </div>
 
               <div className="mt-8 pt-4 bg-[#eff4ff] -mx-6 -mb-6 lg:-mx-7 lg:-mb-7 p-6 rounded-b-2xl flex flex-col gap-3 border-t border-[#dae3f4]">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-[#444650] font-semibold">Consultar precio</span>
-                  <span className="text-xs text-[#001b4b] font-bold">Venta al por mayor</span>
+                  <span className="text-xs text-[#001b4b] font-bold">Consulta comercial</span>
                 </div>
                 <button
-                  onClick={() => onOpenQuoteModal('electricos')}
+                  onClick={() => onNavigate('productos')}
                   className="w-full inline-flex items-center justify-center gap-2 bg-[#fc820c] hover:bg-[#964900] text-white text-sm font-bold py-2.5 px-4 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer active:scale-95"
                 >
                   <span className="material-symbols-outlined text-[19px]">chat</span>
-                  <span>Cotizar eléctricos</span>
+                  <span>Ver productos</span>
                 </button>
               </div>
             </div>
@@ -233,31 +226,28 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 </div>
                 <h3 className="font-['Montserrat'] text-xl text-[#001b4b] font-bold">Construcción y ferretería</h3>
                 <p className="text-sm text-[#131c28] mt-1 font-semibold">
-                  Herramientas y materiales para cada proyecto
+                  Revisa los productos de esta categoría
                 </p>
                 <p className="text-xs text-[#444650] mt-3 leading-relaxed">
-                  Herramientas manuales, discos de corte, abrasivos, fijaciones, cerraduras, alambres, cintas técnicas y equipos para faena pesada.
+                  Consulta las referencias de construcción y ferretería incluidas en el inventario.
                 </p>
 
                 <div className="mt-4 pt-3 border-t border-[#f8f9ff] flex flex-wrap gap-1.5 text-[11px] text-[#444650]">
-                  <span className="bg-[#eff4ff] px-2 py-0.5 rounded">Discos de corte</span>
-                  <span className="bg-[#eff4ff] px-2 py-0.5 rounded">Alambre recocido</span>
-                  <span className="bg-[#eff4ff] px-2 py-0.5 rounded">Cerraduras</span>
-                  <span className="bg-[#eff4ff] px-2 py-0.5 rounded">Fijaciones Drywall</span>
+                  <span className="bg-[#eff4ff] px-2 py-0.5 rounded">Construcción</span>
                 </div>
               </div>
 
               <div className="mt-8 pt-4 bg-[#eff4ff] -mx-6 -mb-6 lg:-mx-7 lg:-mb-7 p-6 rounded-b-2xl flex flex-col gap-3 border-t border-[#dae3f4]">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-[#444650] font-semibold">Consultar precio</span>
-                  <span className="text-xs text-[#001b4b] font-bold">Precios por escala</span>
+                  <span className="text-xs text-[#001b4b] font-bold">Consulta comercial</span>
                 </div>
                 <button
-                  onClick={() => onOpenQuoteModal('construccion')}
+                  onClick={() => onNavigate('productos')}
                   className="w-full inline-flex items-center justify-center gap-2 bg-[#fc820c] hover:bg-[#964900] text-white text-sm font-bold py-2.5 px-4 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer active:scale-95"
                 >
                   <span className="material-symbols-outlined text-[19px]">chat</span>
-                  <span>Cotizar ferretería</span>
+                  <span>Ver productos</span>
                 </button>
               </div>
             </div>
@@ -270,31 +260,28 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 </div>
                 <h3 className="font-['Montserrat'] text-xl text-[#001b4b] font-bold">Accesorios sanitarios</h3>
                 <p className="text-sm text-[#131c28] mt-1 font-semibold">
-                  Soluciones para obra y para vender en tu local
+                  Revisa los productos de esta categoría
                 </p>
                 <p className="text-xs text-[#444650] mt-3 leading-relaxed">
-                  Válvulas, tubería hidrosanitaria, accesorios de PVC, grifería institucional, selladores, sifones y repuestos de alta rotación para mostrador.
+                  Consulta las referencias sanitarias incluidas en el inventario.
                 </p>
 
                 <div className="mt-4 pt-3 border-t border-[#f8f9ff] flex flex-wrap gap-1.5 text-[11px] text-[#444650]">
-                  <span className="bg-[#eff4ff] px-2 py-0.5 rounded">Válvulas PVC</span>
-                  <span className="bg-[#eff4ff] px-2 py-0.5 rounded">Soldadura PVC</span>
-                  <span className="bg-[#eff4ff] px-2 py-0.5 rounded">Sifones flexibles</span>
-                  <span className="bg-[#eff4ff] px-2 py-0.5 rounded">Teflón industrial</span>
+                  <span className="bg-[#eff4ff] px-2 py-0.5 rounded">Sanitarios</span>
                 </div>
               </div>
 
               <div className="mt-8 pt-4 bg-[#eff4ff] -mx-6 -mb-6 lg:-mx-7 lg:-mb-7 p-6 rounded-b-2xl flex flex-col gap-3 border-t border-[#dae3f4]">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-[#444650] font-semibold">Consultar precio</span>
-                  <span className="text-xs text-[#001b4b] font-bold">Disponibilidad en bodega</span>
+                  <span className="text-xs text-[#001b4b] font-bold">Consulta comercial</span>
                 </div>
                 <button
-                  onClick={() => onOpenQuoteModal('sanitarios')}
+                  onClick={() => onNavigate('productos')}
                   className="w-full inline-flex items-center justify-center gap-2 bg-[#fc820c] hover:bg-[#964900] text-white text-sm font-bold py-2.5 px-4 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer active:scale-95"
                 >
                   <span className="material-symbols-outlined text-[19px]">chat</span>
-                  <span>Cotizar sanitarios</span>
+                  <span>Ver productos</span>
                 </button>
               </div>
             </div>
@@ -339,7 +326,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               </div>
               <h3 className="font-['Montserrat'] text-base font-bold text-white mb-2">Soluciones</h3>
               <p className="text-xs sm:text-sm text-[#dae2ff] leading-relaxed">
-                Soluciones: opciones para construcción, ferretería y electricidad
+                Productos para construcción, ferretería y electricidad
               </p>
             </div>
 
@@ -350,7 +337,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               </div>
               <h3 className="font-['Montserrat'] text-base font-bold text-white mb-2">Distribución</h3>
               <p className="text-xs sm:text-sm text-[#dae2ff] leading-relaxed">
-                Distribución: atención y entrega para todos nuestros clientes
+                Revisa las referencias y solicita información
               </p>
             </div>
           </div>
@@ -379,7 +366,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               Cómo comprar en 3 pasos
             </h2>
             <p className="text-sm text-[#444650] mt-2">
-              Sin formularios interminables ni demoras administrativas. Respuesta rápida directo a tu celular.
+              Envía tu solicitud por WhatsApp o consulta las referencias en el catálogo.
             </p>
           </div>
 
@@ -394,7 +381,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <h3 className="font-['Montserrat'] text-lg text-[#001b4b] font-bold">Escríbenos por WhatsApp</h3>
               </div>
               <p className="text-xs sm:text-sm text-[#444650] leading-relaxed">
-                Envía tu listado de materiales o la referencia que necesitas. Nuestro equipo comercial te responde en minutos.
+                Envía tu listado de materiales o la referencia que necesitas. Nuestro equipo comercial recibe tu consulta por WhatsApp.
               </p>
             </div>
 
@@ -408,7 +395,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <h3 className="font-['Montserrat'] text-lg text-[#001b4b] font-bold">Recibe tu cotización</h3>
               </div>
               <p className="text-xs sm:text-sm text-[#444650] leading-relaxed">
-                Te compartimos precios por volumen, disponibilidad inmediata de bodega y opciones de pago o crédito.
+                Te compartimos la información de precio y disponibilidad vigente para tu solicitud.
               </p>
             </div>
 
@@ -422,7 +409,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <h3 className="font-['Montserrat'] text-lg text-[#001b4b] font-bold">Recibe tu pedido</h3>
               </div>
               <p className="text-xs sm:text-sm text-[#444650] leading-relaxed">
-                Coordinamos la logística directa hasta tu negocio o frente de obra en Valledupar y departamentos cercanos.
+                La forma y el lugar de entrega se confirman durante la cotización.
               </p>
             </div>
           </div>
@@ -434,84 +421,24 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
         <div className="max-w-[1320px] mx-auto px-4 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-xs font-bold uppercase tracking-wider text-[#fc820c]">
-              Marcas respaldadas
+              Marcas compartidas
             </span>
             <h2 className="font-['Montserrat'] text-2xl lg:text-3xl text-[#001b4b] mt-1 font-bold">
-              Trabajamos con las mejores marcas
+              Marcas cuyos logos compartiste
             </h2>
           </div>
 
-          {/* Cuadrícula de 6 tarjetas de marcas */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {/* Marcas enviadas por la empresa */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {ALLIED_BRANDS.map((brand) => (
-              <div
+              <button
                 key={brand.name}
                 onClick={() => onNavigate('aliados')}
-                className="bg-white p-4 rounded-xl shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[110px] border border-[#dae3f4] cursor-pointer group"
+                className="bg-white p-4 rounded-xl shadow-xs hover:shadow-md transition-shadow text-center flex flex-col items-center justify-center gap-2 min-h-[110px] border border-[#dae3f4] cursor-pointer"
               >
-                <span className="font-['Montserrat'] text-lg text-[#001b4b] font-bold tracking-tight group-hover:text-[#fc820c] transition-colors">
-                  {brand.name}
-                </span>
-                <span className="text-[11px] text-[#444650] uppercase mt-1 font-medium">
-                  {brand.category.split('&')[0].trim()}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECCIÓN 7: TESTIMONIOS (ID: nosotros) */}
-      <section className="w-full bg-[#f8f9ff] py-14 lg:py-20 border-b border-[#dae3f4]/70" id="nosotros">
-        <div className="max-w-[1320px] mx-auto px-4 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#fc820c]">
-              Confianza comprobada
-            </span>
-            <h2 className="font-['Montserrat'] text-2xl lg:text-3xl text-[#001b4b] mt-1 font-bold">
-              Lo que dicen nuestros clientes
-            </h2>
-            <p className="text-sm text-[#444650] mt-2">
-              Experiencias reales de comerciantes y constructores que crecen junto a D&M Distribuidora.
-            </p>
-          </div>
-
-          {/* 3 Tarjetas de testimonios reales */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {TESTIMONIALS.map((t) => (
-              <div
-                key={t.id}
-                className="bg-white p-6 lg:p-7 rounded-2xl shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between border border-[#dae3f4]"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="px-2.5 py-0.5 rounded bg-[#eff4ff] text-[11px] text-[#001b4b] font-semibold">
-                      Cliente Verificado
-                    </span>
-                    <div className="flex text-[#fc820c]">
-                      {[...Array(t.rating)].map((_, i) => (
-                        <span key={i} className="material-symbols-outlined text-[18px]">
-                          star
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <p className="text-xs sm:text-sm text-[#131c28] italic leading-relaxed">
-                    "{t.quote}"
-                  </p>
-                </div>
-                <div className="mt-6 pt-4 border-t border-[#f8f9ff] flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-full bg-[#e5eeff] flex-shrink-0 flex items-center justify-center text-[#001b4b] font-bold text-sm">
-                    {t.clientName.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-['Montserrat'] text-xs sm:text-sm text-[#001b4b] font-bold">
-                      {t.clientName} · {t.city}
-                    </p>
-                    <p className="text-[11px] text-[#444650] font-medium">{t.businessType}</p>
-                  </div>
-                </div>
-              </div>
+                <img src={brand.logo} alt={`Logo ${brand.name}`} loading="lazy" className="h-12 max-w-full object-contain" />
+                <span className="text-xs font-semibold text-[#001b4b]">{brand.name}</span>
+              </button>
             ))}
           </div>
         </div>
@@ -587,13 +514,13 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
         <div className="max-w-[1320px] mx-auto px-4 lg:px-8 relative z-10 text-center">
           <div className="max-w-3xl mx-auto space-y-4">
             <span className="text-xs text-[#ffdcc6] uppercase tracking-widest font-bold">
-              Abastecimiento inmediato
+              Catálogo de productos
             </span>
             <h2 className="font-['Montserrat'] text-3xl sm:text-4xl text-white font-extrabold tracking-tight">
-              Cotiza hoy y surte tu ferretería
+              Consulta y cotiza los productos que necesitas
             </h2>
             <p className="text-base text-[#dae2ff] leading-relaxed max-w-2xl mx-auto">
-              Optimiza la rotación de tu inventario con despacho preferencial, precios de distribuidor y la atención dedicada que tu negocio en el Caribe merece.
+              Revisa el catálogo y envía tu solicitud por WhatsApp para confirmar precio y disponibilidad.
             </p>
             <div className="pt-4">
               <button

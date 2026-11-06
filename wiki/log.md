@@ -2,7 +2,7 @@
 tipo: bitácora
 estado: vigente
 creado: 2026-10-28
-actualizado: 2026-10-28
+actualizado: 2026-11-06
 tags: [bitacora, actividad]
 fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 ---
@@ -60,3 +60,18 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - `git push -u origin main` terminó correctamente. GitHub creó `main` y confirmó el mismo commit `19dbdb2` que la rama local; quedó configurado el seguimiento `origin/main`.
 - Solo se enviaron los archivos versionados. `Docs/`, el ZIP, `node_modules/` y `dist/` permanecen fuera del repositorio.
 - El código quedó en GitHub; no se configuró ni ejecutó un despliegue web.
+
+## [2026-11-06] catálogo-y-contacto | Integración del inventario y respuestas del cliente
+
+- El usuario confirmó WhatsApp `+57 316 460 2821`, dirección Carrera 4H # 21-48, barrio Villa Clara y correo `distri.dym13@gmail.com`; pidió conservar Contacto, retirar PBX y no incluir Maps.
+- Se integraron 1.492 nombres únicos del archivo externo `../../inventario 04-11.xlsx` en `src/data/inventoryCatalog.json`. Las categorías se infirieron del nombre: eléctricos 156, sanitarios 285, construcción/ferretería 1.051. El libro original quedó intacto; stock/precios no se publican.
+- Se añadió paginación de 10 productos, búsqueda y filtro por las 3 categorías; cotización solo usa nombres/categorías/cantidades.
+- Se copiaron los 11 logos de Docs elegidos por el usuario a `public/brand/partners/`; se retiraron testimonios, descripciones no respaldadas de marcas y simulación de crédito. Crédito queda como consulta por WhatsApp; Nosotros no incluye misión/visión.
+- Comprobación: compilación Vite y TypeScript correctas; conteos y categorías de ejemplo del inventario comprobados. El navegador no pudo conectar con la vista local para revisión visual.
+- Los cambios de este turno siguen locales; no se han subido a GitHub ni publicados en la web.
+
+## [2026-11-06] verificación | Cierre de catálogo y memoria
+
+- Confirmados 1.492 elementos en el JSON de catálogo y 11 logos técnicos. `vite build`, `tsc --noEmit` y `git diff --check` pasaron.
+- La revisión visual no pudo realizarse porque el navegador no conectó al servidor local. No se afirma que el cambio esté visualmente probado ni publicado.
+- Se actualizó el catálogo de fuentes para registrar que la autorización de mostrar logos no confirma relaciones comerciales vigentes.

@@ -1,6 +1,6 @@
 ---
 tipo: plan-de-mejora
-estado: en-validacion
+estado: en-progreso
 creado: 2026-11-06
 actualizado: 2026-11-06
 tags: [plan, landing, mejoras]
@@ -14,42 +14,40 @@ Esta hoja adapta el plan recibido al código y a los materiales que sí existen.
 ## Revisión del estado real
 
 - **Confirmado:** la aplicación está hecha con React, TypeScript y Vite. Tiene inicio, catálogo, aliados, nosotros y contacto; son pantallas dentro de una sola aplicación.
-- **Confirmado:** el catálogo y sus productos viven en `src/data/mockData.ts`. El carrito se mantiene en `App.tsx` y la cotización se arma en `QuoteModal.tsx` para enviarse a WhatsApp.
-- **Provisional / de alto riesgo:** los datos de productos, stock, marcas, testimonios, cobertura, horarios, crédito y varias afirmaciones del código son datos de demostración y requieren validación contra fuentes de la empresa.
-- **Confirmado:** la simulación de crédito calcula un cupo con una fórmula fija en `CreditModal.tsx` y comunica un plazo de 30 a 45 días. No se encontró respaldo documental para esa regla; debe desactivarse o convertirse en consulta cuando el cliente confirme que no hay reglas oficiales.
-- **Confirmado:** la pantalla de contacto reúne canales, horario y un formulario que prepara un mensaje para WhatsApp. No se ha probado la recepción del mensaje. El usuario solicitó cambiar el eslogan, retirar el PBX y actualizar el correo; estos tres cambios ya se aplicaron localmente.
-- **Confirmado:** el logo ya está en el encabezado. Persisten textos como «SKU» visibles en inicio, catálogo y cotizador.
-- **Confirmado:** `Docs/` contiene documentos empresariales, un borrador visual y el logo, además de imágenes de marcas. No hay un catálogo real completo, testimonios autorizados, fotos de categorías, misión/visión, dirección de Maps o reglas de crédito confirmadas en el inventario actual.
-- **Pendiente:** comprobar compilación y visualización de los cambios actuales; revisar desbordamiento en 320 px; desplegar la página en un servicio público (la sincronización con GitHub no constituye despliegue).
+- **Confirmado:** catálogo React en `src/data/inventoryCatalog.json`, buscador, filtros por las tres categorías y carrito en `App.tsx`; cotizaciones se preparan para WhatsApp en `QuoteModal.tsx`.
+- **Confirmado:** el Excel tiene 1.494 filas. El catálogo presenta 1.492 nombres únicos y clasifica por nombre; stock/precio no se muestran. La clasificación aún puede corregirse con la empresa.
+- **Confirmado:** el crédito ya no calcula cupos ni publica plazos; ofrece una consulta por WhatsApp, pues el usuario indicó que las condiciones varían.
+- **Confirmado:** Contacto sigue disponible con correo, WhatsApp y dirección confirmados por el usuario; no incluye Maps ni PBX.
+- **Confirmado:** están mostrados los 11 logos entregados. La landing ya no contiene sección de testimonios; la pantalla Nosotros usa solo descripción de actividad y líneas de producto, sin misión/visión.
+- **Confirmado:** compilación de Vite y TypeScript pasan. **Pendiente:** revisión visual/funcional con el navegador, pues no conectó al servidor local de la versión anterior; esta versión fue iniciada en `http://127.0.0.1:3001/`.
+- **Pendiente:** revisar accesibilidad/breakpoints y decidir publicación. GitHub contiene una versión anterior; los cambios de esta sesión son locales hasta que se autorice subirlos.
 
 ## Cambios aplicados en esta sesión
 
 - **Confirmado por el usuario:** eslogan exacto: «D&M, Soluciones para cada necesidad».
-- **Confirmado por el usuario:** quitar PBX de la pantalla de contacto y del pie de página.
-- **Confirmado por el usuario:** correo nuevo: `distri.dym13@gmail.com`; se vinculó para abrir el correo desde ambas ubicaciones.
-- **Pendiente:** la pantalla Contacto completa continúa disponible. El plan recibido propone eliminarla, pero esta hoja no lo da por aprobado todavía.
+- **Confirmado por el usuario:** teléfono `+57 316 460 2821`, dirección Carrera 4H # 21-48, barrio Villa Clara; conservar Contacto y no incluir Maps.
+- **Confirmado por el usuario:** correo `distri.dym13@gmail.com`, PBX retirado y eslogan «D&M, Soluciones para cada necesidad».
+- **Confirmado por el usuario:** mostrar todos los logos recibidos; quitar testimonios; no usar misión/visión por ahora; mostrar 10 productos por página sin fotos.
+- **Pendiente confirmado:** las condiciones de crédito cambian y no se cuenta con información completa.
 
 ## Ruta de trabajo
 
 0. **Preparar las skills del plan.** En `Plan De Mejora/17-distribuidora-dym/` están los ZIP de SEO y tratamiento de datos. Revisarlos e instalar sus carpetas completas en `.agents/skills/` antes de esos pasos; las skills de diseño citadas en `instalar-skills.md` no aparecen en este proyecto y su instalación queda pendiente.
-1. **Validar información empresarial y los flujos actuales.** Responder las preguntas de abajo y relacionar cada respuesta con el material de `Docs/`. No cambiar aún testimonios, marcas, condiciones ni teléfonos no confirmados.
-2. **Cerrar el contenido y los contactos.** Confirmar canales (correo actualizado; PBX quitado), decidir si se conserva la pantalla Contacto, y reemplazar cualquier dato ficticio o retirarlo. Agregar Maps solo con enlace entregado por la empresa.
-3. **Ajustar lenguaje y contenido.** Cambiar «SKU» por «producto» donde sea texto dirigido al cliente. Integrar misión y visión únicamente si se reciben sus versiones oficiales. Quitar testimonios de muestra y afirmaciones de crédito, stock o entrega que no estén respaldadas.
-4. **Catálogo y cotización.** Recibir catálogo real categorizado; agregar paginación conservando búsqueda, filtros y selección. Confirmar cantidad por página. Verificar agregar, modificar, quitar y enviar exactamente los productos y cantidades seleccionados al WhatsApp autorizado. Las tarjetas con fotos se prueban como opción reversible usando imágenes aprobadas.
-5. **Marcas y aliados.** Confirmar qué marcas se distribuyen y qué logos se pueden publicar; aclarar nombres que difieren entre documentos e imágenes. Después, implementar carrusel pausible y fichas emergentes accesibles, solo para los aliados autorizados.
-6. **Crédito sin promesas.** Recibir reglas oficiales. Si no existen, retirar el cálculo fijo actual y dejar una consulta informativa por un canal aprobado, con texto claro de que está sujeto a estudio y negociación. No mostrar montos estimados ni plazos no autorizados.
+1. **Información empresarial y flujos:** validación inicial completada según las respuestas de este turno. Los detalles restantes están en [[pendientes]].
+2. **Contenido y contacto:** aplicado: teléfono, dirección, email, eslogan, pantalla Contacto conservada y sin Maps/PBX.
+3. **Lenguaje:** aplicado: productos sin SKU o atributos no incluidos en el inventario; sin testimonios ni sección de misión/visión; se quitaron afirmaciones de crédito y stock no respaldadas.
+4. **Catálogo y cotización:** aplicado localmente: 1.492 nombres únicos, tres categorías y 10 por página; sin fotos, stock ni precio. Mantiene filtros y selección; falta comprobar visualmente la navegación y envío al WhatsApp.
+5. **Marcas:** aplicado localmente: galería de los 11 logos recibidos, sin detalles de garantía/certificación no respaldados.
+6. **Crédito:** aplicado: consulta informativa por WhatsApp sin fórmula, monto, plazo ni promesa de aprobación.
 7. **Privacidad y datos.** Inventariar los datos que solicitan el cotizador y el formulario de contacto. Recibir NIT/RUT, dirección legal y correo para asuntos de datos; preparar política y aceptación antes de habilitar una recopilación que dependa de ella.
 8. **Pulido, SEO y accesibilidad.** Revisar jerarquía visual, móvil, teclado, etiquetas, título/descripción y textos alternativos sin inventar ubicaciones, horarios o marcas.
 9. **Prueba final y entrega.** Compilar; revisar en escritorio y móvil; probar enlaces y flujo de cotización solo contra destino confirmado. Guardar versión local en Git. El despliegue web se hace aparte y requiere autorización para el destino.
 
-## Preguntas necesarias para continuar
+## Respuestas confirmadas y datos aún pendientes
 
-1. **Crédito:** ¿qué datos solicita la simulación y qué reglas oficiales usa? Si no hay fórmula aprobada, ¿autorizas que quite el cálculo y deje solo una consulta por WhatsApp, aclarando que está sujeto a estudio y negociación?
-2. **Marcas:** ¿qué marcas son aliadas vigentes y autorizas mostrar sus logos? ¿JC Top corresponde a JC Tools? ¿Qué marcas de las imágenes de `Docs/` se pueden publicar?
-3. **Contacto:** ¿siguen vigentes el WhatsApp `+57 316 460 2821` y la dirección actual del código? ¿Cuál es el enlace de Maps? ¿Quieres conservar la pantalla Contacto además del correo en el pie?
-4. **Contenido de confianza:** ¿puedes compartir misión y visión oficiales y testimonios reales con autorización y calificación? Si no, ¿prefieres que quite los testimonios de muestra?
-5. **Catálogo:** ¿cuántos productos por página prefieres? ¿Puedes agregar a `Docs/` el catálogo vigente y fotos por categoría que autorices para una prueba visual?
+- **Ya confirmado:** no se incluyen reglas de crédito aún; los logos recibidos se pueden mostrar; teléfono/dirección/email son vigentes; no Maps; mantener Contacto; sin testimonios ni misión/visión; 10 por página y sin fotos.
+- **Pendiente para futuras mejoras:** NIT/RUT y datos del responsable de privacidad para política; revisión de productos clasificados por nombre; reglas oficiales si en algún momento se desea describir las condiciones de crédito; revisión visual final y autorización de publicación.
 
 ## Secuencia para usar el plan recibido
 
-El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` sigue disponible. Su paso de logo quedó atendido; el paso de pie/contacto quedó parcialmente atendido con el cambio de correo y retiro del PBX. Los pasos posteriores esperan las respuestas y fuentes indicadas aquí. Esta hoja evita marcar pasos como terminados antes de verificarlos.
+El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus materiales siguen intactos. El sitio conserva el framework actual y la pantalla de contacto. La instalación de skills, política de datos, SEO, revisión visual completa y publicación quedan por hacer cuando corresponda.

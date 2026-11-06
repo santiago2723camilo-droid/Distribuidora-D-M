@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { COMPANY_ADDRESS, COMPANY_EMAIL, COMPANY_PHONE, COMPANY_PHONE_DISPLAY, FAQS } from '../../data/mockData';
+import { COMPANY_ADDRESS, COMPANY_EMAIL, COMPANY_PHONE, COMPANY_PHONE_DISPLAY } from '../../data/mockData';
 
 interface ContactScreenProps {
   onOpenQuoteModal: () => void;
@@ -40,19 +40,19 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
               Habla Directo con tu Asesor en Valledupar
             </h1>
             <p className="text-xs sm:text-sm text-[#dae2ff] leading-relaxed">
-              Atención inmediata para cotizaciones, despachos a obras, consulta de existencias o solicitudes de crédito comercial.
+              Comunícate con nosotros para consultas y cotizaciones.
             </p>
           </div>
         </div>
 
         {/* Canales de Contacto */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="bg-white p-6 rounded-2xl shadow-xs border border-[#dae3f4] space-y-3">
             <div className="w-12 h-12 rounded-xl bg-[#ffdcc6] text-[#fc820c] flex items-center justify-center">
               <span className="material-symbols-outlined text-[26px]">chat</span>
             </div>
             <h3 className="font-['Montserrat'] text-base font-bold text-[#001b4b]">WhatsApp Asesor</h3>
-            <p className="text-xs text-[#444650]">Respuesta en 15 minutos en horario hábil.</p>
+            <p className="text-xs text-[#444650]">Escríbenos por WhatsApp para consultas o cotizaciones.</p>
             <a
               href={`https://wa.me/${COMPANY_PHONE}`}
               target="_blank"
@@ -68,7 +68,7 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
               <span className="material-symbols-outlined text-[26px]">mail</span>
             </div>
             <h3 className="font-['Montserrat'] text-base font-bold text-[#001b4b]">Correo Comercial</h3>
-            <p className="text-xs text-[#444650]">Envío de licitaciones y órdenes de compra.</p>
+            <p className="text-xs text-[#444650]">Envíanos tus consultas por correo.</p>
             <a href={`mailto:${COMPANY_EMAIL}`} className="text-xs font-medium text-[#444650] block truncate hover:underline">{COMPANY_EMAIL}</a>
           </div>
 
@@ -76,9 +76,8 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
             <div className="w-12 h-12 rounded-xl bg-[#eff4ff] text-[#001b4b] flex items-center justify-center">
               <span className="material-symbols-outlined text-[26px]">location_on</span>
             </div>
-            <h3 className="font-['Montserrat'] text-base font-bold text-[#001b4b]">Bodega Principal</h3>
+            <h3 className="font-['Montserrat'] text-base font-bold text-[#001b4b]">Dirección</h3>
             <p className="text-xs text-[#444650]">{COMPANY_ADDRESS}</p>
-            <span className="text-[11px] text-[#747781] block">Retiros en bodega autorizados</span>
           </div>
         </div>
 
@@ -89,7 +88,7 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
               Envía tu requerimiento directo
             </h3>
             <p className="text-xs text-[#444650] mb-6">
-              Te contestaremos directamente a tu WhatsApp con los precios de distribuidor aplicables.
+              El formulario prepara un mensaje para que lo revises y lo envíes por WhatsApp.
             </p>
 
             {isSent ? (
@@ -97,7 +96,7 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
                 <span className="material-symbols-outlined text-[36px] text-green-600">check_circle</span>
                 <h4 className="font-bold text-sm text-[#001b4b]">Mensaje listo en WhatsApp</h4>
                 <p className="text-xs text-[#444650]">
-                  Tu conversación se abrió con nuestro asesor comercial.
+                  WhatsApp se abrió con el mensaje preparado para que lo revises antes de enviarlo.
                 </p>
                 <button
                   onClick={() => setIsSent(false)}
@@ -180,44 +179,21 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
             )}
           </div>
 
-          {/* Horarios & Ubicación Info */}
+          {/* Información comercial */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-[#12306b] text-white p-6 rounded-2xl space-y-4">
-              <h3 className="font-['Montserrat'] text-base font-bold text-white">
-                Horarios de Operación Logística
-              </h3>
-              <div className="space-y-3 text-xs text-[#dae2ff]">
-                <div className="flex justify-between py-1.5 border-b border-white/10">
-                  <span>Lunes a Viernes:</span>
-                  <span className="font-bold text-white">7:00 AM – 5:30 PM</span>
-                </div>
-                <div className="flex justify-between py-1.5 border-b border-white/10">
-                  <span>Sábados:</span>
-                  <span className="font-bold text-white">7:30 AM – 1:00 PM</span>
-                </div>
-                <div className="flex justify-between py-1.5">
-                  <span>Domingos y Festivos:</span>
-                  <span className="text-[#ffdcc6]">Cerrado para bodega</span>
-                </div>
-              </div>
-              <p className="text-[11px] text-[#b1c5ff] pt-2">
-                * Para despachos de urgencia en fin de semana en obra civil, consultar con su asesor comercial previamente.
-              </p>
-            </div>
-
             <div className="bg-white p-6 rounded-2xl border border-[#dae3f4] space-y-3">
               <h4 className="font-['Montserrat'] text-sm font-bold text-[#001b4b]">
-                ¿Prefieres cotizar con listado dinámico?
+                ¿Quieres cotizar productos del catálogo?
               </h4>
               <p className="text-xs text-[#444650]">
-                Usa nuestro cotizador interactivo para armar cantidades de cable, tubería o herramientas y calcular tu pedido exacto.
+                Añade los productos que necesitas y prepara tu solicitud de cotización.
               </p>
               <button
                 onClick={onOpenQuoteModal}
                 className="w-full py-2.5 bg-[#eff4ff] hover:bg-[#e0e9f9] text-[#001b4b] text-xs font-bold rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span className="material-symbols-outlined text-[18px]">shopping_cart</span>
-                <span>Abrir Cotizador Interactivo</span>
+                <span>Abrir cotizador</span>
               </button>
             </div>
           </div>
