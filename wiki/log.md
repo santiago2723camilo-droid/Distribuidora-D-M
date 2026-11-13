@@ -99,3 +99,13 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - Se revisó el logo del encabezado y los dos PDF originales. El logo está integrado pero es rasterizado y borroso; elevar DPI no añade detalle. Se conserva intacto y queda pendiente solicitar un original vectorial o de alta resolución.
 - Se cambió el texto visible que decía “referencias” o “inventario” por “productos” o “catálogo”, y se retiró el campo `sku` legado no utilizado. No había SKU en el texto visible.
 - `vite build` y `tsc --noEmit` pasaron. La página mostró los textos actualizados en el navegador local; la prueba fue parcial en un solo tamaño. No se subió nada a GitHub.
+
+## [2026-11-13] plan | Paso 3 y guía de fotos
+
+- Se verificaron en el código del sitio el correo, teléfono y dirección vigentes. El pie y la pantalla Contacto ya los muestran; PBX y Maps no aparecen. Se conserva Contacto y se omite Maps según la indicación actual del usuario. No se modificó el código de la landing.
+- Se generó una guía de fotos con filas para los 1.492 productos del catálogo. Agrupa 463 productos en 135 grupos compartibles y asigna 1.029 tomas individuales, para 1.164 fotos sugeridas en total. Los grupos son provisionales hasta comparar físicamente los productos.
+- Archivos: [[lista-de-fotos-catalogo]] y [[lista-fotos-catalogo.csv]]. El catálogo web sigue sin fotos; build y vista visual no aplican porque no hubo cambio de código.
+
+## [2026-11-13] corrección | Conteo de grupos de fotos
+
+- Al separar el aerosol transparente de los aerosoles de color genérico, se recalculó el plan: 135 grupos compartibles para 462 productos, 1.030 tomas individuales y 1.165 fotos sugeridas. Se mantienen los nombres completos y la correspondencia por producto en los dos entregables enlazados arriba.

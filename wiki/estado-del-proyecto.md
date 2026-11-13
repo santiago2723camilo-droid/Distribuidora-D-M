@@ -48,6 +48,18 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 
 Continuar con la revisión del desbordamiento de página a 320 px y validar los datos comerciales provisionales antes de cambiar contenido.
 
+## Paso 3 del plan recibido · Pie de página y contacto
+
+- **Confirmado:** se verificaron los datos vigentes en `src/data/mockData.ts`: WhatsApp `+57 316 460 2821`, correo `distri.dym13@gmail.com` y dirección Carrera 4H # 21-48, barrio Villa Clara.
+- **Confirmado:** el pie y la pantalla Contacto muestran esos datos; la pantalla Contacto se conserva como pidió el usuario. No se encontró PBX ni enlace de Maps en el código de la landing.
+- **Decisión del usuario:** no agregar Maps y conservar Contacto, aunque el plan original sugiera lo contrario. El paso 3 queda cumplido según la preferencia vigente; no requería cambios nuevos en el código.
+- **Comprobación:** búsqueda textual en el código de contacto; no se ejecutó una prueba de navegación visual ni de recepción de mensajes en esta revisión.
+
+## Fotos del catálogo
+
+- **Provisional:** se preparó `[[lista-de-fotos-catalogo]]` y su archivo tabular `[[lista-fotos-catalogo.csv]]` a partir de los 1.492 nombres del catálogo. Propone 1.165 fotos sugeridas: 135 grupos compartibles para 462 productos y 1.030 tomas individuales.
+- **Pendiente:** comparar físicamente los productos de cada grupo antes de reutilizar la imagen. La landing conserva el catálogo sin fotos hasta que el usuario solicite integrarlas; la guía no contiene imágenes reales.
+
 ## Cambios recientes
 
 - **Confirmado:** el 2026-11-06 se cambió el encabezado principal a «D&M, Soluciones para cada necesidad», se retiraron las dos apariciones del PBX y el correo se actualizó a `distri.dym13@gmail.com` en el pie y en Contacto.

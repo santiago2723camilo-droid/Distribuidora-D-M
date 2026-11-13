@@ -2,12 +2,15 @@
 tipo: pendientes
 estado: abierto
 creado: 2026-10-28
-actualizado: 2026-11-06
+actualizado: 2026-11-13
 tags: [pendientes, preguntas]
 fuentes: ["trabajo/landing-google-ai-studio/src/data/mockData.ts", "Docs/"]
 ---
 
 # Pendientes
+
+- **Media:** validar físicamente los 135 grupos compartibles de [[lista-de-fotos-catalogo]] antes de usar una foto para productos de distinto tamaño/color. La guía asigna tomas individuales a los otros productos.
+- **Pendiente del usuario:** si más adelante se desean fotos de producto en la landing, elegir y entregar las imágenes. El catálogo permanece sin fotos, conforme a la preferencia vigente.
 
 - **Alta:** resolver el límite de ruta con `&` para que `npm run` funcione como usuario final, o usar la invocación directa de Node documentada en `AGENTS.md`.
 - **Media:** localizar la causa de la barra horizontal observada a 320 px; en 375 px el encabezado se ve completo.

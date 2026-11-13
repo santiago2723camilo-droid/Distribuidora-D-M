@@ -52,6 +52,19 @@ La numeración de «Ruta de trabajo» resume la secuencia adaptada de la wiki. C
 - **Pendiente:** el logo oficial disponible en los PDF está rasterizado y borroso a tamaño de encabezado. Renderizarlo a más DPI no recupera detalle; no lo redibujé ni alteré. El paso queda parcial hasta recibir una fuente vectorial o de mayor resolución.
 - **Comprobado:** `vite build` y `tsc --noEmit` pasan; los textos actualizados aparecen en `http://127.0.0.1:3003/`. La revisión visual fue del encabezado y el catálogo, no de todos los tamaños.
 
+## Paso 3 del plan recibido · Pie de página y contacto
+
+- **Confirmado:** el pie y la vista Contacto ya muestran WhatsApp `+57 316 460 2821`, `distri.dym13@gmail.com` y Carrera 4H # 21-48, barrio Villa Clara; el PBX está retirado.
+- **Confirmado por el usuario:** conservar Contacto y no incluir Maps. Esta preferencia prevalece sobre las dos acciones opuestas del plan original.
+- **Comprobado en esta sesión:** búsqueda de contacto en el código; no hay referencias a PBX ni Maps. El paso queda aplicado de acuerdo con las instrucciones vigentes, sin cambios nuevos de código.
+- **Alcance pendiente de prueba:** no se revalidaron visualmente los enlaces ni se probó recepción de mensajes en WhatsApp.
+
+## Fotografías de productos · preparación solicitada
+
+- **Provisional:** se construyó una guía para los 1.492 productos: 135 grupos compartibles (462 productos) y 1.030 productos que requieren toma individual según el nombre del inventario. Ver [[lista-de-fotos-catalogo]] y la tabla completa [[lista-fotos-catalogo.csv]].
+- Los tamaños se agrupan cuando el resto del nombre coincide; “industrial” se mantiene como familia diferente. En aerosoles solo se comparten colores cuando el resto de la descripción coincide. Validar forma, material, empaque y acabado físicamente antes de reutilizar la foto.
+- El catálogo del sitio sigue sin fotos de producto, tal como se había solicitado; este listado prepara las tomas y no integra ni publica imágenes.
+
 ## Respuestas confirmadas y datos aún pendientes
 
 - **Ya confirmado:** no se incluyen reglas de crédito aún; los logos recibidos se pueden mostrar; teléfono/dirección/email son vigentes; no Maps; mantener Contacto; sin testimonios ni misión/visión; 10 por página y sin fotos.
