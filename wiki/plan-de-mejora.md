@@ -19,7 +19,7 @@ Esta hoja adapta el plan recibido al código y a los materiales que sí existen.
 - **Confirmado:** el crédito ya no calcula cupos ni publica plazos; ofrece una consulta por WhatsApp, pues el usuario indicó que las condiciones varían.
 - **Confirmado:** Contacto sigue disponible con correo, WhatsApp y dirección confirmados por el usuario; no incluye Maps ni PBX.
 - **Confirmado:** están mostrados los 11 logos entregados. La landing ya no contiene sección de testimonios; la pantalla Nosotros usa solo descripción de actividad y líneas de producto, sin misión/visión.
-- **Confirmado:** compilación de Vite y TypeScript pasan. **Pendiente:** revisión visual con el navegador; el servidor de esta sesión inició en `http://127.0.0.1:3002/`, pero el navegador local no conecta.
+- **Confirmado:** compilación de Vite y TypeScript pasan. La portada ya se abrió en navegador local desde `http://127.0.0.1:3003/`; faltan los flujos y tamaños móviles.
 - **Pendiente:** revisar accesibilidad/breakpoints y decidir publicación. GitHub contiene una versión anterior; los cambios de esta sesión son locales hasta que se autorice subirlos.
 
 ## Cambios aplicados en esta sesión
@@ -33,7 +33,7 @@ Esta hoja adapta el plan recibido al código y a los materiales que sí existen.
 ## Ruta de trabajo
 
 0. **Preparar las skills del plan.** En `Plan De Mejora/17-distribuidora-dym/` están los ZIP de SEO y tratamiento de datos. Revisarlos e instalar sus carpetas completas en `.agents/skills/` antes de esos pasos; las skills de diseño citadas en `instalar-skills.md` no aparecen en este proyecto y su instalación queda pendiente.
-1. **Información empresarial y flujos:** revisión documental y del código completada el 2026-11-06; no se cambió el sitio. Se catalogaron activos, formularios, cotizador, crédito, marcas y navegación. La revisión visual queda pendiente por timeout. Hallazgos en [[estado-del-proyecto]] y [[pendientes]].
+1. **Información empresarial y flujos:** revisión documental y del código completada el 2026-11-06; la portada se revisó visualmente el 2026-11-13 en navegador local. No se cambió el sitio en esos pasos. Se catalogaron activos, formularios, cotizador, crédito, marcas y navegación. Hallazgos y pendientes en [[estado-del-proyecto]] y [[pendientes]].
 2. **Contenido y contacto:** aplicado: teléfono, dirección, email, eslogan, pantalla Contacto conservada y sin Maps/PBX.
 3. **Lenguaje:** aplicado: productos sin SKU o atributos no incluidos en el inventario; sin testimonios ni sección de misión/visión; se quitaron afirmaciones de crédito y stock no respaldadas.
 4. **Catálogo y cotización:** aplicado localmente: 1.492 nombres únicos, tres categorías y 10 por página; sin fotos, stock ni precio. Mantiene filtros y selección; falta comprobar visualmente la navegación y envío al WhatsApp.
@@ -61,4 +61,4 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 - **Confirmado:** el formulario de Contacto exige nombre, teléfono, ciudad y consulta; empresa es opcional. Prepara un segundo mensaje a WhatsApp. No se observó política de privacidad ni casilla de aceptación.
 - **Confirmado:** crédito quedó como consulta por WhatsApp, sin captura de datos ni simulador. La pantalla Contacto permanece. Marcas tiene pantalla separada en una cuadrícula estática, no carrusel ni fichas emergentes.
 - **Confirmado:** una búsqueda textual del código no encontró “SKU(s)”, PBX ni enlaces de Maps en la interfaz; `sku` solo permanece como campo opcional legado en el tipo TypeScript. El teléfono, correo y dirección actuales están en `src/data/mockData.ts`.
-- **Pendiente de verificación:** la pestaña `http://127.0.0.1:3000/` mostró `ERR_CONNECTION_TIMED_OUT`. Vite inició en `http://127.0.0.1:3002/`, pero el entorno de navegador no permitió validar su apariencia. No se hicieron cambios en los archivos del sitio.
+- **Confirmado:** la primera instancia local en 3002 no aceptaba conexiones del navegador. Vite se inició en `http://127.0.0.1:3003/`; la portada quedó visible en la pestaña local. No se hicieron cambios en los archivos del sitio.

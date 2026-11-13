@@ -20,5 +20,5 @@ fuentes: ["trabajo/landing-google-ai-studio/src/data/mockData.ts", "Docs/"]
 - **Media:** completar la política de datos cuando se confirmen los datos legales requeridos (NIT/RUT, dirección para datos personales y responsable/correo apropiado).
 - **Pendiente:** instalar las skills entregadas en los ZIP del plan antes de aplicar esas rutinas especializadas.
 - **Pendiente de validación:** revisar demás flujos y confirmar información provisional antes de desplegar la web. El código está en GitHub; el sitio no está desplegado.
-- **Pendiente de verificación:** la vista visual de la página local no cargó en el navegador; Vite inició en el puerto 3002, pero el entorno no pudo conectarse.
+- **Pendiente de verificación:** revisar filtros, paginación, formularios y tamaños móviles en la vista local, abierta en `http://127.0.0.1:3003/`.
 - Ver preguntas de validación y secuencia propuesta en [[plan-de-mejora]].

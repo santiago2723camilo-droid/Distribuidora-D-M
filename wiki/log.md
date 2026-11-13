@@ -87,3 +87,9 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - El usuario pidió levantar nuevamente la página en local, no publicarla en GitHub.
 - Vite quedó ejecutándose en `http://127.0.0.1:3002/` porque 3000 y 3001 estaban ocupados. El proceso sigue activo.
 - La apertura del puerto 3002 desde el navegador integrado y la comprobación HTTP local expiraron; la vista visual queda pendiente. No se modificó el código del sitio ni se hizo push.
+
+## [2026-11-13] vista-local | Página abierta en el navegador
+
+- Se identificó que la instancia anterior en 3002 no aceptaba conexiones. Se detuvo esa instancia y se inició Vite en 3003.
+- La portada abrió y se revisó visualmente en el navegador: logo, eslogan, botones principales e imagen de portada visibles. El servidor sigue activo.
+- No se modificó el código del sitio ni se hizo push a GitHub. Queda pendiente revisar las secciones y el diseño móvil.

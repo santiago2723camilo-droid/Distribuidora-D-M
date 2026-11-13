@@ -71,11 +71,11 @@ Continuar con la revisión del desbordamiento de página a 320 px y validar los 
 
 - **Confirmado (2026-11-06):** se revisaron los originales disponibles en `Docs/`, los archivos del paquete del plan, y el código de catálogo, navegación, aliados, cotizador, crédito y Contacto. No se modificó el sitio.
 - **Confirmado:** el cotizador y Contacto preparan mensajes con `wa.me`; la persona debe revisarlos y enviarlos. El cotizador recoge datos opcionales de nombre, empresa, ciudad y notas; Contacto exige nombre, teléfono, ciudad y consulta. No hay política de privacidad/consentimiento en la interfaz.
-- **Pendiente:** revisar visualmente la versión local. La pestaña en 3000 respondió con timeout; Vite inició en 3002, pero el navegador no logró conectarse desde este entorno.
+- **Confirmado (2026-11-13):** revisión visual inicial de la portada en navegador local a 3003; se ven el logo, el eslogan, el llamado al catálogo y la imagen de portada. No se revisaron aún filtros, cotizador ni otros tamaños.
 - Detalle de materiales y flujos: [[plan-de-mejora]].
 
 ## Vista local · 2026-11-13
 
-- **Confirmado:** el servidor de desarrollo Vite está ejecutándose en `http://127.0.0.1:3002/`. Los puertos 3000 y 3001 ya estaban ocupados al iniciarlo.
-- **Pendiente de verificación:** el navegador integrado agotó el tiempo de espera al intentar abrir 3002 y la consulta local desde este entorno también expiró. El proceso sigue activo, pero no se pudo comprobar que la página se vea en el navegador.
-- **Confirmado:** no se hizo push a GitHub; esta solicitud fue para levantar la vista local.
+- **Confirmado:** Vite está ejecutándose en `http://127.0.0.1:3003/` y la página abrió en el navegador. La primera instancia, en 3002, no aceptaba conexiones y se detuvo.
+- **Revisado visualmente:** la portada muestra el logo D&M, el eslogan «D&M, Soluciones para cada necesidad», los botones principales y la foto ilustrativa.
+- **Pendiente:** revisar catálogo, paginación, formularios y diseño móvil. No se hizo push a GitHub; el usuario pidió vista local.
