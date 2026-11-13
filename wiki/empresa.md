@@ -2,7 +2,7 @@
 tipo: empresa
 estado: vigente
 creado: 2026-10-28
-actualizado: 2026-11-06
+actualizado: 2026-11-13
 tags: [empresa, distribuidora-dym]
 fuentes: ["Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/DISTRIBUIDORA D&M.pdf", "Docs/LOGO DISTRIBUIDORA DYM.pdf", "../../inventario 04-11.xlsx"]
 ---
@@ -15,6 +15,10 @@ fuentes: ["Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/DISTRIBUIDORA D&M.pdf"
 - **Confirmado:** el borrador nombra las líneas construcción y ferretería, accesorios sanitarios y eléctricos.
 - **Provisional:** la landing actual se dirige a ferreterías, contratistas/maestros de obra y constructoras. Esa audiencia aparece en el código del sitio, pero no en el material empresarial revisado.
 - **Pendiente:** confirmar qué marcas se distribuyen actualmente y las condiciones comerciales. El usuario autorizó mostrar todos los logos recibidos, sin que esto confirme por sí solo una relación comercial vigente. Las marcas del borrador no coinciden completamente con las imágenes recibidas.
+
+## Misión y visión
+
+- **Pendiente:** no se encontraron textos oficiales de misión y visión en el DOCX empresarial revisado (`Docs/DISTRIBUIDORA_DYM worddd (1).docx`). El documento sí contiene una descripción de la empresa y una sección de valores; esos textos no se reinterpretan como misión ni visión. La pantalla Nosotros se conserva sin esas secciones hasta recibir los textos aprobados.
 
 ## Identidad visual
 
@@ -36,3 +40,4 @@ fuentes: ["Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/DISTRIBUIDORA D&M.pdf"
 - **Confirmado:** mostrar en la página los 11 logos recibidos; catálogo con 10 productos por página, sin fotos de producto; retirar testimonios y trabajar por ahora sin misión ni visión.
 - **Confirmado:** usar el inventario compartido como fuente del catálogo; consultar precio y disponibilidad al cotizar.
 - **Pendiente:** preferencia específica sobre fotografía o paleta general.
+- **Pendiente:** textos oficiales de misión y visión; no aparecen en el DOCX empresarial revisado.

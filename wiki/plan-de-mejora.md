@@ -65,6 +65,12 @@ La numeración de «Ruta de trabajo» resume la secuencia adaptada de la wiki. C
 - Los tamaños se agrupan cuando el resto del nombre coincide; “industrial” se mantiene como familia diferente. En aerosoles solo se comparten colores cuando el resto de la descripción coincide. Validar forma, material, empaque y acabado físicamente antes de reutilizar la foto.
 - El catálogo del sitio sigue sin fotos de producto, tal como se había solicitado; este listado prepara las tomas y no integra ni publica imágenes.
 
+## Paso 4 del plan recibido · Nosotros: misión y visión
+
+- **No aplicado, pendiente de fuente:** el DOCX empresarial de `Docs/` contiene una descripción de la empresa y los valores «Responsabilidad» y «Compromiso con el cliente», pero no declara una misión ni una visión oficiales.
+- **Decisión vigente:** no se inventan ni se reformulan los valores como misión/visión. La pantalla Nosotros queda igual y sin esas secciones, conforme a la preferencia previa del usuario hasta que entregue textos oficiales.
+- **Siguiente paso mínimo:** añadir los textos aprobados a `Docs/` o enviarlos para registro como una fuente nueva. Entonces se puede mostrar el contenido exacto en Nosotros.
+
 ## Respuestas confirmadas y datos aún pendientes
 
 - **Ya confirmado:** no se incluyen reglas de crédito aún; los logos recibidos se pueden mostrar; teléfono/dirección/email son vigentes; no Maps; mantener Contacto; sin testimonios ni misión/visión; 10 por página y sin fotos.

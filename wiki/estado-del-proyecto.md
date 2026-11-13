@@ -60,6 +60,12 @@ Continuar con la revisión del desbordamiento de página a 320 px y validar los 
 - **Provisional:** se preparó `[[lista-de-fotos-catalogo]]` y su archivo tabular `[[lista-fotos-catalogo.csv]]` a partir de los 1.492 nombres del catálogo. Propone 1.165 fotos sugeridas: 135 grupos compartibles para 462 productos y 1.030 tomas individuales.
 - **Pendiente:** comparar físicamente los productos de cada grupo antes de reutilizar la imagen. La landing conserva el catálogo sin fotos hasta que el usuario solicite integrarlas; la guía no contiene imágenes reales.
 
+## Paso 4 del plan recibido · Misión y visión
+
+- **Pendiente:** el DOCX empresarial en `Docs/` contiene descripción de la empresa y valores, pero no misión ni visión oficiales. No se añadieron textos ni se modificó la pantalla Nosotros.
+- **Pendiente del usuario:** compartir o colocar en `Docs/` las versiones oficiales aprobadas de misión y visión para poder completar el paso sin inventar contenido.
+- **Comprobación:** lectura del DOCX original y revisión de la pantalla `src/components/screens/AboutScreen.tsx`; la interfaz actual no presenta secciones de misión o visión.
+
 ## Cambios recientes
 
 - **Confirmado:** el 2026-11-06 se cambió el encabezado principal a «D&M, Soluciones para cada necesidad», se retiraron las dos apariciones del PBX y el correo se actualizó a `distri.dym13@gmail.com` en el pie y en Contacto.

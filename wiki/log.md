@@ -109,3 +109,8 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 ## [2026-11-13] corrección | Conteo de grupos de fotos
 
 - Al separar el aerosol transparente de los aerosoles de color genérico, se recalculó el plan: 135 grupos compartibles para 462 productos, 1.030 tomas individuales y 1.165 fotos sugeridas. Se mantienen los nombres completos y la correspondencia por producto en los dos entregables enlazados arriba.
+
+## [2026-11-13] plan | Paso 4, misión y visión
+
+- Se revisó el DOCX empresarial original y la pantalla Nosotros. El documento contiene una descripción empresarial y valores, pero no misión ni visión oficiales.
+- No se modificó la página ni se inventaron textos. El paso queda pendiente hasta recibir los textos aprobados del usuario en `Docs/` o como fuente nueva.
