@@ -2,7 +2,7 @@
 tipo: bitácora
 estado: vigente
 creado: 2026-10-28
-actualizado: 2026-11-06
+actualizado: 2026-11-13
 tags: [bitacora, actividad]
 fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 ---
@@ -81,3 +81,9 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - Se revisaron `Docs/`, los materiales del plan y el código actual de navegación, catálogo, marcas, cotizador, crédito y Contacto; no se modificó el sitio.
 - Se registraron los campos que recogen los formularios, que el mensaje requiere envío manual desde WhatsApp, que no hay aviso/consentimiento de privacidad, y que faltan fotos propias, fichas de marcas, destinos/flete confirmados y datos legales para la política.
 - No se pudo revisar visualmente la página: 3000 da timeout; Vite inició en 3002, pero el entorno del navegador no logró conectarse.
+
+## [2026-11-13] vista-local | Servidor de desarrollo iniciado
+
+- El usuario pidió levantar nuevamente la página en local, no publicarla en GitHub.
+- Vite quedó ejecutándose en `http://127.0.0.1:3002/` porque 3000 y 3001 estaban ocupados. El proceso sigue activo.
+- La apertura del puerto 3002 desde el navegador integrado y la comprobación HTTP local expiraron; la vista visual queda pendiente. No se modificó el código del sitio ni se hizo push.

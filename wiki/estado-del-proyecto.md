@@ -2,7 +2,7 @@
 tipo: estado-del-proyecto
 estado: vigente
 creado: 2026-10-28
-actualizado: 2026-11-06
+actualizado: 2026-11-13
 tags: [proyecto, landing, vite]
 fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-google-ai-studio/README.md"]
 ---
@@ -73,3 +73,9 @@ Continuar con la revisión del desbordamiento de página a 320 px y validar los 
 - **Confirmado:** el cotizador y Contacto preparan mensajes con `wa.me`; la persona debe revisarlos y enviarlos. El cotizador recoge datos opcionales de nombre, empresa, ciudad y notas; Contacto exige nombre, teléfono, ciudad y consulta. No hay política de privacidad/consentimiento en la interfaz.
 - **Pendiente:** revisar visualmente la versión local. La pestaña en 3000 respondió con timeout; Vite inició en 3002, pero el navegador no logró conectarse desde este entorno.
 - Detalle de materiales y flujos: [[plan-de-mejora]].
+
+## Vista local · 2026-11-13
+
+- **Confirmado:** el servidor de desarrollo Vite está ejecutándose en `http://127.0.0.1:3002/`. Los puertos 3000 y 3001 ya estaban ocupados al iniciarlo.
+- **Pendiente de verificación:** el navegador integrado agotó el tiempo de espera al intentar abrir 3002 y la consulta local desde este entorno también expiró. El proceso sigue activo, pero no se pudo comprobar que la página se vea en el navegador.
+- **Confirmado:** no se hizo push a GitHub; esta solicitud fue para levantar la vista local.
