@@ -16,7 +16,7 @@ fuentes: ["trabajo/landing-google-ai-studio/src/data/mockData.ts", "Docs/"]
 - **Media:** stock y precios del archivo no se muestran en la página; confirmar explícitamente si desean publicar alguno después.
 - **Media:** relación entre JC Top y JC Tools pendiente; ambos logos se muestran de manera separada sin afirmar que son la misma marca.
 - **Media:** confirmar los municipios/destinos que se muestran en el cotizador y si el ejemplo sobre flete es apropiado; aparecen como opciones o texto de ejemplo, sin respaldo empresarial registrado.
-- **Media:** conseguir logo original/vectorial de buena resolución si se desea mejorar la nitidez.
+- **Media:** pedir un original del logo en SVG/PDF vectorial o PNG grande para que el encabezado quede nítido. Los archivos de `Docs/` disponibles son borrosos incluso al renderizarlos a mayor DPI.
 - **Media:** completar la política de datos cuando se confirmen los datos legales requeridos (NIT/RUT, dirección para datos personales y responsable/correo apropiado).
 - **Pendiente:** instalar las skills entregadas en los ZIP del plan antes de aplicar esas rutinas especializadas.
 - **Pendiente de validación:** revisar demás flujos y confirmar información provisional antes de desplegar la web. El código está en GitHub; el sitio no está desplegado.

@@ -93,3 +93,9 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - Se identificó que la instancia anterior en 3002 no aceptaba conexiones. Se detuvo esa instancia y se inició Vite en 3003.
 - La portada abrió y se revisó visualmente en el navegador: logo, eslogan, botones principales e imagen de portada visibles. El servidor sigue activo.
 - No se modificó el código del sitio ni se hizo push a GitHub. Queda pendiente revisar las secciones y el diseño móvil.
+
+## [2026-11-13] plan | Paso 2, logo y términos del catálogo
+
+- Se revisó el logo del encabezado y los dos PDF originales. El logo está integrado pero es rasterizado y borroso; elevar DPI no añade detalle. Se conserva intacto y queda pendiente solicitar un original vectorial o de alta resolución.
+- Se cambió el texto visible que decía “referencias” o “inventario” por “productos” o “catálogo”, y se retiró el campo `sku` legado no utilizado. No había SKU en el texto visible.
+- `vite build` y `tsc --noEmit` pasaron. La página mostró los textos actualizados en el navegador local; la prueba fue parcial en un solo tamaño. No se subió nada a GitHub.

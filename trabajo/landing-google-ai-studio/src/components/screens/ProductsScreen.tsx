@@ -60,7 +60,7 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
             Productos para construcción, ferretería y electricidad
           </h1>
           <p className="text-xs sm:text-sm text-[#dae2ff] leading-relaxed mt-3 max-w-3xl">
-            Explora los productos del inventario por nombre o categoría. Consulta disponibilidad y precio al solicitar tu cotización.
+            Busca productos por nombre o categoría. Consulta precio y disponibilidad al solicitar tu cotización.
           </p>
         </section>
 

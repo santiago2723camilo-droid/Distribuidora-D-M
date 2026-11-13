@@ -5,7 +5,6 @@ export interface ProductItem {
   name: string;
   category: 'electricos' | 'construccion' | 'sanitarios';
   categoryLabel: string;
-  sku?: string;
   brand?: string;
   unit?: string;
   minOrder?: string;

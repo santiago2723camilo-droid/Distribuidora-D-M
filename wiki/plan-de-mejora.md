@@ -2,7 +2,7 @@
 tipo: plan-de-mejora
 estado: en-progreso
 creado: 2026-11-06
-actualizado: 2026-11-06
+actualizado: 2026-11-13
 tags: [plan, landing, mejoras]
 fuentes: ["Plan De Mejora/17-distribuidora-dym/plan-mejoras.md", "Plan De Mejora/17-distribuidora-dym/validacion-con-cliente.md", "trabajo/landing-google-ai-studio/src/"]
 ---
@@ -10,6 +10,8 @@ fuentes: ["Plan De Mejora/17-distribuidora-dym/plan-mejoras.md", "Plan De Mejora
 # Plan de mejora de la landing D&M
 
 Esta hoja adapta el plan recibido al código y a los materiales que sí existen. Los originales de `Plan De Mejora/` y `Docs/` se conservan intactos. Cada paso debe revisarse antes de marcarse como terminado; los datos provisionales no se presentan como hechos.
+
+La numeración de «Ruta de trabajo» resume la secuencia adaptada de la wiki. Cuando el usuario pide un número de paso, se refiere al paso numerado del archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md`.
 
 ## Revisión del estado real
 
@@ -43,6 +45,13 @@ Esta hoja adapta el plan recibido al código y a los materiales que sí existen.
 8. **Pulido, SEO y accesibilidad.** Revisar jerarquía visual, móvil, teclado, etiquetas, título/descripción y textos alternativos sin inventar ubicaciones, horarios o marcas.
 9. **Prueba final y entrega.** Compilar; revisar en escritorio y móvil; probar enlaces y flujo de cotización solo contra destino confirmado. Guardar versión local en Git. El despliegue web se hace aparte y requiere autorización para el destino.
 
+## Paso 2 del plan recibido · Logo y palabras claras
+
+- **Confirmado:** el encabezado de la página usa el logo seleccionado de `Docs/LOGO DISTRIBUIDORA DYM.pdf` y la portada muestra la marca en el navegador local.
+- **Confirmado:** no hay “SKU(s)” en el texto de la interfaz. Quité el campo `sku` heredado no utilizado y cambié en el texto visible “referencias” e “inventario” por “productos” y “catálogo” cuando hablaban de los artículos.
+- **Pendiente:** el logo oficial disponible en los PDF está rasterizado y borroso a tamaño de encabezado. Renderizarlo a más DPI no recupera detalle; no lo redibujé ni alteré. El paso queda parcial hasta recibir una fuente vectorial o de mayor resolución.
+- **Comprobado:** `vite build` y `tsc --noEmit` pasan; los textos actualizados aparecen en `http://127.0.0.1:3003/`. La revisión visual fue del encabezado y el catálogo, no de todos los tamaños.
+
 ## Respuestas confirmadas y datos aún pendientes
 
 - **Ya confirmado:** no se incluyen reglas de crédito aún; los logos recibidos se pueden mostrar; teléfono/dirección/email son vigentes; no Maps; mantener Contacto; sin testimonios ni misión/visión; 10 por página y sin fotos.
@@ -60,5 +69,5 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 - **Confirmado:** el cotizador permite agregar, incrementar, reducir y quitar productos, editar cantidades, vaciar la lista y prepara un mensaje a WhatsApp con el número confirmado. Abrir WhatsApp no envía automáticamente el mensaje. Nombre, empresa, ciudad y notas son campos opcionales; la ciudad empieza en Valledupar. La lista de municipios y la frase de flete del ejemplo aún no tienen respaldo confirmado.
 - **Confirmado:** el formulario de Contacto exige nombre, teléfono, ciudad y consulta; empresa es opcional. Prepara un segundo mensaje a WhatsApp. No se observó política de privacidad ni casilla de aceptación.
 - **Confirmado:** crédito quedó como consulta por WhatsApp, sin captura de datos ni simulador. La pantalla Contacto permanece. Marcas tiene pantalla separada en una cuadrícula estática, no carrusel ni fichas emergentes.
-- **Confirmado:** una búsqueda textual del código no encontró “SKU(s)”, PBX ni enlaces de Maps en la interfaz; `sku` solo permanece como campo opcional legado en el tipo TypeScript. El teléfono, correo y dirección actuales están en `src/data/mockData.ts`.
+- **Confirmado:** la revisión inicial no encontró “SKU(s)”, PBX ni enlaces de Maps en la interfaz. En el paso 2 también se retiró el campo `sku` opcional que quedaba sin uso en el tipo TypeScript. El teléfono, correo y dirección están en `src/data/mockData.ts`.
 - **Confirmado:** la primera instancia local en 3002 no aceptaba conexiones del navegador. Vite se inició en `http://127.0.0.1:3003/`; la portada quedó visible en la pestaña local. No se hicieron cambios en los archivos del sitio.

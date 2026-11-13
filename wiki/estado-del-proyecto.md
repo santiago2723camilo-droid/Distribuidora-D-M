@@ -79,3 +79,9 @@ Continuar con la revisión del desbordamiento de página a 320 px y validar los 
 - **Confirmado:** Vite está ejecutándose en `http://127.0.0.1:3003/` y la página abrió en el navegador. La primera instancia, en 3002, no aceptaba conexiones y se detuvo.
 - **Revisado visualmente:** la portada muestra el logo D&M, el eslogan «D&M, Soluciones para cada necesidad», los botones principales y la foto ilustrativa.
 - **Pendiente:** revisar catálogo, paginación, formularios y diseño móvil. No se hizo push a GitHub; el usuario pidió vista local.
+
+## Paso 2 del plan recibido · Logo y palabras claras
+
+- **Confirmado:** el texto visible ya no usa “SKU”, “referencias” ni “inventario” para identificar productos; usa “productos” y “catálogo”. Se eliminó el campo `sku` legado no utilizado.
+- **Pendiente:** conseguir el logo oficial vectorial o de alta resolución. Los PDFs disponibles contienen una versión rasterizada borrosa; la copia actual sigue en el encabezado sin alteraciones.
+- **Confirmado:** `vite build` y TypeScript terminaron correctamente. El navegador local mostró los textos actualizados y el logo actual; todavía no se probó en distintos tamaños.

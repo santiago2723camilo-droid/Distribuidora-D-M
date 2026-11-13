@@ -208,7 +208,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
           {/* Notas o requerimientos especiales */}
           <div>
             <label className="block text-xs font-medium text-[#444650] mb-1">
-              3. Notas o referencias adicionales que no ves en el listado
+              3. Notas o productos que no aparecen en el catálogo
             </label>
             <textarea
               rows={2}

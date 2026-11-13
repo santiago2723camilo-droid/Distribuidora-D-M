@@ -82,7 +82,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                       Catálogo de productos
                     </p>
                     <p className="font-['Montserrat'] text-sm sm:text-base font-bold text-[#001b4b]">
-                      Consulta las referencias
+                      Consulta productos
                     </p>
                   </div>
                   <div className="w-10 h-10 rounded-full bg-[#e5eeff] flex items-center justify-center text-[#001b4b]">
@@ -106,7 +106,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 </div>
                 <div>
                   <h3 className="font-['Montserrat'] text-sm font-bold text-[#001b4b]">Catálogo amplio</h3>
-                  <p className="text-xs text-[#444650]">Referencias para consultar</p>
+                  <p className="text-xs text-[#444650]">Productos en el catálogo</p>
                 </div>
               </div>
 
@@ -168,7 +168,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 Explora las categorías del catálogo
               </h2>
               <p className="text-sm text-[#444650] mt-2">
-                Revisa el inventario por categoría y solicita la información de precio y disponibilidad vigente.
+                Explora los productos por categoría y consulta precio y disponibilidad al cotizar.
               </p>
             </div>
             <div className="flex items-center gap-3">
@@ -195,7 +195,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   Revisa los productos de esta categoría
                 </p>
                 <p className="text-xs text-[#444650] mt-3 leading-relaxed">
-                  Consulta las referencias eléctricas incluidas en el inventario.
+                  Explora los productos eléctricos incluidos en el catálogo.
                 </p>
 
                 <div className="mt-4 pt-3 border-t border-[#f8f9ff] flex flex-wrap gap-1.5 text-[11px] text-[#444650]">
@@ -229,7 +229,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   Revisa los productos de esta categoría
                 </p>
                 <p className="text-xs text-[#444650] mt-3 leading-relaxed">
-                  Consulta las referencias de construcción y ferretería incluidas en el inventario.
+                  Explora los productos de construcción y ferretería incluidos en el catálogo.
                 </p>
 
                 <div className="mt-4 pt-3 border-t border-[#f8f9ff] flex flex-wrap gap-1.5 text-[11px] text-[#444650]">
@@ -263,7 +263,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   Revisa los productos de esta categoría
                 </p>
                 <p className="text-xs text-[#444650] mt-3 leading-relaxed">
-                  Consulta las referencias sanitarias incluidas en el inventario.
+                  Explora los productos sanitarios incluidos en el catálogo.
                 </p>
 
                 <div className="mt-4 pt-3 border-t border-[#f8f9ff] flex flex-wrap gap-1.5 text-[11px] text-[#444650]">
@@ -337,7 +337,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               </div>
               <h3 className="font-['Montserrat'] text-base font-bold text-white mb-2">Distribución</h3>
               <p className="text-xs sm:text-sm text-[#dae2ff] leading-relaxed">
-                Revisa las referencias y solicita información
+                Revisa los productos del catálogo y solicita información
               </p>
             </div>
           </div>
@@ -366,7 +366,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               Cómo comprar en 3 pasos
             </h2>
             <p className="text-sm text-[#444650] mt-2">
-              Envía tu solicitud por WhatsApp o consulta las referencias en el catálogo.
+              Envía tu solicitud por WhatsApp o busca productos en el catálogo.
             </p>
           </div>
 
@@ -381,7 +381,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <h3 className="font-['Montserrat'] text-lg text-[#001b4b] font-bold">Escríbenos por WhatsApp</h3>
               </div>
               <p className="text-xs sm:text-sm text-[#444650] leading-relaxed">
-                Envía tu listado de materiales o la referencia que necesitas. Nuestro equipo comercial recibe tu consulta por WhatsApp.
+                Envía tu listado de materiales o indica qué producto necesitas. Nuestro equipo comercial recibe tu consulta por WhatsApp.
               </p>
             </div>
 
