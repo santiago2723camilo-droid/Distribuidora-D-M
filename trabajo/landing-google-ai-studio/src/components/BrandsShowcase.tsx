@@ -62,7 +62,7 @@ export const BrandsShowcase: React.FC = () => {
 
   return (
     <>
-      <section className="w-full border-b border-[#dae3f4] bg-[#e5eeff] py-14 lg:py-16" id="marcas" aria-labelledby="brands-title">
+      <section className="w-full border-b border-[#dae3f4] bg-white py-14 lg:py-16" id="marcas" aria-labelledby="brands-title">
         <div className="mx-auto max-w-[1320px] px-4 lg:px-8">
           <div className="mx-auto mb-8 max-w-2xl text-center">
             <span className="text-xs font-bold uppercase tracking-wider text-[#fc820c]">Marcas compartidas</span>
@@ -119,7 +119,7 @@ export const BrandsShowcase: React.FC = () => {
             >
               <span aria-hidden="true" className="material-symbols-outlined">close</span>
             </button>
-            <div className="flex min-h-36 items-center justify-center rounded-xl bg-[#f8f9ff] p-6">
+            <div className="flex min-h-36 items-center justify-center rounded-xl bg-white p-6">
               <img src={selectedBrand.logo} alt={`Logo ${selectedBrand.name}`} className="max-h-24 max-w-full object-contain" />
             </div>
             <h2 id="brand-dialog-title" className="mt-5 font-['Montserrat'] text-xl font-bold text-[#001b4b]">{selectedBrand.name}</h2>

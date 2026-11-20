@@ -130,3 +130,12 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - Se avanzó con el paso 7: los 11 logos autorizados aparecen en carrusel lento y pausable, con modales que se abren al seleccionar una marca, se cierran con Escape y gestionan el foco; el movimiento respeta la preferencia de movimiento reducido. Se retiró la pantalla independiente de aliados y «Marcas» navega a la sección de portada.
 - En la vista local se comprobó abrir el modal de Cellux, cerrarlo con Escape y pausar/reanudar el carrusel. Las comprobaciones vite build, tsc --noEmit y git diff --check pasaron; se conserva la advertencia conocida de __dirname. No se hizo una revisión visual comparativa móvil/escritorio en esta interacción; no se publicó.
 - El paso 7 queda parcial: no hay fichas detalladas de todas las marcas en Docs/; se muestran solo logo y nombre y se informa de la falta de ficha. Para cerrarlo: entregar fichas o confirmar que basta esta presentación.
+
+## [2026-11-20] marcas | Fondo blanco
+
+- A petición del usuario, se crearon 11 PNG derivados con fondo exterior blanco a partir de las copias JPEG de marca. Los originales de Docs/ y las copias previas se conservaron intactos; se mantuvieron los campos de color que forman parte de los logos.
+- Se cambiaron las rutas del carrusel y de los modales para usar los PNG; la sección y la zona de imagen del modal usan fondo blanco. Los 11 derivados se revisaron visualmente. Compilación pendiente al registrar esta entrada.
+
+## [2026-11-20] marcas | Verificación de fondos
+
+- Vite build, TypeScript y `git diff --check` pasaron después de conectar los PNG. Las 11 rutas de `mockData.ts` existen y las esquinas de los archivos generados son blancas. Se mantiene la advertencia conocida de compatibilidad sobre `__dirname` en `vite.config.ts`.

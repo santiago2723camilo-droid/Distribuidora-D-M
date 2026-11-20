@@ -2,7 +2,7 @@
 tipo: catálogo-de-fuentes
 estado: vigente
 creado: 2026-10-28
-actualizado: 2026-11-06
+actualizado: 2026-11-20
 tags: [fuentes, activos, docs]
 fuentes: ["Docs/"]
 ---
@@ -29,6 +29,7 @@ fuentes: ["Docs/"]
 | `Docs/ZAFIRO.jpeg` | Identidad de marca | Logotipo Zafiro Luxmetric; JPEG revisado visualmente. Fecha: 2026-10-28. | Se muestra por autorización del usuario; la relación comercial actual no se describe. |
 | `../../inventario 04-11.xlsx` | Inventario de productos | Hoja `catalogo_productos_1 (53)`, 1.494 filas y columnas de descripción, stock y precio; archivo recibido el 2026-11-06. | Fuente externa original, no modificada ni copiada al repositorio. Se integraron 1.492 nombres únicos (2 descripciones repetidas) en `trabajo/landing-google-ai-studio/src/data/inventoryCatalog.json`; stock y precios quedaron fuera del sitio. Clasificación provisional inferida por nombre. |
 | `Docs/{CELLUX,DEWALT,FERMETAL,JCTOP,JS TOOLS,RESTREPO,RIOPLAST,TOTAL,UNIFER,VATIO,ZAFIRO}.jpeg` → `trabajo/landing-google-ai-studio/public/brand/partners/` | Identidad visual / logos de marca | 11 JPEG revisados visualmente con anterioridad; originales conservados en `Docs/`. | El usuario autorizó mostrar todos los logos enviados. Copias técnicas locales; en la página se muestran logo y nombre, sin fichas de garantía o certificación. |
+| `Docs/{CELLUX,DEWALT,FERMETAL,JCTOP,JS TOOLS,RESTREPO,RIOPLAST,TOTAL,UNIFER,VATIO,ZAFIRO}.jpeg` → `trabajo/landing-google-ai-studio/public/brand/partners-white/*.png` (derivados de `public/brand/partners/*.jpeg`) | Identidad visual / versiones con fondo blanco | 11 PNG preparados el 2026-11-20 a petición del usuario. Se normalizó el fondo exterior; los originales de `Docs/` y las copias JPEG previas se conservaron intactos. | Uso actual en carrusel y modales. Los campos de color que forman parte del diseño del logo se conservaron. Revisados visualmente; ver [[decisiones]]. |
 
 ## Diferencias y límites de revisión
 

@@ -78,3 +78,9 @@ fuentes: ["AGENTS.md", "Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/LOGO DIST
 - **Implementación del paso 7:** los 11 logos ya autorizados se muestran en un carrusel pausable con modales accesibles; se quitó la página independiente de aliados y el menú «Marcas» lleva a la sección de portada.
 - **Límite de fuente:** `Docs/` no contiene fichas detalladas para todas las marcas. Los modales no afirman datos comerciales, garantías ni certificaciones. El paso 7 queda parcial hasta recibir fuentes para las fichas o confirmar que basta con logo y nombre.
 - **Fuente:** indicación del usuario del 2026-11-20; `Docs/` inventariado en [[documentos-y-activos]]; ejecución en `trabajo/landing-google-ai-studio/src/components/BrandsShowcase.tsx`.
+
+## 2026-11-20 — Fondo blanco para los logos
+
+- **Decisión confirmada por el usuario:** dejar los logos sobre fondo blanco.
+- **Implementación:** se crearon PNG derivados con fondos exteriores blancos para los 11 logos y se actualizaron el carrusel y los modales para usarlos. Los originales de `Docs/` y las copias JPEG previas permanecen intactos. Se conservaron los campos de color que forman parte del diseño de cada logotipo.
+- **Fuente:** petición del usuario del 2026-11-20; catálogo de activos en [[documentos-y-activos]].

@@ -43,6 +43,7 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 - **Confirmado (2026-11-20):** el catálogo muestra 10 productos por página; con 1.492 productos hay 150 páginas. La primera muestra 1–10 y la última 1.491–1.492; el buscador y la categoría permanecen al avanzar, y el producto agregado se conserva en la cotización. Una búsqueda de abrazaderas industriales muestra 2 resultados y vuelve a la página 1.
 - **Confirmado (2026-11-20):** revisión visual de Nosotros y del catálogo en escritorio a 1.280 px y móvil a 375 px; el ancho del documento no desborda a 320 ni a 375 px.
 - **Confirmado (2026-11-20):** paso 7 parcial: carrusel de 11 logos, opción para pausar, modal de marca que cierra con Escape y navegación «Marcas» en la portada. Se comprobó el comportamiento del modal y pausa en navegador local. Falta ficha fuente por marca; no se probó el diseño visual del carrusel en varios tamaños.
+- **Confirmado (2026-11-20):** a petición del usuario se prepararon 11 PNG con fondos exteriores blancos para los logos; se revisaron visualmente y se conservan intactos los originales de `Docs/` y las copias JPEG de trabajo anteriores. Vite build, TypeScript, `git diff --check` y existencia de las 11 rutas pasaron; se mantiene la advertencia conocida de `__dirname`.
 - **Pendiente:** los scripts `npm run` siguen teniendo el problema conocido con `&` en la ruta de Windows; los binarios directos funcionan. Enlaces y recepción de formularios no se probaron porque el cambio se limitó al encabezado.
 
 ## Próximo paso
