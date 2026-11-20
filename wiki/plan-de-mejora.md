@@ -116,3 +116,11 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 - **Aplicado y revisado:** la respuesta de crédito en preguntas frecuentes dice que las condiciones pueden cambiar, invita a consultar por WhatsApp la información vigente y aclara que la solicitud está sujeta a revisión. No ofrece días exactos, plazos, cupos ni aprobación. El modal de crédito también indica que esta página no calcula cupos ni confirma plazos o aprobaciones.
 - **Otras respuestas revisadas:** catálogo explica búsqueda y categorías; cotización indica que precio y disponibilidad se confirman al atender la solicitud. Coinciden con las funciones observadas en la página.
 - **Resultado:** el paso 8 ya estaba aplicado por instrucciones anteriores; se confirma terminado sin cambios de código. La revisión fue por inspección del código y del inventario documental, no una prueba visual nueva.
+
+## Paso 9 del plan recibido · Carrito y cotizador
+
+- **Aplicado localmente:** el pie del cotizador adapta la disposición de sus botones a móvil para que no salgan del recuadro. En anchos pequeños, cada producto muestra su nombre arriba de los controles.
+- **Pruebas funcionales:** se agregaron tres artículos de distintas categorías; se cambió la cantidad del panel LED, se eliminó la abrazadera y se vació el carrito. La lista restante mostró el panel con cantidad 2 y el codo con cantidad 1.
+- **Mensaje revisado por código:** el texto usa exactamente el nombre y cantidad actuales de cada artículo y el destino `COMPANY_PHONE` confirmado. No se abrió WhatsApp ni se enviaron datos, así que la recepción no se probó.
+- **Vista local:** revisión visual a 320, 390 y 703 px; el botón cabe dentro del modal. Al terminar, se vació el carrito y cerró el modal.
+- **Validación:** Vite build, TypeScript y `git diff --check` pasaron; sigue el aviso conocido de `__dirname`.

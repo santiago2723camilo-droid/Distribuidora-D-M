@@ -48,7 +48,15 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 
 ## Próximo paso
 
-El paso 6 original (muestra de tarjetas de categoría con imágenes) se omitió por decisión del usuario; el catálogo seguirá sin fotos. El paso 7 está aplicado parcialmente: carrusel y modales de logos, con fichas de aliados aún pendientes por falta de fuentes. El paso 8 (sin testimonios y crédito sujeto a consulta/revisión) ya está aplicado y se revisó en el código; el siguiente paso del plan es el 9, probar y corregir el carrito/cotizador. No se han confirmado relaciones comerciales, certificaciones ni garantías para todos los logos.
+El paso 6 original (muestra de tarjetas de categoría con imágenes) se omitió por decisión del usuario; el catálogo seguirá sin fotos. El paso 7 está aplicado parcialmente: carrusel y modales de logos, con fichas de aliados aún pendientes por falta de fuentes. El paso 8 (sin testimonios y crédito sujeto a consulta/revisión) ya está aplicado. El paso 9 del plan (carrito y cotizador) se corrigió y probó localmente; el siguiente es el paso 10, simulación de crédito, que debe seguir como consulta por WhatsApp mientras no existan reglas aprobadas. No se han confirmado relaciones comerciales, certificaciones ni garantías para todos los logos.
+
+## Paso 9 del plan recibido · Carrito y cotizador
+
+- **Aplicado localmente:** el pie del cotizador reorganiza sus botones para mantenerlos dentro del modal en pantallas estrechas. En el celular, cada producto muestra el nombre completo arriba de sus controles de cantidad.
+- **Prueba funcional en navegador local:** se agregaron una abrazadera, un panel LED y un codo sanitario; se aumentó y redujo la cantidad del panel, se quitó la abrazadera y se vació la lista. El panel quedó en cantidad 2 y el codo en cantidad 1 antes de vaciar.
+- **Mensaje revisado en código:** cada línea se arma desde los mismos elementos vigentes del carrito (`item.product.name` y `item.quantity`) y abre el número confirmado en `COMPANY_PHONE`. No se abrió WhatsApp ni se envió información; la recepción real sigue pendiente.
+- **Revisión visual:** cotizador con varios productos en navegador local a 320, 390 y 703 px; el botón permaneció dentro del modal y los nombres se leen mejor en celular. Se dejó el carrito vacío y se cerró el modal.
+- **Comprobaciones:** build de Vite, TypeScript y `git diff --check` pasaron. Vite mantiene el aviso conocido de `__dirname`.
 
 ## Paso 3 del plan recibido · Pie de página y contacto
 

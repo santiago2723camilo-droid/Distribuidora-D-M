@@ -167,14 +167,14 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                 {cart.map((item) => (
                   <div
                     key={item.product.id}
-                    className="p-3 bg-white rounded-xl border border-[#dae3f4] flex items-center justify-between gap-3 shadow-xs hover:border-[#12306b]/40 transition-colors"
+                    className="p-3 bg-white rounded-xl border border-[#dae3f4] flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 shadow-xs hover:border-[#12306b]/40 transition-colors"
                   >
-                    <div className="flex-1 min-w-0">
-                      <p className="text-xs font-bold text-[#001b4b] truncate">{item.product.name}</p>
+                    <div className="w-full sm:flex-1 min-w-0">
+                      <p className="text-xs font-bold text-[#001b4b] break-words sm:truncate">{item.product.name}</p>
                       <p className="text-[11px] text-[#747781]">{item.product.categoryLabel}</p>
                     </div>
 
-                    <div className="flex items-center gap-2 flex-shrink-0">
+                    <div className="flex items-center justify-between sm:justify-start gap-2 flex-shrink-0">
                       <div className="flex items-center border border-[#c4c6d1] rounded-lg overflow-hidden bg-[#f8f9ff]">
                         <button
                           onClick={() => onUpdateQuantity(item.product.id, Math.max(1, item.quantity - 1))}
@@ -221,21 +221,21 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
         </div>
 
         {/* Footer Actions */}
-        <div className="p-4 bg-[#f8f9ff] border-t border-[#dae3f4] flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-[#747781] text-center sm:text-left">
+        <div className="p-4 bg-[#f8f9ff] border-t border-[#dae3f4] flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3">
+          <p className="w-full lg:flex-1 text-xs text-[#747781] text-center lg:text-left">
             Tu solicitud se abrirá en WhatsApp para que la revises y la envíes.
           </p>
 
-          <div className="flex items-center gap-2 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-stretch gap-2 w-full lg:w-auto">
             <button
               onClick={onClose}
-              className="flex-1 sm:flex-none px-4 py-2 text-xs font-semibold text-[#444650] hover:bg-[#e5eeff] rounded-lg transition-colors cursor-pointer"
+              className="min-w-0 flex-1 lg:flex-none px-4 py-2 text-xs font-semibold text-[#444650] hover:bg-[#e5eeff] rounded-lg transition-colors cursor-pointer"
             >
               Seguir explorando
             </button>
             <button
               onClick={handleSendWhatsApp}
-              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-[#fc820c] hover:bg-[#964900] text-white font-['Inter'] text-sm font-bold px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer whitespace-nowrap active:scale-95"
+              className="min-w-0 flex-1 lg:flex-none inline-flex items-center justify-center gap-2 bg-[#fc820c] hover:bg-[#964900] text-white font-['Inter'] text-sm font-bold px-4 lg:px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer whitespace-nowrap active:scale-95"
             >
               <span className="material-symbols-outlined text-[20px]">chat</span>
               <span>Enviar a WhatsApp</span>

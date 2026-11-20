@@ -145,3 +145,10 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - Se revisaron testimonios, calificaciones y preguntas de crédito en el código y los materiales catalogados. No hay testimonios ni estrellas en la landing ni testimonios reales calificados en `Docs/`.
 - La respuesta de crédito ya explica que las condiciones pueden cambiar, dirige a consultar por WhatsApp la información vigente y aclara que toda solicitud queda sujeta a revisión. No promete tiempos, cupos ni aprobación; el modal coincide.
 - Paso 8 confirmado como ya aplicado; no se necesitó cambiar el código. La revisión fue de texto/código, sin nueva comprobación visual. Próximo paso original: 9, cotizador; ver [[plan-de-mejora]] y [[pendientes]].
+
+## [2026-11-20] plan | Paso 9, carrito y cotizador
+
+- Se ajustó `QuoteModal.tsx`: las acciones del pie ahora se acomodan en móvil sin salirse del modal; en tarjetas de producto pequeñas, el nombre queda sobre los controles y ya no se comprime a unas pocas letras.
+- En la vista local se agregaron tres productos de las categorías ferretería, eléctricos y sanitarios. Se aumentó y redujo una cantidad, se quitó un producto y se vació la lista. A 320, 390 y 703 px, el botón de WhatsApp quedó dentro del modal.
+- Se revisó el generador del mensaje en código: toma nombre y cantidad directamente de cada producto actual del carrito y usa el teléfono confirmado. No se abrió WhatsApp ni se transmitieron datos; queda pendiente la recepción real.
+- Vite build y TypeScript pasaron; `git diff --check` no encontró errores de whitespace. Vite conserva el aviso de `__dirname`. Siguiente paso original: 10, crédito; sin reglas estables, mantener consulta por WhatsApp y no calcular cupos.
