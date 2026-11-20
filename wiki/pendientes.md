@@ -16,6 +16,7 @@ fuentes: ["trabajo/landing-google-ai-studio/src/data/mockData.ts", "Docs/"]
 - **Alta:** resolver el límite de ruta con `&` para que `npm run` funcione como usuario final, o usar la invocación directa de Node documentada en `AGENTS.md`.
 - **Paso 6 del plan:** omitido por decisión del usuario; no se usarán imágenes en el catálogo ni en la muestra de tarjetas por categoría. Ver [[plan-de-mejora]] y [[empresa]].
 - **Paso 7 del plan (parcial):** faltan fichas detalladas de las marcas en `Docs/`. El carrusel/modal usa solo los 11 logos autorizados y sus nombres; no afirma garantías ni relaciones comerciales vigentes. Ver [[documentos-y-activos]] y [[plan-de-mejora]].
+- **Paso 9 del plan:** probar cambios de cantidad, eliminación de productos, exactitud del mensaje de WhatsApp y uso del cotizador desde móvil. Ver [[plan-de-mejora]].
 - **Alta:** las condiciones de crédito cambian y no están completas; no reactivar una simulación hasta recibir una regla aprobada.
 - **Media:** la clasificación del inventario es provisional y se infirió de los nombres de producto; confirmar los casos que la empresa quiera mover a otra categoría.
 - **Media:** stock y precios del archivo no se muestran en la página; confirmar explícitamente si desean publicar alguno después.

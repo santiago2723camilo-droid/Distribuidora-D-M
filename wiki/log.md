@@ -139,3 +139,9 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 ## [2026-11-20] marcas | Verificación de fondos
 
 - Vite build, TypeScript y `git diff --check` pasaron después de conectar los PNG. Las 11 rutas de `mockData.ts` existen y las esquinas de los archivos generados son blancas. Se mantiene la advertencia conocida de compatibilidad sobre `__dirname` en `vite.config.ts`.
+
+## [2026-11-20] plan | Paso 8 revisado
+
+- Se revisaron testimonios, calificaciones y preguntas de crédito en el código y los materiales catalogados. No hay testimonios ni estrellas en la landing ni testimonios reales calificados en `Docs/`.
+- La respuesta de crédito ya explica que las condiciones pueden cambiar, dirige a consultar por WhatsApp la información vigente y aclara que toda solicitud queda sujeta a revisión. No promete tiempos, cupos ni aprobación; el modal coincide.
+- Paso 8 confirmado como ya aplicado; no se necesitó cambiar el código. La revisión fue de texto/código, sin nueva comprobación visual. Próximo paso original: 9, cotizador; ver [[plan-de-mejora]] y [[pendientes]].

@@ -48,7 +48,7 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 
 ## Próximo paso
 
-El paso 6 original (muestra de tarjetas de categoría con imágenes) se omitió por decisión del usuario; el catálogo seguirá sin fotos. Se avanzó al paso 7: carrusel y modales de logos están implementados localmente. El paso 7 queda parcial hasta recibir fichas detalladas de aliados en `Docs/` o aceptar que los modales muestren solo logo y nombre. No se han confirmado relaciones comerciales, certificaciones ni garantías para todos los logos.
+El paso 6 original (muestra de tarjetas de categoría con imágenes) se omitió por decisión del usuario; el catálogo seguirá sin fotos. El paso 7 está aplicado parcialmente: carrusel y modales de logos, con fichas de aliados aún pendientes por falta de fuentes. El paso 8 (sin testimonios y crédito sujeto a consulta/revisión) ya está aplicado y se revisó en el código; el siguiente paso del plan es el 9, probar y corregir el carrito/cotizador. No se han confirmado relaciones comerciales, certificaciones ni garantías para todos los logos.
 
 ## Paso 3 del plan recibido · Pie de página y contacto
 

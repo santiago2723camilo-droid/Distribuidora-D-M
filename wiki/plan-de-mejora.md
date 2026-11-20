@@ -109,3 +109,10 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 - **Aplicado localmente:** se retiró la pantalla aparte de aliados. La opción «Marcas» del menú lleva a la sección de la portada.
 - **Parcial por falta de fuente:** los modales muestran el logo y el nombre; aclaran que no hay una ficha adicional en los documentos disponibles. `Docs/` no respalda detalles de actividad, garantía o certificación para cada marca. No se inventaron.
 - **Comprobado:** build de Vite y TypeScript pasan. En la vista local se abrió el modal de Cellux, se cerró con Escape y se pausó/reanudó el carrusel. Ver [[documentos-y-activos]] y [[pendientes]].
+
+## Paso 8 del plan recibido · Testimonios y preguntas de crédito
+
+- **Aplicado previamente y revisado ahora:** no hay sección ni texto de testimonios, estrellas o calificaciones en el código de la landing. En `Docs/` no hay testimonios con una calificación que se puedan publicar; no se añadieron.
+- **Aplicado y revisado:** la respuesta de crédito en preguntas frecuentes dice que las condiciones pueden cambiar, invita a consultar por WhatsApp la información vigente y aclara que la solicitud está sujeta a revisión. No ofrece días exactos, plazos, cupos ni aprobación. El modal de crédito también indica que esta página no calcula cupos ni confirma plazos o aprobaciones.
+- **Otras respuestas revisadas:** catálogo explica búsqueda y categorías; cotización indica que precio y disponibilidad se confirman al atender la solicitud. Coinciden con las funciones observadas en la página.
+- **Resultado:** el paso 8 ya estaba aplicado por instrucciones anteriores; se confirma terminado sin cambios de código. La revisión fue por inspección del código y del inventario documental, no una prueba visual nueva.
