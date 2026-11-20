@@ -48,7 +48,7 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 
 ## Próximo paso
 
-El paso 6 original (muestra de tarjetas de categoría con imágenes) se omitió por decisión del usuario; el catálogo seguirá sin fotos. El paso 7 está aplicado parcialmente: carrusel y modales de logos, con fichas de aliados aún pendientes por falta de fuentes. El paso 8 (sin testimonios y crédito sujeto a consulta/revisión) ya está aplicado. El paso 9 del plan (carrito y cotizador) se corrigió y probó localmente; el siguiente es el paso 10, simulación de crédito, que debe seguir como consulta por WhatsApp mientras no existan reglas aprobadas. No se han confirmado relaciones comerciales, certificaciones ni garantías para todos los logos.
+El paso 6 original (muestra de tarjetas de categoría con imágenes) se omitió por decisión del usuario; el catálogo seguirá sin fotos. El paso 7 está aplicado parcialmente: carrusel y modales de logos, con fichas de aliados aún pendientes por falta de fuentes. Los pasos 8 (testimonios/crédito) y 9 (cotizador) están aplicados y comprobados dentro de sus límites. El paso 10 deja una consulta de crédito por WhatsApp con texto libre; el siguiente es el paso 11, pulido profesional, sin cambiar contenido ni identidad aprobados. No se han confirmado relaciones comerciales, certificaciones ni garantías para todos los logos.
 
 ## Paso 9 del plan recibido · Carrito y cotizador
 
@@ -57,6 +57,14 @@ El paso 6 original (muestra de tarjetas de categoría con imágenes) se omitió 
 - **Mensaje revisado en código:** cada línea se arma desde los mismos elementos vigentes del carrito (`item.product.name` y `item.quantity`) y abre el número confirmado en `COMPANY_PHONE`. No se abrió WhatsApp ni se envió información; la recepción real sigue pendiente.
 - **Revisión visual:** cotizador con varios productos en navegador local a 320, 390 y 703 px; el botón permaneció dentro del modal y los nombres se leen mejor en celular. Se dejó el carrito vacío y se cerró el modal.
 - **Comprobaciones:** build de Vite, TypeScript y `git diff --check` pasaron. Vite mantiene el aviso conocido de `__dirname`.
+
+## Paso 10 del plan recibido · Simulación de crédito
+
+- **Fuente y límite:** el usuario confirmó que las condiciones cambian y siguen incompletas; la wiki no registra reglas ni variables aprobadas para calcular cupos, plazos o aprobación. No se añadió una simulación.
+- **Aplicado localmente:** el modal explica que las condiciones deben consultarse, ofrece una pregunta opcional y arma un mensaje para el WhatsApp confirmado. No guarda ni envía el texto: abre el borrador en WhatsApp para revisión y envío de la persona.
+- **Tres casos probados en navegador, sin transmitir mensajes:** (1) campo vacío → consulta general de condiciones vigentes; (2) pregunta por cupo → pregunta incluida literalmente, sin calcular un monto; (3) pregunta por plazo y revisión → pregunta incluida literalmente, sin prometer un plazo ni una aprobación.
+- **Revisión visual:** modal a 375 y 320 px; el botón queda dentro del recuadro. La prueba no abrió WhatsApp ni verificó recepción.
+- **Comprobaciones:** build de Vite, TypeScript y `git diff --check` pasan. Vite conserva el aviso conocido sobre `__dirname`.
 
 ## Paso 3 del plan recibido · Pie de página y contacto
 

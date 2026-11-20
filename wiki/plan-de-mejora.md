@@ -124,3 +124,10 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 - **Mensaje revisado por código:** el texto usa exactamente el nombre y cantidad actuales de cada artículo y el destino `COMPANY_PHONE` confirmado. No se abrió WhatsApp ni se enviaron datos, así que la recepción no se probó.
 - **Vista local:** revisión visual a 320, 390 y 703 px; el botón cabe dentro del modal. Al terminar, se vació el carrito y cerró el modal.
 - **Validación:** Vite build, TypeScript y `git diff --check` pasaron; sigue el aviso conocido de `__dirname`.
+
+## Paso 10 del plan recibido · Simulación de crédito
+
+- **Fuente:** el usuario dijo que las condiciones no están completas y cambian constantemente; [[empresa]] registra que no hay reglas para simulación. Se conserva el límite de no calcular cupos, términos ni aprobar solicitudes.
+- **Aplicado localmente:** se añadió un campo opcional para describir la consulta. El enlace arma un borrador al WhatsApp de `COMPANY_PHONE`; no guarda la respuesta ni transmite datos por sí mismo. El texto aclara que condiciones/plazos/aprobaciones no se calculan ni confirman en la página.
+- **Tres casos verificados leyendo el borrador preparado (sin abrir WhatsApp):** campo vacío produce una consulta general; pregunta por cupo se incluye sin monto calculado; pregunta por plazo y revisión se incluye sin plazo prometido ni aprobación.
+- **Visual y técnico:** modal revisado a 375 y 320 px; botón dentro del recuadro. Vite build, TypeScript y `git diff --check` pasan.

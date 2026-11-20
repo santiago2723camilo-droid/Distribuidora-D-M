@@ -17,7 +17,7 @@ fuentes: ["trabajo/landing-google-ai-studio/src/data/mockData.ts", "Docs/"]
 - **Paso 6 del plan:** omitido por decisión del usuario; no se usarán imágenes en el catálogo ni en la muestra de tarjetas por categoría. Ver [[plan-de-mejora]] y [[empresa]].
 - **Paso 7 del plan (parcial):** faltan fichas detalladas de las marcas en `Docs/`. El carrusel/modal usa solo los 11 logos autorizados y sus nombres; no afirma garantías ni relaciones comerciales vigentes. Ver [[documentos-y-activos]] y [[plan-de-mejora]].
 - **Paso 9 del plan:** carrito y cotizador probados localmente, y botón ajustado para móvil. Pendiente queda verificar recepción real en WhatsApp cuando haya un canal de prueba autorizado; no se envió ningún mensaje. Ver [[plan-de-mejora]] y [[estado-del-proyecto]].
-- **Paso 10 del plan:** no hay reglas completas y estables para simular crédito; conservar consulta por WhatsApp y no inventar cálculos. Ver [[empresa]] y [[plan-de-mejora]].
+- **Paso 10 del plan:** el sitio ofrece consulta por WhatsApp con campo libre y no simula cupos ni condiciones. Sigue pendiente recibir reglas completas y aprobadas si la empresa decide habilitar una simulación futura. Ver [[empresa]], [[plan-de-mejora]] y [[estado-del-proyecto]].
 - **Alta:** las condiciones de crédito cambian y no están completas; no reactivar una simulación hasta recibir una regla aprobada.
 - **Media:** la clasificación del inventario es provisional y se infirió de los nombres de producto; confirmar los casos que la empresa quiera mover a otra categoría.
 - **Media:** stock y precios del archivo no se muestran en la página; confirmar explícitamente si desean publicar alguno después.

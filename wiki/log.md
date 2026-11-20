@@ -157,3 +157,10 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 
 - Se creó el commit `0a947cc` (`Ajusta el cotizador para móvil`) con el componente del cotizador y las páginas de seguimiento de la wiki.
 - Tras revisar el contenido incluido y excluir la carpeta `Plan De Mejora/` que permanece sin seguimiento, se subió `main` al remoto autorizado `origin`. La rama quedó sincronizada. Esto guarda código en GitHub; no despliega el sitio público.
+
+## [2026-11-20] plan | Paso 10, consulta de crédito
+
+- Se revisó el modal y la información vigente: las condiciones cambian y no hay reglas aprobadas para una simulación. Se mantuvo el límite de no calcular cupos, plazos o aprobaciones.
+- El modal ahora permite escribir una pregunta opcional que se agrega al mensaje preparado para WhatsApp. La página no guarda ni envía el mensaje; la persona lo revisa y lo envía desde WhatsApp.
+- Se probaron tres borradores: consulta general, pregunta por cupo y pregunta por plazo/revisión. Se revisó visualmente el modal a 375 y 320 px; no se abrió WhatsApp.
+- Vite build, TypeScript y `git diff --check` pasaron; sigue el aviso conocido de `__dirname`. Próximo paso del archivo original: paso 11, pulido profesional.
