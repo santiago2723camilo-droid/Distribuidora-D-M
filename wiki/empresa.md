@@ -2,7 +2,7 @@
 tipo: empresa
 estado: vigente
 creado: 2026-10-28
-actualizado: 2026-11-13
+actualizado: 2026-11-20
 tags: [empresa, distribuidora-dym]
 fuentes: ["Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/DISTRIBUIDORA D&M.pdf", "Docs/LOGO DISTRIBUIDORA DYM.pdf", "../../inventario 04-11.xlsx"]
 ---
@@ -18,7 +18,8 @@ fuentes: ["Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/DISTRIBUIDORA D&M.pdf"
 
 ## Misión y visión
 
-- **Pendiente:** no se encontraron textos oficiales de misión y visión en el DOCX empresarial revisado (`Docs/DISTRIBUIDORA_DYM worddd (1).docx`). El documento sí contiene una descripción de la empresa y una sección de valores; esos textos no se reinterpretan como misión ni visión. La pantalla Nosotros se conserva sin esas secciones hasta recibir los textos aprobados.
+- **Propuesta redactada por el agente a solicitud del usuario (2026-11-20); no figura en las fuentes originales:** misión: «Ofrecer productos para construcción, ferretería y soluciones eléctricas, con responsabilidad y una atención cercana a las necesidades de nuestros clientes».
+- **Propuesta redactada por el agente a solicitud del usuario (2026-11-20); no figura en las fuentes originales:** visión: «Ser una distribuidora reconocida por la variedad de sus productos y el compromiso con sus clientes».
 
 ## Identidad visual
 
@@ -37,7 +38,6 @@ fuentes: ["Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/DISTRIBUIDORA D&M.pdf"
 - **Confirmado:** mantener la landing empresarial existente y su contenido aprobado; trabajar con cambios pequeños, explicar en español claro y comprobar el resultado.
 - **Confirmado:** integrar el logo D&M disponible en `Docs/` en el encabezado.
 - **Confirmado:** usar el eslogan «D&M, Soluciones para cada necesidad», retirar el PBX y mostrar `distri.dym13@gmail.com` como correo.
-- **Confirmado:** mostrar en la página los 11 logos recibidos; catálogo con 10 productos por página, sin fotos de producto; retirar testimonios y trabajar por ahora sin misión ni visión.
+- **Confirmado:** mostrar en la página los 11 logos recibidos; catálogo con 10 productos por página, sin fotos de producto; retirar testimonios.
 - **Confirmado:** usar el inventario compartido como fuente del catálogo; consultar precio y disponibilidad al cotizar.
 - **Pendiente:** preferencia específica sobre fotografía o paleta general.
-- **Pendiente:** textos oficiales de misión y visión; no aparecen en el DOCX empresarial revisado.

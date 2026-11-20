@@ -2,7 +2,7 @@
 tipo: plan-de-mejora
 estado: en-progreso
 creado: 2026-11-06
-actualizado: 2026-11-13
+actualizado: 2026-11-20
 tags: [plan, landing, mejoras]
 fuentes: ["Plan De Mejora/17-distribuidora-dym/plan-mejoras.md", "Plan De Mejora/17-distribuidora-dym/validacion-con-cliente.md", "trabajo/landing-google-ai-studio/src/"]
 ---
@@ -20,8 +20,8 @@ La numeración de «Ruta de trabajo» resume la secuencia adaptada de la wiki. C
 - **Confirmado:** el Excel tiene 1.494 filas. El catálogo presenta 1.492 nombres únicos y clasifica por nombre; stock/precio no se muestran. La clasificación aún puede corregirse con la empresa.
 - **Confirmado:** el crédito ya no calcula cupos ni publica plazos; ofrece una consulta por WhatsApp, pues el usuario indicó que las condiciones varían.
 - **Confirmado:** Contacto sigue disponible con correo, WhatsApp y dirección confirmados por el usuario; no incluye Maps ni PBX.
-- **Confirmado:** están mostrados los 11 logos entregados. La landing ya no contiene sección de testimonios; la pantalla Nosotros usa solo descripción de actividad y líneas de producto, sin misión/visión.
-- **Confirmado:** compilación de Vite y TypeScript pasan. La portada ya se abrió en navegador local desde `http://127.0.0.1:3003/`; faltan los flujos y tamaños móviles.
+- **Confirmado:** están mostrados los 11 logos entregados. La landing ya no contiene sección de testimonios; la landing no contiene testimonios; el 2026-11-20 se añadieron a Nosotros misión y visión propuestas por el agente a solicitud del usuario.
+- **Confirmado:** compilación de Vite y TypeScript pasan. El catálogo y Nosotros se revisaron en escritorio y móvil en `http://127.0.0.1:3004/`; el carrito de prueba se vació al terminar.
 - **Pendiente:** revisar accesibilidad/breakpoints y decidir publicación. GitHub contiene una versión anterior; los cambios de esta sesión son locales hasta que se autorice subirlos.
 
 ## Cambios aplicados en esta sesión
@@ -37,8 +37,8 @@ La numeración de «Ruta de trabajo» resume la secuencia adaptada de la wiki. C
 0. **Preparar las skills del plan.** En `Plan De Mejora/17-distribuidora-dym/` están los ZIP de SEO y tratamiento de datos. Revisarlos e instalar sus carpetas completas en `.agents/skills/` antes de esos pasos; las skills de diseño citadas en `instalar-skills.md` no aparecen en este proyecto y su instalación queda pendiente.
 1. **Información empresarial y flujos:** revisión documental y del código completada el 2026-11-06; la portada se revisó visualmente el 2026-11-13 en navegador local. No se cambió el sitio en esos pasos. Se catalogaron activos, formularios, cotizador, crédito, marcas y navegación. Hallazgos y pendientes en [[estado-del-proyecto]] y [[pendientes]].
 2. **Contenido y contacto:** aplicado: teléfono, dirección, email, eslogan, pantalla Contacto conservada y sin Maps/PBX.
-3. **Lenguaje:** aplicado: productos sin SKU o atributos no incluidos en el inventario; sin testimonios ni sección de misión/visión; se quitaron afirmaciones de crédito y stock no respaldadas.
-4. **Catálogo y cotización:** aplicado localmente: 1.492 nombres únicos, tres categorías y 10 por página; sin fotos, stock ni precio. Mantiene filtros y selección; falta comprobar visualmente la navegación y envío al WhatsApp.
+3. **Lenguaje:** aplicado: productos sin SKU o atributos no incluidos en el inventario; sin testimonios; se quitaron afirmaciones de crédito y stock no respaldadas. Misión y visión se añadieron como propuesta en el paso 4 original.
+4. **Catálogo y cotización:** aplicado localmente: 1.492 nombres únicos, tres categorías y 10 por página; sin fotos, stock ni precio. Mantiene filtros y selección; navegación y persistencia en cotización comprobadas el 2026-11-20.
 5. **Marcas:** aplicado localmente: galería de los 11 logos recibidos, sin detalles de garantía/certificación no respaldados.
 6. **Crédito:** aplicado: consulta informativa por WhatsApp sin fórmula, monto, plazo ni promesa de aprobación.
 7. **Privacidad y datos.** Inventariar los datos que solicitan el cotizador y el formulario de contacto. Recibir NIT/RUT, dirección legal y correo para asuntos de datos; preparar política y aceptación antes de habilitar una recopilación que dependa de ella.
@@ -67,13 +67,20 @@ La numeración de «Ruta de trabajo» resume la secuencia adaptada de la wiki. C
 
 ## Paso 4 del plan recibido · Nosotros: misión y visión
 
-- **No aplicado, pendiente de fuente:** el DOCX empresarial de `Docs/` contiene una descripción de la empresa y los valores «Responsabilidad» y «Compromiso con el cliente», pero no declara una misión ni una visión oficiales.
-- **Decisión vigente:** no se inventan ni se reformulan los valores como misión/visión. La pantalla Nosotros queda igual y sin esas secciones, conforme a la preferencia previa del usuario hasta que entregue textos oficiales.
-- **Siguiente paso mínimo:** añadir los textos aprobados a `Docs/` o enviarlos para registro como una fuente nueva. Entonces se puede mostrar el contenido exacto en Nosotros.
+- **Aplicado localmente por solicitud del usuario:** se añadieron una misión y una visión sencillas, redactadas por el agente con la oferta y los valores documentados.
+- **Trazabilidad:** el DOCX empresarial original contiene una descripción y los valores «Responsabilidad» y «Compromiso con el cliente», pero no textos de misión ni visión. Las nuevas frases son una propuesta y no se presentan como transcripciones oficiales.
+- **Comprobado:** aparecen en Nosotros en escritorio y móvil; los originales de `Docs/` permanecen intactos.
+
+## Paso 5 del plan recibido · Catálogo con paginación
+
+- **Aplicado y comprobado:** 1.492 productos, tres categorías, 10 por página, sin imágenes de producto, precios ni existencias.
+- La primera página muestra 1–10 de 1.492; la última, 1.491–1.492. La búsqueda «TORNILLO» muestra 30; con la categoría Construcción y ferretería quedan 28. Al cambiar a la segunda página, se conservaron búsqueda, filtro y el producto añadido a cotización. «ABRAZADERA CREMALLERA INDUSTRIAL» devuelve dos productos y queda en la página 1 de 1.
+- **Verificación visual:** catálogo y Nosotros revisados localmente a 1.280 px y 375 px; no se detectó desbordamiento horizontal al medir 320 px. El carrito se limpió después de la prueba.
+- **Compilación y tipos:** Vite build y TypeScript pasaron; se conserva la advertencia conocida de `__dirname` en `vite.config.ts`.
 
 ## Respuestas confirmadas y datos aún pendientes
 
-- **Ya confirmado:** no se incluyen reglas de crédito aún; los logos recibidos se pueden mostrar; teléfono/dirección/email son vigentes; no Maps; mantener Contacto; sin testimonios ni misión/visión; 10 por página y sin fotos.
+- **Ya confirmado:** no se incluyen reglas de crédito aún; los logos recibidos se pueden mostrar; teléfono/dirección/email son vigentes; no Maps; mantener Contacto; sin testimonios; 10 productos por página y sin fotos. Misión y visión actuales son propuestas provisionales solicitadas por el usuario.
 - **Pendiente para futuras mejoras:** NIT/RUT y datos del responsable de privacidad para política; revisión de productos clasificados por nombre; reglas oficiales si en algún momento se desea describir las condiciones de crédito; revisión visual final y autorización de publicación.
 
 ## Secuencia para usar el plan recibido
@@ -90,3 +97,8 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 - **Confirmado:** crédito quedó como consulta por WhatsApp, sin captura de datos ni simulador. La pantalla Contacto permanece. Marcas tiene pantalla separada en una cuadrícula estática, no carrusel ni fichas emergentes.
 - **Confirmado:** la revisión inicial no encontró “SKU(s)”, PBX ni enlaces de Maps en la interfaz. En el paso 2 también se retiró el campo `sku` opcional que quedaba sin uso en el tipo TypeScript. El teléfono, correo y dirección están en `src/data/mockData.ts`.
 - **Confirmado:** la primera instancia local en 3002 no aceptaba conexiones del navegador. Vite se inició en `http://127.0.0.1:3003/`; la portada quedó visible en la pestaña local. No se hicieron cambios en los archivos del sitio.
+
+
+## Paso 6 del plan recibido · Fotografías
+
+- **Pendiente:** en Docs/ no se encontraron fotos propias de categorías o productos; hay logos. El usuario puede depositar allí las fotos que quiera usar. Se elegirán y copiarán solo los activos autorizados para una ubicación técnica del sitio; los originales se conservan intactos.

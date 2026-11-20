@@ -12,6 +12,17 @@ const productLines = [
   { title: 'Productos eléctricos', icon: 'bolt' },
 ];
 
+const companyPurpose = [
+  {
+    title: 'Misión',
+    text: 'Ofrecer productos para construcción, ferretería y soluciones eléctricas, con responsabilidad y una atención cercana a las necesidades de nuestros clientes.',
+  },
+  {
+    title: 'Visión',
+    text: 'Ser una distribuidora reconocida por la variedad de sus productos y el compromiso con sus clientes.',
+  },
+];
+
 export const AboutScreen: React.FC<AboutScreenProps> = ({
   onOpenCreditModal,
   onOpenQuoteModal,
@@ -28,6 +39,15 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
         <p className="text-sm text-[#dae2ff] leading-relaxed mt-3 max-w-2xl">
           Distribuidora D&M ofrece productos para construcción, ferretería y soluciones eléctricas.
         </p>
+      </section>
+
+      <section aria-label="Misión y visión" className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {companyPurpose.map((item) => (
+          <article key={item.title} className="bg-white p-6 rounded-2xl border border-[#dae3f4] shadow-xs">
+            <h2 className="font-['Montserrat'] text-xl font-bold text-[#001b4b]">{item.title}</h2>
+            <p className="text-sm text-[#444650] leading-relaxed mt-3">{item.text}</p>
+          </article>
+        ))}
       </section>
 
       <section aria-labelledby="product-lines-title" className="space-y-4">

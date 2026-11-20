@@ -2,7 +2,7 @@
 tipo: índice
 estado: vigente
 creado: 2026-10-28
-actualizado: 2026-11-13
+actualizado: 2026-11-20
 tags: [wiki, landing, dym]
 fuentes: ["AGENTS.md"]
 ---

@@ -2,7 +2,7 @@
 tipo: decisiones
 estado: vigente
 creado: 2026-10-28
-actualizado: 2026-11-13
+actualizado: 2026-11-20
 tags: [decisiones, proyecto]
 fuentes: ["AGENTS.md", "Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/LOGO DISTRIBUIDORA DYM.pdf", "../../inventario 04-11.xlsx"]
 ---
@@ -64,3 +64,10 @@ fuentes: ["AGENTS.md", "Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/LOGO DIST
 - **Motivo:** reducir tomas repetidas siguiendo los ejemplos del usuario, manteniendo grupos conservadores por nombre.
 - **Límite:** la comparación de forma, material, marca, empaque y acabado requiere revisar físicamente los productos; la lista no significa que las imágenes ya existan ni que se hayan integrado en la web.
 - **Fuente:** solicitud del usuario del 2026-11-13 y `trabajo/landing-google-ai-studio/src/data/inventoryCatalog.json`.
+
+## 2026-11-20 — Misión, visión y catálogo
+
+- **Instrucción del usuario:** redactar una misión y una visión sencillas y continuar con el siguiente paso del plan.
+- **Implementación local:** se añadieron textos de misión/visión a Nosotros. Son una propuesta redactada por el agente a solicitud del usuario; no aparecen en las fuentes empresariales originales.
+- **Paso 5 comprobado:** primera y última páginas, filtro/búsqueda, conservación de categoría y producto seleccionado al cambiar de página. Se mantuvieron las 10 tarjetas por página y el catálogo sin fotos.
+- **Fuente:** solicitud del usuario del 2026-11-20; para el contexto empresarial, `Docs/DISTRIBUIDORA_DYM worddd (1).docx`.

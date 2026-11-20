@@ -2,7 +2,7 @@
 tipo: estado-del-proyecto
 estado: vigente
 creado: 2026-10-28
-actualizado: 2026-11-13
+actualizado: 2026-11-20
 tags: [proyecto, landing, vite]
 fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-google-ai-studio/README.md"]
 ---
@@ -41,12 +41,13 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 - **Confirmado:** PDF y DOCX leídos; se renderizaron y revisaron visualmente los dos PDF y las 11 imágenes JPEG.
 - **Confirmado:** build y TypeScript sin errores mediante binarios locales; logo visible en vista previa de escritorio y móvil.
 - **Confirmado (2026-11-06):** compilación de Vite y TypeScript pasan después de integrar catálogo, paginación, logos, contacto y cambios de crédito/testimonios. La comprobación final de esta sesión también pasó; sigue apareciendo la advertencia futura de `__dirname` en Vite.
-- **Pendiente:** comprobar visualmente las 10 tarjetas por página y controles de paginación en móvil/escritorio. En la vista anterior se detectó desbordamiento horizontal a 320 px; no se ha vuelto a revisar.
+- **Confirmado (2026-11-20):** el catálogo muestra 10 productos por página; con 1.492 productos hay 150 páginas. La primera muestra 1–10 y la última 1.491–1.492; el buscador y la categoría permanecen al avanzar, y el producto agregado se conserva en la cotización. Una búsqueda de abrazaderas industriales muestra 2 resultados y vuelve a la página 1.
+- **Confirmado (2026-11-20):** revisión visual de Nosotros y del catálogo en escritorio a 1.280 px y móvil a 375 px; el ancho del documento no desborda a 320 ni a 375 px.
 - **Pendiente:** los scripts `npm run` siguen teniendo el problema conocido con `&` en la ruta de Windows; los binarios directos funcionan. Enlaces y recepción de formularios no se probaron porque el cambio se limitó al encabezado.
 
 ## Próximo paso
 
-Continuar con la revisión del desbordamiento de página a 320 px y validar los datos comerciales provisionales antes de cambiar contenido.
+El siguiente paso del plan original es el paso 6: mostrar una muestra de tarjetas de categoría con imágenes de `Docs/`. En la carpeta no hay fotos propias de categorías, productos o instalaciones; solo logos. Para avanzar ese paso hacen falta imágenes de categoría apropiadas.
 
 ## Paso 3 del plan recibido · Pie de página y contacto
 
@@ -62,9 +63,16 @@ Continuar con la revisión del desbordamiento de página a 320 px y validar los 
 
 ## Paso 4 del plan recibido · Misión y visión
 
-- **Pendiente:** el DOCX empresarial en `Docs/` contiene descripción de la empresa y valores, pero no misión ni visión oficiales. No se añadieron textos ni se modificó la pantalla Nosotros.
-- **Pendiente del usuario:** compartir o colocar en `Docs/` las versiones oficiales aprobadas de misión y visión para poder completar el paso sin inventar contenido.
-- **Comprobación:** lectura del DOCX original y revisión de la pantalla `src/components/screens/AboutScreen.tsx`; la interfaz actual no presenta secciones de misión o visión.
+- **Aplicado localmente por solicitud del usuario:** se añadieron a Nosotros una misión y una visión sencillas, redactadas por el agente a partir de la oferta y los valores documentados.
+- **Trazabilidad:** los textos son una propuesta nueva, no una transcripción ni contenido oficial hallado en `Docs/`. Se registran como provisionales hasta que el usuario los corrija o confirme.
+- **Comprobado:** ambos textos aparecen en escritorio a 1.280 px y en móvil a 375 px; en móvil se presentan apilados.
+
+## Paso 5 del plan recibido · Catálogo con paginación
+
+- **Aplicado y comprobado:** el catálogo existente conserva sus 1.492 productos, texto sin fotos, búsqueda, filtros, páginas de 10 y selección global para cotizar.
+- **Pruebas funcionales en vista local:** primera página 1–10 de 1.492; última página 1.491–1.492 de 1.492. Una búsqueda de «TORNILLO» devuelve 30, y junto con Construcción y ferretería devuelve 28; al pasar a la página 2 se conservaron la búsqueda, categoría y el producto agregado al carrito. «ABRAZADERA CREMALLERA INDUSTRIAL» devuelve 2 productos y vuelve a la primera página.
+- **Revisión visual:** catálogo en escritorio a 1.280 px y móvil a 375 px; sin desbordamiento horizontal medido a 320 px. Se vació el producto usado para la prueba; el cotizador quedó sin artículos.
+- **Comprobaciones de código:** compilación Vite y TypeScript sin errores. Vite conserva la advertencia conocida de `__dirname` en su configuración.
 
 ## Cambios recientes
 

@@ -2,7 +2,7 @@
 tipo: pendientes
 estado: abierto
 creado: 2026-10-28
-actualizado: 2026-11-13
+actualizado: 2026-11-20
 tags: [pendientes, preguntas]
 fuentes: ["trabajo/landing-google-ai-studio/src/data/mockData.ts", "Docs/"]
 ---
@@ -11,10 +11,10 @@ fuentes: ["trabajo/landing-google-ai-studio/src/data/mockData.ts", "Docs/"]
 
 - **Media:** validar físicamente los 135 grupos compartibles de [[lista-de-fotos-catalogo]] antes de usar una foto para productos de distinto tamaño/color. La guía asigna tomas individuales a los otros productos.
 - **Pendiente del usuario:** si más adelante se desean fotos de producto en la landing, elegir y entregar las imágenes. El catálogo permanece sin fotos, conforme a la preferencia vigente.
-- **Paso 4 del plan:** faltan textos oficiales de misión y visión. El DOCX empresarial solo presenta la descripción y los valores; no se alteró la pantalla Nosotros. Ver [[empresa]] y [[plan-de-mejora]].
+- **Paso 4 del plan:** misión y visión ya se añadieron en Nosotros como propuestas redactadas por el agente a solicitud del usuario. No aparecen en el DOCX original y aún no son textos oficiales; ver [[empresa]] y [[plan-de-mejora]].
 
 - **Alta:** resolver el límite de ruta con `&` para que `npm run` funcione como usuario final, o usar la invocación directa de Node documentada en `AGENTS.md`.
-- **Media:** localizar la causa de la barra horizontal observada a 320 px; en 375 px el encabezado se ve completo.
+- **Paso 6 del plan:** faltan fotos propias de productos/categorías en `Docs/`; el usuario puede agregarlas allí para seleccionar activos concretos. No usar imágenes de productos sin autorización. Ver [[documentos-y-activos]] y [[plan-de-mejora]].
 - **Alta:** las condiciones de crédito cambian y no están completas; no reactivar una simulación hasta recibir una regla aprobada.
 - **Media:** la clasificación del inventario es provisional y se infirió de los nombres de producto; confirmar los casos que la empresa quiera mover a otra categoría.
 - **Media:** stock y precios del archivo no se muestran en la página; confirmar explícitamente si desean publicar alguno después.
@@ -24,5 +24,5 @@ fuentes: ["trabajo/landing-google-ai-studio/src/data/mockData.ts", "Docs/"]
 - **Media:** completar la política de datos cuando se confirmen los datos legales requeridos (NIT/RUT, dirección para datos personales y responsable/correo apropiado).
 - **Pendiente:** instalar las skills entregadas en los ZIP del plan antes de aplicar esas rutinas especializadas.
 - **Pendiente de validación:** revisar demás flujos y confirmar información provisional antes de desplegar la web. El código está en GitHub; el sitio no está desplegado.
-- **Pendiente de verificación:** revisar filtros, paginación, formularios y tamaños móviles en la vista local, abierta en `http://127.0.0.1:3003/`.
+- **Pendiente de verificación:** revisar formularios y recepción de mensajes en el canal de prueba autorizado; la paginación, filtros y vista móvil del catálogo sí se revisaron el 2026-11-20. Ver [[estado-del-proyecto]].
 - Ver preguntas de validación y secuencia propuesta en [[plan-de-mejora]].

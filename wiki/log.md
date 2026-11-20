@@ -114,3 +114,11 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 
 - Se revisó el DOCX empresarial original y la pantalla Nosotros. El documento contiene una descripción empresarial y valores, pero no misión ni visión oficiales.
 - No se modificó la página ni se inventaron textos. El paso queda pendiente hasta recibir los textos aprobados del usuario en `Docs/` o como fuente nueva.
+
+
+## [2026-11-20] plan | Misión, visión y paso 5 del catálogo
+
+- A solicitud del usuario, se añadieron a Nosotros una misión y una visión sencillas redactadas por el agente. Se registran como propuestas provisionales, no como textos oficiales ni como contenido extraído de los originales.
+- Se revisó el catálogo: 1.492 productos, 10 por página; primera y última página, búsqueda, categoría y persistencia de la cotización comprobadas. El artículo de prueba se retiró del carrito y no se envió ningún mensaje de WhatsApp.
+- Vite build y TypeScript pasaron. Revisión visual en escritorio y móvil; no se detectó desbordamiento horizontal a 320 px. Vista local: http://127.0.0.1:3004/. No publicado.
+- Siguiente paso del plan: fotos propias para categorías/productos, que todavía no están en Docs/; se esperan activos seleccionados antes de integrarlos.
