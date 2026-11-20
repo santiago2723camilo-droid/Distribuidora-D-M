@@ -55,3 +55,23 @@
 .animate-pulse-subtle {
   animation: pulseSubtle 2.5s infinite ease-in-out;
 }
+
+@keyframes brandsMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.brands-marquee-track {
+  animation: brandsMarquee 42s linear infinite;
+}
+
+.brands-marquee:hover .brands-marquee-track,
+.brands-marquee:focus-within .brands-marquee-track,
+.brands-marquee-track.is-paused {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .brands-marquee-track { animation: none; }
+}

@@ -38,6 +38,6 @@ fuentes: ["Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/DISTRIBUIDORA D&M.pdf"
 - **Confirmado:** mantener la landing empresarial existente y su contenido aprobado; trabajar con cambios pequeños, explicar en español claro y comprobar el resultado.
 - **Confirmado:** integrar el logo D&M disponible en `Docs/` en el encabezado.
 - **Confirmado:** usar el eslogan «D&M, Soluciones para cada necesidad», retirar el PBX y mostrar `distri.dym13@gmail.com` como correo.
-- **Confirmado:** mostrar en la página los 11 logos recibidos; catálogo con 10 productos por página, sin fotos de producto; retirar testimonios.
+- **Confirmado:** mostrar en la página los 11 logos recibidos; catálogo con 10 productos por página y sin fotos; retirar testimonios. El usuario decidió omitir la muestra del paso 6 que agregaba imágenes a las tarjetas por categoría.
 - **Confirmado:** usar el inventario compartido como fuente del catálogo; consultar precio y disponibilidad al cotizar.
 - **Pendiente:** preferencia específica sobre fotografía o paleta general.

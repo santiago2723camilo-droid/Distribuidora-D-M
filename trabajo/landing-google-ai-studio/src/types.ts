@@ -1,4 +1,4 @@
-export type ScreenType = 'inicio' | 'productos' | 'aliados' | 'nosotros' | 'contacto';
+export type ScreenType = 'inicio' | 'productos' | 'nosotros' | 'contacto';
 
 export interface ProductItem {
   id: string;

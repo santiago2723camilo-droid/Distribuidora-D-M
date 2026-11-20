@@ -21,14 +21,13 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 
 ## Página y publicación
 
-- **Confirmado:** existe una landing con inicio, productos, aliados, nosotros y contacto, además de modales de cotización y crédito y un botón de WhatsApp.
+- **Confirmado:** existe una landing con inicio, productos, nosotros y contacto, además de una sección de marcas, modales de cotización y crédito y un botón de WhatsApp.
 - **Confirmado:** el catálogo anterior de demostración se reemplazó por 1.492 nombres únicos derivados del inventario recibido; los nombres se clasificaron por reglas según términos del producto. El origen no trae categorías explícitas y esa clasificación es provisional. No se exponen los campos de stock ni precio.
 - **Confirmado:** el diseño del ZIP usa una foto de stock remota en la sección principal; los activos de Docs son logos, no fotos del negocio.
 - **Confirmado:** build con `node .\node_modules\vite\bin\vite.js build` y TypeScript con `node .\node_modules\typescript\bin\tsc --noEmit` terminaron correctamente. Vite muestra una advertencia de compatibilidad futura por `__dirname` en `vite.config.ts`.
 - **Confirmado:** el encabezado usa el logo local `public/brand/logo-dym.png`, generado al recortar el PDF original sin modificarlo. Ya no depende del logo remoto del código extraído.
-- **Confirmado:** vista previa verificada en navegador a 1280 px y 375 px; logo y controles del encabezado visibles. A 320 px también se ve el logo, cotización y menú; el crédito permanece accesible dentro del menú. En la captura de 320 px se observa una barra horizontal en otra parte de la página, pendiente de localizar.
-- **Pendiente:** revisión visual de los últimos cambios. El navegador no pudo cargar la versión anterior en el puerto 3000; Vite inició esta versión en `http://127.0.0.1:3001/`, pero no se verificó desde el navegador.
-- **Pendiente:** localizar la causa de desplazamiento horizontal de la página a 320 px.
+- **Confirmado:** la vista de la portada y catálogo se verificó en escritorio y móvil en iteraciones previas. En la prueba más reciente de anchos 320 y 375 px, el documento no desbordó horizontalmente.
+- **Histórico, reemplazado:** en noviembre 6 y 13 no se pudo verificar una vista local; la vista actual se sirve en `http://127.0.0.1:3004/` y se revisó en noviembre 20.
 - **Confirmado:** remoto `origin` configurado como `https://github.com/santiago2723camilo-droid/Distribuidora-D-M.git`; rama local `main` sigue `origin/main`.
 - **Confirmado:** Git Credential Manager inició sesión como `santiago2723camilo-droid`; se subió `main` a `origin` y GitHub confirmó el mismo hash local/remoto `9a56f60`. La rama local sigue `origin/main`.
 - **Pendiente:** el código está en GitHub, pero no se ha desplegado a un dominio o servicio de hosting.
@@ -43,11 +42,12 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 - **Confirmado (2026-11-06):** compilación de Vite y TypeScript pasan después de integrar catálogo, paginación, logos, contacto y cambios de crédito/testimonios. La comprobación final de esta sesión también pasó; sigue apareciendo la advertencia futura de `__dirname` en Vite.
 - **Confirmado (2026-11-20):** el catálogo muestra 10 productos por página; con 1.492 productos hay 150 páginas. La primera muestra 1–10 y la última 1.491–1.492; el buscador y la categoría permanecen al avanzar, y el producto agregado se conserva en la cotización. Una búsqueda de abrazaderas industriales muestra 2 resultados y vuelve a la página 1.
 - **Confirmado (2026-11-20):** revisión visual de Nosotros y del catálogo en escritorio a 1.280 px y móvil a 375 px; el ancho del documento no desborda a 320 ni a 375 px.
+- **Confirmado (2026-11-20):** paso 7 parcial: carrusel de 11 logos, opción para pausar, modal de marca que cierra con Escape y navegación «Marcas» en la portada. Se comprobó el comportamiento del modal y pausa en navegador local. Falta ficha fuente por marca; no se probó el diseño visual del carrusel en varios tamaños.
 - **Pendiente:** los scripts `npm run` siguen teniendo el problema conocido con `&` en la ruta de Windows; los binarios directos funcionan. Enlaces y recepción de formularios no se probaron porque el cambio se limitó al encabezado.
 
 ## Próximo paso
 
-El siguiente paso del plan original es el paso 6: mostrar una muestra de tarjetas de categoría con imágenes de `Docs/`. En la carpeta no hay fotos propias de categorías, productos o instalaciones; solo logos. Para avanzar ese paso hacen falta imágenes de categoría apropiadas.
+El paso 6 original (muestra de tarjetas de categoría con imágenes) se omitió por decisión del usuario; el catálogo seguirá sin fotos. Se avanzó al paso 7: carrusel y modales de logos están implementados localmente. El paso 7 queda parcial hasta recibir fichas detalladas de aliados en `Docs/` o aceptar que los modales muestren solo logo y nombre. No se han confirmado relaciones comerciales, certificaciones ni garantías para todos los logos.
 
 ## Paso 3 del plan recibido · Pie de página y contacto
 

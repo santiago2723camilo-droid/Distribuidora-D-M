@@ -122,3 +122,11 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - Se revisó el catálogo: 1.492 productos, 10 por página; primera y última página, búsqueda, categoría y persistencia de la cotización comprobadas. El artículo de prueba se retiró del carrito y no se envió ningún mensaje de WhatsApp.
 - Vite build y TypeScript pasaron. Revisión visual en escritorio y móvil; no se detectó desbordamiento horizontal a 320 px. Vista local: http://127.0.0.1:3004/. No publicado.
 - Siguiente paso del plan: fotos propias para categorías/productos, que todavía no están en Docs/; se esperan activos seleccionados antes de integrarlos.
+
+
+## [2026-11-20] plan | Se omite paso 6 y avanza paso 7
+
+- El usuario indicó que no se usarán imágenes en el catálogo. Se marcó como omitida la muestra de imágenes para tarjetas de categoría del paso 6.
+- Se avanzó con el paso 7: los 11 logos autorizados aparecen en carrusel lento y pausable, con modales que se abren al seleccionar una marca, se cierran con Escape y gestionan el foco; el movimiento respeta la preferencia de movimiento reducido. Se retiró la pantalla independiente de aliados y «Marcas» navega a la sección de portada.
+- En la vista local se comprobó abrir el modal de Cellux, cerrarlo con Escape y pausar/reanudar el carrusel. Las comprobaciones vite build, tsc --noEmit y git diff --check pasaron; se conserva la advertencia conocida de __dirname. No se hizo una revisión visual comparativa móvil/escritorio en esta interacción; no se publicó.
+- El paso 7 queda parcial: no hay fichas detalladas de todas las marcas en Docs/; se muestran solo logo y nombre y se informa de la falta de ficha. Para cerrarlo: entregar fichas o confirmar que basta esta presentación.

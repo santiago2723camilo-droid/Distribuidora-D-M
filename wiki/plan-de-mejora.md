@@ -15,12 +15,12 @@ La numeración de «Ruta de trabajo» resume la secuencia adaptada de la wiki. C
 
 ## Revisión del estado real
 
-- **Confirmado:** la aplicación está hecha con React, TypeScript y Vite. Tiene inicio, catálogo, aliados, nosotros y contacto; son pantallas dentro de una sola aplicación.
+- **Confirmado:** la aplicación está hecha con React, TypeScript y Vite. Tiene inicio, catálogo, nosotros y contacto; las marcas ahora se muestran en una sección de la portada, no en una pantalla independiente.
 - **Confirmado:** catálogo React en `src/data/inventoryCatalog.json`, buscador, filtros por las tres categorías y carrito en `App.tsx`; cotizaciones se preparan para WhatsApp en `QuoteModal.tsx`.
 - **Confirmado:** el Excel tiene 1.494 filas. El catálogo presenta 1.492 nombres únicos y clasifica por nombre; stock/precio no se muestran. La clasificación aún puede corregirse con la empresa.
 - **Confirmado:** el crédito ya no calcula cupos ni publica plazos; ofrece una consulta por WhatsApp, pues el usuario indicó que las condiciones varían.
 - **Confirmado:** Contacto sigue disponible con correo, WhatsApp y dirección confirmados por el usuario; no incluye Maps ni PBX.
-- **Confirmado:** están mostrados los 11 logos entregados. La landing ya no contiene sección de testimonios; la landing no contiene testimonios; el 2026-11-20 se añadieron a Nosotros misión y visión propuestas por el agente a solicitud del usuario.
+- **Confirmado:** están mostrados los 11 logos entregados. La landing ya no contiene testimonios ni una pantalla independiente de aliados; los logos están en un carrusel de portada con modales accesibles. No hay fichas detalladas de cada marca en `Docs/`.
 - **Confirmado:** compilación de Vite y TypeScript pasan. El catálogo y Nosotros se revisaron en escritorio y móvil en `http://127.0.0.1:3004/`; el carrito de prueba se vació al terminar.
 - **Pendiente:** revisar accesibilidad/breakpoints y decidir publicación. GitHub contiene una versión anterior; los cambios de esta sesión son locales hasta que se autorice subirlos.
 
@@ -29,7 +29,7 @@ La numeración de «Ruta de trabajo» resume la secuencia adaptada de la wiki. C
 - **Confirmado por el usuario:** eslogan exacto: «D&M, Soluciones para cada necesidad».
 - **Confirmado por el usuario:** teléfono `+57 316 460 2821`, dirección Carrera 4H # 21-48, barrio Villa Clara; conservar Contacto y no incluir Maps.
 - **Confirmado por el usuario:** correo `distri.dym13@gmail.com`, PBX retirado y eslogan «D&M, Soluciones para cada necesidad».
-- **Confirmado por el usuario:** mostrar todos los logos recibidos; quitar testimonios; no usar misión/visión por ahora; mostrar 10 productos por página sin fotos.
+- **Confirmado por el usuario:** mostrar los 11 logos recibidos; quitar testimonios; mostrar 10 productos por página sin fotos. Después, pidió redactar y añadir una misión y visión sencillas, registradas como propuestas en [[empresa]].
 - **Pendiente confirmado:** las condiciones de crédito cambian y no se cuenta con información completa.
 
 ## Ruta de trabajo
@@ -39,7 +39,7 @@ La numeración de «Ruta de trabajo» resume la secuencia adaptada de la wiki. C
 2. **Contenido y contacto:** aplicado: teléfono, dirección, email, eslogan, pantalla Contacto conservada y sin Maps/PBX.
 3. **Lenguaje:** aplicado: productos sin SKU o atributos no incluidos en el inventario; sin testimonios; se quitaron afirmaciones de crédito y stock no respaldadas. Misión y visión se añadieron como propuesta en el paso 4 original.
 4. **Catálogo y cotización:** aplicado localmente: 1.492 nombres únicos, tres categorías y 10 por página; sin fotos, stock ni precio. Mantiene filtros y selección; navegación y persistencia en cotización comprobadas el 2026-11-20.
-5. **Marcas:** aplicado localmente: galería de los 11 logos recibidos, sin detalles de garantía/certificación no respaldados.
+5. **Marcas:** carrusel y modales implementados localmente con los 11 logos autorizados; faltan fichas de aliados en `Docs/` para completar sus detalles.
 6. **Crédito:** aplicado: consulta informativa por WhatsApp sin fórmula, monto, plazo ni promesa de aprobación.
 7. **Privacidad y datos.** Inventariar los datos que solicitan el cotizador y el formulario de contacto. Recibir NIT/RUT, dirección legal y correo para asuntos de datos; preparar política y aceptación antes de habilitar una recopilación que dependa de ella.
 8. **Pulido, SEO y accesibilidad.** Revisar jerarquía visual, móvil, teclado, etiquetas, título/descripción y textos alternativos sin inventar ubicaciones, horarios o marcas.
@@ -94,11 +94,18 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 - **Confirmado:** el catálogo actual busca por nombre, filtra las tres categorías y pagina 10 productos; conserva selección en el estado de la aplicación mientras se navega entre pantallas. Los grupos del inventario son inferidos por nombre y no incluyen precio ni existencia.
 - **Confirmado:** el cotizador permite agregar, incrementar, reducir y quitar productos, editar cantidades, vaciar la lista y prepara un mensaje a WhatsApp con el número confirmado. Abrir WhatsApp no envía automáticamente el mensaje. Nombre, empresa, ciudad y notas son campos opcionales; la ciudad empieza en Valledupar. La lista de municipios y la frase de flete del ejemplo aún no tienen respaldo confirmado.
 - **Confirmado:** el formulario de Contacto exige nombre, teléfono, ciudad y consulta; empresa es opcional. Prepara un segundo mensaje a WhatsApp. No se observó política de privacidad ni casilla de aceptación.
-- **Confirmado:** crédito quedó como consulta por WhatsApp, sin captura de datos ni simulador. La pantalla Contacto permanece. Marcas tiene pantalla separada en una cuadrícula estática, no carrusel ni fichas emergentes.
+- **Confirmado:** crédito quedó como consulta por WhatsApp, sin captura de datos ni simulador. La pantalla Contacto permanece. Las marcas se presentan en la portada en un carrusel y modales; la ficha detallada de cada marca sigue pendiente de fuente.
 - **Confirmado:** la revisión inicial no encontró “SKU(s)”, PBX ni enlaces de Maps en la interfaz. En el paso 2 también se retiró el campo `sku` opcional que quedaba sin uso en el tipo TypeScript. El teléfono, correo y dirección están en `src/data/mockData.ts`.
 - **Confirmado:** la primera instancia local en 3002 no aceptaba conexiones del navegador. Vite se inició en `http://127.0.0.1:3003/`; la portada quedó visible en la pestaña local. No se hicieron cambios en los archivos del sitio.
 
 
-## Paso 6 del plan recibido · Fotografías
+## Paso 6 del plan recibido · Muestra de tarjetas por categoría
 
-- **Pendiente:** en Docs/ no se encontraron fotos propias de categorías o productos; hay logos. El usuario puede depositar allí las fotos que quiera usar. Se elegirán y copiarán solo los activos autorizados para una ubicación técnica del sitio; los originales se conservan intactos.
+- **Omitido por decisión del usuario (2026-11-20):** no se usarán imágenes en el catálogo. Por eso no se preparó la muestra de tarjetas de categoría con fotos que propone este paso. El catálogo permanece en texto y sin imágenes de producto.
+
+## Paso 7 del plan recibido · Marcas y aliados
+
+- **Aplicado localmente:** los 11 logos autorizados aparecen en un carrusel lento que se puede pausar; el movimiento se detiene al enfocar o pasar el puntero y se desactiva cuando el sistema reduce movimiento. Al seleccionar un logo se abre un modal, que se cierra con botón o Escape y mantiene el foco accesible.
+- **Aplicado localmente:** se retiró la pantalla aparte de aliados. La opción «Marcas» del menú lleva a la sección de la portada.
+- **Parcial por falta de fuente:** los modales muestran el logo y el nombre; aclaran que no hay una ficha adicional en los documentos disponibles. `Docs/` no respalda detalles de actividad, garantía o certificación para cada marca. No se inventaron.
+- **Comprobado:** build de Vite y TypeScript pasan. En la vista local se abrió el modal de Cellux, se cerró con Escape y se pausó/reanudó el carrusel. Ver [[documentos-y-activos]] y [[pendientes]].

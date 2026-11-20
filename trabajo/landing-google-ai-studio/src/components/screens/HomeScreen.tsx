@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ScreenType } from '../../types';
-import { ALLIED_BRANDS, COMPANY_PHONE, FAQS } from '../../data/mockData';
+import { COMPANY_PHONE, FAQS } from '../../data/mockData';
+import { BrandsShowcase } from '../BrandsShowcase';
 
 interface HomeScreenProps {
   onNavigate: (screen: ScreenType) => void;
@@ -416,33 +417,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
         </div>
       </section>
 
-      {/* SECCIÓN 6: NUESTROS ALIADOS */}
-      <section className="w-full bg-[#e5eeff] py-14 lg:py-16 border-b border-[#dae3f4]" id="aliados">
-        <div className="max-w-[1320px] mx-auto px-4 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#fc820c]">
-              Marcas compartidas
-            </span>
-            <h2 className="font-['Montserrat'] text-2xl lg:text-3xl text-[#001b4b] mt-1 font-bold">
-              Marcas cuyos logos compartiste
-            </h2>
-          </div>
-
-          {/* Marcas enviadas por la empresa */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {ALLIED_BRANDS.map((brand) => (
-              <button
-                key={brand.name}
-                onClick={() => onNavigate('aliados')}
-                className="bg-white p-4 rounded-xl shadow-xs hover:shadow-md transition-shadow text-center flex flex-col items-center justify-center gap-2 min-h-[110px] border border-[#dae3f4] cursor-pointer"
-              >
-                <img src={brand.logo} alt={`Logo ${brand.name}`} loading="lazy" className="h-12 max-w-full object-contain" />
-                <span className="text-xs font-semibold text-[#001b4b]">{brand.name}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
+      <BrandsShowcase />
 
       {/* SECCIÓN 8: PREGUNTAS FRECUENTES */}
       <section className="w-full bg-[#eff4ff] py-14 lg:py-20 border-b border-[#dae3f4]">

@@ -7,10 +7,10 @@ interface FooterProps {
   onOpenCreditModal: () => void;
 }
 
-const navigation: { id: ScreenType; label: string }[] = [
+const navigation: { id: ScreenType | 'marcas'; label: string }[] = [
   { id: 'inicio', label: 'Inicio' },
   { id: 'productos', label: 'Productos' },
-  { id: 'aliados', label: 'Marcas' },
+  { id: 'marcas', label: 'Marcas' },
   { id: 'nosotros', label: 'Nosotros' },
   { id: 'contacto', label: 'Contacto' },
 ];
@@ -32,7 +32,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCreditModal })
           <ul className="grid grid-cols-2 gap-2 text-sm text-[#b1c5ff]">
             {navigation.map((item) => (
               <li key={item.id}>
-                <button type="button" onClick={() => onNavigate(item.id)} className="hover:text-white">
+                <button
+                  type="button"
+                  onClick={() => {
+                    onNavigate(item.id === 'marcas' ? 'inicio' : item.id);
+                    if (item.id === 'marcas') {
+                      window.setTimeout(() => document.getElementById('marcas')?.scrollIntoView({ behavior: 'smooth' }), 0);
+                    }
+                  }}
+                  className="hover:text-white"
+                >
                   {item.label}
                 </button>
               </li>

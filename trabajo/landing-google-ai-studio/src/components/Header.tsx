@@ -19,18 +19,22 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navItems: { id: ScreenType; label: string }[] = [
+  const navItems: { id: ScreenType | 'marcas'; label: string }[] = [
     { id: 'inicio', label: 'Inicio' },
     { id: 'productos', label: 'Productos' },
-    { id: 'aliados', label: 'Aliados' },
+    { id: 'marcas', label: 'Marcas' },
     { id: 'nosotros', label: 'Nosotros' },
     { id: 'contacto', label: 'Contacto' },
   ];
 
-  const handleNavClick = (screen: ScreenType) => {
-    onNavigate(screen);
+  const handleNavClick = (screen: ScreenType | 'marcas') => {
+    onNavigate(screen === 'marcas' ? 'inicio' : screen);
     setMobileMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (screen === 'marcas') {
+      window.setTimeout(() => document.getElementById('marcas')?.scrollIntoView({ behavior: 'smooth' }), 0);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -51,7 +55,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Navigation Zone */}
         <nav className="hidden lg:flex items-center gap-2">
           {navItems.map((item) => {
-            const isActive = currentScreen === item.id;
+            const isActive = item.id !== 'marcas' && currentScreen === item.id;
             return (
               <button
                 key={item.id}

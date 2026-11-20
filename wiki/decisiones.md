@@ -71,3 +71,10 @@ fuentes: ["AGENTS.md", "Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/LOGO DIST
 - **Implementación local:** se añadieron textos de misión/visión a Nosotros. Son una propuesta redactada por el agente a solicitud del usuario; no aparecen en las fuentes empresariales originales.
 - **Paso 5 comprobado:** primera y última páginas, filtro/búsqueda, conservación de categoría y producto seleccionado al cambiar de página. Se mantuvieron las 10 tarjetas por página y el catálogo sin fotos.
 - **Fuente:** solicitud del usuario del 2026-11-20; para el contexto empresarial, `Docs/DISTRIBUIDORA_DYM worddd (1).docx`.
+
+## 2026-11-20 — Sin imágenes de categoría y marcas en portada
+
+- **Decisión confirmada por el usuario:** no usar imágenes para el catálogo; se omite la muestra de tarjetas por categoría con imágenes del paso 6 original.
+- **Implementación del paso 7:** los 11 logos ya autorizados se muestran en un carrusel pausable con modales accesibles; se quitó la página independiente de aliados y el menú «Marcas» lleva a la sección de portada.
+- **Límite de fuente:** `Docs/` no contiene fichas detalladas para todas las marcas. Los modales no afirman datos comerciales, garantías ni certificaciones. El paso 7 queda parcial hasta recibir fuentes para las fichas o confirmar que basta con logo y nombre.
+- **Fuente:** indicación del usuario del 2026-11-20; `Docs/` inventariado en [[documentos-y-activos]]; ejecución en `trabajo/landing-google-ai-studio/src/components/BrandsShowcase.tsx`.

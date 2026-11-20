@@ -7,7 +7,6 @@ import { QuoteModal } from './components/QuoteModal';
 import { CreditModal } from './components/CreditModal';
 import { HomeScreen } from './components/screens/HomeScreen';
 import { ProductsScreen } from './components/screens/ProductsScreen';
-import { PartnersScreen } from './components/screens/PartnersScreen';
 import { AboutScreen } from './components/screens/AboutScreen';
 import { ContactScreen } from './components/screens/ContactScreen';
 
@@ -87,10 +86,6 @@ export default function App() {
             onAddToCart={handleAddToCart}
             onOpenQuoteModal={() => setIsQuoteModalOpen(true)}
           />
-        )}
-
-        {currentScreen === 'aliados' && (
-          <PartnersScreen />
         )}
 
         {currentScreen === 'nosotros' && (

@@ -14,7 +14,8 @@ fuentes: ["trabajo/landing-google-ai-studio/src/data/mockData.ts", "Docs/"]
 - **Paso 4 del plan:** misión y visión ya se añadieron en Nosotros como propuestas redactadas por el agente a solicitud del usuario. No aparecen en el DOCX original y aún no son textos oficiales; ver [[empresa]] y [[plan-de-mejora]].
 
 - **Alta:** resolver el límite de ruta con `&` para que `npm run` funcione como usuario final, o usar la invocación directa de Node documentada en `AGENTS.md`.
-- **Paso 6 del plan:** faltan fotos propias de productos/categorías en `Docs/`; el usuario puede agregarlas allí para seleccionar activos concretos. No usar imágenes de productos sin autorización. Ver [[documentos-y-activos]] y [[plan-de-mejora]].
+- **Paso 6 del plan:** omitido por decisión del usuario; no se usarán imágenes en el catálogo ni en la muestra de tarjetas por categoría. Ver [[plan-de-mejora]] y [[empresa]].
+- **Paso 7 del plan (parcial):** faltan fichas detalladas de las marcas en `Docs/`. El carrusel/modal usa solo los 11 logos autorizados y sus nombres; no afirma garantías ni relaciones comerciales vigentes. Ver [[documentos-y-activos]] y [[plan-de-mejora]].
 - **Alta:** las condiciones de crédito cambian y no están completas; no reactivar una simulación hasta recibir una regla aprobada.
 - **Media:** la clasificación del inventario es provisional y se infirió de los nombres de producto; confirmar los casos que la empresa quiera mover a otra categoría.
 - **Media:** stock y precios del archivo no se muestran en la página; confirmar explícitamente si desean publicar alguno después.
