@@ -22,7 +22,7 @@ La numeración de «Ruta de trabajo» resume la secuencia adaptada de la wiki. C
 - **Confirmado:** Contacto sigue disponible con correo, WhatsApp y dirección confirmados por el usuario; no incluye Maps ni PBX.
 - **Confirmado:** están mostrados los 11 logos entregados. La landing ya no contiene testimonios ni una pantalla independiente de aliados; los logos están en un carrusel de portada con modales accesibles. No hay fichas detalladas de cada marca en `Docs/`.
 - **Confirmado:** compilación de Vite y TypeScript pasan. El catálogo y Nosotros se revisaron en escritorio y móvil en `http://127.0.0.1:3004/`; el carrito de prueba se vació al terminar.
-- **Pendiente:** revisar accesibilidad/breakpoints y decidir publicación. GitHub contiene una versión anterior; los cambios de esta sesión son locales hasta que se autorice subirlos.
+- **Pendiente:** revisar los formularios restantes, accesibilidad y los pasos siguientes del plan. El commit `0a947cc` del paso 9 está sincronizado en GitHub; el sitio aún no se ha desplegado a un dominio o servicio de hosting.
 
 ## Cambios aplicados en esta sesión
 

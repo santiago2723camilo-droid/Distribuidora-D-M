@@ -152,3 +152,8 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - En la vista local se agregaron tres productos de las categorías ferretería, eléctricos y sanitarios. Se aumentó y redujo una cantidad, se quitó un producto y se vació la lista. A 320, 390 y 703 px, el botón de WhatsApp quedó dentro del modal.
 - Se revisó el generador del mensaje en código: toma nombre y cantidad directamente de cada producto actual del carrito y usa el teléfono confirmado. No se abrió WhatsApp ni se transmitieron datos; queda pendiente la recepción real.
 - Vite build y TypeScript pasaron; `git diff --check` no encontró errores de whitespace. Vite conserva el aviso de `__dirname`. Siguiente paso original: 10, crédito; sin reglas estables, mantener consulta por WhatsApp y no calcular cupos.
+
+## [2026-11-20] sincronización | Paso 9 en GitHub
+
+- Se creó el commit `0a947cc` (`Ajusta el cotizador para móvil`) con el componente del cotizador y las páginas de seguimiento de la wiki.
+- Tras revisar el contenido incluido y excluir la carpeta `Plan De Mejora/` que permanece sin seguimiento, se subió `main` al remoto autorizado `origin`. La rama quedó sincronizada. Esto guarda código en GitHub; no despliega el sitio público.

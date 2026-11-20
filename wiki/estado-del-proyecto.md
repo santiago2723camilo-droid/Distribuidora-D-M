@@ -29,10 +29,10 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 - **Confirmado:** la vista de la portada y catálogo se verificó en escritorio y móvil en iteraciones previas. En la prueba más reciente de anchos 320 y 375 px, el documento no desbordó horizontalmente.
 - **Histórico, reemplazado:** en noviembre 6 y 13 no se pudo verificar una vista local; la vista actual se sirve en `http://127.0.0.1:3004/` y se revisó en noviembre 20.
 - **Confirmado:** remoto `origin` configurado como `https://github.com/santiago2723camilo-droid/Distribuidora-D-M.git`; rama local `main` sigue `origin/main`.
-- **Confirmado:** Git Credential Manager inició sesión como `santiago2723camilo-droid`; se subió `main` a `origin` y GitHub confirmó el mismo hash local/remoto `9a56f60`. La rama local sigue `origin/main`.
+- **Confirmado (2026-11-20):** Git Credential Manager inició sesión como `santiago2723camilo-droid`; el commit `0a947cc` se subió a `origin/main` y la rama local quedó sincronizada.
 - **Pendiente:** el código está en GitHub, pero no se ha desplegado a un dominio o servicio de hosting.
 - **Confirmado por el usuario (2026-11-06):** WhatsApp `+57 316 460 2821`, correo `distri.dym13@gmail.com`, dirección Carrera 4H # 21-48, barrio Villa Clara; no incluir Maps y conservar Contacto.
-- **Pendiente:** no se ha probado el envío ni la recepción de mensajes en WhatsApp; no se ha publicado la nueva versión.
+- **Pendiente:** no se ha probado el envío ni la recepción de mensajes en WhatsApp. El código está sincronizado en GitHub, pero no se ha desplegado a un dominio o servicio de hosting.
 
 ## Comprobaciones
 
