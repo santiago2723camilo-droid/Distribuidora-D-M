@@ -23,7 +23,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
   return (
     <div className="flex flex-col w-full">
       {/* SECCIÓN 2: HERO */}
-      <section className="relative w-full overflow-hidden bg-[#f8f9ff] py-12 lg:py-20 border-b border-[#dae3f4]/60">
+      <section className="relative w-full bg-[#f8f9ff] py-10 lg:py-16 border-b border-[#dae3f4]/60">
         <div className="max-w-[1320px] mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Hero Text Content */}
@@ -67,17 +67,17 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
 
             {/* Hero Photographic Frame */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white p-2 border border-[#dae3f4]">
+              <figure className="rounded-2xl overflow-hidden shadow-sm bg-white border border-[#dae3f4]">
                 <img
                   alt="Imagen ilustrativa de herramientas y materiales de ferretería"
-                  className="w-full h-auto max-h-[460px] object-cover rounded-xl transform hover:scale-[1.02] transition-transform duration-500"
+                  className="w-full h-auto max-h-[460px] object-cover"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWMKUpw2rA0Ni6xuDFbfcn_sozckcp1JVvAtRmSIbg2oxk-oEkduLAt5-3yUZwNPdI1Mq0TnoB_hKK7GJA1DgnyMgcTouQisU76xlGx4YgWnT5utw5GYFqSeXvFQYSBnN5ubTLbe9vmeOlCmcqB52JfCBG5kuCDEM9lavOSEO5ngG0gG1VfcAdFbeJUXCJ_-5OZi32ASeiheuUS7twMQ_8jpAXbvg4xEV8zpTYk5A"
                   onError={(e) => {
                     // Styled resilient fallback if network blips
                     e.currentTarget.style.display = 'none';
                   }}
                 />
-                <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-lg flex items-center justify-between border border-[#e5eeff]">
+                <figcaption className="p-4 sm:px-5 flex items-center justify-between gap-3 border-t border-[#e5eeff]">
                   <div>
                     <p className="text-[11px] font-bold uppercase text-[#fc820c] tracking-wider">
                       Catálogo de productos
@@ -89,76 +89,80 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   <div className="w-10 h-10 rounded-full bg-[#e5eeff] flex items-center justify-center text-[#001b4b]">
                     <span className="material-symbols-outlined text-[22px]">inventory_2</span>
                   </div>
-                </div>
-              </div>
+                </figcaption>
+              </figure>
             </div>
           </div>
 
           {/* Barra de confianza (4 beneficios clave) */}
-          <div className="mt-12 pt-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="mt-8 lg:mt-10 border-t border-[#dae3f4] pt-6 lg:pt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
               {/* Item 1 */}
-              <div
+              <button
+                type="button"
                 onClick={() => onNavigate('productos')}
-                className="bg-white p-5 rounded-xl shadow-xs hover:shadow-md border border-[#dae3f4]/70 transition-all duration-300 flex items-center gap-4 group cursor-pointer"
+                className="bg-white px-4 py-3.5 rounded-xl border border-[#dae3f4] hover:border-[#b1c5ff] transition-colors flex items-center gap-3 group cursor-pointer text-left"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#eff4ff] group-hover:bg-[#001b4b] text-[#001b4b] group-hover:text-white flex items-center justify-center transition-colors duration-300 flex-shrink-0">
-                  <span className="material-symbols-outlined text-[26px]">inventory_2</span>
-                </div>
-                <div>
-                  <h3 className="font-['Montserrat'] text-sm font-bold text-[#001b4b]">Catálogo amplio</h3>
-                  <p className="text-xs text-[#444650]">Productos en el catálogo</p>
-                </div>
-              </div>
+                <span className="w-11 h-11 rounded-xl bg-[#eff4ff] group-hover:bg-[#001b4b] text-[#001b4b] group-hover:text-white flex items-center justify-center transition-colors shrink-0">
+                  <span aria-hidden="true" className="material-symbols-outlined text-[26px]">inventory_2</span>
+                </span>
+                <span>
+                  <span className="block font-['Montserrat'] text-sm font-bold text-[#001b4b]">Catálogo amplio</span>
+                  <span className="block text-xs text-[#444650]">Productos en el catálogo</span>
+                </span>
+              </button>
 
               {/* Item 2 */}
-              <div
+              <button
+                type="button"
                 onClick={() => onOpenQuoteModal()}
-                className="bg-white p-5 rounded-xl shadow-xs hover:shadow-md border border-[#dae3f4]/70 transition-all duration-300 flex items-center gap-4 group cursor-pointer"
+                className="bg-white px-4 py-3.5 rounded-xl border border-[#dae3f4] hover:border-[#b1c5ff] transition-colors flex items-center gap-3 group cursor-pointer text-left"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#eff4ff] group-hover:bg-[#001b4b] text-[#001b4b] group-hover:text-white flex items-center justify-center transition-colors duration-300 flex-shrink-0">
-                  <span className="material-symbols-outlined text-[26px]">sell</span>
-                </div>
-                <div>
-                  <h3 className="font-['Montserrat'] text-sm font-bold text-[#001b4b]">Cotizaciones</h3>
-                  <p className="text-xs text-[#444650]">Solicita precio y disponibilidad</p>
-                </div>
-              </div>
+                <span className="w-11 h-11 rounded-xl bg-[#eff4ff] group-hover:bg-[#001b4b] text-[#001b4b] group-hover:text-white flex items-center justify-center transition-colors shrink-0">
+                  <span aria-hidden="true" className="material-symbols-outlined text-[26px]">sell</span>
+                </span>
+                <span>
+                  <span className="block font-['Montserrat'] text-sm font-bold text-[#001b4b]">Cotizaciones</span>
+                  <span className="block text-xs text-[#444650]">Solicita precio y disponibilidad</span>
+                </span>
+              </button>
 
               {/* Item 3 */}
-              <div
+              <button
+                type="button"
                 onClick={onOpenCreditModal}
-                className="bg-white p-5 rounded-xl shadow-xs hover:shadow-md border border-[#dae3f4]/70 transition-all duration-300 flex items-center gap-4 group cursor-pointer"
+                className="bg-white px-4 py-3.5 rounded-xl border border-[#dae3f4] hover:border-[#b1c5ff] transition-colors flex items-center gap-3 group cursor-pointer text-left"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#eff4ff] group-hover:bg-[#001b4b] text-[#001b4b] group-hover:text-white flex items-center justify-center transition-colors duration-300 flex-shrink-0">
-                  <span className="material-symbols-outlined text-[26px]">credit_card</span>
-                </div>
-                <div>
-                  <h3 className="font-['Montserrat'] text-sm font-bold text-[#001b4b]">Crédito para ferreterías</h3>
-                  <p className="text-xs text-[#444650]">Líneas de apoyo comercial</p>
-                </div>
-              </div>
+                <span className="w-11 h-11 rounded-xl bg-[#eff4ff] group-hover:bg-[#001b4b] text-[#001b4b] group-hover:text-white flex items-center justify-center transition-colors shrink-0">
+                  <span aria-hidden="true" className="material-symbols-outlined text-[26px]">credit_card</span>
+                </span>
+                <span>
+                  <span className="block font-['Montserrat'] text-sm font-bold text-[#001b4b]">Crédito para ferreterías</span>
+                  <span className="block text-xs text-[#444650]">Líneas de apoyo comercial</span>
+                </span>
+              </button>
 
               {/* Item 4 */}
-              <div
+              <button
+                type="button"
                 onClick={() => onNavigate('nosotros')}
-                className="bg-white p-5 rounded-xl shadow-xs hover:shadow-md border border-[#dae3f4]/70 transition-all duration-300 flex items-center gap-4 group cursor-pointer"
+                className="bg-white px-4 py-3.5 rounded-xl border border-[#dae3f4] hover:border-[#b1c5ff] transition-colors flex items-center gap-3 group cursor-pointer text-left"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#eff4ff] group-hover:bg-[#001b4b] text-[#001b4b] group-hover:text-white flex items-center justify-center transition-colors duration-300 flex-shrink-0">
-                  <span className="material-symbols-outlined text-[26px]">local_shipping</span>
-                </div>
-                <div>
-                  <h3 className="font-['Montserrat'] text-sm font-bold text-[#001b4b]">Atención por WhatsApp</h3>
-                  <p className="text-xs text-[#444650]">Consulta productos y cotizaciones</p>
-                </div>
-              </div>
+                <span className="w-11 h-11 rounded-xl bg-[#eff4ff] group-hover:bg-[#001b4b] text-[#001b4b] group-hover:text-white flex items-center justify-center transition-colors shrink-0">
+                  <span aria-hidden="true" className="material-symbols-outlined text-[26px]">local_shipping</span>
+                </span>
+                <span>
+                  <span className="block font-['Montserrat'] text-sm font-bold text-[#001b4b]">Atención por WhatsApp</span>
+                  <span className="block text-xs text-[#444650]">Consulta productos y cotizaciones</span>
+                </span>
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* SECCIÓN 3: PRODUCTOS POR CATEGORÍA */}
-      <section className="w-full bg-[#eff4ff] py-14 lg:py-20 border-b border-[#dae3f4]/80" id="productos">
+      <section className="w-full bg-[#eff4ff] py-12 lg:py-16 border-b border-[#dae3f4]/80" id="productos">
         <div className="max-w-[1320px] mx-auto px-4 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
             <div className="max-w-2xl">
@@ -175,7 +179,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             <div className="flex items-center gap-3">
               <button
                 onClick={() => onNavigate('productos')}
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#001b4b] bg-white px-3.5 py-2 rounded-lg border border-[#dae3f4] hover:bg-[#e5eeff] transition-colors cursor-pointer"
+                className="min-h-11 inline-flex items-center gap-1.5 text-xs font-bold text-[#001b4b] bg-white px-3.5 py-2 rounded-lg border border-[#dae3f4] hover:bg-[#e5eeff] transition-colors cursor-pointer"
               >
                 <span className="material-symbols-outlined text-[18px]">list_alt</span>
                 <span>Ver catálogo completo &rarr;</span>
@@ -291,7 +295,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       </section>
 
       {/* SECCIÓN 4: POR QUÉ ELEGIR D&M (AZUL OSCURO #12306B) */}
-      <section className="w-full bg-[#12306b] text-white py-14 lg:py-20 relative overflow-hidden">
+      <section data-dark-surface className="w-full bg-[#12306b] text-white py-12 lg:py-16 relative overflow-hidden">
         <div className="absolute -right-24 -bottom-24 w-96 h-96 bg-[#001b4b] rounded-full blur-3xl opacity-50 pointer-events-none"></div>
         <div className="absolute -left-20 -top-20 w-80 h-80 bg-[#fc820c] rounded-full blur-3xl opacity-10 pointer-events-none"></div>
 
@@ -357,7 +361,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       </section>
 
       {/* SECCIÓN 5: CÓMO COMPRAR EN 3 PASOS */}
-      <section className="w-full bg-[#f8f9ff] py-14 lg:py-20 border-b border-[#dae3f4]/70">
+      <section className="w-full bg-[#f8f9ff] py-12 lg:py-16 border-b border-[#dae3f4]/70">
         <div className="max-w-[1320px] mx-auto px-4 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-xs font-bold uppercase tracking-wider text-[#fc820c]">
@@ -420,7 +424,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       <BrandsShowcase />
 
       {/* SECCIÓN 8: PREGUNTAS FRECUENTES */}
-      <section className="w-full bg-[#eff4ff] py-14 lg:py-20 border-b border-[#dae3f4]">
+      <section className="w-full bg-[#eff4ff] py-12 lg:py-16 border-b border-[#dae3f4]">
         <div className="max-w-[880px] mx-auto px-4 lg:px-8">
           <div className="text-center mb-10">
             <span className="text-xs font-bold uppercase tracking-wider text-[#fc820c]">
@@ -438,11 +442,13 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               return (
                 <div
                   key={faq.id}
-                  className="bg-white rounded-xl shadow-xs border border-[#dae3f4] transition-all duration-200 overflow-hidden"
+                  className="bg-white rounded-xl border border-[#dae3f4]"
                 >
                   <button
+                    type="button"
+                    aria-expanded={isOpen}
                     onClick={() => toggleFaq(idx)}
-                    className="w-full flex items-center justify-between p-5 text-left font-['Montserrat'] text-sm sm:text-base text-[#001b4b] font-bold select-none cursor-pointer hover:bg-[#f8f9ff] transition-colors"
+                    className="w-full flex items-center justify-between gap-3 p-5 rounded-xl text-left font-['Montserrat'] text-sm sm:text-base text-[#001b4b] font-bold select-none cursor-pointer hover:bg-[#f8f9ff] transition-colors"
                   >
                     <span className="flex items-center gap-3">
                       <span className="material-symbols-outlined text-[#fc820c] text-[20px]">
@@ -484,7 +490,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       </section>
 
       {/* SECCIÓN 9: LLAMADO FINAL (FONDO AZUL PROFUNDO #12306B) */}
-      <section className="w-full bg-[#12306b] text-white py-16 lg:py-24 relative overflow-hidden">
+      <section data-dark-surface className="w-full bg-[#12306b] text-white py-14 lg:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#001b4b] to-[#12306b] opacity-90"></div>
         <div className="max-w-[1320px] mx-auto px-4 lg:px-8 relative z-10 text-center">
           <div className="max-w-3xl mx-auto space-y-4">

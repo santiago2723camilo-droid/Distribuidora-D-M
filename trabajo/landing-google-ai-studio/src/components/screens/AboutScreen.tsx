@@ -27,8 +27,8 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
   onOpenCreditModal,
   onOpenQuoteModal,
 }) => (
-  <div className="w-full bg-[#f8f9ff] min-h-screen py-10">
-    <div className="max-w-[1320px] mx-auto px-4 lg:px-8 space-y-8">
+  <div className="w-full bg-[#f8f9ff] min-h-screen py-8 lg:py-12">
+    <div className="max-w-[1320px] mx-auto px-4 lg:px-8 space-y-6 sm:space-y-8">
       <section className="bg-[#001b4b] text-white rounded-2xl p-6 lg:p-10 shadow-lg border border-[#12306b]">
         <span className="text-xs font-bold uppercase tracking-wider text-[#fc820c] bg-white/10 px-3 py-1 rounded-full">
           Sobre Distribuidora D&M

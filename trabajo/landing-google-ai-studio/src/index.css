@@ -27,6 +27,29 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
   }
+
+  :focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+
+  [data-dark-surface] :focus-visible {
+    outline-color: var(--color-surface-container-lowest);
+  }
+
+  ::selection {
+    color: var(--color-primary);
+    background: var(--color-primary-fixed);
+  }
+}
+
+.site-dialog::backdrop {
+  background: rgb(0 0 0 / 60%);
+  backdrop-filter: blur(4px);
+}
+
+body:has(.site-dialog[open]) {
+  overflow: hidden;
 }
 
 /* Material Symbols styling */

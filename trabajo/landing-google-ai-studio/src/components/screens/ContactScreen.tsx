@@ -28,12 +28,12 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
   };
 
   return (
-    <div className="w-full bg-[#f8f9ff] min-h-screen py-10">
-      <div className="max-w-[1320px] mx-auto px-4 lg:px-8 space-y-12">
+    <div className="w-full bg-[#f8f9ff] min-h-screen py-8 lg:py-12">
+      <div className="max-w-[1320px] mx-auto px-4 lg:px-8 space-y-6 sm:space-y-8">
         {/* Banner */}
         <div className="bg-[#001b4b] text-white rounded-2xl p-6 lg:p-10 shadow-lg relative overflow-hidden border border-[#12306b]">
           <div className="relative z-10 max-w-2xl space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#fc820c] bg-white/10 px-3 py-1 rounded-full">
+            <span className="inline-block text-xs font-bold uppercase tracking-wider text-[#fc820c] bg-white/10 px-3 py-1 rounded-xl">
               Canales de Atención Mayorista
             </span>
             <h1 className="font-['Montserrat'] text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
@@ -46,7 +46,7 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
         </div>
 
         {/* Canales de Contacto */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
           <div className="bg-white p-6 rounded-2xl shadow-xs border border-[#dae3f4] space-y-3">
             <div className="w-12 h-12 rounded-xl bg-[#ffdcc6] text-[#fc820c] flex items-center justify-center">
               <span className="material-symbols-outlined text-[26px]">chat</span>
@@ -57,7 +57,7 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
               href={`https://wa.me/${COMPANY_PHONE}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-xs font-bold text-[#fc820c] hover:underline"
+              className="inline-flex min-h-11 items-center text-sm font-bold text-[#964900] hover:underline"
             >
               {COMPANY_PHONE_DISPLAY} &rarr;
             </a>
@@ -69,7 +69,7 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
             </div>
             <h3 className="font-['Montserrat'] text-base font-bold text-[#001b4b]">Correo Comercial</h3>
             <p className="text-xs text-[#444650]">Envíanos tus consultas por correo.</p>
-            <a href={`mailto:${COMPANY_EMAIL}`} className="text-xs font-medium text-[#444650] block truncate hover:underline">{COMPANY_EMAIL}</a>
+            <a href={`mailto:${COMPANY_EMAIL}`} className="flex min-h-11 items-center text-sm font-medium text-[#444650] wrap-anywhere hover:underline">{COMPANY_EMAIL}</a>
           </div>
 
           <div className="bg-white p-6 rounded-2xl shadow-xs border border-[#dae3f4] space-y-3">
@@ -82,7 +82,7 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
         </div>
 
         {/* Formulario y Horarios */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 items-start gap-4 lg:gap-6">
           <div className="lg:col-span-7 bg-white p-6 lg:p-8 rounded-2xl shadow-xs border border-[#dae3f4]">
             <h3 className="font-['Montserrat'] text-lg font-bold text-[#001b4b] mb-1">
               Envía tu requerimiento directo
@@ -92,15 +92,16 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
             </p>
 
             {isSent ? (
-              <div className="bg-[#eff4ff] p-6 rounded-xl text-center space-y-2 border border-[#dae3f4]">
+              <div role="status" className="bg-[#eff4ff] p-6 rounded-xl text-center space-y-2 border border-[#dae3f4]">
                 <span className="material-symbols-outlined text-[36px] text-green-600">check_circle</span>
                 <h4 className="font-bold text-sm text-[#001b4b]">Mensaje listo en WhatsApp</h4>
                 <p className="text-xs text-[#444650]">
                   WhatsApp se abrió con el mensaje preparado para que lo revises antes de enviarlo.
                 </p>
                 <button
+                  type="button"
                   onClick={() => setIsSent(false)}
-                  className="mt-3 text-xs text-[#fc820c] font-bold hover:underline"
+                  className="mt-3 min-h-11 px-2 text-sm text-[#964900] font-bold hover:underline"
                 >
                   Enviar otro mensaje
                 </button>
@@ -109,68 +110,76 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-medium text-[#444650] mb-1">Nombre Completo *</label>
+                    <label htmlFor="contact-name" className="block text-xs font-medium text-[#444650] mb-1">Nombre Completo *</label>
                     <input
+                      id="contact-name"
                       type="text"
                       required
                       placeholder="Ej: Andrés Morales"
+                      autoComplete="name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full text-xs px-3 py-2.5 bg-[#f8f9ff] border border-[#c4c6d1] rounded-lg focus:outline-none focus:border-[#001b4b]"
+                      className="w-full min-h-11 text-base sm:text-sm px-3 py-3 bg-[#f8f9ff] border border-[#c4c6d1] rounded-lg placeholder:text-[#444650] focus:border-[#001b4b]"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-[#444650] mb-1">Ferretería / Empresa</label>
+                    <label htmlFor="contact-business" className="block text-xs font-medium text-[#444650] mb-1">Ferretería / Empresa</label>
                     <input
+                      id="contact-business"
                       type="text"
+                      autoComplete="organization"
                       placeholder="Ej: Ferretería El Carmen"
                       value={business}
                       onChange={(e) => setBusiness(e.target.value)}
-                      className="w-full text-xs px-3 py-2.5 bg-[#f8f9ff] border border-[#c4c6d1] rounded-lg focus:outline-none focus:border-[#001b4b]"
+                      className="w-full min-h-11 text-base sm:text-sm px-3 py-3 bg-[#f8f9ff] border border-[#c4c6d1] rounded-lg placeholder:text-[#444650] focus:border-[#001b4b]"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-medium text-[#444650] mb-1">Teléfono / WhatsApp *</label>
+                    <label htmlFor="contact-phone" className="block text-xs font-medium text-[#444650] mb-1">Teléfono / WhatsApp *</label>
                     <input
+                      id="contact-phone"
                       type="tel"
                       required
                       placeholder="Ej: 310 123 4567"
+                      autoComplete="tel"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full text-xs px-3 py-2.5 bg-[#f8f9ff] border border-[#c4c6d1] rounded-lg focus:outline-none focus:border-[#001b4b]"
+                      className="w-full min-h-11 text-base sm:text-sm px-3 py-3 bg-[#f8f9ff] border border-[#c4c6d1] rounded-lg placeholder:text-[#444650] focus:border-[#001b4b]"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-[#444650] mb-1">Ciudad o Municipio *</label>
+                    <label htmlFor="contact-city" className="block text-xs font-medium text-[#444650] mb-1">Ciudad o Municipio *</label>
                     <input
+                      id="contact-city"
                       type="text"
                       required
                       placeholder="Ej: Valledupar, Codazzi, etc."
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
-                      className="w-full text-xs px-3 py-2.5 bg-[#f8f9ff] border border-[#c4c6d1] rounded-lg focus:outline-none focus:border-[#001b4b]"
+                      className="w-full min-h-11 text-base sm:text-sm px-3 py-3 bg-[#f8f9ff] border border-[#c4c6d1] rounded-lg placeholder:text-[#444650] focus:border-[#001b4b]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-[#444650] mb-1">¿Qué materiales o servicios requieres? *</label>
+                  <label htmlFor="contact-message" className="block text-xs font-medium text-[#444650] mb-1">¿Qué materiales o servicios requieres? *</label>
                   <textarea
+                    id="contact-message"
                     required
                     rows={4}
                     placeholder="Describe los productos, cantidades o si deseas consultar condiciones de crédito..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="w-full text-xs px-3 py-2.5 bg-[#f8f9ff] border border-[#c4c6d1] rounded-lg focus:outline-none focus:border-[#001b4b]"
+                    className="w-full text-base sm:text-sm px-3 py-3 bg-[#f8f9ff] border border-[#c4c6d1] rounded-lg placeholder:text-[#444650] focus:border-[#001b4b]"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3 bg-[#fc820c] hover:bg-[#964900] text-white text-sm font-bold rounded-lg shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                  className="w-full min-h-11 px-3 py-3 bg-[#fc820c] hover:bg-[#964900] text-white text-sm font-bold rounded-lg shadow-sm hover:shadow-md transition-colors flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span className="material-symbols-outlined text-[19px]">chat</span>
                   <span>Contactar Asesor por WhatsApp</span>
@@ -190,7 +199,7 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
               </p>
               <button
                 onClick={onOpenQuoteModal}
-                className="w-full py-2.5 bg-[#eff4ff] hover:bg-[#e0e9f9] text-[#001b4b] text-xs font-bold rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full min-h-11 py-2.5 bg-[#eff4ff] hover:bg-[#e0e9f9] text-[#001b4b] text-sm font-bold rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span className="material-symbols-outlined text-[18px]">shopping_cart</span>
                 <span>Abrir cotizador</span>

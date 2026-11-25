@@ -62,7 +62,7 @@ export const BrandsShowcase: React.FC = () => {
 
   return (
     <>
-      <section className="w-full border-b border-[#dae3f4] bg-white py-14 lg:py-16" id="marcas" aria-labelledby="brands-title">
+      <section className="w-full scroll-mt-20 border-b border-[#dae3f4] bg-white py-12 lg:py-16" id="marcas" aria-labelledby="brands-title">
         <div className="mx-auto max-w-[1320px] px-4 lg:px-8">
           <div className="mx-auto mb-8 max-w-2xl text-center">
             <span className="text-xs font-bold uppercase tracking-wider text-[#fc820c]">Marcas compartidas</span>

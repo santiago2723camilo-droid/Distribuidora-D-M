@@ -2,7 +2,7 @@
 tipo: estado-del-proyecto
 estado: vigente
 creado: 2026-10-28
-actualizado: 2026-11-20
+actualizado: 2026-11-25
 tags: [proyecto, landing, vite]
 fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-google-ai-studio/README.md"]
 ---
@@ -27,7 +27,7 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 - **Confirmado:** build con `node .\node_modules\vite\bin\vite.js build` y TypeScript con `node .\node_modules\typescript\bin\tsc --noEmit` terminaron correctamente. Vite muestra una advertencia de compatibilidad futura por `__dirname` en `vite.config.ts`.
 - **Confirmado:** el encabezado usa el logo local `public/brand/logo-dym.png`, generado al recortar el PDF original sin modificarlo. Ya no depende del logo remoto del código extraído.
 - **Confirmado:** la vista de la portada y catálogo se verificó en escritorio y móvil en iteraciones previas. En la prueba más reciente de anchos 320 y 375 px, el documento no desbordó horizontalmente.
-- **Histórico, reemplazado:** en noviembre 6 y 13 no se pudo verificar una vista local; la vista actual se sirve en `http://127.0.0.1:3004/` y se revisó en noviembre 20.
+- **Confirmado (2026-11-25):** vista local en `http://127.0.0.1:3005/`, revisada en Brave. El servidor de desarrollo se ejecuta solo en la dirección local de este equipo.
 - **Confirmado:** remoto `origin` configurado como `https://github.com/santiago2723camilo-droid/Distribuidora-D-M.git`; rama local `main` sigue `origin/main`.
 - **Confirmado (2026-11-20):** Git Credential Manager inició sesión como `santiago2723camilo-droid`; el commit `0a947cc` se subió a `origin/main` y la rama local quedó sincronizada.
 - **Pendiente:** el código está en GitHub, pero no se ha desplegado a un dominio o servicio de hosting.
@@ -48,7 +48,14 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 
 ## Próximo paso
 
-El paso 6 original (muestra de tarjetas de categoría con imágenes) se omitió por decisión del usuario; el catálogo seguirá sin fotos. El paso 7 está aplicado parcialmente: carrusel y modales de logos, con fichas de aliados aún pendientes por falta de fuentes. Los pasos 8 (testimonios/crédito) y 9 (cotizador) están aplicados y comprobados dentro de sus límites. El paso 10 deja una consulta de crédito por WhatsApp con texto libre; el siguiente es el paso 11, pulido profesional, sin cambiar contenido ni identidad aprobados. No se han confirmado relaciones comerciales, certificaciones ni garantías para todos los logos.
+El paso 11 está aplicado y verificado. El siguiente es el paso 12 del [[plan-de-mejora]], revisión en celular y casos raros. El catálogo sigue sin fotos por decisión del usuario. Los pendientes de fichas de marcas, crédito y recepción por WhatsApp se mantienen en [[pendientes]].
+
+## Paso 11 · Pulido profesional
+
+- **Confirmado:** se ordenaron los espacios de Inicio, Productos, Nosotros y Contacto. La portada usa un pie separado para su foto y cuatro accesos con teclado. Los textos, el logo y la paleta de marca se conservaron.
+- **Confirmado:** los formularios asocian etiquetas con campos. Se ajustaron botones y filtros para pantallas pequeñas. Al paginar, el catálogo lleva al inicio del nuevo grupo de resultados. El cotizador muestra los nombres completos y permite ajustar cantidades con botones de 44 px. Cotización y Crédito admiten navegación con teclado y cierre con Escape.
+- **Comprobado (2026-11-25):** Brave en escritorio y ventana emulada de 320 px. El filtro Construcción y ferretería con búsqueda «TORNILLO» pasó de los resultados 1–10 a 11–20 de 28 y mantuvo el producto seleccionado. Se aumentó su cantidad de 1 a 2 y luego se eliminó. En móvil se observaron campos de Contacto, filtros, cotizador y crédito. Al cerrar Crédito con Escape, el foco volvió al menú. La compilación de Vite y TypeScript pasaron.
+- **Pendiente:** la recepción real por WhatsApp y el despliegue público. En esta revisión se hicieron pruebas locales, sin enviar mensajes.
 
 ## Paso 9 del plan recibido · Carrito y cotizador
 

@@ -2,7 +2,7 @@
 tipo: plan-de-mejora
 estado: en-progreso
 creado: 2026-11-06
-actualizado: 2026-11-20
+actualizado: 2026-11-25
 tags: [plan, landing, mejoras]
 fuentes: ["Plan De Mejora/17-distribuidora-dym/plan-mejoras.md", "Plan De Mejora/17-distribuidora-dym/validacion-con-cliente.md", "trabajo/landing-google-ai-studio/src/"]
 ---
@@ -131,3 +131,11 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 - **Aplicado localmente:** se añadió un campo opcional para describir la consulta. El enlace arma un borrador al WhatsApp de `COMPANY_PHONE`; no guarda la respuesta ni transmite datos por sí mismo. El texto aclara que condiciones/plazos/aprobaciones no se calculan ni confirman en la página.
 - **Tres casos verificados leyendo el borrador preparado (sin abrir WhatsApp):** campo vacío produce una consulta general; pregunta por cupo se incluye sin monto calculado; pregunta por plazo y revisión se incluye sin plazo prometido ni aprobación.
 - **Visual y técnico:** modal revisado a 375 y 320 px; botón dentro del recuadro. Vite build, TypeScript y `git diff --check` pasan.
+
+## Paso 11 del plan recibido · Pulido profesional
+
+- **Aplicado:** portada con espacios más parejos, pie de foto fuera de la imagen y accesos manejables con teclado. Se conservaron los textos, el logo y la paleta. La pestaña reutiliza el logo existente como icono.
+- **Aplicado:** campos con etiquetas vinculadas y texto más legible en móvil, controles principales de al menos 44 px, filtros en varias filas cuando hace falta y paginación que devuelve la vista a los resultados. El cotizador tiene una lista con nombres completos, controles de cantidad y una zona de acciones que permanece visible.
+- **Guía aplicada:** se consultaron las instrucciones oficiales de [Emil](https://github.com/emilkowalski/skills/blob/main/skills/emil-design-eng/SKILL.md) e [Impeccable](https://github.com/pbakaus/impeccable/blob/main/.agents/skills/impeccable/SKILL.md). Se siguieron directamente porque las skills no están instaladas en el proyecto.
+- **Comprobado:** Vite build, TypeScript y `git diff --check`. En Brave se revisaron escritorio y móvil emulado a 320 px. La paginación mantuvo el filtro, la búsqueda y el carrito. Se aumentó y quitó un producto. Escape cerró los modales probados y, en Crédito, devolvió el foco al menú. No se comprobó la recepción por WhatsApp.
+- **Siguiente:** paso 12, recorrido en celular y casos raros. Ver [[estado-del-proyecto]] y [[pendientes]].

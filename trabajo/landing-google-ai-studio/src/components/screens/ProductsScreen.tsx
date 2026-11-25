@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { CartItem, ProductItem } from '../../types';
 import { PRODUCTS_CATALOG } from '../../data/mockData';
 
@@ -28,6 +28,10 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>('all');
   const [page, setPage] = useState(1);
   const [addedItemNotice, setAddedItemNotice] = useState<string | null>(null);
+  const noticeTimer = useRef<number | undefined>(undefined);
+  const resultsRef = useRef<HTMLElement>(null);
+
+  useEffect(() => () => window.clearTimeout(noticeTimer.current), []);
 
   const query = search.trim().toLocaleLowerCase('es');
   const filteredProducts = PRODUCTS_CATALOG.filter((item) => {
@@ -43,15 +47,22 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
   const handleAdd = (product: ProductItem) => {
     onAddToCart(product, 1);
     setAddedItemNotice(product.name);
-    window.setTimeout(() => setAddedItemNotice(null), 2500);
+    window.clearTimeout(noticeTimer.current);
+    noticeTimer.current = window.setTimeout(() => setAddedItemNotice(null), 2500);
+  };
+
+  const goToPage = (nextPage: number) => {
+    setPage(nextPage);
+    resultsRef.current?.focus({ preventScroll: true });
+    resultsRef.current?.scrollIntoView({ block: 'start' });
   };
 
   const getCartQuantity = (productId: string) =>
     cart.find((item) => item.product.id === productId)?.quantity ?? 0;
 
   return (
-    <div className="w-full bg-[#f8f9ff] min-h-screen py-10">
-      <div className="max-w-[1320px] mx-auto px-4 lg:px-8 space-y-8">
+    <div className="w-full bg-[#f8f9ff] min-h-screen py-8 lg:py-12">
+      <div className="max-w-[1320px] mx-auto px-4 lg:px-8 space-y-6 sm:space-y-8">
         <section className="bg-[#001b4b] text-white rounded-2xl p-6 lg:p-10 shadow-lg border border-[#12306b]">
           <span className="text-xs font-bold uppercase tracking-wider text-[#fc820c] bg-white/10 px-3 py-1 rounded-full">
             Catálogo de productos
@@ -65,13 +76,13 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
         </section>
 
         {addedItemNotice && (
-          <div role="status" className="fixed top-24 right-4 z-50 bg-[#001b4b] text-white px-4 py-3 rounded-xl shadow-xl border border-[#fc820c] flex items-center gap-3">
+          <div data-dark-surface className="fixed top-24 right-4 z-50 max-w-[calc(100%-2rem)] bg-[#001b4b] text-white px-4 py-2 rounded-xl shadow-xl border border-[#fc820c] flex items-center gap-3">
             <span className="material-symbols-outlined text-[#fc820c]">check_circle</span>
-            <div className="text-xs min-w-0">
+            <div role="status" className="text-xs min-w-0">
               <p className="font-bold">Agregado a cotización</p>
               <p className="text-[#dae2ff] truncate max-w-xs">{addedItemNotice}</p>
             </div>
-            <button onClick={onOpenQuoteModal} className="ml-2 bg-[#fc820c] text-white text-xs px-2.5 py-1 rounded font-bold">
+            <button type="button" onClick={onOpenQuoteModal} className="min-h-11 min-w-11 shrink-0 bg-[#fc820c] hover:bg-[#964900] text-white text-xs px-2.5 rounded-lg font-bold transition-colors">
               Ver
             </button>
           </div>
@@ -88,11 +99,11 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
                 setPage(1);
               }}
               placeholder="Buscar producto por nombre…"
-              className="w-full px-4 py-3 bg-[#f8f9ff] border border-[#c4c6d1] rounded-xl text-sm focus:outline-none focus:border-[#001b4b]"
+              className="w-full min-h-11 px-4 py-3 bg-[#f8f9ff] border border-[#c4c6d1] rounded-xl text-base sm:text-sm placeholder:text-[#444650] focus:border-[#001b4b]"
             />
           </label>
 
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none" aria-label="Filtrar por categoría">
+          <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Filtrar por categoría">
             {categories.map((category) => (
               <button
                 key={category.id}
@@ -102,7 +113,7 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
                   setSelectedCategory(category.id);
                   setPage(1);
                 }}
-                className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-colors ${
+                className={`min-h-11 inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-colors ${
                   selectedCategory === category.id
                     ? 'bg-[#001b4b] text-white'
                     : 'bg-[#eff4ff] text-[#444650] hover:bg-[#dae3f4] hover:text-[#001b4b]'
@@ -121,7 +132,7 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
                 : 'No hay productos que coincidan con tu búsqueda'}
             </p>
             {cart.length > 0 && (
-              <button onClick={onOpenQuoteModal} className="inline-flex items-center justify-center gap-2 bg-[#fc820c] text-white text-xs font-bold px-3.5 py-2 rounded-lg hover:bg-[#964900]">
+              <button onClick={onOpenQuoteModal} className="min-h-11 inline-flex items-center justify-center gap-2 bg-[#fc820c] text-white text-xs font-bold px-3.5 py-2 rounded-lg hover:bg-[#964900] transition-colors">
                 <span className="material-symbols-outlined text-[16px]">shopping_cart</span>
                 Ver cotización ({cart.reduce((sum, item) => sum + item.quantity, 0)})
               </button>
@@ -131,21 +142,21 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
 
         {pageProducts.length ? (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <section ref={resultsRef} tabIndex={-1} aria-label="Resultados del catálogo" className="scroll-mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {pageProducts.map((product) => {
                 const quantity = getCartQuantity(product.id);
                 return (
                   <article key={product.id} className="bg-white rounded-2xl p-5 shadow-xs border border-[#dae3f4] flex flex-col justify-between gap-5">
                     <div>
                       <p className="text-[11px] font-bold text-[#fc820c] uppercase">{product.categoryLabel}</p>
-                      <h2 className="font-['Montserrat'] text-base font-bold text-[#001b4b] leading-snug mt-2 break-words">
+                      <h2 className="font-['Montserrat'] text-base font-bold text-[#001b4b] leading-snug mt-2 wrap-anywhere">
                         {product.name}
                       </h2>
                     </div>
                     <button
                       type="button"
                       onClick={() => handleAdd(product)}
-                      className="w-full inline-flex items-center justify-center gap-2 bg-[#fc820c] hover:bg-[#964900] text-white text-xs font-bold py-3 px-4 rounded-lg transition-colors"
+                      className="w-full min-h-11 inline-flex items-center justify-center gap-2 bg-[#fc820c] hover:bg-[#964900] text-white text-sm font-bold py-3 px-4 rounded-lg transition-colors"
                     >
                       <span className="material-symbols-outlined text-[17px]">add_shopping_cart</span>
                       {quantity ? `Añadir más (${quantity})` : 'Añadir a cotización'}
@@ -153,25 +164,25 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
                   </article>
                 );
               })}
-            </div>
+            </section>
 
-            <nav className="flex items-center justify-center gap-4" aria-label="Paginación del catálogo">
+            <nav className="flex items-center justify-center gap-2 sm:gap-4" aria-label="Paginación del catálogo">
               <button
                 type="button"
-                onClick={() => setPage((value) => Math.max(1, value - 1))}
+                onClick={() => goToPage(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="px-4 py-2 rounded-lg border border-[#c4c6d1] text-sm font-semibold text-[#001b4b] disabled:opacity-40 disabled:cursor-not-allowed"
+                className="min-h-11 px-3 sm:px-4 py-2 rounded-lg border border-[#c4c6d1] text-sm font-semibold text-[#001b4b] hover:bg-[#e5eeff] transition-colors disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-transparent"
               >
                 Anterior
               </button>
-              <span className="text-sm text-[#444650]" aria-live="polite">
+              <span className="text-sm text-center tabular-nums text-[#444650]" aria-live="polite">
                 Página {currentPage} de {pageCount}
               </span>
               <button
                 type="button"
-                onClick={() => setPage((value) => Math.min(pageCount, value + 1))}
+                onClick={() => goToPage(currentPage + 1)}
                 disabled={currentPage === pageCount}
-                className="px-4 py-2 rounded-lg border border-[#c4c6d1] text-sm font-semibold text-[#001b4b] disabled:opacity-40 disabled:cursor-not-allowed"
+                className="min-h-11 px-3 sm:px-4 py-2 rounded-lg border border-[#c4c6d1] text-sm font-semibold text-[#001b4b] hover:bg-[#e5eeff] transition-colors disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-transparent"
               >
                 Siguiente
               </button>
@@ -188,7 +199,7 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
                 setSelectedCategory('all');
                 setPage(1);
               }}
-              className="text-xs font-bold text-[#fc820c] hover:underline"
+              className="min-h-11 px-2 text-sm font-bold text-[#964900] hover:underline"
             >
               Ver todos los productos
             </button>

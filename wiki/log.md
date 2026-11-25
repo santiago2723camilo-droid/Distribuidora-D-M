@@ -164,3 +164,9 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - El modal ahora permite escribir una pregunta opcional que se agrega al mensaje preparado para WhatsApp. La página no guarda ni envía el mensaje; la persona lo revisa y lo envía desde WhatsApp.
 - Se probaron tres borradores: consulta general, pregunta por cupo y pregunta por plazo/revisión. Se revisó visualmente el modal a 375 y 320 px; no se abrió WhatsApp.
 - Vite build, TypeScript y `git diff --check` pasaron; sigue el aviso conocido de `__dirname`. Próximo paso del archivo original: paso 11, pulido profesional.
+
+## [2026-11-25] plan | Paso 11, pulido profesional
+
+- Se retomó el borrador local y se completó el pulido de Inicio, catálogo, formularios y cotizador con las guías oficiales de Emil e Impeccable. Se conservaron textos y marca.
+- En Brave se revisaron escritorio y 320 px. El catálogo pasó de 1–10 a 11–20 de 28 sin perder filtro, búsqueda ni carrito. Se aumentó y quitó el producto de prueba. El cierre con Escape y el foco visible se observaron en los modales. No se enviaron mensajes.
+- Vite build, TypeScript y `git diff --check` pasaron. La vista local quedó en `http://127.0.0.1:3005/`. Siguiente tarea del plan: paso 12. Ver [[plan-de-mejora]] y [[estado-del-proyecto]].

@@ -2,7 +2,7 @@
 tipo: pendientes
 estado: abierto
 creado: 2026-10-28
-actualizado: 2026-11-20
+actualizado: 2026-11-25
 tags: [pendientes, preguntas]
 fuentes: ["trabajo/landing-google-ai-studio/src/data/mockData.ts", "Docs/"]
 ---
@@ -18,6 +18,7 @@ fuentes: ["trabajo/landing-google-ai-studio/src/data/mockData.ts", "Docs/"]
 - **Paso 7 del plan (parcial):** faltan fichas detalladas de las marcas en `Docs/`. El carrusel/modal usa solo los 11 logos autorizados y sus nombres; no afirma garantías ni relaciones comerciales vigentes. Ver [[documentos-y-activos]] y [[plan-de-mejora]].
 - **Paso 9 del plan:** carrito y cotizador probados localmente, y botón ajustado para móvil. Pendiente queda verificar recepción real en WhatsApp cuando haya un canal de prueba autorizado; no se envió ningún mensaje. Ver [[plan-de-mejora]] y [[estado-del-proyecto]].
 - **Paso 10 del plan:** el sitio ofrece consulta por WhatsApp con campo libre y no simula cupos ni condiciones. Sigue pendiente recibir reglas completas y aprobadas si la empresa decide habilitar una simulación futura. Ver [[empresa]], [[plan-de-mejora]] y [[estado-del-proyecto]].
+- **Paso 12 del plan:** revisar catálogos largos, búsquedas sin resultados, nombres extensos, carrito vacío y ventanas de marcas con foco en el uso en celular. La revisión del paso 11 cubrió la paginación con filtro, los cambios de cantidad y una vista emulada de 320 px.
 - **Alta:** las condiciones de crédito cambian y no están completas; no reactivar una simulación hasta recibir una regla aprobada.
 - **Media:** la clasificación del inventario es provisional y se infirió de los nombres de producto; confirmar los casos que la empresa quiera mover a otra categoría.
 - **Media:** stock y precios del archivo no se muestran en la página; confirmar explícitamente si desean publicar alguno después.
@@ -27,5 +28,5 @@ fuentes: ["trabajo/landing-google-ai-studio/src/data/mockData.ts", "Docs/"]
 - **Media:** completar la política de datos cuando se confirmen los datos legales requeridos (NIT/RUT, dirección para datos personales y responsable/correo apropiado).
 - **Pendiente:** instalar las skills entregadas en los ZIP del plan antes de aplicar esas rutinas especializadas.
 - **Pendiente de validación:** revisar demás flujos y confirmar información provisional antes de desplegar la web. El código está en GitHub; el sitio no está desplegado.
-- **Pendiente de verificación:** revisar formularios y recepción de mensajes en el canal de prueba autorizado; la paginación, filtros y vista móvil del catálogo sí se revisaron el 2026-11-20. Ver [[estado-del-proyecto]].
+- **Pendiente de verificación:** envío y recepción de mensajes en WhatsApp con un canal de prueba autorizado. La vista y las etiquetas de los formularios se revisaron el 2026-11-25. Ver [[estado-del-proyecto]].
 - Ver preguntas de validación y secuencia propuesta en [[plan-de-mejora]].

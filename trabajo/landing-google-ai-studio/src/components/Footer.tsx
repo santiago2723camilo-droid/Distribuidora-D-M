@@ -16,7 +16,7 @@ const navigation: { id: ScreenType | 'marcas'; label: string }[] = [
 ];
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCreditModal }) => (
-  <footer className="w-full bg-[#001b4b] text-white border-t border-[#12306b]">
+  <footer data-dark-surface className="w-full bg-[#001b4b] text-white border-t border-[#12306b]">
     <div className="max-w-[1320px] mx-auto px-4 lg:px-8 py-10 lg:py-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-8 border-b border-[#12306b]/80">
         <section className="space-y-3">
