@@ -48,7 +48,14 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 
 ## Próximo paso
 
-El paso 15 del [[plan-de-mejora]] quedó aplicado y comprobado localmente en `http://127.0.0.1:3005/`. Para comprobar indexación y configurar la URL principal falta conocer la dirección pública del sitio. El paso 14 sigue aplazado por indicación de D&M hasta contar con el NIT. Su borrador se conserva en una vista local separada en `http://127.0.0.1:3006/`. Otros pendientes están en [[pendientes]].
+El paso 16 del [[plan-de-mejora]] quedó verificado en la compilación local en `http://127.0.0.1:3007/`. Para comprobar indexación y configurar la URL principal falta conocer la dirección pública del sitio. El paso 14 sigue aplazado por indicación de D&M hasta contar con el NIT. Su borrador se conserva en una vista local separada en `http://127.0.0.1:3006/`. Otros pendientes están en [[pendientes]].
+
+## Paso 16 · Revisión final
+
+- **Comprobado (2026-11-25):** Brave en escritorio y vista móvil emulada de 390 px. Se recorrieron Inicio, Productos, Nosotros, Marcas y Contacto. Se verificó la dirección en texto y la consulta de Crédito, que prepara un mensaje con la pregunta escrita sin cálculo de cupo, plazo ni aprobación.
+- **Comprobado:** el borrador de WhatsApp se interceptó localmente en escritorio y en móvil. Coincidieron los nombres, el orden, el destino y las cantidades de los tres productos seleccionados desde las páginas 1, 50 y 150. El número de destino coincide con `COMPANY_PHONE`. No se envió un mensaje ni se comprobó su recepción.
+- **Corregido y vuelto a probar:** en escritorio, al navegar con el teclado, el carrusel pasa a desplazamiento manual para mantener visible el logo que tiene el foco. Se verificó Tab del primer logo al último, Enter para abrir Zafiro, Escape para devolver el foco y el botón para reanudar el movimiento.
+- **Versión local:** Vite build, TypeScript y `git diff --check` pasaron. La compilación final excluye el borrador privado y la instrumentación temporal. La etiqueta local de Git es `revision-final-paso-16`. El despliegue público sigue pendiente.
 
 ## Paso 13 · Transiciones suaves
 

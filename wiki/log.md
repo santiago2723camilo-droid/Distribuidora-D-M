@@ -204,3 +204,9 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - Se aplazó la política hasta contar con el NIT, por indicación de D&M. En la landing habitual se ajustaron el título, la descripción y el texto de la portada. Se incorporaron datos estructurados con contactos públicos y una alternativa para el visitante sin JavaScript.
 - Brave comprobó portada en escritorio y 390 px, el acceso al catálogo, los datos de Contacto y la alternativa sin JavaScript. El HTML compilado coincidió con los datos de la app. Vite, TypeScript y `git diff --check` pasaron.
 - Sigue pendiente confirmar una URL pública para revisar rastreo e indexación y configurar la dirección canónica. Ver [[plan-de-mejora]].
+
+## [2026-11-25] revisión | Paso 16, versión final local
+
+- Se revisó la compilación en Brave en escritorio y a 390 px. El cotizador conservó tres productos de las páginas 1, 50 y 150. Se interceptó el borrador en ambos tamaños y coincidieron nombres, cantidades y el número de destino. También se revisó el mensaje de consulta de Crédito. No se abrieron conversaciones ni se enviaron mensajes.
+- Se corrigió el carrusel para que el logo enfocado quede visible al navegar con el teclado. Se comprobó Tab, Enter, Escape, retorno de foco y reanudación del movimiento.
+- Vite build, TypeScript y `git diff --check` pasaron. La versión local se guardó con la etiqueta `revision-final-paso-16`. La política continúa aplazada por el NIT y queda fuera de la compilación. Ver [[plan-de-mejora]].

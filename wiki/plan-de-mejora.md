@@ -180,3 +180,18 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 - **Pendiente con URL pública:** comprobar acceso de Google al sitio, URL canónica, sitemap si corresponde y Search Console. Inicio, Productos, Nosotros y Contacto son vistas de una sola URL. No se añadieron rutas independientes, posiciones prometidas ni direcciones de ejemplo.
 - **Confirmaciones útiles:** URL pública o decisión de alojamiento, municipios o zonas reales de entrega, modalidad y horario de atención si se quieren publicar, y existencia de un Perfil de Empresa de Google. Se mantiene la decisión de no incorporar un enlace de Maps a la landing.
 - **Fuentes:** guía local `seo-organico-ia.zip`, [Guía inicial de SEO de Google](https://developers.google.com/search/docs/fundamentals/seo-starter-guide), [Datos estructurados de negocios locales](https://developers.google.com/search/docs/appearance/structured-data/local-business) y [Cómo solicitar rastreo](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl).
+
+## Paso 16 del plan recibido · Revisión final
+
+**Estado: aplicado y comprobado localmente.** Vista de la compilación en `http://127.0.0.1:3007/`. Versión local identificada con la etiqueta de Git `revision-final-paso-16`.
+
+| Página de catálogo | Nombre exacto en el borrador | Cantidad |
+|---:|---|---:|
+| 1 | ABRAZADERA CREMALLERA 1 1/2 | 1 |
+| 50 | CORREDILLA PLASTICA NEGRA 150X2.5 | 2 |
+| 150 | YEE LAVADORA COBRE | 3 |
+
+- **Comprobado:** se agregaron desde las tres páginas y se comparó el texto real preparado por la compilación, interceptando localmente el enlace de WhatsApp. Coincidieron los nombres, cantidades y el número confirmado, tanto en escritorio como en móvil emulado a 390 px.
+- **Comprobado y corregido:** el teclado entra al carrusel con el logo enfocado visible, incluso al pasar de Cellux a Zafiro. Enter abre el detalle, Escape devuelve el foco y se puede reanudar la animación.
+- **Comprobado:** consulta de crédito por WhatsApp con pregunta de prueba y sin simulación o promesa. Contacto conserva dirección en texto, como pidió D&M. Compilación y TypeScript correctos.
+- **Pendiente:** recepción real por WhatsApp, revisión en teléfono físico, URL pública e indexación. La política se mantiene aplazada por el NIT. La versión local no se desplegó. Ver [[estado-del-proyecto]] y [[pendientes]].

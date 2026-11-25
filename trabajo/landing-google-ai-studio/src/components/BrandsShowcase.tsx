@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { ALLIED_BRANDS } from '../data/mockData';
 import { AlliedBrand } from '../types';
 import { ModalDialog } from './ModalDialog';
@@ -6,11 +6,34 @@ import { ModalDialog } from './ModalDialog';
 export const BrandsShowcase: React.FC = () => {
   const [selectedBrand, setSelectedBrand] = useState<AlliedBrand | null>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const [isKeyboardBrowsing, setIsKeyboardBrowsing] = useState(false);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const motionStopped = isPaused || isKeyboardBrowsing;
+
+  useLayoutEffect(() => {
+    if (!isKeyboardBrowsing) return;
+    carouselRef.current?.querySelector('button:focus')?.scrollIntoView({
+      block: 'nearest',
+      inline: 'nearest',
+      behavior: 'instant',
+    });
+  }, [isKeyboardBrowsing]);
+
+  const toggleMotion = () => {
+    if (isKeyboardBrowsing) {
+      carouselRef.current?.scrollTo({ left: 0, behavior: 'instant' });
+      setIsKeyboardBrowsing(false);
+    }
+    setIsPaused(!motionStopped);
+  };
 
   const renderBrandButton = (brand: AlliedBrand, duplicate = false) => (
     <button
       key={`${duplicate ? 'duplicate-' : ''}${brand.name}`}
       type="button"
+      onFocus={(event) => {
+        if (event.currentTarget.matches(':focus-visible')) setIsKeyboardBrowsing(true);
+      }}
       onClick={(event) => {
         event.currentTarget.focus({ preventScroll: true });
         setSelectedBrand(brand);
@@ -38,22 +61,29 @@ export const BrandsShowcase: React.FC = () => {
           <div className="brands-pause mb-4 flex justify-end">
             <button
               type="button"
-              onClick={() => setIsPaused((paused) => !paused)}
-              aria-pressed={isPaused}
+              onClick={toggleMotion}
+              aria-pressed={motionStopped}
               className="min-h-11 rounded-lg border border-[#b1c5ff] bg-white px-3 py-2 text-xs font-semibold text-[#001b4b] hover:bg-[#f8f9ff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#001b4b]"
             >
-              {isPaused ? 'Reanudar movimiento' : 'Pausar movimiento'}
+              {motionStopped ? 'Reanudar movimiento' : 'Pausar movimiento'}
             </button>
           </div>
 
-          <div className="brands-marquee overflow-hidden rounded-2xl" role="group" aria-label="Logos de marcas">
-            <div className={`brands-marquee-track flex w-max py-2 ${isPaused ? 'is-paused' : ''}`}>
+          <div
+            ref={carouselRef}
+            className={`brands-marquee rounded-2xl ${isKeyboardBrowsing ? 'overflow-x-auto overscroll-x-contain snap-x snap-proximity' : 'overflow-hidden'}`}
+            role="group"
+            aria-label="Logos de marcas"
+          >
+            <div className={`brands-marquee-track flex w-max py-2 ${isPaused ? 'is-paused' : ''} ${isKeyboardBrowsing ? 'is-keyboard-browsing' : ''}`}>
               <div className="flex w-max shrink-0 gap-4 pr-4">
                 {ALLIED_BRANDS.map((brand) => renderBrandButton(brand))}
               </div>
-              <div className="brands-repeat flex w-max shrink-0 gap-4 pr-4">
-                {ALLIED_BRANDS.map((brand) => renderBrandButton(brand, true))}
-              </div>
+              {!isKeyboardBrowsing && (
+                <div className="brands-repeat flex w-max shrink-0 gap-4 pr-4">
+                  {ALLIED_BRANDS.map((brand) => renderBrandButton(brand, true))}
+                </div>
+              )}
             </div>
           </div>
           <p className="mt-3 text-center text-xs text-[#444650]">
