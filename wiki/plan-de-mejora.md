@@ -153,3 +153,20 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 - **Aplicado:** una entrada breve al abrir el detalle de una marca, mostrar los resultados de otra página y mostrar el aviso de borrador preparado en el cotizador. La preferencia del sistema admite el modo sin animación. No se espera a que termine una animación para mostrar el contenido ni para usar los controles.
 - **Comprobado:** Brave en escritorio y a 390 px con movimiento reducido emulado. Cada animación se inició en el modo normal y ninguna se inició con la preferencia reducida. Enter y Escape conservaron el comportamiento. Se probó el borrador por interceptación local, sin abrir WhatsApp. Vite build, TypeScript y `git diff --check` pasaron.
 - **Siguiente:** paso 14, política de tratamiento de datos. Ver [[estado-del-proyecto]] y [[pendientes]].
+
+## Paso 14 del plan recibido · Tratamiento de datos
+
+**Estado: diagnóstico confirmado.** Identificación legal, canal para ejercer derechos y manejo de conversaciones pendientes de confirmación.
+
+| Flujo | Datos que pide la página | Destino observado |
+|---|---|---|
+| Cotizador | Nombre o contacto, empresa u obra, municipio y notas. Los campos son opcionales y el municipio empieza en Valledupar. Se agregan productos y cantidades si hay selección. | Se incluyen en el borrador que abre WhatsApp. |
+| Contacto | Nombre, teléfono, municipio y consulta obligatorios. Ferretería o empresa opcional. | Se incluyen en el borrador que abre WhatsApp. |
+| Crédito | Pregunta de texto libre opcional. El formulario no solicita cédula, documentos, ingresos ni montos. | WhatsApp abre una consulta general o incluye el texto escrito. |
+
+- **Confirmado por código:** los campos se mantienen en memoria mientras se usa la página. El texto viaja como parte del enlace al abrir WhatsApp. La persona revisa el borrador y decide si lo envía. No se encontró una base de datos propia para estos formularios, ni política o casilla de autorización. Los enlaces directos sin campos no incorporan los datos de los formularios.
+- **Confirmado por código:** la portada carga fuentes e imagen desde servicios externos de Google. No se encontró analítica instalada en la landing. El alojamiento público y sus registros quedan por comprobar cuando se defina el despliegue.
+- **Confirmado por el usuario:** marca, correo comercial, teléfono y dirección de atención en [[empresa]]. **Pendiente:** razón social o nombre registrado y NIT, domicilio y contactos legales, cargo que atenderá derechos, finalidades y manejo de mensajes. `Docs/` no tiene una política ni un soporte de identidad fiscal identificado.
+- **Pendiente de validación:** usos de la información y publicidad, quién recibe o consulta los mensajes, dónde se guardan, por cuánto tiempo y cómo se conserva la prueba de autorización. No se constataron campos específicos de salud o de menores. Los campos libres pueden recibir información adicional que la página no pide.
+- **Propuesta:** página propia con enlace en el pie. Aviso breve y casilla de autorización sin premarcar en los tres flujos antes de abrir el borrador en WhatsApp. Alcance y conservación de la autorización se acuerdan con la empresa. Las promociones, si se realizan, tendrían una autorización separada y opcional.
+- **Fuentes:** guía local `tratamiento-datos-landing.zip`, [Ley 1581 de 2012, arts. 9 y 12](https://jurinfo.jep.gov.co/Normograma/compilacion/docs/ley_1581_2012.htm), [SIC sobre contenido mínimo de la política](https://sedeelectronica.sic.gov.co/publicaciones/boletin-juridico/concepto/politicas-de-tratamiento-de-datos-personales) y [Decreto 1074 de 2015, arts. 2.2.2.25.2.5 y 2.2.2.25.3.1](https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=76608).

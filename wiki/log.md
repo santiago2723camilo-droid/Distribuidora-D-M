@@ -182,3 +182,8 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - Se aplicaron transiciones al abrir marcas, al paginar y al mostrar el aviso del cotizador. El aviso confirma que se preparó un borrador para revisar.
 - Brave registró las tres animaciones con la preferencia normal y ninguna con movimiento reducido emulado a 390 px. Enter paginó, Escape cerró los diálogos y el envío se interceptó en la prueba local.
 - Vite build, TypeScript y `git diff --check` pasaron. El siguiente tema del plan es tratamiento de datos. Ver [[plan-de-mejora]] y [[estado-del-proyecto]].
+
+## [2026-11-25] revisión | Paso 14, qué datos piden los formularios
+
+- Se inventariaron Cotizador, Contacto, Crédito y enlaces directos a WhatsApp. Se ubicaron los datos confirmados de atención y se consultaron la guía del plan y fuentes oficiales colombianas.
+- Se registraron las confirmaciones faltantes y la propuesta de aviso, casilla y enlace. Esta etapa fue documental. La política y los cambios de interfaz quedan pendientes. Ver [[plan-de-mejora]] y [[pendientes]].
