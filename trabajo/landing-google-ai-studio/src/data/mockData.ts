@@ -5,18 +5,20 @@ export const COMPANY_PHONE_DISPLAY = '+57 316 460 2821';
 export const COMPANY_EMAIL = 'distri.dym13@gmail.com';
 export const COMPANY_ADDRESS = 'Carrera 4H # 21-48, barrio Villa Clara';
 
+const partnerLogoBase = `${import.meta.env.BASE_URL}brand/partners-white/`;
+
 export const ALLIED_BRANDS: AlliedBrand[] = [
-  { name: 'Cellux', logo: '/brand/partners-white/cellux.png' },
-  { name: 'DeWalt', logo: '/brand/partners-white/dewalt.png' },
-  { name: 'Fermetal', logo: '/brand/partners-white/fermetal.png' },
-  { name: 'JC Top', logo: '/brand/partners-white/jc-top.png' },
-  { name: 'JS Tools', logo: '/brand/partners-white/js-tools.png' },
-  { name: 'GR Restrepo', logo: '/brand/partners-white/restrepo.png' },
-  { name: 'Rioplast', logo: '/brand/partners-white/rioplast.png' },
-  { name: 'Total', logo: '/brand/partners-white/total.png' },
-  { name: 'UF Unifer', logo: '/brand/partners-white/unifer.png' },
-  { name: 'Vatio', logo: '/brand/partners-white/vatio.png' },
-  { name: 'Zafiro', logo: '/brand/partners-white/zafiro.png' },
+  { name: 'Cellux', logo: `${partnerLogoBase}cellux.png` },
+  { name: 'DeWalt', logo: `${partnerLogoBase}dewalt.png` },
+  { name: 'Fermetal', logo: `${partnerLogoBase}fermetal.png` },
+  { name: 'JC Top', logo: `${partnerLogoBase}jc-top.png` },
+  { name: 'JS Tools', logo: `${partnerLogoBase}js-tools.png` },
+  { name: 'GR Restrepo', logo: `${partnerLogoBase}restrepo.png` },
+  { name: 'Rioplast', logo: `${partnerLogoBase}rioplast.png` },
+  { name: 'Total', logo: `${partnerLogoBase}total.png` },
+  { name: 'UF Unifer', logo: `${partnerLogoBase}unifer.png` },
+  { name: 'Vatio', logo: `${partnerLogoBase}vatio.png` },
+  { name: 'Zafiro', logo: `${partnerLogoBase}zafiro.png` },
 ];
 
 export { PRODUCTS_CATALOG } from './inventoryCatalog';

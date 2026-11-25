@@ -48,7 +48,7 @@ export const Header: React.FC<HeaderProps> = ({
           <img
             alt="Distribuidora D&M"
             className="h-8 sm:h-10 w-auto max-w-full object-contain object-left transition-transform group-hover:scale-[1.02]"
-            src="/brand/logo-dym.png"
+            src={`${import.meta.env.BASE_URL}brand/logo-dym.png`}
           />
         </button>
 
