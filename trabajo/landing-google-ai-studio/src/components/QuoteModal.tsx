@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { CartItem } from '../types';
+import { CartItem, MAX_ITEM_QUANTITY } from '../types';
 import { COMPANY_PHONE } from '../data/mockData';
 import { ModalDialog } from './ModalDialog';
 import { PrivacyAuthorization, privacyPreview, privacyPreviewFeedback, usePrivacyAuthorization } from './PrivacyAuthorization';
@@ -209,12 +209,39 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                         >
                           -
                         </button>
-                        <span className="min-w-10 px-1 text-center text-sm font-bold tabular-nums" aria-live="polite">{item.quantity}</span>
+                        <input
+                          key={item.quantity}
+                          type="number"
+                          min={1}
+                          max={MAX_ITEM_QUANTITY}
+                          step={1}
+                          inputMode="numeric"
+                          enterKeyHint="done"
+                          required
+                          defaultValue={item.quantity}
+                          aria-label={`Cantidad de ${item.product.name}`}
+                          onBlur={(event) => {
+                            const input = event.currentTarget;
+                            if (!input.validity.valid) {
+                              input.value = String(item.quantity);
+                            } else if (input.valueAsNumber !== item.quantity) {
+                              onUpdateQuantity(item.product.id, input.valueAsNumber);
+                            }
+                          }}
+                          onKeyDown={(event) => {
+                            if (event.key === 'Enter') {
+                              event.preventDefault();
+                              if (event.currentTarget.reportValidity()) event.currentTarget.blur();
+                            }
+                          }}
+                          className="h-11 w-22 border-x border-[#c4c6d1] bg-white px-1 text-center text-base font-bold tabular-nums [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none"
+                        />
                         <button
                           onClick={() => onUpdateQuantity(item.product.id, item.quantity + 1)}
                           type="button"
                           aria-label={`Aumentar ${item.product.name}`}
-                          className="w-11 h-11 rounded-r-lg flex items-center justify-center text-[#131c28] hover:bg-[#e5eeff] cursor-pointer"
+                          disabled={item.quantity >= MAX_ITEM_QUANTITY}
+                          className="w-11 h-11 rounded-r-lg flex items-center justify-center text-[#131c28] enabled:hover:bg-[#e5eeff] enabled:cursor-pointer disabled:opacity-40"
                         >
                           +
                         </button>

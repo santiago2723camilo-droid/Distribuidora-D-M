@@ -220,3 +220,8 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 
 - D&M autorizó GitHub Pages en su repositorio. Se ajustaron las rutas del icono de pestaña, el logo del encabezado y los once logos de marcas. GitHub Actions compiló y publicó `3ee88a7` desde `main`.
 - La portada, los logos y los archivos de la app devolvieron HTTP 200. En Brave se revisaron escritorio y móvil emulado de 390 px, el carrusel, un detalle de marca, el catálogo y la apertura del cotizador. El borrador de política devolvió HTTP 404 y sigue pendiente del NIT. Ver [[estado-del-proyecto]].
+
+## [2026-11-25] mejora | Cantidades editables al cotizar
+
+- D&M pidió que el cliente escriba la cantidad en vez de pulsar el botón repetidamente. Se agregó el campo al catálogo y se habilitó la edición directa en el cotizador.
+- La compilación y TypeScript pasaron. En escritorio y móvil emulado se comprobaron la adición por cantidad, la edición y el rechazo de valores inválidos. Se guardó la mejora localmente, pendiente de publicación. Ver [[estado-del-proyecto]].

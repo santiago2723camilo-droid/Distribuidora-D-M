@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { CartItem, ProductItem } from '../../types';
+import { CartItem, MAX_ITEM_QUANTITY, ProductItem } from '../../types';
 import { PRODUCTS_CATALOG } from '../../data/mockData';
 
 interface ProductsScreenProps {
@@ -56,9 +56,15 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
   const firstVisible = filteredProducts.length ? (currentPage - 1) * PAGE_SIZE + 1 : 0;
   const lastVisible = Math.min(currentPage * PAGE_SIZE, filteredProducts.length);
 
-  const handleAdd = (product: ProductItem) => {
-    onAddToCart(product, 1);
-    setAddedItemNotice(product.name);
+  const handleAdd = (event: React.FormEvent<HTMLFormElement>, product: ProductItem) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const quantity = Number(new FormData(form).get('quantity'));
+    if (!Number.isInteger(quantity) || quantity < 1 || quantity + getCartQuantity(product.id) > MAX_ITEM_QUANTITY) return;
+
+    onAddToCart(product, quantity);
+    form.reset();
+    setAddedItemNotice(`${numberFormat.format(quantity)} × ${product.name}`);
     window.clearTimeout(noticeTimer.current);
     noticeTimer.current = window.setTimeout(() => setAddedItemNotice(null), 2500);
   };
@@ -185,6 +191,7 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
               <div key={pageTurn} className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 ${pageTurn ? 'catalog-page-enter' : ''}`}>
               {pageProducts.map((product) => {
                 const quantity = getCartQuantity(product.id);
+                const remaining = MAX_ITEM_QUANTITY - quantity;
                 return (
                   <article key={product.id} className="bg-white rounded-2xl p-5 shadow-xs border border-[#dae3f4] flex flex-col justify-between gap-5">
                     <div>
@@ -193,14 +200,31 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
                         {product.name}
                       </h2>
                     </div>
-                    <button
-                      type="button"
-                      onClick={() => handleAdd(product)}
-                      className="w-full min-h-11 inline-flex items-center justify-center gap-2 bg-[#fc820c] hover:bg-[#964900] text-white text-sm font-bold py-3 px-4 rounded-lg transition-colors"
-                    >
-                      <span className="material-symbols-outlined text-[17px]">add_shopping_cart</span>
-                      {quantity ? `Añadir más (${quantity})` : 'Añadir a cotización'}
-                    </button>
+                    <form onSubmit={(event) => handleAdd(event, product)} className="grid grid-cols-[5rem_minmax(0,1fr)] items-end gap-2">
+                      <label className="grid gap-1 text-xs font-medium text-[#444650]">
+                        Cantidad <span className="sr-only">de {product.name}</span>
+                        <input
+                          type="number"
+                          name="quantity"
+                          min={1}
+                          max={remaining}
+                          step={1}
+                          defaultValue={1}
+                          inputMode="numeric"
+                          enterKeyHint="go"
+                          required
+                          disabled={!remaining}
+                          className="w-full min-h-11 rounded-lg border border-[#c4c6d1] bg-[#f8f9ff] px-2 text-base text-[#001b4b]"
+                        />
+                      </label>
+                      <button
+                        type="submit"
+                        disabled={!remaining}
+                        className="min-h-11 rounded-lg bg-[#fc820c] px-2 py-2 text-sm font-bold text-white transition-colors enabled:hover:bg-[#964900] disabled:opacity-50"
+                      >
+                        {!remaining ? 'Límite alcanzado' : quantity ? `Añadir más (${numberFormat.format(quantity)})` : 'Añadir a cotización'}
+                      </button>
+                    </form>
                   </article>
                 );
               })}

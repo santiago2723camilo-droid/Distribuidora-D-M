@@ -22,6 +22,8 @@ export interface CartItem {
   notes?: string;
 }
 
+export const MAX_ITEM_QUANTITY = 999_999_999;
+
 export interface AlliedBrand {
   name: string;
   logo: string;

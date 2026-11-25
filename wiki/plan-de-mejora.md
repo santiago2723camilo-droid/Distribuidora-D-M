@@ -119,6 +119,7 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 
 ## Paso 9 del plan recibido · Carrito y cotizador
 
+- **Mejora local (2026-11-25):** se puede escribir la cantidad en la tarjeta del catálogo y añadir todas las unidades en una sola acción. En el cotizador, el número entre `−` y `+` se puede editar directamente. Se aceptan enteros positivos. Ver pruebas en [[estado-del-proyecto]].
 - **Aplicado localmente:** el pie del cotizador adapta la disposición de sus botones a móvil para que no salgan del recuadro. En anchos pequeños, cada producto muestra su nombre arriba de los controles.
 - **Pruebas funcionales:** se agregaron tres artículos de distintas categorías; se cambió la cantidad del panel LED, se eliminó la abrazadera y se vació el carrito. La lista restante mostró el panel con cantidad 2 y el codo con cantidad 1.
 - **Mensaje revisado por código:** el texto usa exactamente el nombre y cantidad actuales de cada artículo y el destino `COMPANY_PHONE` confirmado. No se abrió WhatsApp ni se enviaron datos, así que la recepción no se probó.
