@@ -225,3 +225,8 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 
 - D&M pidió que el cliente escriba la cantidad en vez de pulsar el botón repetidamente. Se agregó el campo al catálogo y se habilitó la edición directa en el cotizador.
 - La compilación y TypeScript pasaron. En escritorio y móvil emulado se comprobaron la adición por cantidad, la edición y el rechazo de valores inválidos. Se guardó la mejora localmente, pendiente de publicación. Ver [[estado-del-proyecto]].
+
+## [2026-11-25] publicación | Cantidades editables
+
+- Con autorización de D&M se subió `9bd621b` a `main`. GitHub Actions compiló y desplegó con éxito. La página pública respondió HTTP 200 y su JavaScript coincidió por SHA-256 con el probado en Brave en escritorio y a 390 px. El control de Brave se detuvo durante la comprobación en línea al no poder verificar la dirección de la pestaña. El borrador de política devolvió HTTP 404.
+- D&M pidió ideas para el diseño. Se anotaron propuestas para la portada, la sección de marcas y el catálogo en [[plan-de-mejora]]. Las propuestas esperan elección.

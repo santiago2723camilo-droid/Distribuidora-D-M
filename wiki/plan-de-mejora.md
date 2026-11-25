@@ -119,7 +119,7 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 
 ## Paso 9 del plan recibido · Carrito y cotizador
 
-- **Mejora local (2026-11-25):** se puede escribir la cantidad en la tarjeta del catálogo y añadir todas las unidades en una sola acción. En el cotizador, el número entre `−` y `+` se puede editar directamente. Se aceptan enteros positivos. Ver pruebas en [[estado-del-proyecto]].
+- **Mejora publicada (2026-11-25):** se puede escribir la cantidad en la tarjeta del catálogo y añadir todas las unidades en una sola acción. En el cotizador, el número entre `−` y `+` se puede editar directamente. Se aceptan enteros positivos. Ver pruebas en [[estado-del-proyecto]].
 - **Aplicado localmente:** el pie del cotizador adapta la disposición de sus botones a móvil para que no salgan del recuadro. En anchos pequeños, cada producto muestra su nombre arriba de los controles.
 - **Pruebas funcionales:** se agregaron tres artículos de distintas categorías; se cambió la cantidad del panel LED, se eliminó la abrazadera y se vació el carrito. La lista restante mostró el panel con cantidad 2 y el codo con cantidad 1.
 - **Mensaje revisado por código:** el texto usa exactamente el nombre y cantidad actuales de cada artículo y el destino `COMPANY_PHONE` confirmado. No se abrió WhatsApp ni se enviaron datos, así que la recepción no se probó.
@@ -203,3 +203,9 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 - **Decisión de D&M:** usar GitHub Pages en el repositorio autorizado. La política queda aplazada hasta contar con el NIT.
 - **Implementación:** el flujo `.github/workflows/deploy-pages.yml` instala y compila desde la carpeta de la app con base `/Distribuidora-D-M/` y publica solo `dist/`. Los cambios a la app en `main` disparan la publicación. El icono de pestaña, logo principal y logos de marcas usan la base de Vite. [Guía de Vite](https://vite.dev/guide/static-deploy#github-pages) y [fuentes de GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 - **Comprobado (2026-11-25):** la [landing pública](https://santiago2723camilo-droid.github.io/Distribuidora-D-M/) y sus 12 PNG principales responden HTTP 200. En Brave se vieron los logos en escritorio y a 390 px, se abrió el detalle de Total y funcionó el acceso al catálogo y al cotizador. El borrador de la política no se sirve por HTTPS. [Ejecución del despliegue](https://github.com/santiago2723camilo-droid/Distribuidora-D-M/actions/runs/45699009870).
+
+## Ideas de diseño para revisar con D&M
+
+- **Propuesta:** despejar la portada, dar prioridad a «Cotizar por WhatsApp» y acercar las tres categorías a la parte superior. Usar el naranja para destacar la acción principal y ajustar el contraste del texto de los botones.
+- **Propuesta:** titular la sección «Marcas» y probar una cuadrícula de logos alineados con fondo blanco. Si D&M aporta un original más nítido, probarlo en el encabezado. Una foto real del negocio sería una opción para la portada si D&M tiene una aprobada.
+- **Propuesta:** mantener el catálogo sin fotos y aplicar una alineación uniforme al nombre del producto, al campo de cantidad y al botón «Añadir». Las propuestas esperan elección de D&M.
