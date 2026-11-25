@@ -42,10 +42,11 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Brand Zone */}
         <button
           onClick={() => handleNavClick('inicio')}
+          aria-label="Ir al inicio de Distribuidora D&M"
           className="flex min-h-11 min-w-0 max-w-[132px] sm:max-w-[190px] items-center rounded-lg text-left group cursor-pointer"
         >
           <img
-            alt="Logo D&M Distribuidora"
+            alt="Distribuidora D&M"
             className="h-8 sm:h-10 w-auto max-w-full object-contain object-left transition-transform group-hover:scale-[1.02]"
             src="/brand/logo-dym.png"
           />

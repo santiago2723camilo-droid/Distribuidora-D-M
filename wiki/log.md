@@ -198,3 +198,9 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - D&M confirmó que las solicitudes se atienden y conservan en WhatsApp y que no envía promociones. Solicitó incorporar el NIT más adelante.
 - Se crearon los documentos privados y una vista local separada para revisar la política y las casillas. Brave comprobó el bloqueo sin autorización y la confirmación simulada en Cotizador, Contacto y Crédito. Se revisaron los enlaces y la vista de 390 px. No se abrió WhatsApp en las pruebas.
 - Vite, TypeScript y la revisión del paquete confirmaron que el contenido privado y los avisos de la vista de prueba quedan fuera de la compilación publicable. NIT, criterio de conservación, constancia, vigencia y aprobación siguen pendientes. Ver [[plan-de-mejora]].
+
+## [2026-11-25] plan | Paso 15, SEO
+
+- Se aplazó la política hasta contar con el NIT, por indicación de D&M. En la landing habitual se ajustaron el título, la descripción y el texto de la portada. Se incorporaron datos estructurados con contactos públicos y una alternativa para el visitante sin JavaScript.
+- Brave comprobó portada en escritorio y 390 px, el acceso al catálogo, los datos de Contacto y la alternativa sin JavaScript. El HTML compilado coincidió con los datos de la app. Vite, TypeScript y `git diff --check` pasaron.
+- Sigue pendiente confirmar una URL pública para revisar rastreo e indexación y configurar la dirección canónica. Ver [[plan-de-mejora]].

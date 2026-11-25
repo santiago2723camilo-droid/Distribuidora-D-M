@@ -48,7 +48,7 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 
 ## Próximo paso
 
-El paso 14 del [[plan-de-mejora]] tiene borrador y casillas comprobados en una vista local separada en `http://127.0.0.1:3006/`. D&M confirma que atiende y conserva las solicitudes en WhatsApp y que no envía promociones. Se aplazó el NIT por indicación del usuario. Faltan el criterio de conservación, el procedimiento de constancia, la vigencia y la aprobación del texto. La vista habitual permanece en el puerto 3005. Otros pendientes están en [[pendientes]].
+El paso 15 del [[plan-de-mejora]] quedó aplicado y comprobado localmente en `http://127.0.0.1:3005/`. Para comprobar indexación y configurar la URL principal falta conocer la dirección pública del sitio. El paso 14 sigue aplazado por indicación de D&M hasta contar con el NIT. Su borrador se conserva en una vista local separada en `http://127.0.0.1:3006/`. Otros pendientes están en [[pendientes]].
 
 ## Paso 13 · Transiciones suaves
 

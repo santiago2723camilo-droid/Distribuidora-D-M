@@ -38,7 +38,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               </h1>
 
               <p className="font-['Inter'] text-base sm:text-lg text-[#444650] max-w-xl leading-relaxed">
-                Productos para construcción, ferretería y soluciones eléctricas. Revisa el catálogo y solicita una cotización.
+                Distribuimos al por mayor productos de ferretería y construcción, accesorios sanitarios y eléctricos. Consulta el catálogo y cotiza por WhatsApp.
               </p>
 
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
@@ -69,7 +69,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             <div className="lg:col-span-5 relative">
               <figure className="rounded-2xl overflow-hidden shadow-sm bg-white border border-[#dae3f4]">
                 <img
-                  alt="Imagen ilustrativa de herramientas y materiales de ferretería"
+                  alt="Foto ilustrativa de herramientas manuales y accesorios de ferretería sobre una mesa"
                   className="w-full h-auto max-h-[460px] object-cover"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWMKUpw2rA0Ni6xuDFbfcn_sozckcp1JVvAtRmSIbg2oxk-oEkduLAt5-3yUZwNPdI1Mq0TnoB_hKK7GJA1DgnyMgcTouQisU76xlGx4YgWnT5utw5GYFqSeXvFQYSBnN5ubTLbe9vmeOlCmcqB52JfCBG5kuCDEM9lavOSEO5ngG0gG1VfcAdFbeJUXCJ_-5OZi32ASeiheuUS7twMQ_8jpAXbvg4xEV8zpTYk5A"
                   onError={(e) => {
