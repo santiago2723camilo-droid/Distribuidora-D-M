@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { CartItem, ProductItem } from '../../types';
 import { PRODUCTS_CATALOG } from '../../data/mockData';
 
@@ -11,6 +11,15 @@ interface ProductsScreenProps {
 type CategoryFilter = 'all' | ProductItem['category'];
 
 const PAGE_SIZE = 10;
+const numberFormat = new Intl.NumberFormat('es-CO');
+
+const normalizeSearch = (value: string) =>
+  value.toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().replace(/\s+/g, ' ');
+
+const searchableProducts = PRODUCTS_CATALOG.map((product) => ({
+  product,
+  searchableName: normalizeSearch(product.name),
+}));
 
 const categories: { id: CategoryFilter; label: string; icon: string }[] = [
   { id: 'all', label: 'Todos los productos', icon: 'apps' },
@@ -30,14 +39,16 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
   const [addedItemNotice, setAddedItemNotice] = useState<string | null>(null);
   const noticeTimer = useRef<number | undefined>(undefined);
   const resultsRef = useRef<HTMLElement>(null);
+  const searchSectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => () => window.clearTimeout(noticeTimer.current), []);
 
-  const query = search.trim().toLocaleLowerCase('es');
-  const filteredProducts = PRODUCTS_CATALOG.filter((item) => {
-    const matchesCategory = selectedCategory === 'all' || item.category === selectedCategory;
-    return matchesCategory && (!query || item.name.toLocaleLowerCase('es').includes(query));
-  });
+  const query = normalizeSearch(search);
+  const filteredProducts = useMemo(() => searchableProducts
+    .filter(({ product, searchableName }) =>
+      (selectedCategory === 'all' || product.category === selectedCategory) &&
+      searchableName.includes(query))
+    .map(({ product }) => product), [query, selectedCategory]);
   const pageCount = Math.max(1, Math.ceil(filteredProducts.length / PAGE_SIZE));
   const currentPage = Math.min(page, pageCount);
   const pageProducts = filteredProducts.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
@@ -55,6 +66,14 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
     setPage(nextPage);
     resultsRef.current?.focus({ preventScroll: true });
     resultsRef.current?.scrollIntoView({ block: 'start' });
+  };
+
+  const handlePageJump = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const target = Number(new FormData(event.currentTarget).get('page'));
+    if (Number.isInteger(target) && target >= 1 && target <= pageCount) {
+      goToPage(target);
+    }
   };
 
   const getCartQuantity = (productId: string) =>
@@ -76,23 +95,21 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
         </section>
 
         {addedItemNotice && (
-          <div data-dark-surface className="fixed top-24 right-4 z-50 max-w-[calc(100%-2rem)] bg-[#001b4b] text-white px-4 py-2 rounded-xl shadow-xl border border-[#fc820c] flex items-center gap-3">
-            <span className="material-symbols-outlined text-[#fc820c]">check_circle</span>
+          <div data-dark-surface className="fixed top-24 right-4 z-50 max-w-[calc(100%-2rem)] pointer-events-none bg-[#001b4b] text-white px-4 py-2 rounded-xl shadow-xl border border-[#fc820c] flex items-center gap-3">
+            <span aria-hidden="true" className="material-symbols-outlined text-[#fc820c]">check_circle</span>
             <div role="status" className="text-xs min-w-0">
               <p className="font-bold">Agregado a cotización</p>
               <p className="text-[#dae2ff] truncate max-w-xs">{addedItemNotice}</p>
             </div>
-            <button type="button" onClick={onOpenQuoteModal} className="min-h-11 min-w-11 shrink-0 bg-[#fc820c] hover:bg-[#964900] text-white text-xs px-2.5 rounded-lg font-bold transition-colors">
-              Ver
-            </button>
           </div>
         )}
 
-        <section className="bg-white p-5 rounded-2xl shadow-xs border border-[#dae3f4] space-y-4">
+        <section ref={searchSectionRef} tabIndex={-1} aria-label="Búsqueda y filtros" className="scroll-mt-24 bg-white p-5 rounded-2xl shadow-xs border border-[#dae3f4] space-y-4">
           <label className="block w-full md:max-w-lg">
             <span className="sr-only">Buscar productos</span>
             <input
               type="search"
+              enterKeyHint="search"
               value={search}
               onChange={(event) => {
                 setSearch(event.target.value);
@@ -113,31 +130,51 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
                   setSelectedCategory(category.id);
                   setPage(1);
                 }}
-                className={`min-h-11 inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-colors ${
+                className={`min-h-11 max-w-full inline-flex items-center gap-2 px-4 py-2 rounded-xl text-left text-xs sm:text-sm font-semibold transition-colors ${
                   selectedCategory === category.id
                     ? 'bg-[#001b4b] text-white'
                     : 'bg-[#eff4ff] text-[#444650] hover:bg-[#dae3f4] hover:text-[#001b4b]'
                 }`}
               >
-                <span className="material-symbols-outlined text-[18px]">{category.icon}</span>
-                <span>{category.label}</span>
+                <span aria-hidden="true" className="material-symbols-outlined shrink-0 text-[18px]">{category.icon}</span>
+                <span className="min-w-0 wrap-anywhere">{category.label}</span>
               </button>
             ))}
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-[#f8f9ff] pt-4">
             <p className="text-xs text-[#444650]" aria-live="polite">
-              {filteredProducts.length
-                ? `Mostrando ${firstVisible}–${lastVisible} de ${filteredProducts.length} productos`
+              {filteredProducts.length === 1 ? '1 producto encontrado' : filteredProducts.length
+                ? `Mostrando ${numberFormat.format(firstVisible)}–${numberFormat.format(lastVisible)} de ${numberFormat.format(filteredProducts.length)} productos`
                 : 'No hay productos que coincidan con tu búsqueda'}
             </p>
-            {cart.length > 0 && (
-              <button onClick={onOpenQuoteModal} className="min-h-11 inline-flex items-center justify-center gap-2 bg-[#fc820c] text-white text-xs font-bold px-3.5 py-2 rounded-lg hover:bg-[#964900] transition-colors">
-                <span className="material-symbols-outlined text-[16px]">shopping_cart</span>
-                Ver cotización ({cart.reduce((sum, item) => sum + item.quantity, 0)})
-              </button>
-            )}
+            <button type="button" onClick={onOpenQuoteModal} className="min-h-11 inline-flex items-center justify-center gap-2 bg-[#fc820c] text-white text-xs font-bold px-3.5 py-2 rounded-lg hover:bg-[#964900] transition-colors">
+              <span aria-hidden="true" className="material-symbols-outlined text-[16px]">shopping_cart</span>
+              Ver cotización ({numberFormat.format(cart.reduce((sum, item) => sum + item.quantity, 0))})
+            </button>
           </div>
+          {pageCount > 1 && (
+            <form key={`${currentPage}-${pageCount}`} onSubmit={handlePageJump} className="flex flex-wrap items-end gap-2">
+              <label className="grid gap-1 text-sm text-[#444650]">
+                <span>Ir a página (1–{pageCount})</span>
+                <input
+                  type="number"
+                  name="page"
+                  min={1}
+                  max={pageCount}
+                  step={1}
+                  required
+                  inputMode="numeric"
+                  enterKeyHint="go"
+                  defaultValue={currentPage}
+                  className="w-28 min-h-11 rounded-lg border border-[#c4c6d1] px-3 text-base"
+                />
+              </label>
+              <button type="submit" className="min-h-11 min-w-11 rounded-lg bg-[#001b4b] px-4 text-sm font-bold text-white hover:bg-[#12306b]">
+                Ir
+              </button>
+            </form>
+          )}
         </section>
 
         {pageProducts.length ? (
@@ -166,7 +203,8 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
               })}
             </section>
 
-            <nav className="flex items-center justify-center gap-2 sm:gap-4" aria-label="Paginación del catálogo">
+            {pageCount > 1 && (
+            <nav className="flex flex-wrap items-center justify-center gap-2 sm:gap-4" aria-label="Paginación del catálogo">
               <button
                 type="button"
                 onClick={() => goToPage(currentPage - 1)}
@@ -175,7 +213,7 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
               >
                 Anterior
               </button>
-              <span className="text-sm text-center tabular-nums text-[#444650]" aria-live="polite">
+              <span className="order-first w-full sm:order-none sm:w-auto text-sm text-center tabular-nums text-[#444650]" aria-live="polite">
                 Página {currentPage} de {pageCount}
               </span>
               <button
@@ -187,6 +225,7 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
                 Siguiente
               </button>
             </nav>
+            )}
           </>
         ) : (
           <section className="bg-white rounded-2xl p-10 text-center border border-[#dae3f4] space-y-3">
@@ -198,6 +237,8 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
                 setSearch('');
                 setSelectedCategory('all');
                 setPage(1);
+                searchSectionRef.current?.focus({ preventScroll: true });
+                searchSectionRef.current?.scrollIntoView({ block: 'start' });
               }}
               className="min-h-11 px-2 text-sm font-bold text-[#964900] hover:underline"
             >

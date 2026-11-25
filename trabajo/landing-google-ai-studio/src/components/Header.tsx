@@ -44,11 +44,11 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Brand Zone */}
         <button
           onClick={() => handleNavClick('inicio')}
-          className="flex min-h-11 items-center gap-3 flex-shrink-0 rounded-lg text-left group cursor-pointer"
+          className="flex min-h-11 min-w-0 max-w-[132px] sm:max-w-[190px] items-center rounded-lg text-left group cursor-pointer"
         >
           <img
             alt="Logo D&M Distribuidora"
-            className="h-8 sm:h-10 w-auto max-w-[132px] sm:max-w-[190px] object-contain transition-transform group-hover:scale-[1.02]"
+            className="h-8 sm:h-10 w-auto max-w-full object-contain object-left transition-transform group-hover:scale-[1.02]"
             src="/brand/logo-dym.png"
           />
         </button>
@@ -75,19 +75,20 @@ export const Header: React.FC<HeaderProps> = ({
         </nav>
 
         {/* Action Zone */}
-        <div className="flex items-center gap-1 sm:gap-3">
+        <div className="flex shrink-0 items-center gap-1 sm:gap-3">
           {/* Quote builder button */}
           <button
             onClick={onOpenQuoteModal}
             className="relative min-h-11 inline-flex items-center gap-2 bg-[#fc820c] hover:bg-[#964900] text-white font-['Inter'] text-sm font-semibold px-2 sm:px-4 py-2.5 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer whitespace-nowrap active:scale-95"
             title="Abrir cotizador o enviar pedido a WhatsApp"
+            aria-label={cartCount > 0 ? `Cotizar por WhatsApp, ${cartCount} ${cartCount === 1 ? 'unidad' : 'unidades'}` : undefined}
           >
             <span className="material-symbols-outlined text-[19px]">chat</span>
             <span className="hidden sm:inline">Cotizar por WhatsApp</span>
             <span className="sm:hidden">Cotizar</span>
             {cartCount > 0 && (
-              <span className="bg-[#001b4b] text-white text-xs font-bold min-w-5 px-1 h-5 rounded-full flex items-center justify-center tabular-nums">
-                {cartCount}
+              <span aria-hidden="true" className="bg-[#001b4b] text-white text-xs font-bold min-w-5 px-1 h-5 rounded-full flex items-center justify-center tabular-nums">
+                {cartCount > 99 ? '99+' : cartCount}
               </span>
             )}
           </button>

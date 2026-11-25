@@ -1,13 +1,9 @@
 import React from 'react';
 import { COMPANY_PHONE } from '../data/mockData';
 
-interface FloatingWhatsAppProps {
-  onQuickQuoteClick?: () => void;
-}
-
-export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onQuickQuoteClick }) => {
+export const FloatingWhatsApp: React.FC = () => {
   return (
-    <aside className="fixed bottom-6 right-6 z-50 flex items-center group pointer-events-auto">
+    <aside className="fixed bottom-6 right-6 z-50 hidden md:flex items-center group pointer-events-auto">
       {/* Tooltip badge */}
       <span className="hidden md:inline-block mr-2 px-3 py-1.5 bg-[#001b4b] text-white text-xs font-semibold rounded-lg shadow-[0_8px_24px_-4px_rgba(18,48,107,0.25)] transition-all opacity-95 group-hover:opacity-100 whitespace-nowrap border border-[#12306b]">
         Escríbenos por WhatsApp

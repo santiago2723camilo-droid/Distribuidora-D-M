@@ -170,3 +170,9 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - Se retomó el borrador local y se completó el pulido de Inicio, catálogo, formularios y cotizador con las guías oficiales de Emil e Impeccable. Se conservaron textos y marca.
 - En Brave se revisaron escritorio y 320 px. El catálogo pasó de 1–10 a 11–20 de 28 sin perder filtro, búsqueda ni carrito. Se aumentó y quitó el producto de prueba. El cierre con Escape y el foco visible se observaron en los modales. No se enviaron mensajes.
 - Vite build, TypeScript y `git diff --check` pasaron. La vista local quedó en `http://127.0.0.1:3005/`. Siguiente tarea del plan: paso 12. Ver [[plan-de-mejora]] y [[estado-del-proyecto]].
+
+## [2026-11-25] plan | Paso 12, celular y casos raros
+
+- Se explicó el plan original de 17 pasos (0 a 16) y se completaron los ajustes del 12. Se corrigieron el botón flotante que tapaba acciones, el menú que quedaba apretado con el contador y el cotizador cortado a poca altura.
+- Se probó el catálogo real en Brave: página 150 de 150, rechazo de la 151, búsqueda sin resultados y limpieza conservando el carrito. Se leyó el nombre más largo, se ajustaron cantidades y se probó eliminar el último producto y vaciar la lista. En marcas se verificó deslizamiento, apertura de detalle y cierre con Escape.
+- Vite build, TypeScript y `git diff --check` pasaron. Vista local en `http://127.0.0.1:3005/`. Pendientes: comprobación en teléfono físico y recepción de WhatsApp. Paso 13 opcional. Ver [[plan-de-mejora]] y [[estado-del-proyecto]].

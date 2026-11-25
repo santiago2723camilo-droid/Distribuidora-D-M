@@ -107,9 +107,7 @@ export default function App() {
       />
 
       {/* Floating Action Button */}
-      <FloatingWhatsApp
-        onQuickQuoteClick={() => setIsQuoteModalOpen(true)}
-      />
+      <FloatingWhatsApp />
 
       {/* Cotizador WhatsApp Modal */}
       <QuoteModal

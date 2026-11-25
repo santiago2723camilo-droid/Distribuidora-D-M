@@ -52,6 +52,19 @@ body:has(.site-dialog[open]) {
   overflow: hidden;
 }
 
+/* With little vertical space, make fields and actions part of one scroll area. */
+@media (max-height: 480px) {
+  .site-dialog[open] {
+    display: block;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .site-dialog-body {
+    overflow: visible;
+  }
+}
+
 /* Material Symbols styling */
 .material-symbols-outlined {
   font-family: 'Material Symbols Outlined';
@@ -96,5 +109,16 @@ body:has(.site-dialog[open]) {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+}
+
+@media (max-width: 47.999rem), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .brands-marquee {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+  }
+
   .brands-marquee-track { animation: none; }
+  .brands-repeat, .brands-pause { display: none; }
+  .brands-swipe-hint { display: inline; }
 }

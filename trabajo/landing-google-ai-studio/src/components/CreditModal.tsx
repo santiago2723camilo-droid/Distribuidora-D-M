@@ -32,7 +32,7 @@ export const CreditModal: React.FC<CreditModalProps> = ({ isOpen, onClose }) => 
           </button>
         </div>
 
-        <div className="min-h-0 p-4 sm:p-6 overflow-y-auto overscroll-contain space-y-4">
+        <div className="site-dialog-body min-h-0 p-4 sm:p-6 overflow-y-auto overscroll-contain space-y-4">
           <p className="text-sm text-[#444650] leading-relaxed">
             Las condiciones de crédito pueden cambiar. Comunícate por WhatsApp para consultar la información vigente.
           </p>

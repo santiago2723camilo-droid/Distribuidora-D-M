@@ -139,3 +139,11 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 - **Guía aplicada:** se consultaron las instrucciones oficiales de [Emil](https://github.com/emilkowalski/skills/blob/main/skills/emil-design-eng/SKILL.md) e [Impeccable](https://github.com/pbakaus/impeccable/blob/main/.agents/skills/impeccable/SKILL.md). Se siguieron directamente porque las skills no están instaladas en el proyecto.
 - **Comprobado:** Vite build, TypeScript y `git diff --check`. En Brave se revisaron escritorio y móvil emulado a 320 px. La paginación mantuvo el filtro, la búsqueda y el carrito. Se aumentó y quitó un producto. Escape cerró los modales probados y, en Crédito, devolvió el foco al menú. No se comprobó la recepción por WhatsApp.
 - **Siguiente:** paso 12, recorrido en celular y casos raros. Ver [[estado-del-proyecto]] y [[pendientes]].
+
+## Paso 12 del plan recibido · Revisión en celular y casos raros
+
+- **Aplicado:** salto a cualquier página dentro del rango, búsqueda tolerante a tildes y espacios, estado de un solo resultado sin controles innecesarios y retorno a filtros al limpiar el estado sin resultados.
+- **Aplicado:** se corrigieron el solapamiento del botón flotante de WhatsApp en pantallas angostas, el espacio del menú con unidades seleccionadas y el recorte de las acciones del cotizador con poca altura. Las marcas se pueden deslizar manualmente en móvil y sus ventanas devuelven el foco al logo al cerrar.
+- **Comprobado:** se usaron los 1.492 registros reales, incluidos cero y un resultado, la página 150 de 150, una página fuera del rango y el nombre más largo (51 caracteres). Se agregaron productos de páginas distintas y se probó reducir, quitar el último y vaciar. Se revisaron 320 y 390 px, 265 px de altura, escritorio y zoom al 200 %. Ver [[estado-del-proyecto]].
+- **Guía aplicada:** [mobile-native](https://github.com/emilkowalski/skills/blob/main/skills/mobile-native/SKILL.md) y [break-ui](https://github.com/emilkowalski/skills/blob/main/skills/break-ui/SKILL.md), consultadas en sus fuentes oficiales. Los casos se probaron con los datos reales del catálogo.
+- **Pendiente:** teléfono físico y recepción de WhatsApp. El siguiente paso numerado es el 13 y es opcional.

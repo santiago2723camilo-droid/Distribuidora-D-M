@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { CartItem } from '../types';
 import { COMPANY_PHONE } from '../data/mockData';
 import { ModalDialog } from './ModalDialog';
@@ -25,13 +25,14 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   const [city, setCity] = useState('Valledupar');
   const [customCity, setCustomCity] = useState('');
   const [notes, setNotes] = useState('');
+  const materialsHeadingRef = useRef<HTMLHeadingElement>(null);
 
-  const destinationCity = city === 'Otro' ? (customCity || 'Región Caribe') : city;
+  const destinationCity = city === 'Otro' ? (customCity.trim() || 'Región Caribe') : city;
 
   const handleSendWhatsApp = () => {
     let message = `*SOLICITUD DE COTIZACIÓN MAYORISTA - D&M*\n`;
-    message += `👤 *Cliente:* ${clientName || 'Cliente Mayorista'}\n`;
-    if (businessName) message += `🏢 *Ferretería / Obra:* ${businessName}\n`;
+    message += `👤 *Cliente:* ${clientName.trim() || 'Cliente Mayorista'}\n`;
+    if (businessName.trim()) message += `🏢 *Ferretería / Obra:* ${businessName.trim()}\n`;
     message += `📍 *Destino de Entrega:* ${destinationCity}\n\n`;
 
     if (cart.length > 0) {
@@ -78,7 +79,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
         </div>
 
         {/* Content Body */}
-        <div className="min-h-0 p-4 sm:p-6 overflow-y-auto overscroll-contain space-y-5">
+        <div className="site-dialog-body min-h-0 p-4 sm:p-6 overflow-y-auto overscroll-contain space-y-5">
           {/* Datos del Cliente */}
           <div className="bg-[#eff4ff] p-4 rounded-xl border border-[#dae3f4] space-y-3">
             <h3 className="font-['Montserrat'] text-xs font-bold uppercase tracking-wider text-[#001b4b]">
@@ -145,13 +146,16 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
           {/* Listado de Productos en Cotización */}
           <div className="space-y-3">
             <div className="flex items-center justify-between gap-3">
-              <h3 className="font-['Montserrat'] text-xs font-bold uppercase tracking-wider text-[#001b4b]">
+              <h3 ref={materialsHeadingRef} tabIndex={-1} className="font-['Montserrat'] text-xs font-bold uppercase tracking-wider text-[#001b4b]">
                 2. Materiales en tu Cotización ({cart.length})
               </h3>
               {cart.length > 0 && (
                 <button
                   type="button"
-                  onClick={onClearCart}
+                  onClick={() => {
+                    materialsHeadingRef.current?.focus();
+                    onClearCart();
+                  }}
                   className="min-h-11 shrink-0 px-2 text-xs text-[#ba1a1a] hover:underline cursor-pointer"
                 >
                   Vaciar lista
@@ -203,7 +207,10 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                         </button>
                       </div>
                       <button
-                        onClick={() => onRemoveItem(item.product.id)}
+                        onClick={(event) => {
+                          if (cart.length === 1 || event.detail === 0) materialsHeadingRef.current?.focus();
+                          onRemoveItem(item.product.id);
+                        }}
                         type="button"
                         aria-label={`Eliminar ${item.product.name}`}
                         className="min-w-11 min-h-11 flex items-center justify-center text-[#ba1a1a] hover:bg-[#ffdad6] p-1 rounded-md cursor-pointer"

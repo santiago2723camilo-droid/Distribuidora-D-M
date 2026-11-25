@@ -5,10 +5,11 @@ interface ModalDialogProps {
   titleId: string;
   className: string;
   onClose: () => void;
+  closeOnBackdrop?: boolean;
   children: ReactNode;
 }
 
-export function ModalDialog({ isOpen, titleId, className, onClose, children }: ModalDialogProps) {
+export function ModalDialog({ isOpen, titleId, className, onClose, closeOnBackdrop = false, children }: ModalDialogProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useLayoutEffect(() => {
@@ -27,6 +28,13 @@ export function ModalDialog({ isOpen, titleId, className, onClose, children }: M
       onCancel={(event) => {
         event.preventDefault();
         onClose();
+      }}
+      onClick={(event) => {
+        if (!closeOnBackdrop || event.target !== event.currentTarget) return;
+        const { left, right, top, bottom } = event.currentTarget.getBoundingClientRect();
+        if (event.clientX < left || event.clientX > right || event.clientY < top || event.clientY > bottom) {
+          onClose();
+        }
       }}
     >
       {children}

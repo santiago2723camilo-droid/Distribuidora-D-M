@@ -48,7 +48,15 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 
 ## Próximo paso
 
-El paso 11 está aplicado y verificado. El siguiente es el paso 12 del [[plan-de-mejora]], revisión en celular y casos raros. El catálogo sigue sin fotos por decisión del usuario. Los pendientes de fichas de marcas, crédito y recepción por WhatsApp se mantienen en [[pendientes]].
+El paso 12 del [[plan-de-mejora]] está aplicado y comprobado en navegador. La validación en un teléfono físico queda pendiente. El paso 13, de transiciones, es opcional. El catálogo sigue sin fotos por decisión del usuario. Los pendientes de fichas de marcas, crédito y recepción por WhatsApp se mantienen en [[pendientes]].
+
+## Paso 12 · Revisión en celular y casos raros
+
+- **Confirmado:** se agregó el salto directo por número de página, con validación según la búsqueda y la categoría. La búsqueda tolera tildes y espacios repetidos. Se puede limpiar una búsqueda vacía sin perder la cotización.
+- **Confirmado:** en pantallas angostas, el acceso de WhatsApp queda disponible en el menú, Contacto y el pie. El botón flotante se mantiene en pantallas amplias. El logo del encabezado cede espacio para que el contador y el menú se vean juntos. En ventanas bajas, el cotizador permite desplazar campos y acciones en una sola zona.
+- **Confirmado:** en móvil y con movimiento reducido, los logos se recorren manualmente. En escritorio el carrusel conserva movimiento y pausa. Las ventanas de marca usan el mismo diálogo que el cotizador.
+- **Comprobado:** Brave en escritorio, zoom al 200 % y vista emulada de 320 y 390 px. En 320 px se saltó a la página 150 (dos productos), se rechazó la 151, se combinó filtro con búsqueda sin resultados y se conservó el carrito al limpiar y cambiar de página. Se leyó el nombre de 51 caracteres en catálogo y cotizador, se editaron cantidades y se vació la lista. A 265 px de alto se alcanzó el botón final al desplazar. En marcas se probó deslizar, abrir Fermetal y cerrar con Escape. Vite build, TypeScript y `git diff --check` pasaron.
+- **Pendiente:** validar en teléfono físico el teclado y los gestos. No se enviaron mensajes a WhatsApp.
 
 ## Paso 11 · Pulido profesional
 
