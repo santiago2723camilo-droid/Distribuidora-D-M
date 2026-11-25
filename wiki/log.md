@@ -215,3 +215,8 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 
 - Se revisaron los cinco commits salientes y se subieron `main` y `revision-final-paso-16`. Se verificó directamente que ambas referencias identificaban el commit de la versión final `d732855` tras el envío.
 - La API de GitHub confirmó que Pages está desactivado. Su dirección esperada devolvió HTTP 404. Se anotaron los ajustes de ruta y compilación necesarios para ese alojamiento. No se habilitó un despliegue. La política se mantiene pendiente del NIT.
+
+## [2026-11-25] publicación | Landing en GitHub Pages
+
+- D&M autorizó GitHub Pages en su repositorio. Se ajustaron las rutas del icono de pestaña, el logo del encabezado y los once logos de marcas. GitHub Actions compiló y publicó `3ee88a7` desde `main`.
+- La portada, los logos y los archivos de la app devolvieron HTTP 200. En Brave se revisaron escritorio y móvil emulado de 390 px, el carrusel, un detalle de marca, el catálogo y la apertura del cotizador. El borrador de política devolvió HTTP 404 y sigue pendiente del NIT. Ver [[estado-del-proyecto]].

@@ -30,15 +30,16 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 - **Confirmado (2026-11-25):** vista local en `http://127.0.0.1:3005/`, revisada en Brave. El servidor de desarrollo se ejecuta solo en la dirección local de este equipo.
 - **Confirmado:** remoto `origin` configurado como `https://github.com/santiago2723camilo-droid/Distribuidora-D-M.git`; rama local `main` sigue `origin/main`.
 - **Confirmado (2026-11-20):** Git Credential Manager inició sesión como `santiago2723camilo-droid`; el commit `0a947cc` se subió a `origin/main` y la rama local quedó sincronizada.
-- **Confirmado (2026-11-25):** se sincronizaron la versión final `d732855` y la etiqueta `revision-final-paso-16` en GitHub. La API pública indicó que GitHub Pages está desactivado y la dirección prevista para Pages devolvió HTTP 404.
+- **Confirmado (2026-11-25):** la etiqueta `revision-final-paso-16` conserva la revisión local `d732855`. GitHub Pages sirve públicamente la versión `3ee88a7` en [la landing de D&M](https://santiago2723camilo-droid.github.io/Distribuidora-D-M/). [La compilación y el despliegue](https://github.com/santiago2723camilo-droid/Distribuidora-D-M/actions/runs/45699009870) terminaron correctamente.
 - **Confirmado por el usuario (2026-11-06):** WhatsApp `+57 316 460 2821`, correo `distri.dym13@gmail.com`, dirección Carrera 4H # 21-48, barrio Villa Clara; no incluir Maps y conservar Contacto.
-- **Pendiente:** no se ha probado el envío ni la recepción de mensajes en WhatsApp. El código está sincronizado en GitHub, pero no se ha desplegado a un dominio o servicio de hosting.
+- **Pendiente:** probar el envío y la recepción reales de mensajes en WhatsApp por un canal de prueba autorizado.
 
 ## Comprobaciones
 
 - **Confirmado:** se validó que las rutas del ZIP no salen de la carpeta de trabajo ni contienen enlaces simbólicos antes de extraerlo.
 - **Confirmado:** PDF y DOCX leídos; se renderizaron y revisaron visualmente los dos PDF y las 11 imágenes JPEG.
 - **Confirmado:** build y TypeScript sin errores mediante binarios locales; logo visible en vista previa de escritorio y móvil.
+- **Confirmado (2026-11-25):** la portada, CSS, JavaScript, icono de pestaña, logo del encabezado y los 11 logos de marcas responden por HTTPS. Se vieron el encabezado y los logos en Brave en escritorio y a 390 px. Abrieron el detalle de Total desde el carrusel, el catálogo y el cotizador desde el botón móvil. `politica-de-datos.html` devolvió HTTP 404.
 - **Confirmado (2026-11-06):** compilación de Vite y TypeScript pasan después de integrar catálogo, paginación, logos, contacto y cambios de crédito/testimonios. La comprobación final de esta sesión también pasó; sigue apareciendo la advertencia futura de `__dirname` en Vite.
 - **Confirmado (2026-11-20):** el catálogo muestra 10 productos por página; con 1.492 productos hay 150 páginas. La primera muestra 1–10 y la última 1.491–1.492; el buscador y la categoría permanecen al avanzar, y el producto agregado se conserva en la cotización. Una búsqueda de abrazaderas industriales muestra 2 resultados y vuelve a la página 1.
 - **Confirmado (2026-11-20):** revisión visual de Nosotros y del catálogo en escritorio a 1.280 px y móvil a 375 px; el ancho del documento no desborda a 320 ni a 375 px.
@@ -48,7 +49,7 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 
 ## Próximo paso
 
-La versión revisada en el paso 16 está etiquetada y sincronizada con GitHub. El siguiente paso es elegir el alojamiento, configurar la compilación y verificar la URL pública. La guía para ese paso está en [[plan-de-mejora]]. El paso 14 sigue aplazado por indicación de D&M hasta contar con el NIT. Su borrador sigue en una vista local separada en `http://127.0.0.1:3006/`. Otros pendientes están en [[pendientes]].
+La landing está publicada en GitHub Pages. La URL pública confirmada permite continuar con la dirección canónica y Search Console cuando D&M solicite retomar el SEO. El paso 14 sigue aplazado por indicación de D&M hasta contar con el NIT. El borrador se puede revisar en la vista local privada descrita en [[plan-de-mejora]]. Otros pendientes están en [[pendientes]].
 
 ## Paso 16 · Revisión final
 
