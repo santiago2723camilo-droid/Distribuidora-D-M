@@ -48,7 +48,13 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 
 ## Próximo paso
 
-El paso 12 del [[plan-de-mejora]] está aplicado y comprobado en navegador. La validación en un teléfono físico queda pendiente. El paso 13, de transiciones, es opcional. El catálogo sigue sin fotos por decisión del usuario. Los pendientes de fichas de marcas, crédito y recepción por WhatsApp se mantienen en [[pendientes]].
+El paso 13 del [[plan-de-mejora]] está aplicado y comprobado en navegador. El paso 14 trata la política de tratamiento de datos. La validación en un teléfono físico y los pendientes de fichas de marcas, crédito y recepción por WhatsApp se mantienen en [[pendientes]].
+
+## Paso 13 · Transiciones suaves
+
+- **Confirmado:** animaciones de entrada de 180 ms para la ventana de marca y 160 ms para los resultados de una nueva página y el aviso del cotizador. Se ejecutan solo cuando la preferencia de movimiento lo permite. Los contenidos y el foco están disponibles de inmediato.
+- **Confirmado:** al preparar la solicitud, el cotizador muestra un aviso para revisar el borrador en WhatsApp. El aviso describe la preparación del borrador. El despacho sigue dependiendo de la persona.
+- **Comprobado:** en Brave se registró una animación para cada acción con la preferencia normal. Con movimiento reducido emulado a 390 px se repitieron las tres acciones y no se inició ninguna de las nuevas animaciones. Se usaron Enter para paginar y Escape para cerrar ventanas y recuperar el foco. En la prueba local se interceptó la apertura de WhatsApp y se verificó que la cantidad de prueba estaba en la URL del borrador.
 
 ## Paso 12 · Revisión en celular y casos raros
 

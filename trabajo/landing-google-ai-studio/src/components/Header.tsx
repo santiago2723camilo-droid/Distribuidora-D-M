@@ -32,9 +32,7 @@ export const Header: React.FC<HeaderProps> = ({
     onNavigate(screen === 'marcas' ? 'inicio' : screen);
     setMobileMenuOpen(false);
     if (screen === 'marcas') {
-      window.setTimeout(() => document.getElementById('marcas')?.scrollIntoView({ behavior: 'smooth' }), 0);
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.setTimeout(() => document.getElementById('marcas')?.scrollIntoView(), 0);
     }
   };
 

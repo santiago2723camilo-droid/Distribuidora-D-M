@@ -29,7 +29,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             {/* Hero Text Content */}
             <div className="lg:col-span-7 flex flex-col items-start space-y-4 z-10">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#e5eeff] rounded-full text-[#001b4b] text-xs font-semibold">
-                <span className="w-2 h-2 rounded-full bg-[#fc820c] animate-pulse"></span>
+                <span className="w-2 h-2 rounded-full bg-[#fc820c] motion-safe:animate-pulse"></span>
                 <span>Distribución Mayorista · Valledupar y Caribe Colombiano</span>
               </div>
 

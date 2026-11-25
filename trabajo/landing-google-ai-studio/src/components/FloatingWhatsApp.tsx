@@ -17,7 +17,7 @@ export const FloatingWhatsApp: React.FC = () => {
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span className="absolute w-full h-full rounded-full bg-[#fc820c] animate-ping opacity-30"></span>
+        <span className="absolute w-full h-full rounded-full bg-[#fc820c] motion-safe:animate-ping opacity-30"></span>
         <span className="material-symbols-outlined text-[28px] relative z-10">chat</span>
       </a>
     </aside>

@@ -36,6 +36,7 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>('all');
   const [page, setPage] = useState(1);
+  const [pageTurn, setPageTurn] = useState(0);
   const [addedItemNotice, setAddedItemNotice] = useState<string | null>(null);
   const noticeTimer = useRef<number | undefined>(undefined);
   const resultsRef = useRef<HTMLElement>(null);
@@ -63,9 +64,10 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
   };
 
   const goToPage = (nextPage: number) => {
+    if (nextPage !== currentPage) setPageTurn((turn) => turn + 1);
     setPage(nextPage);
     resultsRef.current?.focus({ preventScroll: true });
-    resultsRef.current?.scrollIntoView({ block: 'start' });
+    resultsRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
   };
 
   const handlePageJump = (event: React.FormEvent<HTMLFormElement>) => {
@@ -179,7 +181,8 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
 
         {pageProducts.length ? (
           <>
-            <section ref={resultsRef} tabIndex={-1} aria-label="Resultados del catálogo" className="scroll-mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <section ref={resultsRef} tabIndex={-1} aria-label="Resultados del catálogo" className="scroll-mt-24">
+              <div key={pageTurn} className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 ${pageTurn ? 'catalog-page-enter' : ''}`}>
               {pageProducts.map((product) => {
                 const quantity = getCartQuantity(product.id);
                 return (
@@ -201,6 +204,7 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
                   </article>
                 );
               })}
+              </div>
             </section>
 
             {pageCount > 1 && (

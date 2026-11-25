@@ -176,3 +176,9 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 - Se explicó el plan original de 17 pasos (0 a 16) y se completaron los ajustes del 12. Se corrigieron el botón flotante que tapaba acciones, el menú que quedaba apretado con el contador y el cotizador cortado a poca altura.
 - Se probó el catálogo real en Brave: página 150 de 150, rechazo de la 151, búsqueda sin resultados y limpieza conservando el carrito. Se leyó el nombre más largo, se ajustaron cantidades y se probó eliminar el último producto y vaciar la lista. En marcas se verificó deslizamiento, apertura de detalle y cierre con Escape.
 - Vite build, TypeScript y `git diff --check` pasaron. Vista local en `http://127.0.0.1:3005/`. Pendientes: comprobación en teléfono físico y recepción de WhatsApp. Paso 13 opcional. Ver [[plan-de-mejora]] y [[estado-del-proyecto]].
+
+## [2026-11-25] plan | Paso 13, transiciones suaves
+
+- Se aplicaron transiciones al abrir marcas, al paginar y al mostrar el aviso del cotizador. El aviso confirma que se preparó un borrador para revisar.
+- Brave registró las tres animaciones con la preferencia normal y ninguna con movimiento reducido emulado a 390 px. Enter paginó, Escape cerró los diálogos y el envío se interceptó en la prueba local.
+- Vite build, TypeScript y `git diff --check` pasaron. El siguiente tema del plan es tratamiento de datos. Ver [[plan-de-mejora]] y [[estado-del-proyecto]].

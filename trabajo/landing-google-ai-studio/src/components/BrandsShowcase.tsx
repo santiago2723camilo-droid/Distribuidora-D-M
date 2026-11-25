@@ -66,7 +66,7 @@ export const BrandsShowcase: React.FC = () => {
       <ModalDialog
         isOpen={selectedBrand !== null}
         titleId="brand-dialog-title"
-        className="max-w-lg"
+        className="brand-dialog-enter max-w-lg"
         onClose={() => setSelectedBrand(null)}
         closeOnBackdrop
       >

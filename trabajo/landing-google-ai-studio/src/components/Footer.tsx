@@ -37,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCreditModal })
                   onClick={() => {
                     onNavigate(item.id === 'marcas' ? 'inicio' : item.id);
                     if (item.id === 'marcas') {
-                      window.setTimeout(() => document.getElementById('marcas')?.scrollIntoView({ behavior: 'smooth' }), 0);
+                      window.setTimeout(() => document.getElementById('marcas')?.scrollIntoView(), 0);
                     }
                   }}
                   className="hover:text-white"

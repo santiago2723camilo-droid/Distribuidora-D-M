@@ -52,6 +52,27 @@ body:has(.site-dialog[open]) {
   overflow: hidden;
 }
 
+@keyframes contentEnter {
+  from { opacity: 0.78; }
+  to { opacity: 1; }
+}
+
+@keyframes dialogEnter {
+  from { opacity: 0.78; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .brand-dialog-enter[open] {
+    animation: dialogEnter 180ms cubic-bezier(0.2, 0.65, 0.3, 1);
+  }
+
+  .catalog-page-enter,
+  .quote-feedback-enter {
+    animation: contentEnter 160ms ease-out;
+  }
+}
+
 /* With little vertical space, make fields and actions part of one scroll area. */
 @media (max-height: 480px) {
   .site-dialog[open] {

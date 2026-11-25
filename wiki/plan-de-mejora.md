@@ -147,3 +147,9 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 - **Comprobado:** se usaron los 1.492 registros reales, incluidos cero y un resultado, la página 150 de 150, una página fuera del rango y el nombre más largo (51 caracteres). Se agregaron productos de páginas distintas y se probó reducir, quitar el último y vaciar. Se revisaron 320 y 390 px, 265 px de altura, escritorio y zoom al 200 %. Ver [[estado-del-proyecto]].
 - **Guía aplicada:** [mobile-native](https://github.com/emilkowalski/skills/blob/main/skills/mobile-native/SKILL.md) y [break-ui](https://github.com/emilkowalski/skills/blob/main/skills/break-ui/SKILL.md), consultadas en sus fuentes oficiales. Los casos se probaron con los datos reales del catálogo.
 - **Pendiente:** teléfono físico y recepción de WhatsApp. El siguiente paso numerado es el 13 y es opcional.
+
+## Paso 13 del plan recibido · Transiciones suaves
+
+- **Aplicado:** una entrada breve al abrir el detalle de una marca, mostrar los resultados de otra página y mostrar el aviso de borrador preparado en el cotizador. La preferencia del sistema admite el modo sin animación. No se espera a que termine una animación para mostrar el contenido ni para usar los controles.
+- **Comprobado:** Brave en escritorio y a 390 px con movimiento reducido emulado. Cada animación se inició en el modo normal y ninguna se inició con la preferencia reducida. Enter y Escape conservaron el comportamiento. Se probó el borrador por interceptación local, sin abrir WhatsApp. Vite build, TypeScript y `git diff --check` pasaron.
+- **Siguiente:** paso 14, política de tratamiento de datos. Ver [[estado-del-proyecto]] y [[pendientes]].
