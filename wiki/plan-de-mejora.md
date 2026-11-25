@@ -195,3 +195,10 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 - **Comprobado y corregido:** el teclado entra al carrusel con el logo enfocado visible, incluso al pasar de Cellux a Zafiro. Enter abre el detalle, Escape devuelve el foco y se puede reanudar la animación.
 - **Comprobado:** consulta de crédito por WhatsApp con pregunta de prueba y sin simulación o promesa. Contacto conserva dirección en texto, como pidió D&M. Compilación y TypeScript correctos.
 - **Pendiente:** recepción real por WhatsApp, revisión en teléfono físico, URL pública e indexación. La política se mantiene aplazada por el NIT. La versión local no se desplegó. Ver [[estado-del-proyecto]] y [[pendientes]].
+
+## Entrega a GitHub y despliegue pendiente
+
+- **Confirmado (2026-11-25):** el commit `d732855` y la etiqueta `revision-final-paso-16` están en el [repositorio autorizado](https://github.com/santiago2723camilo-droid/Distribuidora-D-M). Se comprobó el historial saliente y se excluyeron `Docs/`, la carpeta original del plan y los archivos temporales.
+- **Confirmado:** el repositorio es público y GitHub Pages está desactivado. La URL esperada `https://santiago2723camilo-droid.github.io/Distribuidora-D-M/` devolvió HTTP 404. No hay un flujo de publicación en `.github/workflows/`.
+- **Pendiente si se elige Pages:** adaptar la base de Vite a `/Distribuidora-D-M/` y las referencias al logo y a marcas en React para servirlas desde ese prefijo. Configurar GitHub Actions para instalar con `npm ci` y compilar en `trabajo/landing-google-ai-studio/`, y desplegar solo su carpeta `dist/`. Consultar [Vite en GitHub Pages](https://vite.dev/guide/static-deploy#github-pages) y [fuentes de publicación de GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+- **Después del despliegue autorizado:** comprobar la URL y los activos en escritorio y celular, validar los destinos del cotizador y configurar la URL principal y la revisión en Search Console. La política se mantiene pendiente hasta que D&M confirme el NIT.

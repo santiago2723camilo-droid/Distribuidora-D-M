@@ -30,7 +30,7 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 - **Confirmado (2026-11-25):** vista local en `http://127.0.0.1:3005/`, revisada en Brave. El servidor de desarrollo se ejecuta solo en la dirección local de este equipo.
 - **Confirmado:** remoto `origin` configurado como `https://github.com/santiago2723camilo-droid/Distribuidora-D-M.git`; rama local `main` sigue `origin/main`.
 - **Confirmado (2026-11-20):** Git Credential Manager inició sesión como `santiago2723camilo-droid`; el commit `0a947cc` se subió a `origin/main` y la rama local quedó sincronizada.
-- **Pendiente:** el código está en GitHub, pero no se ha desplegado a un dominio o servicio de hosting.
+- **Confirmado (2026-11-25):** se sincronizaron la versión final `d732855` y la etiqueta `revision-final-paso-16` en GitHub. La API pública indicó que GitHub Pages está desactivado y la dirección prevista para Pages devolvió HTTP 404.
 - **Confirmado por el usuario (2026-11-06):** WhatsApp `+57 316 460 2821`, correo `distri.dym13@gmail.com`, dirección Carrera 4H # 21-48, barrio Villa Clara; no incluir Maps y conservar Contacto.
 - **Pendiente:** no se ha probado el envío ni la recepción de mensajes en WhatsApp. El código está sincronizado en GitHub, pero no se ha desplegado a un dominio o servicio de hosting.
 
@@ -48,7 +48,7 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 
 ## Próximo paso
 
-El paso 16 del [[plan-de-mejora]] quedó verificado en la compilación local en `http://127.0.0.1:3007/`. Para comprobar indexación y configurar la URL principal falta conocer la dirección pública del sitio. El paso 14 sigue aplazado por indicación de D&M hasta contar con el NIT. Su borrador se conserva en una vista local separada en `http://127.0.0.1:3006/`. Otros pendientes están en [[pendientes]].
+La versión revisada en el paso 16 está etiquetada y sincronizada con GitHub. El siguiente paso es elegir el alojamiento, configurar la compilación y verificar la URL pública. La guía para ese paso está en [[plan-de-mejora]]. El paso 14 sigue aplazado por indicación de D&M hasta contar con el NIT. Su borrador sigue en una vista local separada en `http://127.0.0.1:3006/`. Otros pendientes están en [[pendientes]].
 
 ## Paso 16 · Revisión final
 
