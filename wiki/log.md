@@ -245,3 +245,8 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 
 - D&M pidió las cuatro funciones y confirmó rodillos, paneles, aerosoles, brochas y tornillería para destacar, además de la región Caribe colombiana para entregas.
 - Se implementó y probó la vista local en cuatro anchos. El cotizador suma las coincidencias y conserva en notas los renglones que la persona decide consultar. Se verificó el borrador de WhatsApp sin enviarlo. Los cambios quedan locales. Ver [[estado-del-proyecto]].
+
+## [2026-11-25] publicación | Buscador, lista, destacados y entregas
+
+- D&M autorizó publicar `0ea390b` y pidió comprobar el enlace público desde su PC. GitHub Actions completó la ejecución `45709815365` y la página devolvió HTTP 200.
+- Chrome para Windows en el PC del usuario comprobó la búsqueda, las cinco líneas destacadas, la cotización por lista y el enlace de entregas a 320, 390, 718 y 1.280 px. Se interceptó el borrador de WhatsApp con datos ficticios y el borrador de política devolvió HTTP 404. Ver [[estado-del-proyecto]].

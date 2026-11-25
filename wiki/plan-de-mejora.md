@@ -212,6 +212,6 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 
 ## Búsqueda y cotización desde la portada
 
-- **Aplicado localmente (2026-11-25):** el buscador de la portada abre el catálogo con la consulta activa. D&M confirmó cinco líneas para destacar. Cada tarjeta muestra una referencia existente, permite añadir unidades a la cotización y abre más referencias de su línea.
-- **Aplicado localmente:** el cotizador permite revisar hasta 50 renglones por bloque. Una coincidencia única se prepara con su cantidad para confirmación. Los renglones ambiguos, sin coincidencia o con cantidades inválidas se pueden corregir o conservar en notas. Los repetidos se consolidan junto con las cantidades que ya tenía el carrito.
-- **Aplicado localmente:** se muestra la cobertura regional confirmada para el Caribe colombiano. WhatsApp permite consultar el destino concreto, el costo y el plazo. Ver [[empresa]] y [[estado-del-proyecto]].
+- **Publicado y comprobado (2026-11-25):** el buscador de la portada abre el catálogo con la consulta activa. D&M confirmó cinco líneas para destacar. Cada tarjeta muestra una referencia existente, permite añadir unidades a la cotización y abre más referencias de su línea.
+- **Publicado y comprobado:** el cotizador permite revisar hasta 50 renglones por bloque. Una coincidencia única se prepara con su cantidad para confirmación. Los renglones ambiguos, sin coincidencia o con cantidades inválidas se pueden corregir o conservar en notas. Los repetidos se consolidan junto con las cantidades que ya tenía el carrito.
+- **Publicado y comprobado:** se muestra la cobertura regional confirmada para el Caribe colombiano. WhatsApp permite consultar el destino concreto, el costo y el plazo. Ver [[empresa]] y [[estado-del-proyecto]].
