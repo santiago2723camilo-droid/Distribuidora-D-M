@@ -235,3 +235,8 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 
 - D&M pidió mejorar la nitidez conservando el logo, abrir Productos desde el cotizador y trabajar la estética de la página en general. Se extrajo el mismo recurso del PDF, se agregó «Ver productos» al cotizador y se aplicó una primera revisión visual de portada, tarjetas, marcas y WhatsApp.
 - Chrome aislado comprobó las vistas a 320, 390, 718 y 1.280 px, el foco al navegar, la conservación de 12 unidades y del borrador, y el acceso filtrado desde la portada. Vite, TypeScript y la comprobación de exclusión del borrador de política pasaron. Cambios guardados localmente para revisión. Ver [[estado-del-proyecto]].
+
+## [2026-11-25] publicación | Paleta de D&M, logo y cotizador
+
+- D&M autorizó publicar y precisó que quería un poco más de color acorde al logo. Se aplicó turquesa, azul y amarillo y se desplegó `67c2346` en GitHub Pages. El mismo logo se sirve desde la extracción del PDF.
+- En Chrome aislado se verificó la página pública a 320, 390, 718 y 1.280 px, con paleta visible, acceso a Productos desde el cotizador, conservación de 12 unidades, filtro Eléctricos y detalle de Cellux. La política sigue pendiente del NIT y el borrador devolvió HTTP 404. Ver [[estado-del-proyecto]].

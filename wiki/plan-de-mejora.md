@@ -206,6 +206,6 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 
 ## Ideas de diseño para revisar con D&M
 
-- **Aplicado localmente (2026-11-25):** portada más breve, acción principal naranja con texto azul oscuro y categorías inmediatamente después de la foto. Las tres tarjetas abren su filtro correspondiente. Se redujo el énfasis visual del WhatsApp flotante y se simplificaron títulos y tarjetas. El catálogo sigue sin fotos y prioriza la lectura de nombres y cantidades.
-- **Aplicado localmente (2026-11-25):** se extrajo el mismo logo desde el PDF de D&M y se ajustó su tamaño en el encabezado. «Ver productos» desde el cotizador abre el catálogo y conserva las cantidades y los datos introducidos. «Marcas» conserva el carrusel con los logos actuales. Ver [[estado-del-proyecto]].
+- **Publicado (2026-11-25):** D&M pidió un poco más de color inspirado en el logo. Se aplicó turquesa en la portada, amarillo en las acciones principales y azul en el catálogo y el cotizador. Las tres tarjetas tienen acentos de la paleta y abren su filtro correspondiente. El catálogo sigue sin fotos y mantiene visibles los nombres y las cantidades.
+- **Publicado (2026-11-25):** se extrajo el mismo logo desde el PDF de D&M y se ajustó su tamaño en el encabezado. «Ver productos» desde el cotizador abre el catálogo y conserva las cantidades y los datos introducidos. «Marcas» conserva el carrusel con los logos actuales. Ver [[estado-del-proyecto]].
 - **Propuesta por evaluar:** una foto real del negocio para la portada si D&M dispone de una aprobada.
