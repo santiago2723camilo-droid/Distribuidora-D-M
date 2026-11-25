@@ -38,16 +38,18 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#ffffff]/95 backdrop-blur-xl border-b border-[#e5eeff] shadow-[0_1px_8px_rgba(18,48,107,0.06)]">
-      <div className="h-20 max-w-[1320px] mx-auto px-4 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
+      <div className="h-20 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
         {/* Brand Zone */}
         <button
           onClick={() => handleNavClick('inicio')}
           aria-label="Ir al inicio de Distribuidora D&M"
-          className="flex min-h-11 min-w-0 max-w-[132px] sm:max-w-[190px] items-center rounded-lg text-left group cursor-pointer"
+          className="flex min-h-11 w-[clamp(8.5rem,39vw,10.5rem)] min-w-0 items-center rounded-lg sm:w-[11.5rem] xl:w-48"
         >
           <img
             alt="Distribuidora D&M"
-            className="h-8 sm:h-10 w-auto max-w-full object-contain object-left transition-transform group-hover:scale-[1.02]"
+            width={653}
+            height={160}
+            className="h-auto w-full"
             src={`${import.meta.env.BASE_URL}brand/logo-dym.png`}
           />
         </button>
@@ -78,11 +80,11 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Quote builder button */}
           <button
             onClick={onOpenQuoteModal}
-            className="relative min-h-11 inline-flex items-center gap-2 bg-[#fc820c] hover:bg-[#964900] text-white font-['Inter'] text-sm font-semibold px-2 sm:px-4 py-2.5 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer whitespace-nowrap active:scale-95"
+            className="min-h-11 inline-flex items-center gap-2 rounded-lg border border-[#dae3f4] bg-[#eff4ff] px-2.5 py-2 text-sm font-bold text-[#001b4b] transition-colors hover:bg-[#e5eeff] sm:px-4 whitespace-nowrap"
             title="Abrir cotizador o enviar pedido a WhatsApp"
             aria-label={cartCount > 0 ? `Cotizar por WhatsApp, ${cartCount} ${cartCount === 1 ? 'unidad' : 'unidades'}` : undefined}
           >
-            <span className="material-symbols-outlined text-[19px]">chat</span>
+            <span aria-hidden="true" className="material-symbols-outlined text-[19px]">chat</span>
             <span className="hidden sm:inline">Cotizar por WhatsApp</span>
             <span className="sm:hidden">Cotizar</span>
             {cartCount > 0 && (

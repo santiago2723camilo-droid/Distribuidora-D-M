@@ -7,6 +7,7 @@ import { PrivacyAuthorization, privacyPreview, privacyPreviewFeedback, usePrivac
 interface QuoteModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onBrowseProducts: () => void;
   cart: CartItem[];
   onUpdateQuantity: (productId: string, quantity: number) => void;
   onRemoveItem: (productId: string) => void;
@@ -16,6 +17,7 @@ interface QuoteModalProps {
 export const QuoteModal: React.FC<QuoteModalProps> = ({
   isOpen,
   onClose,
+  onBrowseProducts,
   cart,
   onUpdateQuantity,
   onRemoveItem,
@@ -183,7 +185,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                 </span>
                 <p className="font-semibold text-[#131c28]">Aún no has agregado materiales específicos</p>
                 <p className="text-xs text-[#747781] mt-1">
-                  Cierra el cotizador y añade productos desde el catálogo, o escribe en las notas qué necesitas cotizar.
+                  Elige productos del catálogo o escribe en las notas qué necesitas cotizar.
                 </p>
               </div>
             ) : (
@@ -296,15 +298,19 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
           <div className="flex flex-col sm:flex-row items-stretch gap-2 w-full lg:w-auto">
             <button
               type="button"
-              onClick={handleClose}
-              className="min-w-0 min-h-11 flex-1 lg:flex-none px-4 py-2 text-xs font-semibold text-[#444650] hover:bg-[#e5eeff] rounded-lg transition-colors cursor-pointer"
+              onClick={() => {
+                handleClose();
+                onBrowseProducts();
+              }}
+              className="min-w-0 min-h-11 flex-1 lg:flex-none inline-flex items-center justify-center gap-2 rounded-lg border border-[#b1c5ff] bg-white px-4 py-2 text-sm font-bold text-[#001b4b] transition-colors hover:bg-[#e5eeff]"
             >
-              Seguir explorando
+              <span aria-hidden="true" className="material-symbols-outlined text-[18px]">inventory_2</span>
+              Ver productos
             </button>
             <button
               type="button"
               onClick={handleSendWhatsApp}
-              className="min-w-0 min-h-11 flex-1 lg:flex-none inline-flex items-center justify-center gap-2 bg-[#fc820c] hover:bg-[#964900] text-white font-['Inter'] text-sm font-bold px-4 lg:px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer whitespace-nowrap active:scale-95"
+              className="min-w-0 min-h-11 flex-1 lg:flex-none inline-flex items-center justify-center gap-2 rounded-lg bg-[#fc820c] px-4 py-2.5 text-sm font-bold text-[#001b4b] transition-colors hover:bg-[#ff9f45]"
             >
               <span className="material-symbols-outlined text-[20px]">chat</span>
               <span>Enviar a WhatsApp</span>

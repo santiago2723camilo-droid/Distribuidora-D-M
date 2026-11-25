@@ -230,3 +230,8 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 
 - Con autorización de D&M se subió `9bd621b` a `main`. GitHub Actions compiló y desplegó con éxito. La página pública respondió HTTP 200 y su JavaScript coincidió por SHA-256 con el probado en Brave en escritorio y a 390 px. El control de Brave se detuvo durante la comprobación en línea al no poder verificar la dirección de la pestaña. El borrador de política devolvió HTTP 404.
 - D&M pidió ideas para el diseño. Se anotaron propuestas para la portada, la sección de marcas y el catálogo en [[plan-de-mejora]]. Las propuestas esperan elección.
+
+## [2026-11-25] mejora | Encabezado, cotizador y estética
+
+- D&M pidió mejorar la nitidez conservando el logo, abrir Productos desde el cotizador y trabajar la estética de la página en general. Se extrajo el mismo recurso del PDF, se agregó «Ver productos» al cotizador y se aplicó una primera revisión visual de portada, tarjetas, marcas y WhatsApp.
+- Chrome aislado comprobó las vistas a 320, 390, 718 y 1.280 px, el foco al navegar, la conservación de 12 unidades y del borrador, y el acceso filtrado desde la portada. Vite, TypeScript y la comprobación de exclusión del borrador de política pasaron. Cambios guardados localmente para revisión. Ver [[estado-del-proyecto]].

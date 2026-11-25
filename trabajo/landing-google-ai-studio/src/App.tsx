@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { CartItem, ProductItem, ScreenType } from './types';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -13,9 +13,18 @@ import { ContactScreen } from './components/screens/ContactScreen';
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<ScreenType>('inicio');
+  const [catalogCategory, setCatalogCategory] = useState<ProductItem['category'] | 'all'>('all');
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [isCreditModalOpen, setIsCreditModalOpen] = useState(false);
+  const focusCatalogHeading = useRef(false);
+
+  useEffect(() => {
+    if (currentScreen === 'productos' && focusCatalogHeading.current) {
+      focusCatalogHeading.current = false;
+      document.getElementById('catalog-title')?.focus({ preventScroll: true });
+    }
+  }, [currentScreen]);
 
   const handleAddToCart = (product: ProductItem, quantity: number = 1) => {
     setCart((prev) => {
@@ -55,7 +64,8 @@ export default function App() {
     setIsQuoteModalOpen(true);
   };
 
-  const handleNavigate = (screen: ScreenType) => {
+  const handleNavigate = (screen: ScreenType, category: ProductItem['category'] | 'all' = 'all') => {
+    if (screen === 'productos') setCatalogCategory(category);
     setCurrentScreen(screen);
     window.scrollTo({ top: 0 });
   };
@@ -88,6 +98,8 @@ export default function App() {
 
         {currentScreen === 'productos' && (
           <ProductsScreen
+            key={catalogCategory}
+            initialCategory={catalogCategory}
             cart={cart}
             onAddToCart={handleAddToCart}
             onOpenQuoteModal={() => setIsQuoteModalOpen(true)}
@@ -119,6 +131,11 @@ export default function App() {
       <QuoteModal
         isOpen={isQuoteModalOpen}
         onClose={() => setIsQuoteModalOpen(false)}
+        onBrowseProducts={() => {
+          if (currentScreen === 'productos') return;
+          focusCatalogHeading.current = true;
+          handleNavigate('productos');
+        }}
         cart={cart}
         onUpdateQuantity={handleUpdateQuantity}
         onRemoveItem={handleRemoveItem}

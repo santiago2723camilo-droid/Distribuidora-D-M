@@ -1,8 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { CartItem, MAX_ITEM_QUANTITY, ProductItem } from '../../types';
-import { PRODUCTS_CATALOG } from '../../data/mockData';
+import { PRODUCT_CATEGORIES, PRODUCTS_CATALOG } from '../../data/mockData';
 
 interface ProductsScreenProps {
+  initialCategory: CategoryFilter;
   onAddToCart: (product: ProductItem, quantity?: number) => void;
   onOpenQuoteModal: () => void;
   cart: CartItem[];
@@ -23,18 +24,17 @@ const searchableProducts = PRODUCTS_CATALOG.map((product) => ({
 
 const categories: { id: CategoryFilter; label: string; icon: string }[] = [
   { id: 'all', label: 'Todos los productos', icon: 'apps' },
-  { id: 'electricos', label: 'Eléctricos', icon: 'bolt' },
-  { id: 'construccion', label: 'Construcción y ferretería', icon: 'handyman' },
-  { id: 'sanitarios', label: 'Accesorios sanitarios', icon: 'plumbing' },
+  ...PRODUCT_CATEGORIES,
 ];
 
 export const ProductsScreen: React.FC<ProductsScreenProps> = ({
+  initialCategory,
   onAddToCart,
   onOpenQuoteModal,
   cart,
 }) => {
   const [search, setSearch] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>('all');
+  const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>(initialCategory);
   const [page, setPage] = useState(1);
   const [pageTurn, setPageTurn] = useState(0);
   const [addedItemNotice, setAddedItemNotice] = useState<string | null>(null);
@@ -89,12 +89,12 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
 
   return (
     <div className="w-full bg-[#f8f9ff] min-h-screen py-8 lg:py-12">
-      <div className="max-w-[1320px] mx-auto px-4 lg:px-8 space-y-6 sm:space-y-8">
-        <section className="bg-[#001b4b] text-white rounded-2xl p-6 lg:p-10 shadow-lg border border-[#12306b]">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
+        <section data-dark-surface className="bg-[#001b4b] text-white rounded-2xl p-6 lg:p-10 border border-[#12306b]">
           <span className="text-xs font-bold uppercase tracking-wider text-[#fc820c] bg-white/10 px-3 py-1 rounded-full">
             Catálogo de productos
           </span>
-          <h1 className="font-['Montserrat'] text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight mt-3">
+          <h1 id="catalog-title" tabIndex={-1} className="font-['Montserrat'] text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight mt-3">
             Productos para construcción, ferretería y electricidad
           </h1>
           <p className="text-xs sm:text-sm text-[#dae2ff] leading-relaxed mt-3 max-w-3xl">
@@ -156,7 +156,7 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
                 ? `Mostrando ${numberFormat.format(firstVisible)}–${numberFormat.format(lastVisible)} de ${numberFormat.format(filteredProducts.length)} productos`
                 : 'No hay productos que coincidan con tu búsqueda'}
             </p>
-            <button type="button" onClick={onOpenQuoteModal} className="min-h-11 inline-flex items-center justify-center gap-2 bg-[#fc820c] text-white text-xs font-bold px-3.5 py-2 rounded-lg hover:bg-[#964900] transition-colors">
+            <button type="button" onClick={onOpenQuoteModal} className="min-h-11 inline-flex items-center justify-center gap-2 bg-[#fc820c] text-[#001b4b] text-sm font-bold px-3.5 py-2 rounded-lg hover:bg-[#ff9f45] transition-colors">
               <span aria-hidden="true" className="material-symbols-outlined text-[16px]">shopping_cart</span>
               Ver cotización ({numberFormat.format(cart.reduce((sum, item) => sum + item.quantity, 0))})
             </button>
@@ -220,7 +220,7 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
                       <button
                         type="submit"
                         disabled={!remaining}
-                        className="min-h-11 rounded-lg bg-[#fc820c] px-2 py-2 text-sm font-bold text-white transition-colors enabled:hover:bg-[#964900] disabled:opacity-50"
+                        className="min-h-11 rounded-lg bg-[#eff4ff] px-2 py-2 text-sm font-bold text-[#001b4b] transition-colors enabled:hover:bg-[#e5eeff] disabled:opacity-50"
                       >
                         {!remaining ? 'Límite alcanzado' : quantity ? `Añadir más (${numberFormat.format(quantity)})` : 'Añadir a cotización'}
                       </button>

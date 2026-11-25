@@ -2,7 +2,7 @@
 tipo: catálogo-de-fuentes
 estado: vigente
 creado: 2026-10-28
-actualizado: 2026-11-20
+actualizado: 2026-11-25
 tags: [fuentes, activos, docs]
 fuentes: ["Docs/"]
 ---
@@ -15,7 +15,7 @@ fuentes: ["Docs/"]
 |---|---|---|---|
 | `Docs/DISTRIBUIDORA_DYM worddd (1).docx` | Información empresarial y textos | Texto breve de presentación, valores, categorías y seis aliados. Fecha del archivo: 2026-10-28. | Base de textos; confirmar vigencia y autorización de publicación. |
 | `Docs/DISTRIBUIDORA D&M.pdf` | Referencia visual / borrador web | PDF de una página que presenta un diseño de landing: logo, navegación, foto genérica de herramientas, textos de presentación, categorías y seis marcas. Fecha: 2026-10-28. | Referencia de versión/diseño; no tratar como catálogo comercial completo. Confirmar qué elementos visuales se conservan. |
-| `Docs/LOGO DISTRIBUIDORA DYM.pdf` | Identidad visual / logo | Una página con logo D&M sobre fondo blanco; se aprecia pequeño/poco definido en la página. Fecha: 2026-10-28. | Elegido por el usuario para el encabezado. Derivado recortado en `trabajo/landing-google-ai-studio/public/brand/logo-dym.png`; original intacto. Puede reemplazarse si aparece un original vectorial de mejor resolución. |
+| `Docs/LOGO DISTRIBUIDORA DYM.pdf` | Identidad visual / logo | Una página con logo D&M. Contiene la imagen original incrustada de 653 × 160 px. Fecha: 2026-10-28. | Elegido por el usuario para el encabezado. Desde el 2026-11-25, `trabajo/landing-google-ai-studio/public/brand/logo-dym.png` usa los píxeles del recurso incrustado. La copia técnica anterior era un recorte de la página renderizada. Se preservó el PDF. |
 | `Docs/CELLUX.jpeg` | Identidad de marca | Logotipo rojo Cellux con escudo y lema; JPEG revisado visualmente. Fecha: 2026-10-28. | Se muestra por autorización del usuario; la relación comercial actual no se describe. |
 | `Docs/DEWALT.jpeg` | Identidad de marca | Logotipo negro/amarillo DeWalt; JPEG revisado visualmente. Fecha: 2026-10-28. | Se muestra por autorización del usuario; la relación comercial actual no se describe. |
 | `Docs/FERMETAL.jpeg` | Identidad de marca | Logotipo Fermetal rojo; aparece en lista de aliados del DOCX. Fecha: 2026-10-28. | Se muestra por autorización del usuario; sin afirmaciones de garantía o certificación. |

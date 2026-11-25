@@ -206,6 +206,6 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 
 ## Ideas de diseño para revisar con D&M
 
-- **Propuesta:** despejar la portada, dar prioridad a «Cotizar por WhatsApp» y acercar las tres categorías a la parte superior. Usar el naranja para destacar la acción principal y ajustar el contraste del texto de los botones.
-- **Propuesta:** titular la sección «Marcas» y probar una cuadrícula de logos alineados con fondo blanco. Si D&M aporta un original más nítido, probarlo en el encabezado. Una foto real del negocio sería una opción para la portada si D&M tiene una aprobada.
-- **Propuesta:** mantener el catálogo sin fotos y aplicar una alineación uniforme al nombre del producto, al campo de cantidad y al botón «Añadir». Las propuestas esperan elección de D&M.
+- **Aplicado localmente (2026-11-25):** portada más breve, acción principal naranja con texto azul oscuro y categorías inmediatamente después de la foto. Las tres tarjetas abren su filtro correspondiente. Se redujo el énfasis visual del WhatsApp flotante y se simplificaron títulos y tarjetas. El catálogo sigue sin fotos y prioriza la lectura de nombres y cantidades.
+- **Aplicado localmente (2026-11-25):** se extrajo el mismo logo desde el PDF de D&M y se ajustó su tamaño en el encabezado. «Ver productos» desde el cotizador abre el catálogo y conserva las cantidades y los datos introducidos. «Marcas» conserva el carrusel con los logos actuales. Ver [[estado-del-proyecto]].
+- **Propuesta por evaluar:** una foto real del negocio para la portada si D&M dispone de una aprobada.

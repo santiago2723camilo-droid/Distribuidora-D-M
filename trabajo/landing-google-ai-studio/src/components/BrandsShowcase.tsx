@@ -50,23 +50,21 @@ export const BrandsShowcase: React.FC = () => {
   return (
     <>
       <section className="w-full scroll-mt-20 border-b border-[#dae3f4] bg-white py-12 lg:py-16" id="marcas" aria-labelledby="brands-title">
-        <div className="mx-auto max-w-[1320px] px-4 lg:px-8">
-          <div className="mx-auto mb-8 max-w-2xl text-center">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#fc820c]">Marcas compartidas</span>
-            <h2 id="brands-title" className="mt-1 font-['Montserrat'] text-2xl font-bold text-[#001b4b] lg:text-3xl">
-              Marcas cuyos logos compartiste
+        <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+            <h2 id="brands-title" className="text-2xl font-bold text-[#001b4b] lg:text-3xl">
+              Marcas
             </h2>
-          </div>
-
-          <div className="brands-pause mb-4 flex justify-end">
-            <button
-              type="button"
-              onClick={toggleMotion}
-              aria-pressed={motionStopped}
-              className="min-h-11 rounded-lg border border-[#b1c5ff] bg-white px-3 py-2 text-xs font-semibold text-[#001b4b] hover:bg-[#f8f9ff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#001b4b]"
-            >
-              {motionStopped ? 'Reanudar movimiento' : 'Pausar movimiento'}
-            </button>
+            <div className="brands-pause">
+              <button
+                type="button"
+                onClick={toggleMotion}
+                aria-pressed={motionStopped}
+                className="min-h-11 rounded-lg border border-[#b1c5ff] bg-white px-3 py-2 text-xs font-semibold text-[#001b4b] hover:bg-[#f8f9ff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#001b4b]"
+              >
+                {motionStopped ? 'Reanudar movimiento' : 'Pausar movimiento'}
+              </button>
+            </div>
           </div>
 
           <div
@@ -117,9 +115,6 @@ export const BrandsShowcase: React.FC = () => {
                 <img src={selectedBrand.logo} alt={`Logo ${selectedBrand.name}`} className="max-h-24 max-w-full object-contain" />
               </div>
               <h2 id="brand-dialog-title" className="mt-4 font-['Montserrat'] text-xl font-bold text-[#001b4b] wrap-anywhere">{selectedBrand.name}</h2>
-              <p className="mt-2 text-sm leading-relaxed text-[#444650]">
-                Este logo fue compartido para la página de Distribuidora D&amp;M. No hay una ficha adicional de esta marca en los documentos disponibles.
-              </p>
             </>
           )}
         </div>

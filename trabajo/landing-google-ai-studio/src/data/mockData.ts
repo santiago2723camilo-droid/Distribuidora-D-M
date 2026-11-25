@@ -1,9 +1,15 @@
-import { AlliedBrand } from '../types';
+import { AlliedBrand, ProductItem } from '../types';
 
 export const COMPANY_PHONE = '573164602821';
 export const COMPANY_PHONE_DISPLAY = '+57 316 460 2821';
 export const COMPANY_EMAIL = 'distri.dym13@gmail.com';
 export const COMPANY_ADDRESS = 'Carrera 4H # 21-48, barrio Villa Clara';
+
+export const PRODUCT_CATEGORIES: { id: ProductItem['category']; label: string; icon: string }[] = [
+  { id: 'electricos', label: 'Eléctricos', icon: 'bolt' },
+  { id: 'construccion', label: 'Construcción y ferretería', icon: 'handyman' },
+  { id: 'sanitarios', label: 'Accesorios sanitarios', icon: 'plumbing' },
+];
 
 const partnerLogoBase = `${import.meta.env.BASE_URL}brand/partners-white/`;
 
