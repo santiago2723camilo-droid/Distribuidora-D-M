@@ -48,7 +48,7 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 
 ## Próximo paso
 
-El paso 13 del [[plan-de-mejora]] está aplicado y comprobado en navegador. El paso 14 tiene el inventario de Cotizador, Contacto y Crédito. Falta confirmar la identidad legal y el manejo de datos con D&M antes de redactar la política e integrar las casillas. La validación en un teléfono físico y los pendientes de fichas de marcas, crédito y recepción por WhatsApp se mantienen en [[pendientes]].
+El paso 13 del [[plan-de-mejora]] está aplicado y comprobado en navegador. El paso 14 tiene el inventario de Cotizador, Contacto y Crédito. D&M confirmó el nombre registrado, la dirección y el canal de atención de derechos. Quedan por confirmar el NIT, el uso de las consultas y cómo se manejan después de recibirlas. La validación en un teléfono físico y los pendientes de fichas de marcas, crédito y recepción por WhatsApp se mantienen en [[pendientes]].
 
 ## Paso 13 · Transiciones suaves
 

@@ -187,3 +187,8 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 
 - Se inventariaron Cotizador, Contacto, Crédito y enlaces directos a WhatsApp. Se ubicaron los datos confirmados de atención y se consultaron la guía del plan y fuentes oficiales colombianas.
 - Se registraron las confirmaciones faltantes y la propuesta de aviso, casilla y enlace. Esta etapa fue documental. La política y los cambios de interfaz quedan pendientes. Ver [[plan-de-mejora]] y [[pendientes]].
+
+## [2026-11-25] confirmación | Identificación y canal de privacidad
+
+- D&M confirmó el nombre registrado según el RUT, el nombre comercial, la dirección y la persona y correo para atender solicitudes de datos. Se anotó el detalle personal en una nota local excluida de Git.
+- Se aclaró que se está revisando el uso y la conservación de las consultas que llegan desde la landing al WhatsApp del negocio. El NIT y el manejo de esos mensajes siguen pendientes. Ver [[plan-de-mejora]].

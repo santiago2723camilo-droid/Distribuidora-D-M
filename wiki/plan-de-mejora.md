@@ -156,7 +156,7 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 
 ## Paso 14 del plan recibido · Tratamiento de datos
 
-**Estado: diagnóstico confirmado.** Identificación legal, canal para ejercer derechos y manejo de conversaciones pendientes de confirmación.
+**Estado: diagnóstico confirmado.** Nombre registrado, dirección y atención de derechos confirmados por el usuario. NIT y manejo de las conversaciones pendientes.
 
 | Flujo | Datos que pide la página | Destino observado |
 |---|---|---|
@@ -166,7 +166,7 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 
 - **Confirmado por código:** los campos se mantienen en memoria mientras se usa la página. El texto viaja como parte del enlace al abrir WhatsApp. La persona revisa el borrador y decide si lo envía. No se encontró una base de datos propia para estos formularios, ni política o casilla de autorización. Los enlaces directos sin campos no incorporan los datos de los formularios.
 - **Confirmado por código:** la portada carga fuentes e imagen desde servicios externos de Google. No se encontró analítica instalada en la landing. El alojamiento público y sus registros quedan por comprobar cuando se defina el despliegue.
-- **Confirmado por el usuario:** marca, correo comercial, teléfono y dirección de atención en [[empresa]]. **Pendiente:** razón social o nombre registrado y NIT, domicilio y contactos legales, cargo que atenderá derechos, finalidades y manejo de mensajes. `Docs/` no tiene una política ni un soporte de identidad fiscal identificado.
+- **Confirmado por el usuario:** marca, correo y teléfono comerciales en [[empresa]]. Para la política, confirmó usar la dirección ya registrada y el correo comercial. El nombre registrado y la persona que atenderá derechos quedaron en `Docs/datos-personales/confirmaciones-locales.md`, excluido de Git. **Pendiente:** NIT, finalidades y manejo de mensajes. No se recibió el RUT ni una política vigente.
 - **Pendiente de validación:** usos de la información y publicidad, quién recibe o consulta los mensajes, dónde se guardan, por cuánto tiempo y cómo se conserva la prueba de autorización. No se constataron campos específicos de salud o de menores. Los campos libres pueden recibir información adicional que la página no pide.
 - **Propuesta:** página propia con enlace en el pie. Aviso breve y casilla de autorización sin premarcar en los tres flujos antes de abrir el borrador en WhatsApp. Alcance y conservación de la autorización se acuerdan con la empresa. Las promociones, si se realizan, tendrían una autorización separada y opcional.
 - **Fuentes:** guía local `tratamiento-datos-landing.zip`, [Ley 1581 de 2012, arts. 9 y 12](https://jurinfo.jep.gov.co/Normograma/compilacion/docs/ley_1581_2012.htm), [SIC sobre contenido mínimo de la política](https://sedeelectronica.sic.gov.co/publicaciones/boletin-juridico/concepto/politicas-de-tratamiento-de-datos-personales) y [Decreto 1074 de 2015, arts. 2.2.2.25.2.5 y 2.2.2.25.3.1](https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=76608).

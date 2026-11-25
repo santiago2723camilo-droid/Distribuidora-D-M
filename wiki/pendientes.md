@@ -25,7 +25,7 @@ fuentes: ["trabajo/landing-google-ai-studio/src/data/mockData.ts", "Docs/"]
 - **Media:** relación entre JC Top y JC Tools pendiente; ambos logos se muestran de manera separada sin afirmar que son la misma marca.
 - **Media:** confirmar los municipios/destinos que se muestran en el cotizador y si el ejemplo sobre flete es apropiado; aparecen como opciones o texto de ejemplo, sin respaldo empresarial registrado.
 - **Media:** pedir un original del logo en SVG/PDF vectorial o PNG grande para que el encabezado quede nítido. Los archivos de `Docs/` disponibles son borrosos incluso al renderizarlos a mayor DPI.
-- **Paso 14, pendiente de datos de D&M:** razón social o nombre registrado y NIT, domicilio y canales legales, cargo que atiende derechos, usos de las consultas y reglas para conservar, compartir y consultar mensajes y autorizaciones. Inventario y alcance propuesto en [[plan-de-mejora]].
+- **Paso 14, pendiente de datos de D&M:** NIT, uso de las consultas para atención o promociones y reglas para conservar y compartir mensajes y autorizaciones. El nombre registrado, la dirección y la persona y correo que atienden derechos ya se confirmaron. Inventario y alcance propuesto en [[plan-de-mejora]].
 - **Pendiente:** instalar las skills entregadas en los ZIP del plan antes de aplicar esas rutinas especializadas.
 - **Pendiente de validación:** revisar demás flujos y confirmar información provisional antes de desplegar la web. El código está en GitHub; el sitio no está desplegado.
 - **Pendiente de verificación:** envío y recepción de mensajes en WhatsApp con un canal de prueba autorizado. La vista y las etiquetas de los formularios se revisaron el 2026-11-25. Ver [[estado-del-proyecto]].
