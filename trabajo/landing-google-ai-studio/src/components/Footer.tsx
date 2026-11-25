@@ -17,12 +17,12 @@ const navigation: { id: ScreenType | 'marcas'; label: string }[] = [
 ];
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCreditModal }) => (
-  <footer data-dark-surface className="w-full bg-[#001b4b] text-white border-t border-[#12306b]">
+  <footer data-dark-surface className="w-full bg-[#001b4b] text-white border-t-3 border-dym-aqua">
     <div className="max-w-[1320px] mx-auto px-4 lg:px-8 py-10 lg:py-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-8 border-b border-[#12306b]/80">
         <section className="space-y-3">
           <h2 className="font-['Montserrat'] text-xl font-black">D&M</h2>
-          <p className="text-sm font-semibold text-[#ffdcc6]">Soluciones para cada necesidad</p>
+          <p className="text-sm font-semibold text-dym-aqua">Soluciones para cada necesidad</p>
           <p className="text-xs text-[#b1c5ff] leading-relaxed">
             Productos para construcción, ferretería y soluciones eléctricas.
           </p>
@@ -53,13 +53,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCreditModal })
         <section className="space-y-3">
           <h2 className="font-['Montserrat'] text-base font-bold">Contacto</h2>
           <p className="text-xs text-[#b1c5ff]">{COMPANY_ADDRESS}</p>
-          <a href={`https://wa.me/${COMPANY_PHONE}`} target="_blank" rel="noopener noreferrer" className="block text-sm text-[#ffdcc6] hover:text-white">
+          <a href={`https://wa.me/${COMPANY_PHONE}`} target="_blank" rel="noopener noreferrer" className="block text-sm text-dym-aqua hover:text-white">
             WhatsApp: {COMPANY_PHONE_DISPLAY}
           </a>
           <a href={`mailto:${COMPANY_EMAIL}`} className="block text-sm text-[#b1c5ff] hover:text-white">
             {COMPANY_EMAIL}
           </a>
-          <button type="button" onClick={onOpenCreditModal} className="text-sm font-semibold text-[#fc820c] hover:text-[#ffdcc6]">
+          <button type="button" onClick={onOpenCreditModal} className="text-sm font-semibold text-dym-gold hover:text-dym-aqua">
             Consultar condiciones de crédito
           </button>
         </section>
@@ -67,7 +67,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCreditModal })
       <div className="pt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
         <p className="text-xs text-[#b1c5ff]">© {new Date().getFullYear()} Distribuidora D&M</p>
         {privacyPreview && (
-          <a href={privacyPolicyPath} className="inline-flex min-h-11 items-center text-sm text-[#ffdcc6] underline">
+          <a href={privacyPolicyPath} className="inline-flex min-h-11 items-center text-sm text-dym-aqua underline">
             Política de Tratamiento de Datos Personales (borrador)
           </a>
         )}

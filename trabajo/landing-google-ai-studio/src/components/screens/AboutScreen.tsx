@@ -30,7 +30,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
   <div className="w-full bg-[#f8f9ff] min-h-screen py-8 lg:py-12">
     <div className="max-w-[1320px] mx-auto px-4 lg:px-8 space-y-6 sm:space-y-8">
       <section className="bg-[#001b4b] text-white rounded-2xl p-6 lg:p-10 shadow-lg border border-[#12306b]">
-        <span className="text-xs font-bold uppercase tracking-wider text-[#fc820c] bg-white/10 px-3 py-1 rounded-full">
+        <span className="text-xs font-bold uppercase tracking-wider text-dym-gold bg-white/10 px-3 py-1 rounded-full">
           Sobre Distribuidora D&M
         </span>
         <h1 className="font-['Montserrat'] text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight mt-3">
@@ -57,7 +57,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {productLines.map((line) => (
             <article key={line.title} className="bg-white p-6 rounded-2xl border border-[#dae3f4] flex items-center gap-4">
-              <span className="material-symbols-outlined text-[30px] text-[#fc820c]">{line.icon}</span>
+              <span className="material-symbols-outlined text-[30px] text-dym-blue">{line.icon}</span>
               <h3 className="font-['Montserrat'] text-base font-bold text-[#001b4b]">{line.title}</h3>
             </article>
           ))}
@@ -70,7 +70,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
           <p className="text-sm text-[#444650] mt-1">{COMPANY_ADDRESS}</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3">
-          <button type="button" onClick={onOpenQuoteModal} className="px-5 py-3 rounded-lg bg-[#fc820c] text-white text-sm font-bold hover:bg-[#964900]">
+          <button type="button" onClick={onOpenQuoteModal} className="px-5 py-3 rounded-lg bg-dym-gold text-[#001b4b] text-sm font-bold hover:bg-dym-gold-hover">
             Solicitar cotización
           </button>
           <button type="button" onClick={onOpenCreditModal} className="px-5 py-3 rounded-lg bg-[#eff4ff] text-[#001b4b] text-sm font-bold hover:bg-[#e0e9f9]">

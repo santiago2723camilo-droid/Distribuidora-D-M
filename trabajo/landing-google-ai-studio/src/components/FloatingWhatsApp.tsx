@@ -10,7 +10,7 @@ export const FloatingWhatsApp: React.FC = () => {
 
       <a
         aria-label="Chat directo por WhatsApp con asesor mayorista D&M"
-        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#fc820c] text-[#001b4b] shadow-md transition-colors hover:bg-[#ff9f45]"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-dym-gold text-[#001b4b] shadow-md transition-colors hover:bg-dym-gold-hover"
         href={`https://wa.me/${COMPANY_PHONE}?text=Hola,%20me%20comunico%20desde%20la%20p%C3%A1gina%20web%20para%20asesor%C3%ADa%20y%20cotizaci%C3%B3n%20mayorista`}
         rel="noopener noreferrer"
         target="_blank"

@@ -12,7 +12,7 @@ export const CreditModal: React.FC<CreditModalProps> = ({ isOpen, onClose }) => 
   const [question, setQuestion] = useState('');
   const [isPreviewPrepared, setIsPreviewPrepared] = useState(false);
   const authorization = usePrivacyAuthorization();
-  const openClassName = 'w-full min-h-11 sm:w-auto inline-flex items-center justify-center gap-2 bg-[#fc820c] hover:bg-[#964900] text-white text-center text-sm font-bold px-4 py-2.5 rounded-lg transition-colors';
+  const openClassName = 'w-full min-h-11 sm:w-auto inline-flex items-center justify-center gap-2 bg-dym-gold hover:bg-dym-gold-hover text-[#001b4b] text-center text-sm font-bold px-4 py-2.5 rounded-lg transition-colors';
 
   const handleClose = () => {
     authorization.reset();
@@ -30,7 +30,7 @@ export const CreditModal: React.FC<CreditModalProps> = ({ isOpen, onClose }) => 
     <ModalDialog isOpen={isOpen} onClose={handleClose} titleId="credit-modal-title" className="max-w-lg">
         <div data-dark-surface className="shrink-0 p-4 sm:p-5 bg-[#12306b] text-white flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 shrink-0 rounded-xl bg-[#fc820c] flex items-center justify-center">
+            <div className="w-10 h-10 shrink-0 rounded-xl bg-dym-gold text-[#001b4b] flex items-center justify-center">
               <span className="material-symbols-outlined text-[22px]">payments</span>
             </div>
             <h2 id="credit-modal-title" className="font-['Montserrat'] text-lg font-bold">

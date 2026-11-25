@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+@theme {
+  --color-dym-aqua: #85eff0;
+  --color-dym-aqua-light: #c9f7f5;
+  --color-dym-aqua-soft: #e8fbfa;
+  --color-dym-blue: #3427ab;
+  --color-dym-blue-soft: #eeedff;
+  --color-dym-gold: #f7cc42;
+  --color-dym-gold-hover: #f2bb25;
+  --color-dym-gold-soft: #fff5d5;
+}
+
 @layer base {
   :root {
     --color-primary: #001b4b;

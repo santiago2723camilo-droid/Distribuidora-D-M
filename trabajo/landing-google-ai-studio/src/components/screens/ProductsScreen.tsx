@@ -90,8 +90,8 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
   return (
     <div className="w-full bg-[#f8f9ff] min-h-screen py-8 lg:py-12">
       <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
-        <section data-dark-surface className="bg-[#001b4b] text-white rounded-2xl p-6 lg:p-10 border border-[#12306b]">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#fc820c] bg-white/10 px-3 py-1 rounded-full">
+        <section data-dark-surface className="bg-linear-to-br from-[#001b4b] to-dym-blue text-white rounded-2xl p-6 lg:p-10 border border-[#12306b]">
+          <span className="text-xs font-bold uppercase tracking-wider text-dym-gold bg-white/10 px-3 py-1 rounded-full">
             Catálogo de productos
           </span>
           <h1 id="catalog-title" tabIndex={-1} className="font-['Montserrat'] text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight mt-3">
@@ -103,8 +103,8 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
         </section>
 
         {addedItemNotice && (
-          <div data-dark-surface className="fixed top-24 right-4 z-50 max-w-[calc(100%-2rem)] pointer-events-none bg-[#001b4b] text-white px-4 py-2 rounded-xl shadow-xl border border-[#fc820c] flex items-center gap-3">
-            <span aria-hidden="true" className="material-symbols-outlined text-[#fc820c]">check_circle</span>
+          <div data-dark-surface className="fixed top-24 right-4 z-50 max-w-[calc(100%-2rem)] pointer-events-none bg-[#001b4b] text-white px-4 py-2 rounded-xl shadow-xl border border-dym-gold flex items-center gap-3">
+            <span aria-hidden="true" className="material-symbols-outlined text-dym-gold">check_circle</span>
             <div role="status" className="text-xs min-w-0">
               <p className="font-bold">Agregado a cotización</p>
               <p className="text-[#dae2ff] truncate max-w-xs">{addedItemNotice}</p>
@@ -140,8 +140,8 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
                 }}
                 className={`min-h-11 max-w-full inline-flex items-center gap-2 px-4 py-2 rounded-xl text-left text-xs sm:text-sm font-semibold transition-colors ${
                   selectedCategory === category.id
-                    ? 'bg-[#001b4b] text-white'
-                    : 'bg-[#eff4ff] text-[#444650] hover:bg-[#dae3f4] hover:text-[#001b4b]'
+                    ? 'bg-dym-blue text-white'
+                    : 'bg-dym-aqua-soft text-[#001b4b] hover:bg-dym-aqua-light'
                 }`}
               >
                 <span aria-hidden="true" className="material-symbols-outlined shrink-0 text-[18px]">{category.icon}</span>
@@ -156,7 +156,7 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
                 ? `Mostrando ${numberFormat.format(firstVisible)}–${numberFormat.format(lastVisible)} de ${numberFormat.format(filteredProducts.length)} productos`
                 : 'No hay productos que coincidan con tu búsqueda'}
             </p>
-            <button type="button" onClick={onOpenQuoteModal} className="min-h-11 inline-flex items-center justify-center gap-2 bg-[#fc820c] text-[#001b4b] text-sm font-bold px-3.5 py-2 rounded-lg hover:bg-[#ff9f45] transition-colors">
+            <button type="button" onClick={onOpenQuoteModal} className="min-h-11 inline-flex items-center justify-center gap-2 bg-dym-gold text-[#001b4b] text-sm font-bold px-3.5 py-2 rounded-lg hover:bg-dym-gold-hover transition-colors">
               <span aria-hidden="true" className="material-symbols-outlined text-[16px]">shopping_cart</span>
               Ver cotización ({numberFormat.format(cart.reduce((sum, item) => sum + item.quantity, 0))})
             </button>
@@ -195,7 +195,7 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
                 return (
                   <article key={product.id} className="bg-white rounded-2xl p-5 shadow-xs border border-[#dae3f4] flex flex-col justify-between gap-5">
                     <div>
-                      <p className="text-[11px] font-bold text-[#fc820c] uppercase">{product.categoryLabel}</p>
+                      <p className="text-[11px] font-bold text-dym-blue uppercase">{product.categoryLabel}</p>
                       <h2 className="font-['Montserrat'] text-base font-bold text-[#001b4b] leading-snug mt-2 wrap-anywhere">
                         {product.name}
                       </h2>
@@ -220,7 +220,7 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
                       <button
                         type="submit"
                         disabled={!remaining}
-                        className="min-h-11 rounded-lg bg-[#eff4ff] px-2 py-2 text-sm font-bold text-[#001b4b] transition-colors enabled:hover:bg-[#e5eeff] disabled:opacity-50"
+                        className="min-h-11 rounded-lg bg-dym-blue-soft px-2 py-2 text-sm font-bold text-dym-blue transition-colors enabled:hover:bg-dym-aqua-light disabled:opacity-50"
                       >
                         {!remaining ? 'Límite alcanzado' : quantity ? `Añadir más (${numberFormat.format(quantity)})` : 'Añadir a cotización'}
                       </button>
@@ -268,7 +268,7 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
                 searchSectionRef.current?.focus({ preventScroll: true });
                 searchSectionRef.current?.scrollIntoView({ block: 'start' });
               }}
-              className="min-h-11 px-2 text-sm font-bold text-[#964900] hover:underline"
+              className="min-h-11 px-2 text-sm font-bold text-dym-blue hover:underline"
             >
               Ver todos los productos
             </button>

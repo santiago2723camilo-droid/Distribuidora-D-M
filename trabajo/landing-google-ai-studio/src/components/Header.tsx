@@ -65,7 +65,7 @@ export const Header: React.FC<HeaderProps> = ({
                 aria-current={isActive ? 'page' : undefined}
                 className={`min-h-11 transition-colors py-2 px-3 text-sm font-semibold rounded-lg cursor-pointer ${
                   isActive
-                    ? 'bg-[#e5eeff] text-[#001b4b] shadow-xs'
+                    ? 'bg-dym-blue-soft text-dym-blue shadow-xs'
                     : 'text-[#444650] hover:text-[#001b4b] hover:bg-[#f8f9ff]'
                 }`}
               >
@@ -80,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Quote builder button */}
           <button
             onClick={onOpenQuoteModal}
-            className="min-h-11 inline-flex items-center gap-2 rounded-lg border border-[#dae3f4] bg-[#eff4ff] px-2.5 py-2 text-sm font-bold text-[#001b4b] transition-colors hover:bg-[#e5eeff] sm:px-4 whitespace-nowrap"
+            className="min-h-11 inline-flex items-center gap-2 rounded-lg border border-dym-aqua-light bg-dym-aqua-soft px-2.5 py-2 text-sm font-bold text-[#001b4b] transition-colors hover:bg-dym-aqua-light sm:px-4 whitespace-nowrap"
             title="Abrir cotizador o enviar pedido a WhatsApp"
             aria-label={cartCount > 0 ? `Cotizar por WhatsApp, ${cartCount} ${cartCount === 1 ? 'unidad' : 'unidades'}` : undefined}
           >
@@ -131,7 +131,7 @@ export const Header: React.FC<HeaderProps> = ({
                 aria-current={isActive ? 'page' : undefined}
                 className={`w-full min-h-11 text-left py-2.5 px-3 rounded-lg text-sm font-medium transition-colors ${
                   isActive
-                    ? 'bg-[#e5eeff] text-[#001b4b] font-bold'
+                    ? 'bg-dym-blue-soft text-dym-blue font-bold'
                     : 'text-[#444650] hover:bg-[#f8f9ff]'
                 }`}
               >
@@ -148,14 +148,14 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className="w-full min-h-11 py-2.5 px-3 text-left text-sm text-[#001b4b] hover:bg-[#eff4ff] rounded-lg font-medium flex items-center gap-2"
             >
-              <span className="material-symbols-outlined text-[18px] text-[#fc820c]">payments</span>
+              <span className="material-symbols-outlined text-[18px] text-dym-blue">payments</span>
               Solicitar Crédito Comercial
             </button>
             <a
               href={`https://wa.me/${COMPANY_PHONE}?text=Hola%20Distribuidora%20D%26M,%20solicito%20atenci%C3%B3n%20comercial`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full min-h-11 text-center py-2.5 px-3 bg-[#fc820c] text-white rounded-lg text-sm font-bold flex items-center justify-center gap-2"
+              className="w-full min-h-11 text-center py-2.5 px-3 bg-dym-gold text-[#001b4b] rounded-lg text-sm font-bold flex items-center justify-center gap-2"
             >
               <span className="material-symbols-outlined text-[18px]">chat</span>
               WhatsApp Directo Asesor

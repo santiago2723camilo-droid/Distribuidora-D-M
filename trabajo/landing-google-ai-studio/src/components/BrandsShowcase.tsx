@@ -49,7 +49,7 @@ export const BrandsShowcase: React.FC = () => {
 
   return (
     <>
-      <section className="w-full scroll-mt-20 border-b border-[#dae3f4] bg-white py-12 lg:py-16" id="marcas" aria-labelledby="brands-title">
+      <section className="w-full scroll-mt-20 border-b border-dym-aqua-light bg-dym-aqua-soft py-12 lg:py-16" id="marcas" aria-labelledby="brands-title">
         <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
           <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
             <h2 id="brands-title" className="text-2xl font-bold text-[#001b4b] lg:text-3xl">

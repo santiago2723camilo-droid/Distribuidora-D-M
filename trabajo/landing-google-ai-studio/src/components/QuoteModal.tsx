@@ -73,9 +73,9 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   return (
     <ModalDialog isOpen={isOpen} onClose={handleClose} titleId="quote-modal-title" className="max-w-2xl">
         {/* Header */}
-        <div data-dark-surface className="shrink-0 p-4 sm:p-5 bg-[#001b4b] text-white flex items-center justify-between gap-2">
+        <div data-dark-surface className="shrink-0 p-4 sm:p-5 bg-linear-to-br from-[#001b4b] to-dym-blue text-white flex items-center justify-between gap-2">
           <div className="flex items-center gap-3">
-            <div className="hidden sm:flex w-10 h-10 shrink-0 rounded-xl bg-[#fc820c] items-center justify-center text-white">
+            <div className="hidden sm:flex w-10 h-10 shrink-0 rounded-xl bg-dym-gold items-center justify-center text-[#001b4b]">
               <span className="material-symbols-outlined text-[22px]">shopping_cart_checkout</span>
             </div>
             <div>
@@ -96,7 +96,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
         {/* Content Body */}
         <div className="site-dialog-body min-h-0 p-4 sm:p-6 overflow-y-auto overscroll-contain space-y-5">
           {/* Datos del Cliente */}
-          <div className="bg-[#eff4ff] p-4 rounded-xl border border-[#dae3f4] space-y-3">
+          <div className="bg-dym-aqua-soft p-4 rounded-xl border border-dym-aqua-light space-y-3">
             <h3 className="font-['Montserrat'] text-xs font-bold uppercase tracking-wider text-[#001b4b]">
               1. Datos de tu Negocio / Obra
             </h3>
@@ -310,7 +310,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
             <button
               type="button"
               onClick={handleSendWhatsApp}
-              className="min-w-0 min-h-11 flex-1 lg:flex-none inline-flex items-center justify-center gap-2 rounded-lg bg-[#fc820c] px-4 py-2.5 text-sm font-bold text-[#001b4b] transition-colors hover:bg-[#ff9f45]"
+              className="min-w-0 min-h-11 flex-1 lg:flex-none inline-flex items-center justify-center gap-2 rounded-lg bg-dym-gold px-4 py-2.5 text-sm font-bold text-[#001b4b] transition-colors hover:bg-dym-gold-hover"
             >
               <span className="material-symbols-outlined text-[20px]">chat</span>
               <span>Enviar a WhatsApp</span>

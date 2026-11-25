@@ -38,7 +38,7 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
         {/* Banner */}
         <div className="bg-[#001b4b] text-white rounded-2xl p-6 lg:p-10 shadow-lg relative overflow-hidden border border-[#12306b]">
           <div className="relative z-10 max-w-2xl space-y-3">
-            <span className="inline-block text-xs font-bold uppercase tracking-wider text-[#fc820c] bg-white/10 px-3 py-1 rounded-xl">
+            <span className="inline-block text-xs font-bold uppercase tracking-wider text-dym-gold bg-white/10 px-3 py-1 rounded-xl">
               Canales de Atención Mayorista
             </span>
             <h1 className="font-['Montserrat'] text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
@@ -53,7 +53,7 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
         {/* Canales de Contacto */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
           <div className="bg-white p-6 rounded-2xl shadow-xs border border-[#dae3f4] space-y-3">
-            <div className="w-12 h-12 rounded-xl bg-[#ffdcc6] text-[#fc820c] flex items-center justify-center">
+            <div className="w-12 h-12 rounded-xl bg-dym-aqua-soft text-dym-blue flex items-center justify-center">
               <span className="material-symbols-outlined text-[26px]">chat</span>
             </div>
             <h3 className="font-['Montserrat'] text-base font-bold text-[#001b4b]">WhatsApp Asesor</h3>
@@ -62,7 +62,7 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
               href={`https://wa.me/${COMPANY_PHONE}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center text-sm font-bold text-[#964900] hover:underline"
+              className="inline-flex min-h-11 items-center text-sm font-bold text-dym-blue hover:underline"
             >
               {COMPANY_PHONE_DISPLAY} &rarr;
             </a>
@@ -106,7 +106,7 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
                 <button
                   type="button"
                   onClick={() => setIsSent(false)}
-                  className="mt-3 min-h-11 px-2 text-sm text-[#964900] font-bold hover:underline"
+                  className="mt-3 min-h-11 px-2 text-sm text-dym-blue font-bold hover:underline"
                 >
                   Enviar otro mensaje
                 </button>
@@ -186,7 +186,7 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
 
                 <button
                   type="submit"
-                  className="w-full min-h-11 px-3 py-3 bg-[#fc820c] hover:bg-[#964900] text-white text-sm font-bold rounded-lg shadow-sm hover:shadow-md transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full min-h-11 px-3 py-3 bg-dym-gold hover:bg-dym-gold-hover text-[#001b4b] text-sm font-bold rounded-lg shadow-sm hover:shadow-md transition-colors flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span className="material-symbols-outlined text-[19px]">chat</span>
                   <span>Contactar Asesor por WhatsApp</span>
