@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { COMPANY_ADDRESS, COMPANY_EMAIL, COMPANY_PHONE, COMPANY_PHONE_DISPLAY } from '../../data/mockData';
+import { PrivacyAuthorization, privacyPreview, privacyPreviewFeedback, usePrivacyAuthorization } from '../PrivacyAuthorization';
 
 interface ContactScreenProps {
   onOpenQuoteModal: () => void;
@@ -12,9 +13,14 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
   const [city, setCity] = useState('Valledupar');
   const [message, setMessage] = useState('');
   const [isSent, setIsSent] = useState(false);
+  const authorization = usePrivacyAuthorization();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!authorization.validate()) return;
+    setIsSent(true);
+    if (privacyPreview) return;
+
     let text = `*CONTACTO WEB - DISTRIBUIDORA D&M*\n`;
     text += `👤 *Nombre:* ${name}\n`;
     if (business) text += `🏢 *Empresa / Ferretería:* ${business}\n`;
@@ -24,7 +30,6 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
 
     const encoded = encodeURIComponent(text);
     window.open(`https://wa.me/${COMPANY_PHONE}?text=${encoded}`, '_blank');
-    setIsSent(true);
   };
 
   return (
@@ -94,9 +99,9 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
             {isSent ? (
               <div role="status" className="bg-[#eff4ff] p-6 rounded-xl text-center space-y-2 border border-[#dae3f4]">
                 <span className="material-symbols-outlined text-[36px] text-green-600">check_circle</span>
-                <h4 className="font-bold text-sm text-[#001b4b]">Mensaje listo en WhatsApp</h4>
+                <h4 className="font-bold text-sm text-[#001b4b]">{privacyPreview ? 'Confirmación de prueba' : 'Mensaje listo en WhatsApp'}</h4>
                 <p className="text-xs text-[#444650]">
-                  WhatsApp se abrió con el mensaje preparado para que lo revises antes de enviarlo.
+                  {privacyPreview ? privacyPreviewFeedback : 'WhatsApp se abrió con el mensaje preparado para que lo revises antes de enviarlo.'}
                 </p>
                 <button
                   type="button"
@@ -176,6 +181,8 @@ export const ContactScreen: React.FC<ContactScreenProps> = ({ onOpenQuoteModal }
                     className="w-full text-base sm:text-sm px-3 py-3 bg-[#f8f9ff] border border-[#c4c6d1] rounded-lg placeholder:text-[#444650] focus:border-[#001b4b]"
                   ></textarea>
                 </div>
+
+                <PrivacyAuthorization inputRef={authorization.inputRef} purpose="responder tu consulta" />
 
                 <button
                   type="submit"

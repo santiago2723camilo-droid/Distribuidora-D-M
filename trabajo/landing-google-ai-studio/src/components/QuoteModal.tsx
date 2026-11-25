@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { CartItem } from '../types';
 import { COMPANY_PHONE } from '../data/mockData';
 import { ModalDialog } from './ModalDialog';
+import { PrivacyAuthorization, privacyPreview, privacyPreviewFeedback, usePrivacyAuthorization } from './PrivacyAuthorization';
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -27,15 +28,21 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   const [notes, setNotes] = useState('');
   const [isQuotePrepared, setIsQuotePrepared] = useState(false);
   const materialsHeadingRef = useRef<HTMLHeadingElement>(null);
+  const authorization = usePrivacyAuthorization();
 
   const destinationCity = city === 'Otro' ? (customCity.trim() || 'Región Caribe') : city;
 
   const handleClose = () => {
+    authorization.reset();
     setIsQuotePrepared(false);
     onClose();
   };
 
   const handleSendWhatsApp = () => {
+    if (!authorization.validate()) return;
+    setIsQuotePrepared(true);
+    if (privacyPreview) return;
+
     let message = `*SOLICITUD DE COTIZACIÓN MAYORISTA - D&M*\n`;
     message += `👤 *Cliente:* ${clientName.trim() || 'Cliente Mayorista'}\n`;
     if (businessName.trim()) message += `🏢 *Ferretería / Obra:* ${businessName.trim()}\n`;
@@ -58,7 +65,6 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
     message += `\n_Enviado desde el cotizador web de Distribuidora D&M._`;
 
     const encoded = encodeURIComponent(message);
-    setIsQuotePrepared(true);
     window.open(`https://wa.me/${COMPANY_PHONE}?text=${encoded}`, '_blank', 'noopener,noreferrer');
   };
 
@@ -247,6 +253,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
               className="w-full text-base sm:text-sm px-3 py-2.5 bg-white border border-[#c4c6d1] rounded-lg placeholder:text-[#444650] focus:border-[#001b4b]"
             ></textarea>
           </div>
+          <PrivacyAuthorization inputRef={authorization.inputRef} purpose="responder tu solicitud de cotización" />
         </div>
 
         {/* Footer Actions */}
@@ -254,7 +261,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
           <p role="status" className="w-full lg:flex-1 text-xs text-[#747781] text-center lg:text-left">
             {isQuotePrepared ? (
               <span className="quote-feedback-enter inline-block font-semibold text-[#001b4b]">
-                Borrador preparado. Revísalo en WhatsApp antes de enviarlo.
+                {privacyPreview ? privacyPreviewFeedback : 'Borrador preparado. Revísalo en WhatsApp antes de enviarlo.'}
               </span>
             ) : 'Tu solicitud se abrirá en WhatsApp para que la revises y la envíes.'}
           </p>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { CartItem, ProductItem, ScreenType } from './types';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { privacyPreview } from './components/PrivacyAuthorization';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { QuoteModal } from './components/QuoteModal';
 import { CreditModal } from './components/CreditModal';
@@ -72,6 +73,11 @@ export default function App() {
 
       {/* Main Screen Content */}
       <main className="flex-1 pt-20">
+        {privacyPreview && (
+          <p className="bg-[#ffdcc6] px-4 py-2.5 text-center text-sm font-semibold text-[#001b4b]">
+            Vista local de la política y los formularios. Los botones de los formularios simulan el envío.
+          </p>
+        )}
         {currentScreen === 'inicio' && (
           <HomeScreen
             onNavigate={handleNavigate}

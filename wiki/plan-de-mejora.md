@@ -156,7 +156,7 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 
 ## Paso 14 del plan recibido · Tratamiento de datos
 
-**Estado: diagnóstico confirmado.** Nombre registrado, dirección y atención de derechos confirmados por el usuario. NIT y manejo de las conversaciones pendientes.
+**Estado: borrador y casillas comprobados en vista privada.** D&M confirmó nombre registrado, dirección y atención de derechos. Las solicitudes se atienden y conservan en WhatsApp. D&M no envía promociones. El NIT se incorporará más adelante por indicación del usuario.
 
 | Flujo | Datos que pide la página | Destino observado |
 |---|---|---|
@@ -166,7 +166,8 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 
 - **Confirmado por código:** los campos se mantienen en memoria mientras se usa la página. El texto viaja como parte del enlace al abrir WhatsApp. La persona revisa el borrador y decide si lo envía. No se encontró una base de datos propia para estos formularios, ni política o casilla de autorización. Los enlaces directos sin campos no incorporan los datos de los formularios.
 - **Confirmado por código:** la portada carga fuentes e imagen desde servicios externos de Google. No se encontró analítica instalada en la landing. El alojamiento público y sus registros quedan por comprobar cuando se defina el despliegue.
-- **Confirmado por el usuario:** marca, correo y teléfono comerciales en [[empresa]]. Para la política, confirmó usar la dirección ya registrada y el correo comercial. El nombre registrado y la persona que atenderá derechos quedaron en `Docs/datos-personales/confirmaciones-locales.md`, excluido de Git. **Pendiente:** NIT, finalidades y manejo de mensajes. No se recibió el RUT ni una política vigente.
-- **Pendiente de validación:** usos de la información y publicidad, quién recibe o consulta los mensajes, dónde se guardan, por cuánto tiempo y cómo se conserva la prueba de autorización. No se constataron campos específicos de salud o de menores. Los campos libres pueden recibir información adicional que la página no pide.
-- **Propuesta:** página propia con enlace en el pie. Aviso breve y casilla de autorización sin premarcar en los tres flujos antes de abrir el borrador en WhatsApp. Alcance y conservación de la autorización se acuerdan con la empresa. Las promociones, si se realizan, tendrían una autorización separada y opcional.
+- **Confirmado por el usuario:** marca, correo y teléfono comerciales en [[empresa]]. Para la política, confirmó usar la dirección ya registrada y el correo comercial. El nombre registrado y la persona que atenderá derechos quedaron en `Docs/datos-personales/confirmaciones-locales.md`, excluido de Git. No se recibió el RUT ni una política vigente.
+- **Vista local:** página independiente, enlace en el pie, aviso y casilla sin marcar en Cotizador, Contacto y Crédito. Se inicia con `node .\node_modules\vite\bin\vite.js --mode privacy-draft --host 127.0.0.1 --port 3006 --strictPort`. El modo simula el envío. Los documentos privados se encuentran en `Docs/datos-personales/`.
+- **Comprobado:** Brave bloqueó las tres acciones con la casilla vacía y mostró confirmación de prueba al marcarla. Se abrieron los enlaces del pie y del cotizador. Se revisaron la política y el cotizador a 390 px. Vite y TypeScript terminaron correctamente. La compilación y la vista normal no sirvieron el borrador.
+- **Pendiente de validación:** NIT, plazo o criterio de conservación, mecanismo para guardar la constancia de autorización, vigencia y aprobación antes de publicación. No se confirmó el alojamiento público y sus registros. No se constataron campos específicos de salud o de menores.
 - **Fuentes:** guía local `tratamiento-datos-landing.zip`, [Ley 1581 de 2012, arts. 9 y 12](https://jurinfo.jep.gov.co/Normograma/compilacion/docs/ley_1581_2012.htm), [SIC sobre contenido mínimo de la política](https://sedeelectronica.sic.gov.co/publicaciones/boletin-juridico/concepto/politicas-de-tratamiento-de-datos-personales) y [Decreto 1074 de 2015, arts. 2.2.2.25.2.5 y 2.2.2.25.3.1](https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=76608).

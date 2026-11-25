@@ -48,7 +48,7 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 
 ## Próximo paso
 
-El paso 13 del [[plan-de-mejora]] está aplicado y comprobado en navegador. El paso 14 tiene el inventario de Cotizador, Contacto y Crédito. D&M confirmó el nombre registrado, la dirección y el canal de atención de derechos. Quedan por confirmar el NIT, el uso de las consultas y cómo se manejan después de recibirlas. La validación en un teléfono físico y los pendientes de fichas de marcas, crédito y recepción por WhatsApp se mantienen en [[pendientes]].
+El paso 14 del [[plan-de-mejora]] tiene borrador y casillas comprobados en una vista local separada en `http://127.0.0.1:3006/`. D&M confirma que atiende y conserva las solicitudes en WhatsApp y que no envía promociones. Se aplazó el NIT por indicación del usuario. Faltan el criterio de conservación, el procedimiento de constancia, la vigencia y la aprobación del texto. La vista habitual permanece en el puerto 3005. Otros pendientes están en [[pendientes]].
 
 ## Paso 13 · Transiciones suaves
 

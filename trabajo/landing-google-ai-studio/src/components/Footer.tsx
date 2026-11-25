@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScreenType } from '../types';
 import { COMPANY_ADDRESS, COMPANY_EMAIL, COMPANY_PHONE, COMPANY_PHONE_DISPLAY } from '../data/mockData';
+import { privacyPolicyPath, privacyPreview } from './PrivacyAuthorization';
 
 interface FooterProps {
   onNavigate: (screen: ScreenType) => void;
@@ -63,7 +64,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCreditModal })
           </button>
         </section>
       </div>
-      <p className="text-xs text-[#b1c5ff] pt-6">© {new Date().getFullYear()} Distribuidora D&M</p>
+      <div className="pt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
+        <p className="text-xs text-[#b1c5ff]">© {new Date().getFullYear()} Distribuidora D&M</p>
+        {privacyPreview && (
+          <a href={privacyPolicyPath} className="inline-flex min-h-11 items-center text-sm text-[#ffdcc6] underline">
+            Política de Tratamiento de Datos Personales (borrador)
+          </a>
+        )}
+      </div>
     </div>
   </footer>
 );
