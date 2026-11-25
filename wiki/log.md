@@ -240,3 +240,8 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 
 - D&M autorizó publicar y precisó que quería un poco más de color acorde al logo. Se aplicó turquesa, azul y amarillo y se desplegó `67c2346` en GitHub Pages. El mismo logo se sirve desde la extracción del PDF.
 - En Chrome aislado se verificó la página pública a 320, 390, 718 y 1.280 px, con paleta visible, acceso a Productos desde el cotizador, conservación de 12 unidades, filtro Eléctricos y detalle de Cellux. La política sigue pendiente del NIT y el borrador devolvió HTTP 404. Ver [[estado-del-proyecto]].
+
+## [2026-11-25] mejora | Búsqueda de portada, lista, destacados y entregas
+
+- D&M pidió las cuatro funciones y confirmó rodillos, paneles, aerosoles, brochas y tornillería para destacar, además de la región Caribe colombiana para entregas.
+- Se implementó y probó la vista local en cuatro anchos. El cotizador suma las coincidencias y conserva en notas los renglones que la persona decide consultar. Se verificó el borrador de WhatsApp sin enviarlo. Los cambios quedan locales. Ver [[estado-del-proyecto]].

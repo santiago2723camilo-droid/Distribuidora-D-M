@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { CartItem, ProductItem, ScreenType } from './types';
+import { MAX_ITEM_QUANTITY, type CartItem, type ProductItem, type ScreenType } from './types';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { privacyPreview } from './components/PrivacyAuthorization';
@@ -14,6 +14,7 @@ import { ContactScreen } from './components/screens/ContactScreen';
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<ScreenType>('inicio');
   const [catalogCategory, setCatalogCategory] = useState<ProductItem['category'] | 'all'>('all');
+  const [catalogSearch, setCatalogSearch] = useState('');
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [isCreditModalOpen, setIsCreditModalOpen] = useState(false);
@@ -26,18 +27,22 @@ export default function App() {
     }
   }, [currentScreen]);
 
-  const handleAddToCart = (product: ProductItem, quantity: number = 1) => {
+  const handleAddItemsToCart = (items: CartItem[]) => {
     setCart((prev) => {
-      const existing = prev.find((item) => item.product.id === product.id);
-      if (existing) {
-        return prev.map((item) =>
-          item.product.id === product.id
-            ? { ...item, quantity: item.quantity + quantity }
-            : item
-        );
+      const updated = new Map(prev.map((item) => [item.product.id, item]));
+      for (const item of items) {
+        const existing = updated.get(item.product.id);
+        const total = (existing?.quantity ?? 0) + item.quantity;
+        if (Number.isSafeInteger(item.quantity) && item.quantity > 0 && total <= MAX_ITEM_QUANTITY) {
+          updated.set(item.product.id, { ...(existing ?? item), quantity: total });
+        }
       }
-      return [...prev, { product, quantity }];
+      return [...updated.values()];
     });
+  };
+
+  const handleAddToCart = (product: ProductItem, quantity: number) => {
+    handleAddItemsToCart([{ product, quantity }]);
   };
 
   const handleUpdateQuantity = (productId: string, quantity: number) => {
@@ -65,9 +70,20 @@ export default function App() {
   };
 
   const handleNavigate = (screen: ScreenType, category: ProductItem['category'] | 'all' = 'all') => {
-    if (screen === 'productos') setCatalogCategory(category);
+    if (screen === 'productos') {
+      setCatalogCategory(category);
+      setCatalogSearch('');
+    }
     setCurrentScreen(screen);
     window.scrollTo({ top: 0 });
+  };
+
+  const handleSearchCatalog = (search: string) => {
+    focusCatalogHeading.current = true;
+    setCatalogCategory('all');
+    setCatalogSearch(search);
+    setCurrentScreen('productos');
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   return (
@@ -91,6 +107,9 @@ export default function App() {
         {currentScreen === 'inicio' && (
           <HomeScreen
             onNavigate={handleNavigate}
+            onSearchCatalog={handleSearchCatalog}
+            onAddToCart={handleAddToCart}
+            cart={cart}
             onOpenQuoteModal={handleOpenQuoteModal}
             onOpenCreditModal={() => setIsCreditModalOpen(true)}
           />
@@ -98,8 +117,9 @@ export default function App() {
 
         {currentScreen === 'productos' && (
           <ProductsScreen
-            key={catalogCategory}
+            key={`${catalogCategory}:${catalogSearch}`}
             initialCategory={catalogCategory}
+            initialSearch={catalogSearch}
             cart={cart}
             onAddToCart={handleAddToCart}
             onOpenQuoteModal={() => setIsQuoteModalOpen(true)}
@@ -137,6 +157,7 @@ export default function App() {
           handleNavigate('productos');
         }}
         cart={cart}
+        onAddItems={handleAddItemsToCart}
         onUpdateQuantity={handleUpdateQuantity}
         onRemoveItem={handleRemoveItem}
         onClearCart={handleClearCart}

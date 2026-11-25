@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { CartItem, MAX_ITEM_QUANTITY } from '../types';
 import { COMPANY_PHONE } from '../data/mockData';
 import { ModalDialog } from './ModalDialog';
+import { QuoteListInput } from './QuoteListInput';
 import { PrivacyAuthorization, privacyPreview, privacyPreviewFeedback, usePrivacyAuthorization } from './PrivacyAuthorization';
 
 interface QuoteModalProps {
@@ -9,6 +10,7 @@ interface QuoteModalProps {
   onClose: () => void;
   onBrowseProducts: () => void;
   cart: CartItem[];
+  onAddItems: (items: CartItem[]) => void;
   onUpdateQuantity: (productId: string, quantity: number) => void;
   onRemoveItem: (productId: string) => void;
   onClearCart: () => void;
@@ -19,6 +21,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   onClose,
   onBrowseProducts,
   cart,
+  onAddItems,
   onUpdateQuantity,
   onRemoveItem,
   onClearCart,
@@ -28,6 +31,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   const [city, setCity] = useState('Valledupar');
   const [customCity, setCustomCity] = useState('');
   const [notes, setNotes] = useState('');
+  const [hasUnappliedList, setHasUnappliedList] = useState(false);
   const [isQuotePrepared, setIsQuotePrepared] = useState(false);
   const materialsHeadingRef = useRef<HTMLHeadingElement>(null);
   const authorization = usePrivacyAuthorization();
@@ -41,7 +45,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   };
 
   const handleSendWhatsApp = () => {
-    if (!authorization.validate()) return;
+    if (hasUnappliedList || !authorization.validate()) return;
     setIsQuotePrepared(true);
     if (privacyPreview) return;
 
@@ -56,7 +60,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
         message += `${idx + 1}. *${item.product.name}*\n`;
         message += `   • Cantidad: ${item.quantity}\n`;
       });
-    } else {
+    } else if (!notes.trim()) {
       message += `📦 *Materiales solicitados:* Deseo cotizar surtido para mi negocio.\n`;
     }
 
@@ -178,6 +182,19 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
               )}
             </div>
 
+            <QuoteListInput
+              cart={cart}
+              onDraftChange={setHasUnappliedList}
+              onApply={(items, pendingLines) => {
+                if (items.length) onAddItems(items);
+                if (pendingLines.length) {
+                  const pending = `Materiales por confirmar:\n${pendingLines.map((line) => `- ${line}`).join('\n')}`;
+                  setNotes((oldNotes) => [oldNotes.trimEnd(), pending].filter(Boolean).join('\n\n'));
+                }
+                setIsQuotePrepared(false);
+              }}
+            />
+
             {cart.length === 0 ? (
               <div className="border border-dashed border-[#c4c6d1] rounded-xl p-6 text-center text-sm text-[#444650] bg-[#f8f9ff]">
                 <span className="material-symbols-outlined text-[36px] text-[#747781] mb-2 block">
@@ -288,7 +305,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
         {/* Footer Actions */}
         <div className="shrink-0 px-4 py-3 sm:p-4 bg-[#f8f9ff] border-t border-[#dae3f4] flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-2 lg:gap-3">
           <p role="status" className="w-full lg:flex-1 text-xs text-[#747781] text-center lg:text-left">
-            {isQuotePrepared ? (
+            {hasUnappliedList ? 'Revisa y añade la lista pegada antes de abrir WhatsApp.' : isQuotePrepared ? (
               <span className="quote-feedback-enter inline-block font-semibold text-[#001b4b]">
                 {privacyPreview ? privacyPreviewFeedback : 'Borrador preparado. Revísalo en WhatsApp antes de enviarlo.'}
               </span>
@@ -310,7 +327,8 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
             <button
               type="button"
               onClick={handleSendWhatsApp}
-              className="min-w-0 min-h-11 flex-1 lg:flex-none inline-flex items-center justify-center gap-2 rounded-lg bg-dym-gold px-4 py-2.5 text-sm font-bold text-[#001b4b] transition-colors hover:bg-dym-gold-hover"
+              disabled={hasUnappliedList}
+              className="min-w-0 min-h-11 flex-1 lg:flex-none inline-flex items-center justify-center gap-2 rounded-lg bg-dym-gold px-4 py-2.5 text-sm font-bold text-[#001b4b] transition-colors enabled:hover:bg-dym-gold-hover disabled:opacity-50"
             >
               <span className="material-symbols-outlined text-[20px]">chat</span>
               <span>Enviar a WhatsApp</span>

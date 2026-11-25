@@ -209,3 +209,9 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 - **Publicado (2026-11-25):** D&M pidió un poco más de color inspirado en el logo. Se aplicó turquesa en la portada, amarillo en las acciones principales y azul en el catálogo y el cotizador. Las tres tarjetas tienen acentos de la paleta y abren su filtro correspondiente. El catálogo sigue sin fotos y mantiene visibles los nombres y las cantidades.
 - **Publicado (2026-11-25):** se extrajo el mismo logo desde el PDF de D&M y se ajustó su tamaño en el encabezado. «Ver productos» desde el cotizador abre el catálogo y conserva las cantidades y los datos introducidos. «Marcas» conserva el carrusel con los logos actuales. Ver [[estado-del-proyecto]].
 - **Propuesta por evaluar:** una foto real del negocio para la portada si D&M dispone de una aprobada.
+
+## Búsqueda y cotización desde la portada
+
+- **Aplicado localmente (2026-11-25):** el buscador de la portada abre el catálogo con la consulta activa. D&M confirmó cinco líneas para destacar. Cada tarjeta muestra una referencia existente, permite añadir unidades a la cotización y abre más referencias de su línea.
+- **Aplicado localmente:** el cotizador permite revisar hasta 50 renglones por bloque. Una coincidencia única se prepara con su cantidad para confirmación. Los renglones ambiguos, sin coincidencia o con cantidades inválidas se pueden corregir o conservar en notas. Los repetidos se consolidan junto con las cantidades que ya tenía el carrito.
+- **Aplicado localmente:** se muestra la cobertura regional confirmada para el Caribe colombiano. WhatsApp permite consultar el destino concreto, el costo y el plazo. Ver [[empresa]] y [[estado-del-proyecto]].

@@ -1,10 +1,13 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { CartItem, MAX_ITEM_QUANTITY, ProductItem } from '../../types';
-import { PRODUCT_CATEGORIES, PRODUCTS_CATALOG } from '../../data/mockData';
+import type { CartItem, ProductItem } from '../../types';
+import { PRODUCT_CATEGORIES } from '../../data/mockData';
+import { normalizeProductSearch, searchableProducts } from '../../data/catalogSearch';
+import { ProductQuoteCard } from '../ProductQuoteCard';
 
 interface ProductsScreenProps {
   initialCategory: CategoryFilter;
-  onAddToCart: (product: ProductItem, quantity?: number) => void;
+  initialSearch: string;
+  onAddToCart: (product: ProductItem, quantity: number) => void;
   onOpenQuoteModal: () => void;
   cart: CartItem[];
 }
@@ -14,14 +17,6 @@ type CategoryFilter = 'all' | ProductItem['category'];
 const PAGE_SIZE = 10;
 const numberFormat = new Intl.NumberFormat('es-CO');
 
-const normalizeSearch = (value: string) =>
-  value.toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().replace(/\s+/g, ' ');
-
-const searchableProducts = PRODUCTS_CATALOG.map((product) => ({
-  product,
-  searchableName: normalizeSearch(product.name),
-}));
-
 const categories: { id: CategoryFilter; label: string; icon: string }[] = [
   { id: 'all', label: 'Todos los productos', icon: 'apps' },
   ...PRODUCT_CATEGORIES,
@@ -29,11 +24,12 @@ const categories: { id: CategoryFilter; label: string; icon: string }[] = [
 
 export const ProductsScreen: React.FC<ProductsScreenProps> = ({
   initialCategory,
+  initialSearch,
   onAddToCart,
   onOpenQuoteModal,
   cart,
 }) => {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState(initialSearch);
   const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>(initialCategory);
   const [page, setPage] = useState(1);
   const [pageTurn, setPageTurn] = useState(0);
@@ -44,7 +40,7 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
 
   useEffect(() => () => window.clearTimeout(noticeTimer.current), []);
 
-  const query = normalizeSearch(search);
+  const query = normalizeProductSearch(search);
   const filteredProducts = useMemo(() => searchableProducts
     .filter(({ product, searchableName }) =>
       (selectedCategory === 'all' || product.category === selectedCategory) &&
@@ -56,14 +52,8 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
   const firstVisible = filteredProducts.length ? (currentPage - 1) * PAGE_SIZE + 1 : 0;
   const lastVisible = Math.min(currentPage * PAGE_SIZE, filteredProducts.length);
 
-  const handleAdd = (event: React.FormEvent<HTMLFormElement>, product: ProductItem) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const quantity = Number(new FormData(form).get('quantity'));
-    if (!Number.isInteger(quantity) || quantity < 1 || quantity + getCartQuantity(product.id) > MAX_ITEM_QUANTITY) return;
-
+  const handleAdd = (product: ProductItem, quantity: number) => {
     onAddToCart(product, quantity);
-    form.reset();
     setAddedItemNotice(`${numberFormat.format(quantity)} × ${product.name}`);
     window.clearTimeout(noticeTimer.current);
     noticeTimer.current = window.setTimeout(() => setAddedItemNotice(null), 2500);
@@ -189,45 +179,9 @@ export const ProductsScreen: React.FC<ProductsScreenProps> = ({
           <>
             <section ref={resultsRef} tabIndex={-1} aria-label="Resultados del catálogo" className="scroll-mt-24">
               <div key={pageTurn} className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 ${pageTurn ? 'catalog-page-enter' : ''}`}>
-              {pageProducts.map((product) => {
-                const quantity = getCartQuantity(product.id);
-                const remaining = MAX_ITEM_QUANTITY - quantity;
-                return (
-                  <article key={product.id} className="bg-white rounded-2xl p-5 shadow-xs border border-[#dae3f4] flex flex-col justify-between gap-5">
-                    <div>
-                      <p className="text-[11px] font-bold text-dym-blue uppercase">{product.categoryLabel}</p>
-                      <h2 className="font-['Montserrat'] text-base font-bold text-[#001b4b] leading-snug mt-2 wrap-anywhere">
-                        {product.name}
-                      </h2>
-                    </div>
-                    <form onSubmit={(event) => handleAdd(event, product)} className="grid grid-cols-[5rem_minmax(0,1fr)] items-end gap-2">
-                      <label className="grid gap-1 text-xs font-medium text-[#444650]">
-                        Cantidad <span className="sr-only">de {product.name}</span>
-                        <input
-                          type="number"
-                          name="quantity"
-                          min={1}
-                          max={remaining}
-                          step={1}
-                          defaultValue={1}
-                          inputMode="numeric"
-                          enterKeyHint="go"
-                          required
-                          disabled={!remaining}
-                          className="w-full min-h-11 rounded-lg border border-[#c4c6d1] bg-[#f8f9ff] px-2 text-base text-[#001b4b]"
-                        />
-                      </label>
-                      <button
-                        type="submit"
-                        disabled={!remaining}
-                        className="min-h-11 rounded-lg bg-dym-blue-soft px-2 py-2 text-sm font-bold text-dym-blue transition-colors enabled:hover:bg-dym-aqua-light disabled:opacity-50"
-                      >
-                        {!remaining ? 'Límite alcanzado' : quantity ? `Añadir más (${numberFormat.format(quantity)})` : 'Añadir a cotización'}
-                      </button>
-                    </form>
-                  </article>
-                );
-              })}
+                {pageProducts.map((product) => (
+                  <ProductQuoteCard key={product.id} product={product} quantity={getCartQuantity(product.id)} onAdd={handleAdd} />
+                ))}
               </div>
             </section>
 

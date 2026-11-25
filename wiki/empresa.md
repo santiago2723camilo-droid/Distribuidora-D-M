@@ -2,7 +2,7 @@
 tipo: empresa
 estado: vigente
 creado: 2026-10-28
-actualizado: 2026-11-20
+actualizado: 2026-11-25
 tags: [empresa, distribuidora-dym]
 fuentes: ["Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/DISTRIBUIDORA D&M.pdf", "Docs/LOGO DISTRIBUIDORA DYM.pdf", "../../inventario 04-11.xlsx"]
 ---
@@ -13,6 +13,7 @@ fuentes: ["Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/DISTRIBUIDORA D&M.pdf"
 
 - **Confirmado:** la empresa se presenta como distribuidora de productos para construcción, ferretería y soluciones eléctricas; su texto destaca variedad, responsabilidad y atención comprometida con sus clientes. Fuentes: DOCX y borrador visual PDF en [[documentos-y-activos]].
 - **Confirmado:** el borrador nombra las líneas construcción y ferretería, accesorios sanitarios y eléctricos.
+- **Confirmado por D&M (2026-11-25):** destacar rodillos, paneles, aerosoles, brochas y tornillería. Las referencias concretas mostradas en la vista previa son ejemplos del catálogo.
 - **Provisional:** la landing actual se dirige a ferreterías, contratistas/maestros de obra y constructoras. Esa audiencia aparece en el código del sitio, pero no en el material empresarial revisado.
 - **Pendiente:** confirmar qué marcas se distribuyen actualmente y las condiciones comerciales. El usuario autorizó mostrar todos los logos recibidos, sin que esto confirme por sí solo una relación comercial vigente. Las marcas del borrador no coinciden completamente con las imágenes recibidas.
 
@@ -30,6 +31,7 @@ fuentes: ["Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/DISTRIBUIDORA D&M.pdf"
 ## Canales y ubicación
 
 - **Confirmado por el usuario (2026-11-06):** WhatsApp `+57 316 460 2821`, correo `distri.dym13@gmail.com` y dirección Carrera 4H # 21-48, barrio Villa Clara.
+- **Confirmado por D&M (2026-11-25):** entregas en el Caribe colombiano. La página ofrece un enlace a WhatsApp para consultar el destino específico, costo y plazo. No se recibió un listado de municipios ni valores de despacho.
 - **Confirmado:** conservar la pantalla Contacto y no incluir enlace de Maps; retirar PBX.
 - **Confirmado:** las condiciones de crédito cambian y no están completas; la página debe ofrecer una consulta por WhatsApp sin simulador, montos, plazos o aprobación.
 

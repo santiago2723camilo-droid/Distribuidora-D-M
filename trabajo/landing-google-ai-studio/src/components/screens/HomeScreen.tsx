@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import { ProductItem, ScreenType } from '../../types';
+import type { CartItem, ProductItem, ScreenType } from '../../types';
 import { COMPANY_PHONE, FAQS, PRODUCT_CATEGORIES } from '../../data/mockData';
+import { FEATURED_PRODUCTS } from '../../data/homeProducts';
 import { BrandsShowcase } from '../BrandsShowcase';
+import { ProductQuoteCard } from '../ProductQuoteCard';
 
 interface HomeScreenProps {
   onNavigate: (screen: ScreenType, category?: ProductItem['category']) => void;
+  onSearchCatalog: (search: string) => void;
+  onAddToCart: (product: ProductItem, quantity: number) => void;
+  cart: CartItem[];
   onOpenQuoteModal: () => void;
   onOpenCreditModal: () => void;
 }
@@ -15,13 +20,19 @@ const categoryTone: Record<ProductItem['category'], string> = {
   sanitarios: 'border-dym-aqua bg-dym-aqua-soft',
 };
 
+const deliveryMessage = 'Hola, quisiera consultar si hacen entregas en mi municipio y cómo se coordina el despacho.';
+
 export const HomeScreen: React.FC<HomeScreenProps> = ({
   onNavigate,
+  onSearchCatalog,
+  onAddToCart,
+  cart,
   onOpenQuoteModal,
   onOpenCreditModal,
 }) => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [showHeroImage, setShowHeroImage] = useState(true);
+  const [featuredNotice, setFeaturedNotice] = useState('');
 
   const toggleFaq = (idx: number) => {
     setOpenFaqIndex(openFaqIndex === idx ? null : idx);
@@ -41,6 +52,32 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-[#444650] lg:text-lg">
               Distribuimos al por mayor productos de ferretería y construcción, accesorios sanitarios y eléctricos. Consulta el catálogo y cotiza por WhatsApp.
             </p>
+            <form
+              role="search"
+              aria-label="Buscar desde la portada"
+              className="mt-5 flex max-w-xl items-stretch gap-2"
+              onSubmit={(event) => {
+                event.preventDefault();
+                const query = String(new FormData(event.currentTarget).get('q') ?? '').trim();
+                if (query) onSearchCatalog(query);
+              }}
+            >
+              <label className="min-w-0 flex-1">
+                <span className="sr-only">Buscar en el catálogo</span>
+                <input
+                  name="q"
+                  type="search"
+                  enterKeyHint="search"
+                  required
+                  placeholder="Ej. panel LED o codo sanitario"
+                  className="min-h-11 w-full rounded-lg border border-dym-aqua bg-white px-3 py-2 text-base text-[#001b4b]"
+                />
+              </label>
+              <button type="submit" className="inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-lg bg-dym-blue px-3 py-2 text-sm font-bold text-white hover:bg-[#001b4b]">
+                <span aria-hidden="true" className="material-symbols-outlined hidden min-[360px]:inline-block">search</span>
+                Buscar
+              </button>
+            </form>
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2">
               <button
                 type="button"
@@ -102,6 +139,44 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           </div>
         </div>
       </section>
+
+      {FEATURED_PRODUCTS.length > 0 && (
+        <section aria-labelledby="featured-title" className="border-b border-dym-aqua-light bg-dym-aqua-soft py-9 sm:py-12">
+          <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h2 id="featured-title" className="text-2xl font-bold text-[#001b4b] lg:text-3xl">Productos destacados</h2>
+                <p className="mt-2 text-sm text-[#444650]">Una referencia de cada línea destacada. Puedes añadirla o ver más opciones.</p>
+              </div>
+              <button type="button" onClick={onOpenQuoteModal} className="min-h-11 rounded-lg border border-dym-blue/25 bg-white px-4 py-2 text-sm font-bold text-dym-blue hover:bg-dym-blue-soft">
+                Ver cotización
+              </button>
+            </div>
+            <p role="status" className="mb-2 text-sm font-semibold text-dym-blue">{featuredNotice}</p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {FEATURED_PRODUCTS.map(({ label, search, product }) => (
+                <div key={product.id} className="flex min-w-0 flex-col items-start">
+                  <div className="w-full flex-1">
+                    <ProductQuoteCard
+                      headingLevel="h3"
+                      label={label}
+                      product={product}
+                      quantity={cart.find((item) => item.product.id === product.id)?.quantity ?? 0}
+                      onAdd={(item, quantity) => {
+                        onAddToCart(item, quantity);
+                        setFeaturedNotice(`Agregado a cotización: ${quantity} × ${item.name}`);
+                      }}
+                    />
+                  </div>
+                  <button type="button" onClick={() => onSearchCatalog(search)} className="min-h-11 rounded-lg px-3 py-2 text-sm font-bold text-dym-blue hover:bg-dym-aqua-light">
+                    Ver {label.toLocaleLowerCase('es')}
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* SECCIÓN 4: POR QUÉ ELEGIR D&M */}
       <section data-dark-surface className="w-full bg-linear-to-br from-[#001b4b] to-dym-blue text-white py-12 lg:py-16 relative overflow-hidden">
@@ -221,6 +296,26 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="delivery-title" className="border-b border-dym-blue/15 bg-dym-blue-soft py-9 sm:py-12">
+        <div className="mx-auto flex max-w-[1320px] flex-wrap items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <h2 id="delivery-title" className="text-2xl font-bold text-[#001b4b] lg:text-3xl">Entregas en el Caribe colombiano</h2>
+            <p className="mt-2 text-sm leading-relaxed text-[#444650]">
+              Indícanos tu municipio y qué productos necesitas. Por WhatsApp puedes consultar la cobertura para tu destino, el costo y el plazo de entrega.
+            </p>
+          </div>
+          <a
+            href={`https://wa.me/${COMPANY_PHONE}?text=${encodeURIComponent(deliveryMessage)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-dym-gold px-4 py-2 text-sm font-bold text-[#001b4b] hover:bg-dym-gold-hover"
+          >
+            <span aria-hidden="true" className="material-symbols-outlined">local_shipping</span>
+            Consultar entrega por WhatsApp
+          </a>
         </div>
       </section>
 
