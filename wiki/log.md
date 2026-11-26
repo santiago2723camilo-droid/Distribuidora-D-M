@@ -255,3 +255,7 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 
 - D&M indicó que no se utilizará el RUT en la landing. Se actualizó el plan y se distinguió de la indicación previa sobre el NIT, que sigue pendiente. El borrador de la política permanece privado.
 - La portada pública respondió HTTP 200. No se hallaron referencias al RUT ni al NIT en el HTML o JavaScript públicos. La ruta del borrador devolvió HTTP 404. Ver [[decisiones]] y [[estado-del-proyecto]].
+
+## [2026-11-26] sincronización | Wiki de D&M en GitHub
+
+- D&M pidió sincronizar los cambios pendientes. Se subió `9da8899` y se verificó en GitHub que la rama `main` recibió el commit. El código de la landing ya estaba sincronizado y el material local de `Plan De Mejora/` quedó fuera de Git. Ver [[estado-del-proyecto]].
