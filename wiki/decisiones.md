@@ -2,7 +2,7 @@
 tipo: decisiones
 estado: vigente
 creado: 2026-10-28
-actualizado: 2026-11-20
+actualizado: 2026-11-26
 tags: [decisiones, proyecto]
 fuentes: ["AGENTS.md", "Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/LOGO DISTRIBUIDORA DYM.pdf", "../../inventario 04-11.xlsx"]
 ---
@@ -84,3 +84,8 @@ fuentes: ["AGENTS.md", "Docs/DISTRIBUIDORA_DYM worddd (1).docx", "Docs/LOGO DIST
 - **Decisión confirmada por el usuario:** dejar los logos sobre fondo blanco.
 - **Implementación:** se crearon PNG derivados con fondos exteriores blancos para los 11 logos y se actualizaron el carrusel y los modales para usarlos. Los originales de `Docs/` y las copias JPEG previas permanecen intactos. Se conservaron los campos de color que forman parte del diseño de cada logotipo.
 - **Fuente:** petición del usuario del 2026-11-20; catálogo de activos en [[documentos-y-activos]].
+
+## 2026-11-26 — Continuidad sin el RUT
+
+- **Confirmado por D&M:** prescindir del documento RUT en el trabajo de la landing. No se solicita, se usa como insumo ni se publica.
+- **Pendiente:** el borrador de tratamiento de datos queda privado. El NIT es un dato distinto y permanece pendiente según la indicación previa. Ver [[plan-de-mejora]] y [[pendientes]].

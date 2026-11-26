@@ -2,7 +2,7 @@
 tipo: estado-del-proyecto
 estado: vigente
 creado: 2026-10-28
-actualizado: 2026-11-25
+actualizado: 2026-11-26
 tags: [proyecto, landing, vite]
 fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-google-ai-studio/README.md"]
 ---
@@ -57,7 +57,7 @@ fuentes: ["trabajo/landing-google-ai-studio/package.json", "trabajo/landing-goog
 
 ## Próximo paso
 
-La landing está publicada en GitHub Pages. La URL pública confirmada permite continuar con la dirección canónica y Search Console cuando D&M solicite retomar el SEO. El paso 14 sigue aplazado por indicación de D&M hasta contar con el NIT. El borrador se puede revisar en la vista local privada descrita en [[plan-de-mejora]]. Otros pendientes están en [[pendientes]].
+La landing está publicada en GitHub Pages. La URL pública confirmada permite continuar con la dirección canónica y Search Console cuando D&M solicite retomar el SEO. El RUT queda fuera de la landing y de los requisitos para continuar, por indicación del usuario del 2026-11-26. La política sigue en borrador privado y el NIT continúa pendiente. Se comprobó que la portada pública responde HTTP 200, que su HTML y JavaScript no contienen referencias al RUT ni al NIT y que la ruta de la política responde HTTP 404. Ver [[decisiones]], [[plan-de-mejora]] y [[pendientes]].
 
 ## Paso 16 · Revisión final
 

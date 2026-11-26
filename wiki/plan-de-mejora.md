@@ -2,7 +2,7 @@
 tipo: plan-de-mejora
 estado: en-progreso
 creado: 2026-11-06
-actualizado: 2026-11-25
+actualizado: 2026-11-26
 tags: [plan, landing, mejoras]
 fuentes: ["Plan De Mejora/17-distribuidora-dym/plan-mejoras.md", "Plan De Mejora/17-distribuidora-dym/validacion-con-cliente.md", "trabajo/landing-google-ai-studio/src/"]
 ---
@@ -41,7 +41,7 @@ La numeración de «Ruta de trabajo» resume la secuencia adaptada de la wiki. C
 4. **Catálogo y cotización:** aplicado localmente: 1.492 nombres únicos, tres categorías y 10 por página; sin fotos, stock ni precio. Mantiene filtros y selección; navegación y persistencia en cotización comprobadas el 2026-11-20.
 5. **Marcas:** carrusel y modales implementados localmente con los 11 logos autorizados; faltan fichas de aliados en `Docs/` para completar sus detalles.
 6. **Crédito:** aplicado: consulta informativa por WhatsApp sin fórmula, monto, plazo ni promesa de aprobación.
-7. **Privacidad y datos.** Inventariar los datos que solicitan el cotizador y el formulario de contacto. Recibir NIT/RUT, dirección legal y correo para asuntos de datos; preparar política y aceptación antes de habilitar una recopilación que dependa de ella.
+7. **Privacidad y datos.** Inventariar los datos que solicitan el cotizador y el formulario de contacto. Revisar los datos pendientes del responsable y preparar la política y la aceptación. Consultar el estado del paso 14.
 8. **Pulido, SEO y accesibilidad.** Revisar jerarquía visual, móvil, teclado, etiquetas, título/descripción y textos alternativos sin inventar ubicaciones, horarios o marcas.
 9. **Prueba final y entrega.** Compilar; revisar en escritorio y móvil; probar enlaces y flujo de cotización solo contra destino confirmado. Guardar versión local en Git. El despliegue web se hace aparte y requiere autorización para el destino.
 
@@ -81,7 +81,7 @@ La numeración de «Ruta de trabajo» resume la secuencia adaptada de la wiki. C
 ## Respuestas confirmadas y datos aún pendientes
 
 - **Ya confirmado:** no se incluyen reglas de crédito aún; los logos recibidos se pueden mostrar; teléfono/dirección/email son vigentes; no Maps; mantener Contacto; sin testimonios; 10 productos por página y sin fotos. Misión y visión actuales son propuestas provisionales solicitadas por el usuario.
-- **Pendiente para futuras mejoras:** NIT/RUT y datos del responsable de privacidad para política; revisión de productos clasificados por nombre; reglas oficiales si en algún momento se desea describir las condiciones de crédito; revisión visual final y autorización de publicación.
+- **Pendiente para futuras mejoras:** datos de privacidad pendientes en el paso 14; revisión de productos clasificados por nombre; reglas oficiales si en algún momento se desea describir las condiciones de crédito; revisión visual final y autorización de publicación.
 
 ## Secuencia para usar el plan recibido
 
@@ -157,7 +157,7 @@ El archivo original `Plan De Mejora/17-distribuidora-dym/plan-mejoras.md` y sus 
 
 ## Paso 14 del plan recibido · Tratamiento de datos
 
-**Estado: borrador y casillas comprobados en vista privada.** D&M confirmó nombre registrado, dirección y atención de derechos. Las solicitudes se atienden y conservan en WhatsApp. D&M no envía promociones. El NIT se incorporará más adelante por indicación del usuario.
+**Estado: borrador y casillas comprobados en vista privada.** D&M confirmó nombre registrado, dirección y atención de derechos. Las solicitudes se atienden y conservan en WhatsApp. D&M no envía promociones. El 2026-11-26 D&M descartó usar el documento RUT para la landing. El NIT sigue pendiente según su indicación previa.
 
 | Flujo | Datos que pide la página | Destino observado |
 |---|---|---|

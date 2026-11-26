@@ -250,3 +250,8 @@ fuentes: ["AGENTS.md", "Docs/", "trabajo/landing-google-ai-studio/"]
 
 - D&M autorizó publicar `0ea390b` y pidió comprobar el enlace público desde su PC. GitHub Actions completó la ejecución `45709815365` y la página devolvió HTTP 200.
 - Chrome para Windows en el PC del usuario comprobó la búsqueda, las cinco líneas destacadas, la cotización por lista y el enlace de entregas a 320, 390, 718 y 1.280 px. Se interceptó el borrador de WhatsApp con datos ficticios y el borrador de política devolvió HTTP 404. Ver [[estado-del-proyecto]].
+
+## [2026-11-26] decisión | Continuar sin el RUT
+
+- D&M indicó que no se utilizará el RUT en la landing. Se actualizó el plan y se distinguió de la indicación previa sobre el NIT, que sigue pendiente. El borrador de la política permanece privado.
+- La portada pública respondió HTTP 200. No se hallaron referencias al RUT ni al NIT en el HTML o JavaScript públicos. La ruta del borrador devolvió HTTP 404. Ver [[decisiones]] y [[estado-del-proyecto]].

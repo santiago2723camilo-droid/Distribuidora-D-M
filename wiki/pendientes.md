@@ -2,7 +2,7 @@
 tipo: pendientes
 estado: abierto
 creado: 2026-10-28
-actualizado: 2026-11-25
+actualizado: 2026-11-26
 tags: [pendientes, preguntas]
 fuentes: ["trabajo/landing-google-ai-studio/src/data/mockData.ts", "Docs/"]
 ---
@@ -25,7 +25,7 @@ fuentes: ["trabajo/landing-google-ai-studio/src/data/mockData.ts", "Docs/"]
 - **Media:** relación entre JC Top y JC Tools pendiente; ambos logos se muestran de manera separada sin afirmar que son la misma marca.
 - **Media:** D&M confirmó el Caribe colombiano como región de entregas. Sigue pendiente validar los municipios que hoy figuran como opciones en el cotizador y si el ejemplo sobre flete es apropiado. Ver [[empresa]].
 - **Media:** pedir un original del logo en SVG/PDF vectorial o PNG grande para que el encabezado quede nítido. Los archivos de `Docs/` disponibles son borrosos incluso al renderizarlos a mayor DPI.
-- **Paso 14, vista local comprobada:** D&M confirmó atención y almacenamiento de mensajes en WhatsApp y ausencia de promociones. NIT aplazado por decisión del usuario. Falta confirmar el criterio de conservación, cómo se deja constancia de la autorización y la fecha de vigencia, y aprobar la versión final. Ver [[plan-de-mejora]].
+- **Paso 14, vista local comprobada:** D&M confirmó atención y almacenamiento de mensajes en WhatsApp y ausencia de promociones. El RUT quedó fuera del alcance para la landing. El NIT, el criterio de conservación, la constancia de autorización, la vigencia y la aprobación de la versión final siguen pendientes. Ver [[decisiones]] y [[plan-de-mejora]].
 - **Paso 15, SEO local comprobado:** la URL pública de GitHub Pages está confirmada. Queda configurar la dirección canónica, revisar si conviene un sitemap y verificar en Search Console. Confirmaciones opcionales para SEO local: zonas de entrega, horario y atención presencial si corresponden, y Perfil de Empresa existente. Ver [[plan-de-mejora]].
 - **Paso 16, revisión y publicación comprobadas:** versión local etiquetada como `revision-final-paso-16` y despliegue verificado en [[estado-del-proyecto]]. La recepción real y la prueba en teléfono físico siguen pendientes.
 - **Pendiente:** instalar las skills entregadas en los ZIP del plan antes de aplicar esas rutinas especializadas.
